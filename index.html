@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso: Sua Rotina Mais Leve na Escola</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(120deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+        .section-title {
+            font-size: 2rem; /* Adjusted from 2.25rem */
+            font-weight: 700;
+            color: #1e3a8a; /* blue-900 */
+        }
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: 2.25rem;
+            }
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 12px;
+            bottom: -12px;
+            width: 2px;
+            background-color: #e0e0e0; /* Lighter line for timeline */
+        }
+         .timeline-item:last-child::before {
+            display: none;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 4px solid #f8fafc; /* bg-slate-50 */
+        }
+        .dot-oficina {
+            background-color: #38bdf8; /* sky-400 */
+        }
+        .dot-plantao {
+            background-color: #a5b4fc; /* indigo-300 */
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.625rem 1.25rem; /* Adjusted padding */
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .btn-primary {
+            background-color: #2563eb; /* blue-600 */
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: #1d4ed8; /* blue-700 */
+        }
+        .btn-secondary {
+            background-color: #e0f2fe; /* sky-100 */
+            color: #0c4a6e; /* sky-900 */
+        }
+        .btn-secondary:hover {
+            background-color: #bae6fd; /* sky-200 */
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Toast Notification for Clipboard Copy -->
+    <div id="toast" class="fixed top-5 right-5 bg-green-500 text-white py-2 px-4 rounded-lg shadow-md opacity-0 transform translate-y-2 transition-all duration-300 z-50">
+        Link copiado para a área de transferência!
+    </div>
+
+    <!-- Header Section -->
+    <header class="gradient-bg py-12 sm:py-16">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-sky-800 font-semibold tracking-widest mb-2">CURSO</p>
+            <h1 class="text-3xl md:text-5xl font-bold text-blue-900 leading-tight">Sua Rotina Mais Leve na Escola</h1>
+            <p class="mt-4 text-base md:text-lg text-sky-800 max-w-3xl mx-auto">Como usar a Inteligência Artificial para simplificar tarefas mantendo a qualidade pedagógica.</p>
+            <div class="mt-8 flex flex-wrap justify-center gap-3">
+                <a href="#inscricao" class="btn btn-primary text-base">
+                    Inscreva-se agora
+                </a>
+                <button id="shareButton" class="btn btn-secondary text-base flex items-center gap-2">
+                    <i data-lucide="share-2" class="w-4 h-4"></i>
+                    Compartilhar
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-16">
+
+        <!-- Overview Section -->
+        <section id="overview" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="section-title">Visão Geral do Curso</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Um curso pensado para professores de Educação Infantil que desejam usar a IA como assistente prática para valorizar o que só um educador pode fazer: observar, mediar, criar e cuidar.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="card">
+                    <div class="mx-auto bg-sky-100 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+                        <i data-lucide="sparkles" class="w-8 h-8 text-sky-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-2">Reduza o Esforço</h3>
+                    <p class="text-slate-600">Diminua o trabalho mecânico de digitar, compilar e formatar documentos pedagógicos.</p>
+                </div>
+                <div class="card">
+                    <div class="mx-auto bg-sky-100 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+                        <i data-lucide="brain-circuit" class="w-8 h-8 text-sky-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-2">Qualidade Pedagógica</h3>
+                    <p class="text-slate-600">Aprenda a usar a IA como uma ferramenta para potencializar sua prática, sem perder a autoria.</p>
+                </div>
+                <div class="card">
+                    <div class="mx-auto bg-sky-100 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+                        <i data-lucide="clock" class="w-8 h-8 text-sky-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-2">Mais Tempo para o Essencial</h3>
+                    <p class="text-slate-600">Libere tempo na sua rotina para se dedicar mais às crianças e ao planejamento criativo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Course Details Section -->
+        <section class="mb-20 bg-white p-8 sm:p-12 rounded-2xl shadow-sm">
+             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="flex items-start gap-4">
+                    <div class="bg-sky-100 p-3 rounded-full">
+                        <i data-lucide="hourglass" class="w-6 h-6 text-sky-700"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-slate-900">Carga Horária</h3>
+                        <p class="text-slate-600">20 horas no total</p>
+                        <p class="text-sm text-slate-500">5 oficinas presenciais, 5 plantões (presença opcional)</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="bg-sky-100 p-3 rounded-full">
+                        <i data-lucide="calendar-days" class="w-6 h-6 text-sky-700"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-slate-900">Período</h3>
+                        <p class="text-slate-600">11/09 a 13/11 de 2025</p>
+                        <p class="text-sm text-slate-500">Encontros às quintas-feiras de manhã.</p>
+                    </div>
+                </div>
+                 <div class="flex items-start gap-4">
+                    <div class="bg-sky-100 p-3 rounded-full">
+                        <i data-lucide="clock-9" class="w-6 h-6 text-sky-700"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-slate-900">Horário</h3>
+                        <p class="text-slate-600">09h às 11h</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="bg-sky-100 p-3 rounded-full">
+                        <i data-lucide="map-pin" class="w-6 h-6 text-sky-700"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-slate-900">Local</h3>
+                        <p class="text-slate-600">Secretaria Municipal de Educação</p>
+                        <p class="text-sm text-slate-500">Plantões podem ser acessados presencialmente ou pelo Google Meet</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- What you will learn Section -->
+        <section id="learning" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="section-title">O que você vai aprender</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Desde os primeiros passos até a criação de relatórios e planos de aula com autoria docente.</p>
+            </div>
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-x-12 gap-y-6">
+                <div class="flex items-start gap-4">
+                    <div class="bg-green-100 p-2 rounded-full mt-1 flex-shrink-0"><i data-lucide="check" class="w-5 h-5 text-green-700"></i></div>
+                    <p class="text-slate-700"><strong class="text-slate-900">Primeiros passos com IA:</strong> Desmistificar a tecnologia e aplicar comandos básicos de texto e imagem.</p>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="bg-green-100 p-2 rounded-full mt-1 flex-shrink-0"><i data-lucide="check" class="w-5 h-5 text-green-700"></i></div>
+                    <p class="text-slate-700"><strong class="text-slate-900">IA com olhar pedagógico:</strong> Dar contexto e ensinar a ferramenta a responder de acordo com a sua realidade.</p>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="bg-green-100 p-2 rounded-full mt-1 flex-shrink-0"><i data-lucide="check" class="w-5 h-5 text-green-700"></i></div>
+                    <p class="text-slate-700"><strong class="text-slate-900">Caderno inteligente:</strong> Registrar observações por voz ou texto, de forma simples e organizada.</p>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="bg-green-100 p-2 rounded-full mt-1 flex-shrink-0"><i data-lucide="check" class="w-5 h-5 text-green-700"></i></div>
+                    <p class="text-slate-700"><strong class="text-slate-900">Planejamento com apoio da IA:</strong> Gerar ideias criativas e formalizar planos de aula no formato da Plataforma APUS.</p>
+                </div>
+                <div class="flex items-start gap-4 md:col-span-2">
+                     <div class="bg-green-100 p-2 rounded-full mt-1 flex-shrink-0"><i data-lucide="check" class="w-5 h-5 text-green-700"></i></div>
+                    <p class="text-slate-700"><strong class="text-slate-900">Relatórios com autoria docente:</strong> Transformar registros em rascunhos de relatórios, mantendo sua voz e responsabilidade.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Course Structure Section -->
+        <section id="structure" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="section-title">Estrutura do Curso</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">5 oficinas práticas e 5 plantões de dúvidas opcionais para apoio individualizado.</p>
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <!-- Setembro -->
+                <h3 class="text-2xl font-bold text-sky-800 mb-6">Setembro</h3>
+                <div class="relative pl-12 pb-8 timeline-item">
+                    <div class="timeline-dot dot-oficina"></div>
+                    <p class="font-semibold text-slate-500">11/09 – Oficina 1</p>
+                    <h4 class="text-lg font-semibold text-slate-900 mt-1">Descobrindo o potencial da IA</h4>
+                    <p class="text-slate-600">Demonstrações práticas e primeiros comandos de texto e imagem.</p>
+                </div>
+                 <div class="relative pl-12 pb-8 timeline-item">
+                    <div class="timeline-dot dot-plantao"></div>
+                    <p class="font-semibold text-slate-500">18/09 – Plantão de Dúvidas (opcional)</p>
+                </div>
+                <div class="relative pl-12 pb-8 timeline-item">
+                    <div class="timeline-dot dot-oficina"></div>
+                    <p class="font-semibold text-slate-500">25/09 – Oficina 2</p>
+                    <h4 class="text-lg font-semibold text-slate-900 mt-1">Comandos pedagógicos</h4>
+                    <p class="text-slate-600">Como estruturar pedidos claros e contextualizados para a IA.</p>
+                </div>
+
+                <!-- Outubro -->
+                <h3 class="text-2xl font-bold text-sky-800 my-6">Outubro</h3>
+                <div class="relative pl-12 pb-8 timeline-item">
+                    <div class="timeline-dot dot-plantao"></div>
+                    <p class="font-semibold text-slate-500">02/10 – Plantão de Dúvidas (opcional)</p>
+                </div>
+                <div class="relative pl-12 pb-8 timeline-item">
+                    <div class="timeline-dot dot-oficina"></div>
+                    <p class="font-semibold text-slate-500">09/10 – Oficina 3</p>
+                    <h4 class="text-lg font-semibold text-slate-900 mt-1">Seu Caderno Inteligente</h4>
+                    <p class="text-slate-600">Fluxo simples para registrar observações de forma ágil.</p>
+                </div>
+                 <div class="relative pl-12 pb-8 timeline-item">
+                    <div class="timeline-dot dot-plantao"></div>
+                    <p class="font-semibold text-slate-500">16/10 – Plantão de Dúvidas (opcional)</p>
+                </div>
+                <div class="relative pl-12 pb-8 timeline-item">
+                    <div class="timeline-dot dot-oficina"></div>
+                    <p class="font-semibold text-slate-500">23/10 – Oficina 4</p>
+                    <h4 class="text-lg font-semibold text-slate-900 mt-1">Da ideia ao plano de aula</h4>
+                    <p class="text-slate-600">IA como parceira criativa e assistente de formatação.</p>
+                </div>
+                <div class="relative pl-12 pb-8 timeline-item">
+                    <div class="timeline-dot dot-plantao"></div>
+                    <p class="font-semibold text-slate-500">30/10 – Plantão de Dúvidas (opcional)</p>
+                </div>
+
+                <!-- Novembro -->
+                <h3 class="text-2xl font-bold text-sky-800 my-6">Novembro</h3>
+                <div class="relative pl-12 pb-8 timeline-item">
+                    <div class="timeline-dot dot-oficina"></div>
+                    <p class="font-semibold text-slate-500">06/11 – Oficina 5</p>
+                    <h4 class="text-lg font-semibold text-slate-900 mt-1">Da anotação ao relatório</h4>
+                    <p class="text-slate-600">Gerando rascunhos de relatórios a partir de registros.</p>
+                </div>
+                 <div class="relative pl-12 timeline-item">
+                    <div class="timeline-dot bg-blue-600"></div>
+                    <p class="font-semibold text-slate-500">13/11 – Encerramento</p>
+                    <h4 class="text-lg font-semibold text-slate-900 mt-1">Plantão Final e Celebração</h4>
+                    <p class="text-slate-600">Espaço para dúvidas finais e comemoração do aprendizado.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Methodology & Requirements Section -->
+        <section class="mb-20 grid md:grid-cols-2 gap-12 items-start">
+            <div>
+                <h2 class="section-title mb-8">Como funciona?</h2>
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <i data-lucide="presentation" class="w-8 h-8 text-sky-600 flex-shrink-0 mt-1"></i>
+                        <div>
+                            <h4 class="font-semibold text-lg">Metodologia Mão na Massa</h4>
+                            <p class="text-slate-600">Demonstrações ao vivo e atividades práticas no seu celular ou computador, com tarefas semanais para aplicar o que aprendeu.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <i data-lucide="users" class="w-8 h-8 text-sky-600 flex-shrink-0 mt-1"></i>
+                        <div>
+                            <h4 class="font-semibold text-lg">Apoio Individualizado</h4>
+                            <p class="text-slate-600">Plantões de dúvidas opcionais (presenciais ou online) para tirar dúvidas e receber ajuda personalizada.</p>
+                        </div>
+                    </div>
+                     <div class="flex gap-4">
+                        <i data-lucide="book-open" class="w-8 h-8 text-sky-600 flex-shrink-0 mt-1"></i>
+                        <div>
+                            <h4 class="font-semibold text-lg">Material de Apoio</h4>
+                            <p class="text-slate-600">Você receberá um guia digital e impresso com links para ferramentas e passo a passo para uso em sala de aula.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card p-8 bg-sky-50 border border-sky-200">
+                <h3 class="text-2xl font-bold text-blue-900 mb-6">O que trazer?</h3>
+                <p class="text-slate-700 mb-6">Para aproveitar ao máximo as oficinas práticas, os participantes devem trazer:</p>
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="smartphone" class="w-6 h-6 text-sky-700"></i>
+                        <span class="text-lg">Celular (Smartphone)</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="laptop" class="w-6 h-6 text-sky-700"></i>
+                        <span class="text-lg">Notebook ou Chromebook</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section id="inscricao" class="gradient-bg rounded-2xl p-12 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-900">Pronto para ter uma rotina mais leve?</h2>
+            <p class="mt-4 text-lg text-sky-800 max-w-2xl mx-auto">Inscreva-se e descubra como a IA pode ser sua maior aliada, sem abrir mão da qualidade pedagógica que você já oferece.</p>
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <a href="#" class="btn btn-primary text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    Quero me inscrever!
+                </a>
+                <button id="shareButton2" class="btn btn-secondary text-lg flex items-center gap-2">
+                    <i data-lucide="share-2" class="w-5 h-5"></i>
+                    Compartilhar
+                </button>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="text-center py-8 bg-slate-100">
+        <p class="text-slate-500">&copy; 2025 - Raul Cabral França - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        const shareData = {
+            title: 'Curso: Sua Rotina Mais Leve na Escola',
+            text: 'Olha que legal este curso sobre como usar Inteligência Artificial para simplificar o dia a dia na escola!',
+            url: window.location.href
+        };
+
+        const shareFunction = async () => {
+            // Use Web Share API if available (mobile)
+            if (navigator.share) {
+                try {
+                    await navigator.share(shareData);
+                } catch (err) {
+                    console.error('Erro ao compartilhar:', err);
+                }
+            } else {
+                // Fallback for desktop: copy to clipboard
+                try {
+                    const textArea = document.createElement('textarea');
+                    textArea.value = window.location.href;
+                    textArea.style.position = 'fixed';
+                    textArea.style.opacity = '0';
+                    document.body.appendChild(textArea);
+                    textArea.focus();
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    showToast();
+                } catch (err) {
+                    console.error('Não foi possível copiar o link:', err);
+                }
+            }
+        };
+        
+        // Share Button Logic
+        const shareButton = document.getElementById('shareButton');
+        const shareButton2 = document.getElementById('shareButton2');
+
+        shareButton.addEventListener('click', shareFunction);
+        shareButton2.addEventListener('click', shareFunction);
+
+        // Toast notification function
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.style.opacity = '1';
+            toast.style.transform = 'translateY(0)';
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(0.5rem)';
+            }, 3000); // Hide after 3 seconds
+        }
+    </script>
+</body>
+</html>
