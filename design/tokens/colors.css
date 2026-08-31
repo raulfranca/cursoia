@@ -1,0 +1,81 @@
+:root{
+  /* --- Base palette: paper --- */
+  --paper-0:#FBF9F2;      /* lightest sheet */
+  --paper-1:#F4F1E7;      /* canvas — the illustration background */
+  --paper-2:#EDE8DA;      /* raised / alternate band */
+  --paper-3:#E3DCC9;      /* sunken, hairline fills */
+
+  /* --- Base palette: ink --- */
+  --ink-0:#000000;        /* illustration line black, only for art */
+  --ink-1:#14130E;        /* primary text */
+  --ink-2:#3D3A31;        /* secondary text */
+  --ink-3:#6B675B;        /* tertiary text, captions */
+  --ink-4:#9C978A;        /* disabled, placeholders */
+  --ink-5:#C9C4B4;        /* hairlines, dividers */
+  --ink-wash:#D6D2C6;     /* the grey blotches in the illustrations */
+
+  /* --- Base palette: accents (low chroma, classroom materials) --- */
+  --lousa-700:#224035;    /* chalkboard green, deep */
+  --lousa-600:#2E574A;
+  --lousa-500:#35604F;    /* primary brand accent */
+  --lousa-300:#8FAEA2;
+  --lousa-100:#DDE7E1;
+
+  --terracota-600:#A6432C;
+  --terracota-500:#C2543A;  /* secondary accent — red marking pen */
+  --terracota-300:#E0A292;
+  --terracota-100:#F6E3DC;
+
+  --ocre-600:#B87F1B;
+  --ocre-500:#E0A02E;      /* highlight / yellow chalk */
+  --ocre-300:#EFCE8C;
+  --ocre-100:#FAEED4;
+
+  --caneta-600:#22406B;
+  --caneta-500:#2C4C7C;    /* pen blue — info */
+  --caneta-300:#93A8C4;
+  --caneta-100:#DEE5EF;
+
+  /* --- Semantic aliases --- */
+  --bg-canvas:var(--paper-1);
+  --bg-sheet:var(--paper-0);
+  --bg-band:var(--paper-2);
+  --bg-sunken:var(--paper-3);
+  --bg-inverse:var(--ink-1);
+  --bg-brand:var(--lousa-500);
+  --bg-brand-soft:var(--lousa-100);
+
+  --text-body:var(--ink-1);
+  --text-muted:var(--ink-2);
+  --text-caption:var(--ink-3);
+  --text-disabled:var(--ink-4);
+  --text-on-inverse:var(--paper-0);
+  --text-on-brand:var(--paper-0);
+  --text-brand:var(--lousa-600);
+  --text-link:var(--lousa-600);
+  --text-link-hover:var(--terracota-500);
+
+  --line-hairline:var(--ink-5);
+  --line-strong:var(--ink-1);
+  --line-soft:var(--paper-3);
+
+  --surface-card:var(--paper-0);
+  --surface-card-alt:var(--paper-2);
+  --surface-field:var(--paper-0);
+
+  --accent-primary:var(--lousa-500);
+  --accent-secondary:var(--terracota-500);
+  --accent-highlight:var(--ocre-500);
+  --accent-info:var(--caneta-500);
+
+  --status-success:var(--lousa-500);
+  --status-success-bg:var(--lousa-100);
+  --status-warning:var(--ocre-600);
+  --status-warning-bg:var(--ocre-100);
+  --status-danger:var(--terracota-600);
+  --status-danger-bg:var(--terracota-100);
+  --status-info:var(--caneta-500);
+  --status-info-bg:var(--caneta-100);
+
+  --focus-ring:var(--terracota-500);
+}

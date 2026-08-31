@@ -1,0 +1,33 @@
+:root{
+  /* 4px base, with a 6px half-step for hairline-tight UI */
+  --space-0:0;
+  --space-1:4px;
+  --space-2:6px;
+  --space-3:8px;
+  --space-4:12px;
+  --space-5:16px;
+  --space-6:20px;
+  --space-7:24px;
+  --space-8:32px;
+  --space-9:40px;
+  --space-10:56px;
+  --space-11:72px;
+  --space-12:96px;
+  --space-13:128px;
+
+  --gutter:var(--space-7);
+  --section-y:var(--space-12);
+  --section-y-tight:var(--space-10);
+  --card-pad:var(--space-7);
+  --card-pad-lg:var(--space-8);
+  --stack-tight:var(--space-3);
+  --stack:var(--space-5);
+  --stack-loose:var(--space-8);
+
+  --measure-narrow:34ch; /* @kind spacing */
+  --measure:62ch; /* @kind spacing */
+  --measure-wide:78ch; /* @kind spacing */
+  --container:1120px;
+  --container-wide:1320px;
+  --container-prose:680px;
+}

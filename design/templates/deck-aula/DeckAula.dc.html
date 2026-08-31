@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Deck de aula" description="Cinco slides 1280×720 na identidade da marca: capa, abertura de seção, conteúdo, prompt e encerramento." -->
+<helmet><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=Instrument+Sans:wght@400..700&family=Caveat:wght@400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><style>body{margin:0;background:#EDE8DA}</style></helmet>
+<div style="display:flex;flex-direction:column;align-items:center;gap:24px;padding:24px;font-family:'Instrument Sans',sans-serif">
+
+<section data-screen-label="01" style="width:1280px;height:720px;position:relative;box-sizing:border-box;background:#F4F1E7;padding:64px 0 64px 80px;display:grid;grid-template-columns:1.02fr .98fr;gap:48px;align-items:center;overflow:hidden">
+<div style="display:flex;flex-direction:column;gap:26px;padding-bottom:40px">
+<span style="font:600 18px/1.2 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#C2543A">Formação de 4 semanas</span>
+<h1 style="margin:0;font:600 82px/1.02 'Bricolage Grotesque',sans-serif;letter-spacing:-.03em;color:#14130E">IA que cabe na sua aula de segunda-feira</h1>
+<p style="margin:0;font:400 27px/1.5 'Instrument Sans',sans-serif;color:#3D3A31;max-width:22ch">Encontro 1 · A IA como colega de planejamento</p>
+<div style="display:flex;align-items:center;gap:20px;padding-top:8px"><span style="font:400 22px 'Instrument Sans',sans-serif;color:#6B675B">9 de março · 19h30</span><span style="font:500 30px Caveat,cursive;color:#C2543A;display:inline-block;transform:rotate(-1.2deg)">traga uma atividade sua</span></div>
+</div>
+<img src="../../assets/illustrations/professora-no-laptop.png" alt="" style="width:100%;display:block">
+<div style="position:absolute;left:0;right:0;bottom:0;border-top:1px solid #000"></div>
+<div style="position:absolute;right:80px;bottom:52px;font:600 20px/1.05 'Bricolage Grotesque',sans-serif;letter-spacing:-.03em;color:#6B675B;text-align:right">IA para<br>Professores</div>
+</section>
+
+<section data-screen-label="02" style="width:1280px;height:720px;position:relative;box-sizing:border-box;background:#35604F;padding:64px 80px;display:flex;flex-direction:column;justify-content:center;overflow:hidden">
+<span style="font:600 18px/1.2 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#EFCE8C">Parte 02</span>
+<h2 style="margin:22px 0 0;font:600 54px/1.08 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;color:#FBF9F2;max-width:26ch">Prompts que viram plano de aula</h2>
+<p style="margin:22px 0 0;font:400 27px/1.5 'Instrument Sans',sans-serif;color:#DDE7E1;max-width:44ch">A estrutura de pedido que devolve objetivo, atividade e fechamento — na sua voz.</p>
+<div style="position:absolute;right:80px;top:56px;font:600 220px/1 'Bricolage Grotesque',sans-serif;color:rgba(251,249,242,.12);letter-spacing:-.05em">02</div>
+<div style="position:absolute;right:80px;bottom:52px;font:600 20px/1.05 'Bricolage Grotesque',sans-serif;letter-spacing:-.03em;color:#8FAEA2;text-align:right">IA para<br>Professores</div>
+</section>
+
+<section data-screen-label="03" style="width:1280px;height:720px;position:relative;box-sizing:border-box;background:#F4F1E7;padding:64px 80px;display:flex;flex-direction:column;overflow:hidden">
+<span style="font:600 18px/1.2 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#C2543A">O que você leva hoje</span>
+<h2 style="margin:18px 0 0;font:600 54px/1.08 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;color:#14130E;max-width:26ch">Três coisas prontas ao fim da aula</h2>
+<div style="display:grid;grid-template-columns:1.05fr .95fr;gap:56px;margin-top:40px;align-items:start">
+<ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:24px">
+<li style="display:flex;gap:20px;align-items:flex-start"><span style="flex:none;width:52px;height:52px;border:1.5px solid #14130E;border-radius:999px;display:grid;place-items:center;font:500 18px 'JetBrains Mono',monospace">01</span><span><span style="display:block;font:600 29px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">Um plano de aula em 15 minutos</span><span style="display:block;font:400 22px/1.4 'Instrument Sans',sans-serif;color:#6B675B;margin-top:6px">do objetivo à atividade de fechamento</span></span></li>
+<li style="display:flex;gap:20px;align-items:flex-start"><span style="flex:none;width:52px;height:52px;border:1.5px solid #14130E;border-radius:999px;display:grid;place-items:center;font:500 18px 'JetBrains Mono',monospace">02</span><span><span style="display:block;font:600 29px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">Uma atividade em três níveis</span><span style="display:block;font:400 22px/1.4 'Instrument Sans',sans-serif;color:#6B675B;margin-top:6px">sem reescrever o enunciado do zero</span></span></li>
+<li style="display:flex;gap:20px;align-items:flex-start"><span style="flex:none;width:52px;height:52px;border:1.5px solid #14130E;border-radius:999px;display:grid;place-items:center;font:500 18px 'JetBrains Mono',monospace">03</span><span><span style="display:block;font:600 29px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">Uma rubrica de quatro níveis</span><span style="display:block;font:400 22px/1.4 'Instrument Sans',sans-serif;color:#6B675B;margin-top:6px">com o critério ainda na sua mão</span></span></li>
+</ul>
+<img src="../../assets/illustrations/professora-tem-ideias.png" alt="" style="width:100%;border:1px solid #C9C4B4;border-radius:14px">
+</div>
+<div style="position:absolute;left:80px;bottom:52px;font:400 15px 'JetBrains Mono',monospace;color:#9C978A">03</div>
+<div style="position:absolute;right:80px;bottom:52px;font:600 20px/1.05 'Bricolage Grotesque',sans-serif;letter-spacing:-.03em;color:#6B675B;text-align:right">IA para<br>Professores</div>
+</section>
+
+<section data-screen-label="04" style="width:1280px;height:720px;position:relative;box-sizing:border-box;background:#F4F1E7;padding:64px 80px;display:flex;flex-direction:column;overflow:hidden">
+<span style="font:600 18px/1.2 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#C2543A">Modelo de pedido</span>
+<h2 style="margin:18px 0 0;font:600 54px/1.08 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;color:#14130E;max-width:28ch">Quatro linhas que mudam a resposta</h2>
+<div style="margin-top:38px;background:#EDE8DA;border:1.5px solid #14130E;border-radius:14px;box-shadow:4px 4px 0 0 #14130E;padding:34px 38px">
+<pre style="margin:0;font:400 25px/1.75 'JetBrains Mono',monospace;color:#14130E;white-space:pre-wrap">Aja como coordenadora pedagógica do Fundamental II.
+Adapte a atividade abaixo para três níveis de leitura.
+Mantenha o mesmo objetivo e o mesmo tempo de aula.
+Devolva em tabela, sem explicar o que você fez.</pre>
+</div>
+<div style="display:flex;align-items:center;gap:24px;margin-top:26px"><span style="font:400 22px/1.5 'Instrument Sans',sans-serif;color:#6B675B">Papel · tarefa · restrição · formato</span><span style="font:500 32px Caveat,cursive;color:#C2543A;display:inline-block;transform:rotate(-1.2deg)">a restrição é a parte que quase todo mundo esquece</span></div>
+<div style="position:absolute;left:80px;bottom:52px;font:400 15px 'JetBrains Mono',monospace;color:#9C978A">04</div>
+<div style="position:absolute;right:80px;bottom:52px;font:600 20px/1.05 'Bricolage Grotesque',sans-serif;letter-spacing:-.03em;color:#6B675B;text-align:right">IA para<br>Professores</div>
+</section>
+
+<section data-screen-label="05" style="width:1280px;height:720px;position:relative;box-sizing:border-box;background:#14130E;padding:64px 80px;display:flex;flex-direction:column;justify-content:center;overflow:hidden">
+<span style="font:600 18px/1.2 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#E0A02E">Para a próxima terça</span>
+<h2 style="margin:22px 0 0;font:600 54px/1.08 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;color:#FBF9F2;max-width:24ch">Rode as três versões com uma turma real</h2>
+<p style="margin:22px 0 0;font:400 27px/1.5 'Instrument Sans',sans-serif;color:#E3DCC9;max-width:42ch">Depois poste no grupo uma frase só: o que mudou de verdade na aula.</p>
+<div style="display:flex;align-items:center;gap:18px;margin-top:38px"><span style="background:#E0A02E;color:#14130E;border:1.5px solid #FBF9F2;border-radius:999px;padding:16px 30px;font:600 24px 'Instrument Sans',sans-serif">iaparaprofessores.br/semana3</span><span style="font:400 22px 'Instrument Sans',sans-serif;color:#9C978A">materiais no fim da página</span></div>
+<div style="position:absolute;right:80px;bottom:52px;font:600 20px/1.05 'Bricolage Grotesque',sans-serif;letter-spacing:-.03em;color:#9C978A;text-align:right">IA para<br>Professores</div>
+</section>
+
+</div>
+</x-dc>
+</body>
+</html>

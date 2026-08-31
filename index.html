@@ -1,441 +1,565 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curso: Sua Rotina Mais Leve na Escola</title>
-    
-    <!-- Meta Tags for Social Share -->
-    <meta property="og:title" content="Curso: Sua Rotina Mais Leve na Escola">
-    <meta property="og:description" content="Aprenda a usar a Inteligência Artificial para simplificar tarefas mantendo a qualidade pedagógica.">
-    <meta property="og:image" content="https://placehold.co/1200x630/0ea5e9/ffffff?text=Curso+de+IA\npara+Professores">
-    <meta property="og:url" content="https://raulfranca.github.io/cursoia/">
-    <meta name="twitter:card" content="summary_large_image">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inteligência Artificial para Educadores</title>
+<meta name="description" content="Aprenda, na prática, a usar IA para planejar, escrever, organizar e criar, sem perder sua autoria | Online · 30 horas">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GS6YNMGLZ9"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Inteligência Artificial para Educadores">
+<meta property="og:description" content="Aprenda, na prática, a usar IA para planejar, escrever, organizar e criar, sem perder sua autoria | Online · 30 horas">
+<meta property="og:url" content="https://raulfranca.github.io/cursoia/">
+<meta property="og:image" content="https://raulfranca.github.io/cursoia/assets/ilustracoes/og-curso-ia.jpg">
+<meta name="twitter:card" content="summary_large_image">
 
-      gtag('config', 'G-GS6YNMGLZ9');
-    </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;700&display=swap">
 
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .gradient-bg {
-            background: linear-gradient(120deg, #f0f9ff 0%, #e0f2fe 100%);
-        }
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #1e3a8a;
-        }
-        @media (min-width: 768px) {
-            .section-title {
-                font-size: 2.25rem;
-            }
-        }
-        .card {
-            background-color: white;
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: 12px;
-            top: 12px;
-            bottom: -12px;
-            width: 2px;
-            background-color: #e0e0e0;
-        }
-         .timeline-item:last-child::before {
-            display: none;
-        }
-        .timeline-dot {
-            position: absolute;
-            left: 0;
-            top: 5px;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            border: 4px solid #f8fafc;
-        }
-        .dot-oficina {
-            background-color: #38bdf8;
-        }
-        .dot-plantao {
-            background-color: #a5b4fc;
-        }
-        .btn {
-            display: inline-block;
-            padding: 0.625rem 1.25rem;
-            border-radius: 0.5rem;
-            font-weight: 600;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        .btn-primary {
-            background-color: #2563eb;
-            color: white;
-        }
-        .btn-primary:hover {
-            background-color: #1d4ed8;
-        }
-        .btn-secondary {
-            background-color: #e0f2fe;
-            color: #0c4a6e;
-        }
-        .btn-secondary:hover {
-            background-color: #bae6fd;
-        }
-    </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS6YNMGLZ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GS6YNMGLZ9');
+</script>
+
+<style>
+/* ============================================================
+   Tokens — copiados de design/tokens/*.css (design system
+   "IA para Professores"). Esta página é autônoma: não depende
+   de nada dentro de design/.
+   ============================================================ */
+:root{
+  --paper-0:#FBF9F2; --paper-1:#F4F1E7; --paper-2:#EDE8DA; --paper-3:#E3DCC9;
+  --ink-1:#14130E; --ink-2:#3D3A31; --ink-3:#6B675B; --ink-4:#9C978A; --ink-5:#C9C4B4;
+  --lousa-700:#224035; --lousa-600:#2E574A; --lousa-500:#35604F; --lousa-300:#8FAEA2; --lousa-100:#DDE7E1;
+  --terracota-600:#A6432C; --terracota-500:#C2543A; --terracota-300:#E0A292; --terracota-100:#F6E3DC;
+  --ocre-600:#B87F1B; --ocre-500:#E0A02E; --ocre-300:#EFCE8C; --ocre-100:#FAEED4;
+  --caneta-500:#2C4C7C; --caneta-300:#93A8C4; --caneta-100:#DEE5EF;
+
+  --bg-canvas:var(--paper-1); --bg-sheet:var(--paper-0); --bg-band:var(--paper-2);
+  --bg-brand:var(--lousa-500); --bg-brand-soft:var(--lousa-100);
+  --text-body:var(--ink-1); --text-muted:var(--ink-2); --text-caption:var(--ink-3);
+  --text-on-brand:var(--paper-0); --text-link:var(--lousa-600); --text-link-hover:var(--terracota-500);
+  --line-hairline:var(--ink-5); --line-strong:var(--ink-1);
+  --surface-card:var(--paper-0);
+  --accent-primary:var(--lousa-500); --accent-secondary:var(--terracota-500); --accent-highlight:var(--ocre-500);
+  --status-warning:var(--ocre-600); --status-warning-bg:var(--ocre-100);
+  --status-danger:var(--terracota-600); --status-danger-bg:var(--terracota-100);
+  --status-info:var(--caneta-500); --status-info-bg:var(--caneta-100);
+  --focus-ring:var(--terracota-500);
+
+  --font-display:"Bricolage Grotesque","Instrument Sans",system-ui,sans-serif;
+  --font-body:"Instrument Sans",system-ui,-apple-system,sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,monospace;
+  --size-2xs:12px; --size-xs:13px; --size-sm:15px; --size-md:17px; --size-lg:20px;
+  --size-xl:25px; --size-2xl:31px; --size-3xl:39px;
+  --lh-tight:1.06; --lh-snug:1.18; --lh-normal:1.35; --lh-relaxed:1.55;
+  --weight-regular:400; --weight-medium:500; --weight-semibold:600;
+  --track-tight:-0.02em; --track-snug:-0.01em; --track-caps:0.14em;
+  --text-h3:var(--weight-semibold) var(--size-xl)/var(--lh-snug) var(--font-display);
+  --text-lead:var(--weight-regular) var(--size-lg)/var(--lh-relaxed) var(--font-body);
+  --text-base:var(--weight-regular) var(--size-md)/var(--lh-relaxed) var(--font-body);
+  --text-small:var(--weight-regular) var(--size-sm)/var(--lh-normal) var(--font-body);
+  --text-caption-font:var(--weight-regular) var(--size-xs)/var(--lh-normal) var(--font-body);
+  --text-eyebrow:var(--weight-semibold) var(--size-2xs)/1.2 var(--font-mono);
+
+  --space-2:6px; --space-3:8px; --space-4:12px; --space-5:16px; --space-6:20px;
+  --space-7:24px; --space-8:32px; --space-9:40px; --space-10:56px; --space-12:96px;
+  --card-pad:var(--space-7); --container:1120px;
+
+  --radius-sm:4px; --radius-md:8px; --radius-card:14px; --radius-pill:999px;
+  --border-hairline:1px; --border-ink:1.5px; --border-heavy:2px;
+  --shadow-ink-sm:2px 2px 0 0 var(--ink-1); --shadow-ink:4px 4px 0 0 var(--ink-1);
+  --dur-fast:140ms; --dur-base:220ms; --ease-out:cubic-bezier(.22,.61,.36,1);
+  --transition-ui:color var(--dur-fast) var(--ease-out),background-color var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out),box-shadow var(--dur-fast) var(--ease-out),transform var(--dur-fast) var(--ease-out);
+}
+
+/* ---------- Base ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--bg-canvas);color:var(--text-body);font:var(--text-base);text-wrap:pretty;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{margin:0;font-family:var(--font-display);font-weight:var(--weight-semibold);letter-spacing:var(--track-tight);color:var(--text-body)}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+a{color:var(--text-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;transition:var(--transition-ui)}
+a:hover{color:var(--text-link-hover)}
+img{display:block;max-width:100%;height:auto}
+::selection{background:var(--ocre-300);color:var(--ink-1)}
+:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+
+/* ---------- Ícones (Lucide, inline) ---------- */
+.ico{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ico--sm{width:16px;height:16px}
+.ico--lg{width:22px;height:22px}
+
+/* ---------- Componentes do design system (prefixo iap-) ---------- */
+.iap-btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--space-3);font-family:var(--font-body);font-weight:var(--weight-semibold);letter-spacing:var(--track-snug);border-radius:var(--radius-pill);border:var(--border-ink) solid transparent;cursor:pointer;text-decoration:none;transition:var(--transition-ui);white-space:nowrap}
+.iap-btn--lg{font-size:var(--size-lg);padding:15px 30px}
+.iap-btn--ghost{background:transparent;color:var(--text-link);border-color:transparent;padding:11px 12px;font-size:var(--size-md)}
+.iap-btn--ghost:hover{color:var(--terracota-500);background:var(--paper-2)}
+.iap-btn--ink{background:var(--accent-highlight);color:var(--ink-1);border-color:var(--line-strong);box-shadow:var(--shadow-ink-sm)}
+.iap-btn--ink:hover{color:var(--ink-1);box-shadow:var(--shadow-ink);transform:translate(-1px,-1px)}
+.iap-btn--ink:active{box-shadow:0 0 0 0 var(--ink-1);transform:translate(2px,2px)}
+
+.iap-badge{display:inline-flex;align-items:center;gap:var(--space-2);font:var(--text-eyebrow);text-transform:uppercase;letter-spacing:var(--track-caps);padding:5px 10px 4px;border-radius:var(--radius-sm)}
+.iap-badge--brand{background:var(--bg-brand-soft);color:var(--lousa-700)}
+.iap-badge--warning{background:var(--status-warning-bg);color:var(--status-warning)}
+.iap-badge--outline{background:transparent;color:var(--ink-1);box-shadow:inset 0 0 0 var(--border-hairline) var(--line-strong)}
+
+.iap-tag{display:inline-flex;align-items:center;font-size:var(--size-sm);font-weight:var(--weight-medium);color:var(--ink-2);border:var(--border-hairline) solid var(--line-hairline);border-radius:var(--radius-pill);padding:5px 13px}
+
+.iap-card{display:flex;flex-direction:column;background:var(--surface-card);border:var(--border-hairline) solid var(--line-hairline);border-radius:var(--radius-card);overflow:hidden;transition:var(--transition-ui)}
+.iap-card--ink{border:var(--border-ink) solid var(--line-strong);box-shadow:var(--shadow-ink)}
+.iap-card__body{display:flex;flex-direction:column;gap:var(--space-3);padding:var(--card-pad)}
+
+.iap-callout{display:flex;gap:var(--space-5);padding:var(--space-6);border-radius:var(--radius-card);border:var(--border-hairline) solid var(--line-hairline);background:var(--paper-0)}
+.iap-callout__icon{color:var(--accent-primary);margin-top:2px}
+.iap-callout__title{font-family:var(--font-display);font-weight:var(--weight-semibold);font-size:var(--size-md);margin-bottom:var(--space-2)}
+.iap-callout__body{font:var(--text-small);color:var(--text-muted)}
+.iap-callout--brand{background:var(--bg-brand-soft);border-color:var(--lousa-300)}
+.iap-callout--brand .iap-callout__icon{color:var(--lousa-700)}
+.iap-callout--warning{background:var(--status-warning-bg);border-color:var(--ocre-300)}
+.iap-callout--warning .iap-callout__icon{color:var(--status-warning)}
+.iap-callout--danger{background:var(--status-danger-bg);border-color:var(--terracota-300)}
+.iap-callout--danger .iap-callout__icon{color:var(--status-danger)}
+.iap-callout--info{background:var(--status-info-bg);border-color:var(--caneta-300)}
+.iap-callout--info .iap-callout__icon{color:var(--status-info)}
+
+.iap-eyebrow{font:var(--text-eyebrow);text-transform:uppercase;letter-spacing:var(--track-caps);color:var(--accent-secondary)}
+.iap-section-heading{display:flex;flex-direction:column;gap:var(--space-5);max-width:62ch}
+.iap-section-heading__title{font-family:var(--font-display);font-weight:var(--weight-semibold);font-size:clamp(27px,3.6vw,var(--size-3xl));line-height:1.1;letter-spacing:-.025em}
+.iap-section-heading__lead{font:var(--text-lead);color:var(--text-muted)}
+
+.iap-stat{display:flex;flex-direction:column;gap:var(--space-2)}
+.iap-stat__value{font-family:var(--font-display);font-weight:var(--weight-semibold);font-size:var(--size-2xl);line-height:var(--lh-tight);letter-spacing:var(--track-tight)}
+.iap-stat__label{font:var(--text-small);color:var(--text-caption)}
+
+.iap-module{display:flex;gap:var(--space-6);align-items:flex-start;padding:var(--card-pad);background:var(--surface-card);border:var(--border-hairline) solid var(--line-hairline);border-radius:var(--radius-card);transition:var(--transition-ui)}
+.iap-module:hover{border-color:var(--line-strong)}
+.iap-module__num{flex:none;width:44px;height:44px;display:grid;place-items:center;border-radius:var(--radius-pill);border:var(--border-ink) solid var(--line-strong);font-family:var(--font-mono);font-size:var(--size-sm);font-weight:var(--weight-medium)}
+.iap-module__title{font-family:var(--font-display);font-weight:var(--weight-semibold);font-size:var(--size-lg);letter-spacing:var(--track-snug)}
+.iap-module__desc{font:var(--text-small);color:var(--text-muted);margin-top:var(--space-2)}
+.iap-module__meta{display:flex;flex-wrap:wrap;gap:var(--space-5);margin-top:var(--space-4);font:var(--text-caption-font);color:var(--text-caption)}
+.iap-module__meta span{display:inline-flex;align-items:center;gap:6px}
+
+.iap-checklist{display:flex;flex-direction:column;gap:var(--space-4)}
+.iap-checklist__item{display:flex;gap:var(--space-4);font-size:var(--size-md);line-height:var(--lh-relaxed);color:var(--text-muted)}
+.iap-checklist__mark{flex:none;margin-top:5px;color:var(--accent-primary)}
+
+/* ---------- Estruturas da página (prefixo pg-) ---------- */
+.pg-skip{position:absolute;left:-9999px;top:0;background:var(--paper-0);color:var(--ink-1);padding:10px 16px;border:var(--border-ink) solid var(--line-strong);border-radius:var(--radius-md);z-index:60}
+.pg-skip:focus{left:16px;top:12px}
+
+.pg-wrap{max-width:var(--container);margin:0 auto;padding-left:var(--space-8);padding-right:var(--space-8)}
+.pg-band{border-top:var(--border-hairline) solid var(--line-hairline);border-bottom:var(--border-hairline) solid var(--line-hairline)}
+.pg-band--sheet{background:var(--bg-sheet)}
+.pg-band--paper{background:var(--bg-band)}
+.pg-section{padding-top:var(--space-12);padding-bottom:var(--space-12)}
+.pg-section--tight{padding-top:var(--space-10);padding-bottom:var(--space-10)}
+
+.pg-header{position:sticky;top:0;z-index:20;background:var(--paper-1);border-bottom:var(--border-hairline) solid var(--line-hairline)}
+.pg-header__in{display:flex;align-items:center;gap:var(--space-8);padding-top:14px;padding-bottom:14px}
+.pg-wordmark{font-family:var(--font-display);font-weight:var(--weight-semibold);font-size:19px;line-height:1.05;letter-spacing:-.03em;color:var(--ink-1);text-decoration:none}
+.pg-nav{display:flex;gap:26px;margin-left:auto}
+.pg-nav a{font-size:var(--size-sm);font-weight:var(--weight-medium);color:var(--ink-3);text-decoration:none;padding-bottom:2px;border-bottom:2px solid transparent}
+.pg-nav a:hover{color:var(--ink-1);border-bottom-color:var(--terracota-500)}
+
+.pg-hero{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--space-10);align-items:center;padding-top:72px;padding-bottom:var(--space-10)}
+.pg-hero__col{display:flex;flex-direction:column;gap:22px}
+.pg-hero h1{font-size:clamp(34px,5.4vw,61px);line-height:1.04;letter-spacing:-.025em}
+.pg-hero__lead{font:var(--weight-regular) clamp(18px,2vw,20px)/1.55 var(--font-body);color:var(--text-muted);max-width:44ch}
+.pg-hero__meta{display:flex;flex-wrap:wrap;gap:var(--space-4) var(--space-6);font-size:var(--size-sm);color:var(--text-caption)}
+.pg-hero__meta span{display:inline-flex;align-items:center;gap:8px}
+.pg-hero__meta .ico{color:var(--accent-primary)}
+
+.pg-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-8);padding-top:var(--space-8);padding-bottom:var(--space-8)}
+.pg-stats .iap-stat+.iap-stat{padding-left:var(--space-6);border-left:var(--border-hairline) solid var(--line-hairline)}
+
+.pg-split{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--space-10);align-items:start}
+.pg-stack{display:flex;flex-direction:column;gap:var(--space-6)}
+.pg-stack--prosa{max-width:72ch}
+.pg-tags{display:flex;flex-wrap:wrap;gap:var(--space-3)}
+
+.pg-programa{display:flex;flex-direction:column;gap:var(--space-4);margin-top:var(--space-9)}
+.pg-lab{display:flex;gap:var(--space-6);align-items:flex-start;padding:var(--card-pad);background:var(--bg-band);border:var(--border-hairline) dashed var(--ink-4);border-radius:var(--radius-card)}
+.pg-lab__icon{flex:none;width:44px;height:44px;display:grid;place-items:center;border-radius:var(--radius-pill);border:var(--border-hairline) dashed var(--ink-4);color:var(--ink-2)}
+
+.pg-faq{display:flex;flex-direction:column;gap:var(--space-4);margin-top:var(--space-9);max-width:820px}
+.pg-faq details{background:var(--surface-card);border:var(--border-hairline) solid var(--line-hairline);border-radius:var(--radius-card);transition:var(--transition-ui)}
+.pg-faq details:hover{border-color:var(--line-strong)}
+.pg-faq summary{display:flex;align-items:center;justify-content:space-between;gap:var(--space-5);padding:var(--space-6) var(--card-pad);cursor:pointer;list-style:none;font-family:var(--font-display);font-weight:var(--weight-semibold);font-size:var(--size-md);letter-spacing:var(--track-snug)}
+.pg-faq summary::-webkit-details-marker{display:none}
+.pg-faq summary .ico{color:var(--ink-3);transition:transform var(--dur-base) var(--ease-out)}
+.pg-faq details[open] summary .ico{transform:rotate(180deg)}
+.pg-faq__body{padding:0 var(--card-pad) var(--space-6);font:var(--text-base);color:var(--text-muted);max-width:70ch}
+
+.pg-cta{background:var(--lousa-500);color:var(--paper-0)}
+.pg-cta__in{display:flex;align-items:center;justify-content:space-between;gap:var(--space-9);padding-top:var(--space-10);padding-bottom:var(--space-10)}
+.pg-cta h2{color:var(--paper-0);font-size:clamp(27px,3.6vw,39px);line-height:1.1;letter-spacing:-.025em}
+.pg-cta p{font-size:var(--size-lg);line-height:1.5;color:var(--lousa-100);max-width:46ch;margin-top:14px}
+.pg-cta__side{display:flex;flex-direction:column;align-items:flex-start;gap:var(--space-4)}
+.pg-cta__note{font-size:var(--size-sm);color:var(--lousa-100);max-width:34ch}
+
+.pg-footer{background:var(--ink-1);color:var(--paper-0);padding:var(--space-10) var(--space-8) var(--space-8)}
+.pg-footer__in{max-width:var(--container);margin:0 auto;display:flex;justify-content:space-between;gap:var(--space-9);flex-wrap:wrap}
+.pg-footer__brand{font-family:var(--font-display);font-weight:var(--weight-semibold);font-size:22px;line-height:1.05;letter-spacing:-.03em}
+.pg-footer p{font-size:var(--size-sm);line-height:1.6;color:var(--paper-3);max-width:38ch}
+.pg-footer nav{display:flex;flex-direction:column;gap:10px;font-size:var(--size-sm)}
+.pg-footer a{color:var(--paper-2);text-decoration:none}
+.pg-footer a:hover{color:var(--ocre-300)}
+.pg-footer__base{max-width:var(--container);margin:var(--space-9) auto 0;padding-top:var(--space-6);border-top:var(--border-hairline) solid var(--ink-2);font-size:var(--size-xs);color:var(--ink-4);display:flex;justify-content:space-between;gap:var(--space-5);flex-wrap:wrap}
+
+/* ---------- Responsivo ---------- */
+@media (max-width:980px){
+  .pg-hero,.pg-split{grid-template-columns:1fr;gap:var(--space-9)}
+  .pg-hero{padding-top:var(--space-9);row-gap:22px}
+  /* Em uma coluna, a coluna de texto sai do fluxo: seus filhos viram itens
+     do próprio grid do hero, o que permite encaixar a ilustração logo
+     depois do título, antes do texto de apoio. */
+  .pg-hero__col{display:contents}
+  .pg-hero .iap-eyebrow{order:1}
+  .pg-hero h1{order:2}
+  .pg-hero__img{order:3;justify-self:center;margin:var(--space-2) 0}
+  .pg-hero__lead{order:4}
+  .pg-hero__meta{order:5}
+  .pg-hero .pg-tags{order:6}
+  .pg-hero__cta{order:7}
+  .pg-stats{grid-template-columns:1fr 1fr;gap:var(--space-6)}
+  .pg-stats .iap-stat:nth-child(odd){padding-left:0;border-left:0}
+  .pg-cta__in{flex-direction:column;align-items:flex-start}
+}
+@media (max-width:680px){
+  .pg-wrap{padding-left:var(--space-6);padding-right:var(--space-6)}
+  .pg-section{padding-top:var(--space-10);padding-bottom:var(--space-10)}
+  .pg-nav{display:none}
+  /* Os quatro números empilham: o divisor deixa de ser vertical e
+     passa a ser a linha que separa uma da outra. */
+  .pg-stats{grid-template-columns:1fr;gap:0;padding-top:var(--space-5);padding-bottom:var(--space-5)}
+  .pg-stats .iap-stat{padding:var(--space-5) 0}
+  .pg-stats .iap-stat+.iap-stat{padding-left:0;border-left:0;border-top:var(--border-hairline) solid var(--line-hairline)}
+  .iap-module,.pg-lab{gap:var(--space-5);padding:var(--space-6)}
+  .iap-module__num,.pg-lab__icon{width:38px;height:38px}
+  .pg-footer__in{flex-direction:column;gap:var(--space-8)}
+}
+</style>
 </head>
-<body class="bg-slate-50 text-slate-800">
+<body>
 
-    <!-- Toast Notification for Clipboard Copy -->
-    <div id="toast" class="fixed top-5 right-5 bg-green-500 text-white py-2 px-4 rounded-lg shadow-md opacity-0 transform translate-y-2 transition-all duration-300 z-40">
-        Link copiado para a área de transferência!
+<a class="pg-skip" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- Sprite de ícones (Lucide 0.470) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+<symbol id="i-video" viewBox="0 0 24 24"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></symbol>
+<symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+<symbol id="i-lightbulb" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></symbol>
+<symbol id="i-shield-alert" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M12 8v4"/><path d="M12 16h.01"/></symbol>
+<symbol id="i-alert-triangle" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
+<symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+<symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+<symbol id="i-book-open" viewBox="0 0 24 24"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></symbol>
+<symbol id="i-messages" viewBox="0 0 24 24"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></symbol>
+<symbol id="i-file-check" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></symbol>
+</defs></svg>
+
+<header class="pg-header">
+  <div class="pg-wrap pg-header__in">
+    <a class="pg-wordmark" href="#topo">Inteligência Artificial para Educadores</a>
+    <nav class="pg-nav">
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#programa">Programa</a>
+      <a href="#certificado">Certificado</a>
+      <a href="#perguntas">Perguntas</a>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+
+  <!-- ============ Hero ============ -->
+  <section id="topo" class="pg-wrap pg-hero">
+    <div class="pg-hero__col">
+      <span class="iap-eyebrow">Rede municipal de Pindamonhangaba</span>
+      <h1>Comece a usar a inteligência artificial a seu favor</h1>
+      <p class="pg-hero__lead">Em 8 semanas, aprenda a usar IA para ganhar tempo em tarefas reais da escola — textos, comunicados, atividades, imagens e assistentes personalizados.</p>
+      <div class="pg-hero__meta">
+        <span><svg class="ico ico--sm"><use href="#i-video"/></svg>Online, no seu horário</span>
+        <span><svg class="ico ico--sm"><use href="#i-award"/></svg>Certificado de 30 horas</span>
+        <span><svg class="ico ico--sm"><use href="#i-calendar"/></svg>28 de setembro a 22 de novembro de 2026</span>
+      </div>
+      <div class="pg-tags">
+        <span class="iap-tag">Educação Infantil</span>
+        <span class="iap-tag">Ensino Fundamental</span>
+        <span class="iap-tag">Gestão Escolar</span>
+      </div>
     </div>
+    <img class="pg-hero__img" src="assets/ilustracoes/professora-no-laptop.webp" width="1000" height="571" alt="Professora trabalhando no laptop" fetchpriority="high">
+  </section>
 
-    <!-- Header Section -->
-    <header class="gradient-bg py-12 sm:py-16">
-        <div class="container mx-auto px-6 text-center">
-            <p class="text-sky-800 font-semibold tracking-widest mb-2">CURSO REMOTO</p>
-            <h1 class="text-3xl md:text-5xl font-bold text-blue-900 leading-tight">Sua Rotina Mais Leve na Escola</h1>
-            <p class="mt-4 text-base md:text-lg text-sky-800 max-w-3xl mx-auto">Como usar a Inteligência Artificial para simplificar tarefas mantendo a qualidade pedagógica.</p>
-            <!-- ALTERAÇÃO 1: Adicionado "VAGAS LIMITADAS" -->
-            <p class="mt-4 text-base font-bold text-amber-600 uppercase tracking-widest">Vagas Limitadas</p>
-            <div class="mt-8 flex flex-wrap justify-center gap-3">
-                <!-- ALTERAÇÃO 2: Botão agora é um link direto -->
-                <a href="https://forms.gle/4x1A8UmJiXe7EubBA" target="_blank" class="btn btn-primary text-base">
-                    Inscreva-se agora
-                </a>
-                <button id="shareButton" class="btn btn-secondary text-base flex items-center gap-2">
-                    <i data-lucide="share-2" class="w-4 h-4"></i>
-                    Compartilhar
-                </button>
-            </div>
+  <!-- ============ Números ============ -->
+  <section class="pg-band pg-band--paper">
+    <div class="pg-wrap pg-stats">
+      <div class="iap-stat"><span class="iap-stat__value">30 horas</span><span class="iap-stat__label">Carga horária certificada</span></div>
+      <div class="iap-stat"><span class="iap-stat__value">8 tópicos online</span><span class="iap-stat__label">Um novo a cada segunda-feira</span></div>
+      <div class="iap-stat"><span class="iap-stat__value">4 datas presenciais</span><span class="iap-stat__label"><b>Opcionais*</b> (para suporte e aprofundamento)</span></div>
+      <div class="iap-stat"><span class="iap-stat__value">Nenhum</span><span class="iap-stat__label">Pré-requisito para entrar</span></div>
+    </div>
+  </section>
+
+  <!-- ============ Como funciona ============ -->
+  <section id="como-funciona" class="pg-wrap pg-section">
+    <div class="pg-stack pg-stack--prosa">
+      <div class="iap-section-heading">
+        <span class="iap-eyebrow">Como funciona</span>
+        <h2 class="iap-section-heading__title">Vídeos curtos, direcionados para a prática, começando do básico</h2>
+      </div>
+      <ul class="iap-checklist">
+        <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark"><use href="#i-check"/></svg>Ambiente no Google Sala de Aula;</li>
+        <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark"><use href="#i-check"/></svg>Toda semana é introduzido um novo tópico, na forma de vídeos curtos;</li>
+        <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark"><use href="#i-check"/></svg>Conceitos fundamentais sobre inteligência artificial, para compreender e pensar criticamente;</li>
+        <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark"><use href="#i-check"/></svg>Passo a passo de como usar as ferramentas na prática;</li>
+        <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark"><use href="#i-check"/></svg>Diversos exemplos de aplicação no cotidiano do professor e da gestão escolar;</li>
+        <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark"><use href="#i-check"/></svg>Tarefas práticas para aplicar os conceitos de cada tópico;</li>
+        <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark"><use href="#i-check"/></svg>Use ferramentas gratuitas nos aparelhos que você já tem: seu celular e/ou computador.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ Programa ============ -->
+  <section id="programa" class="pg-band pg-band--sheet">
+    <div class="pg-wrap pg-section">
+      <div class="iap-section-heading">
+        <span class="iap-eyebrow">O programa</span>
+        <h2 class="iap-section-heading__title">Oito tópicos e quatro laboratórios</h2>
+        <p class="iap-section-heading__lead">A cada semana, um novo tópico é publicado no Google Sala de Aula. Nas datas indicadas, um laboratório presencial será oferecido na SME.</p>
+      </div>
+
+      <div class="pg-programa">
+
+        <article class="iap-module">
+          <span class="iap-module__num">01</span>
+          <div>
+            <h3 class="iap-module__title">A IA já está aqui: por onde começamos?</h3>
+            <p class="iap-module__desc">Conheça as ferramentas, saiba acessá-las e comece a usar em tarefas reais.</p>
+            <p class="iap-module__meta"><span><svg class="ico ico--sm"><use href="#i-calendar"/></svg>Segunda, 28/09</span><span><svg class="ico ico--sm"><use href="#i-clock"/></svg>3 horas</span></p>
+          </div>
+        </article>
+
+        <article class="iap-module">
+          <span class="iap-module__num">02</span>
+          <div>
+            <h3 class="iap-module__title">Quanto mais claro o pedido, melhor a resposta</h3>
+            <p class="iap-module__desc">Aprenda a fornecer contexto e exemplos para refinar os resultados.</p>
+            <p class="iap-module__meta"><span><svg class="ico ico--sm"><use href="#i-calendar"/></svg>Segunda, 05/10</span><span><svg class="ico ico--sm"><use href="#i-clock"/></svg>3 horas</span></p>
+          </div>
+        </article>
+
+        <article class="pg-lab">
+          <span class="pg-lab__icon"><svg class="ico"><use href="#i-users"/></svg></span>
+          <div>
+            <span class="iap-badge iap-badge--outline">Laboratório 1 · presencial · opcional*</span>
+            <h3 class="iap-module__title" style="margin-top:10px">Vamos resolver juntos</h3>
+            <p class="iap-module__desc">Traga uma tarefa real da escola e saia com um jeito melhor de pedir ajuda à IA.</p>
+            <p class="iap-module__meta"><span><svg class="ico ico--sm"><use href="#i-calendar"/></svg>Quinta, 08/10, 18h</span><span><svg class="ico ico--sm"><use href="#i-clock"/></svg>1h 30min</span></p>
+          </div>
+        </article>
+
+        <article class="iap-module">
+          <span class="iap-module__num">03</span>
+          <div>
+            <h3 class="iap-module__title">IA como assistente de texto</h3>
+            <p class="iap-module__desc">Revise documentos, faça traduções, ajuste o estilo e adapte explicações para crianças de todas as idades.</p>
+            <p class="iap-module__meta"><span><svg class="ico ico--sm"><use href="#i-calendar"/></svg>Segunda, 12/10</span><span><svg class="ico ico--sm"><use href="#i-clock"/></svg>3 horas</span></p>
+          </div>
+        </article>
+
+        <article class="iap-module">
+          <span class="iap-module__num">04</span>
+          <div>
+            <h3 class="iap-module__title">Posso confiar no que a IA diz?</h3>
+            <p class="iap-module__desc">Entenda por que a IA erra, obtenha resultados confiáveis e saiba como a IA pode te ajudar a aprender coisas novas.</p>
+            <p class="iap-module__meta"><span><svg class="ico ico--sm"><use href="#i-calendar"/></svg>Segunda, 19/10</span><span><svg class="ico ico--sm"><use href="#i-clock"/></svg>3 horas</span></p>
+          </div>
+        </article>
+
+        <article class="pg-lab">
+          <span class="pg-lab__icon"><svg class="ico"><use href="#i-users"/></svg></span>
+          <div>
+            <span class="iap-badge iap-badge--outline">Laboratório 2 · presencial · opcional*</span>
+            <h3 class="iap-module__title" style="margin-top:10px">Do papel para o digital</h3>
+            <p class="iap-module__desc">Tira dúvidas + Digitalize documentos, transcreva papéis escritos à mão, explique com desenhos e transforme áudios em texto.</p>
+            <p class="iap-module__meta"><span><svg class="ico ico--sm"><use href="#i-calendar"/></svg>Quinta, 22/10, 18h</span><span><svg class="ico ico--sm"><use href="#i-clock"/></svg>1h 30min</span></p>
+          </div>
+        </article>
+
+        <article class="iap-module">
+          <span class="iap-module__num">05</span>
+          <div>
+            <h3 class="iap-module__title">Criar e editar imagens</h3>
+            <p class="iap-module__desc">Produza ilustrações e faça alterações em imagens, mantendo o controle e a consistência sobre o estilo.</p>
+            <p class="iap-module__meta"><span><svg class="ico ico--sm"><use href="#i-calendar"/></svg>Segunda, 26/10</span><span><svg class="ico ico--sm"><use href="#i-clock"/></svg>3 horas</span></p>
+          </div>
+        </article>
+
+        <article class="iap-module">
+          <span class="iap-module__num">06</span>
+          <div>
+            <h3 class="iap-module__title">A segurança dos seus dados e o custo de usar a IA</h3>
+            <p class="iap-module__desc">Ajuste suas configurações de privacidade, entenda para onde vão seus dados e compare os limites e possibilidades de ferramentas gratuitas e pagas.</p>
+            <p class="iap-module__meta"><span><svg class="ico ico--sm"><use href="#i-calendar"/></svg>Segunda, 02/11</span><span><svg class="ico ico--sm"><use href="#i-clock"/></svg>3 horas</span></p>
+          </div>
+        </article>
+
+        <article class="pg-lab">
+          <span class="pg-lab__icon"><svg class="ico"><use href="#i-users"/></svg></span>
+          <div>
+            <span class="iap-badge iap-badge--outline">Laboratório 3 · presencial · opcional*</span>
+            <h3 class="iap-module__title" style="margin-top:10px">Crie um aplicativo sem saber programar</h3>
+            <p class="iap-module__desc">Tira dúvidas + Aprenda a criar um aplicativo simples apenas descrevendo a sua ideia.</p>
+            <p class="iap-module__meta"><span><svg class="ico ico--sm"><use href="#i-calendar"/></svg>Quinta, 05/11, 18h</span><span><svg class="ico ico--sm"><use href="#i-clock"/></svg>1h 30min</span></p>
+          </div>
+        </article>
+
+        <article class="iap-module">
+          <span class="iap-module__num">07</span>
+          <div>
+            <h3 class="iap-module__title">Crie um assistente para tarefas que se repetem</h3>
+            <p class="iap-module__desc">Ganhe tempo com um assistente que lembra os seus padrões e preferências toda vez que executa uma determinada tarefa.</p>
+            <p class="iap-module__meta"><span><svg class="ico ico--sm"><use href="#i-calendar"/></svg>Segunda, 09/11</span><span><svg class="ico ico--sm"><use href="#i-clock"/></svg>3 horas</span></p>
+          </div>
+        </article>
+
+        <article class="pg-lab">
+          <span class="pg-lab__icon"><svg class="ico"><use href="#i-users"/></svg></span>
+          <div>
+            <span class="iap-badge iap-badge--outline">Laboratório 4 · presencial · opcional*</span>
+            <h3 class="iap-module__title" style="margin-top:10px">Construindo o assistente, passo a passo</h3>
+            <p class="iap-module__desc">Traga seu assistente em construção e receba apoio para ajustar.</p>
+            <p class="iap-module__meta"><span><svg class="ico ico--sm"><use href="#i-calendar"/></svg>Quinta, 12/11, 18h</span><span><svg class="ico ico--sm"><use href="#i-clock"/></svg>1h 30min</span></p>
+          </div>
+        </article>
+
+        <article class="iap-module">
+          <span class="iap-module__num">08</span>
+          <div>
+            <h3 class="iap-module__title">O que muda para nós e para as crianças?</h3>
+            <p class="iap-module__desc">Uma análise sobre as mudanças que a inteligência artificial está provocando na sociedade, no mundo do trabalho e na escola. Como educar as crianças para esta nova época?</p>
+            <p class="iap-module__meta"><span><svg class="ico ico--sm"><use href="#i-calendar"/></svg>Segunda, 16/11</span><span><svg class="ico ico--sm"><use href="#i-clock"/></svg>3 horas</span></p>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="iap-callout iap-callout--brand" style="margin-top:var(--space-8)">
+        <svg class="ico ico--lg iap-callout__icon"><use href="#i-file-check"/></svg>
+        <div><p class="iap-callout__title">O curso termina em 22 de novembro</p><p class="iap-callout__body">É o prazo da última entrega. Todas as atividades dos oito tópicos precisam estar postadas até essa data — é por ela que a carga horária do certificado é fechada.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Certificado ============ -->
+  <section id="certificado" class="pg-wrap pg-section">
+    <div class="pg-split">
+      <div class="pg-stack">
+        <div class="iap-section-heading">
+          <span class="iap-eyebrow">Carga horária e certificado</span>
+          <h2 class="iap-section-heading__title">Entregas e presenças</h2>
         </div>
-    </header>
+        <ul class="iap-checklist">
+          <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark"><use href="#i-check"/></svg>Assistir aos vídeos e entregar as atividades de um tópico equivale a 3 horas.</li>
+          <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark"><use href="#i-check"/></svg>Estar no laboratório presencial equivale a 1h e 30min.</li>
+          <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark"><use href="#i-check"/></svg>Os conceitos essenciais estão nos tópicos: o laboratório traz suporte individual e conteúdo extra.</li>
+        </ul>
+      </div>
+      <div class="pg-stack">
+        <div class="iap-card iap-card--ink">
+          <div class="iap-card__body" style="gap:var(--space-5)">
+            <span class="iap-badge iap-badge--brand"><svg class="ico ico--sm"><use href="#i-award"/></svg>Certificado</span>
+            <strong style="font:var(--text-h3)">75% da carga horária cumprida</strong>
+            <p style="font:var(--text-base);color:var(--text-muted)">Para obter o certificado, é necessário cumprir 75% da carga horária total de 30h.</p>
+            <p style="font:var(--text-base);color:var(--text-muted)"><b>Por que os laboratórios presenciais são opcionais?</b></p>
+            <p style="font:var(--text-base);color:var(--text-muted)">É possível cumprir a carga horária mínima <strong>mesmo sem ir a nenhum laboratório</strong>, contanto que entregue as atividades de todos os tópicos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <main class="container mx-auto px-6 py-16">
+  <!-- ============ Inscrição ============ -->
+  <section id="inscricao" class="pg-cta">
+    <div class="pg-wrap pg-cta__in">
+      <div>
+        <h2>O curso começa em 28 de setembro</h2>
+        <p>São oito semanas, 30 horas e nenhuma exigência prévia. Se você chegou até aqui lendo, é para você.</p>
+      </div>
+      <div class="pg-cta__side">
+        <a class="iap-btn iap-btn--lg iap-btn--ink" href="https://forms.gle/xyfS3JNkyYsXTvneA" target="_blank" rel="noopener" onclick="gtag('event','clique_inscricao')">Quero participar <svg class="ico"><use href="#i-arrow-right"/></svg></a>
+        <span class="pg-cta__note">Para profissionais da Rede Municipal de Pindamonhangaba. Sem custo.</span>
+      </div>
+    </div>
+  </section>
 
-        <!-- Overview Section -->
-        <section id="overview" class="mb-20">
-            <div class="text-center mb-12">
-                <h2 class="section-title">Visão Geral do Curso</h2>
-                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Um curso pensado para professores de Educação Infantil que desejam usar a IA como assistente prática para valorizar o que só um educador pode fazer: observar, mediar, criar e cuidar.</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8 text-center">
-                <div class="card">
-                    <div class="mx-auto bg-sky-100 rounded-full w-16 h-16 flex items-center justify-center mb-4">
-                        <i data-lucide="sparkles" class="w-8 h-8 text-sky-600"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-slate-900 mb-2">Reduza o Esforço</h3>
-                    <p class="text-slate-600">Diminua o trabalho mecânico de digitar, compilar e formatar documentos pedagógicos.</p>
-                </div>
-                <div class="card">
-                    <div class="mx-auto bg-sky-100 rounded-full w-16 h-16 flex items-center justify-center mb-4">
-                        <i data-lucide="brain-circuit" class="w-8 h-8 text-sky-600"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-slate-900 mb-2">Qualidade Pedagógica</h3>
-                    <p class="text-slate-600">Aprenda a usar a IA como uma ferramenta para potencializar sua prática, sem perder a autoria.</p>
-                </div>
-                <div class="card">
-                    <div class="mx-auto bg-sky-100 rounded-full w-16 h-16 flex items-center justify-center mb-4">
-                        <i data-lucide="clock" class="w-8 h-8 text-sky-600"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-slate-900 mb-2">Mais Tempo para o Essencial</h3>
-                    <p class="text-slate-600">Libere tempo na sua rotina para se dedicar mais às crianças e ao planejamento criativo.</p>
-                </div>
-            </div>
-        </section>
+  <!-- ============ Perguntas ============ -->
+  <section id="perguntas" class="pg-band pg-band--paper">
+    <div class="pg-wrap pg-section">
+      <div class="iap-section-heading">
+        <span class="iap-eyebrow">Perguntas frequentes</span>
+      </div>
+      <div class="pg-faq">
+        <details>
+          <summary>Preciso pagar alguma coisa?<svg class="ico"><use href="#i-chevron-down"/></svg></summary>
+          <div class="pg-faq__body">Não. O curso é oferecido pela Secretaria Municipal de Educação de Pindamonhangaba exclusivamente aos profissionais da rede.</div>
+        </details>
+        <details>
+          <summary>Nunca usei IA na vida. Consigo acompanhar?<svg class="ico"><use href="#i-chevron-down"/></svg></summary>
+          <div class="pg-faq__body">Sim. O curso não tem pré-requisito nenhum: todas as explicações acompanham o passo a passo de como fazer.</div>
+        </details>
+        <details>
+          <summary>Preciso reservar um horário específico para fazer o curso?<svg class="ico"><use href="#i-chevron-down"/></svg></summary>
+          <div class="pg-faq__body">Os oito tópicos são online e assíncronos: você assiste e pratica no horário que preferir. É importante reservar um tempo para realizar as atividades. Os quatro laboratórios presenciais servem para tirar dúvida com apoio e para o conteúdo bônus. Porém, é possível completar a carga horária mínima sem comparecer presencialmente.</div>
+        </details>
+        <details>
+          <summary>Onde acontece o curso?<svg class="ico"><use href="#i-chevron-down"/></svg></summary>
+          <div class="pg-faq__body">No Google Sala de Aula. Não existe outra plataforma nem área do aluno: vídeos, materiais de apoio, entregas e devolutivas ficam todos lá, no mesmo lugar.</div>
+        </details>
+        <details>
+          <summary>E se eu perder o prazo de uma entrega?<svg class="ico"><use href="#i-chevron-down"/></svg></summary>
+          <div class="pg-faq__body">Você deixa de somar as 3 horas daquele tópico. Ainda dá para chegar às 22h30 exigidas comparecendo a pelo menos um laboratório presencial.</div>
+        </details>
+      </div>
+    </div>
+  </section>
 
-        <!-- Course Details Section -->
-        <section class="mb-20 bg-white p-8 sm:p-12 rounded-2xl shadow-sm">
-             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="flex items-start gap-4">
-                    <div class="bg-sky-100 p-3 rounded-full">
-                        <i data-lucide="map-pin" class="w-6 h-6 text-sky-700"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-lg text-slate-900">Local</h3>
-                        <p class="text-slate-600">Secretaria Municipal de Educação de Pindamonhangaba</p>
-                        <p class="text-sm text-slate-500">R. Gen Júlio Salgado, 996</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4">
-                    <div class="bg-sky-100 p-3 rounded-full">
-                        <i data-lucide="calendar-days" class="w-6 h-6 text-sky-700"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-lg text-slate-900">Período</h3>
-                        <p class="text-slate-600">11/09 a 13/11 de 2025</p>
-                    </div>
-                </div>
-                 <div class="flex items-start gap-4">
-                    <div class="bg-sky-100 p-3 rounded-full">
-                        <i data-lucide="clock-9" class="w-6 h-6 text-sky-700"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-lg text-slate-900">Horário</h3>
-                        <p class="text-slate-600">Quintas-feiras, das 09h às 11h</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4">
-                    <div class="bg-sky-100 p-3 rounded-full">
-                        <i data-lucide="hourglass" class="w-6 h-6 text-sky-700"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-lg text-slate-900">Carga Horária</h3>
-                        <p class="text-slate-600">20 horas no total</p>
-                        <p class="text-sm text-slate-500">5 oficinas presenciais<br>5 plantões opcionais</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+</main>
 
+<footer class="pg-footer">
+  <div class="pg-footer__in">
+    <div>
+      <span class="pg-footer__brand">Inteligência Artificial para Educadores</span>
+      <p style="margin-top:14px">Curso de introdução à inteligência artificial para professores da Educação Infantil e do Ensino Fundamental e para a equipe gestora da rede municipal de Pindamonhangaba.</p>
+    </div>
+    <nav>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#programa">Programa</a>
+      <a href="#certificado">Certificado</a>
+      <a href="#perguntas">Perguntas</a>
+      <a href="#inscricao">Inscrição</a>
+    </nav>
+  </div>
+  <div class="pg-footer__base">
+    <span>Secretaria Municipal de Educação de Pindamonhangaba</span>
+    <span>28/09 a 22/11 de 2026</span>
+  </div>
+</footer>
 
-        <!-- What you will learn Section -->
-        <section id="learning" class="mb-20">
-            <div class="text-center mb-12">
-                <h2 class="section-title">O que você vai aprender</h2>
-                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Desde os primeiros passos até a criação de relatórios e planos de aula com autoria docente.</p>
-            </div>
-            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-x-12 gap-y-6">
-                <div class="flex items-start gap-4">
-                    <div class="bg-green-100 p-2 rounded-full mt-1 flex-shrink-0"><i data-lucide="check" class="w-5 h-5 text-green-700"></i></div>
-                    <p class="text-slate-700"><strong class="text-slate-900">Primeiros passos com IA:</strong> Desmistificar a tecnologia e aplicar comandos básicos de texto e imagem.</p>
-                </div>
-                <div class="flex items-start gap-4">
-                    <div class="bg-green-100 p-2 rounded-full mt-1 flex-shrink-0"><i data-lucide="check" class="w-5 h-5 text-green-700"></i></div>
-                    <p class="text-slate-700"><strong class="text-slate-900">IA com olhar pedagógico:</strong> Dar contexto e ensinar a ferramenta a responder de acordo com a sua realidade.</p>
-                </div>
-                <div class="flex items-start gap-4">
-                    <div class="bg-green-100 p-2 rounded-full mt-1 flex-shrink-0"><i data-lucide="check" class="w-5 h-5 text-green-700"></i></div>
-                    <p class="text-slate-700"><strong class="text-slate-900">Caderno inteligente:</strong> Registrar observações por voz ou texto, de forma simples e organizada.</p>
-                </div>
-                <div class="flex items-start gap-4">
-                    <div class="bg-green-100 p-2 rounded-full mt-1 flex-shrink-0"><i data-lucide="check" class="w-5 h-5 text-green-700"></i></div>
-                    <p class="text-slate-700"><strong class="text-slate-900">Planejamento com apoio da IA:</strong> Gerar ideias criativas e formalizar planos de aula no formato da Plataforma APUS.</p>
-                </div>
-                <div class="flex items-start gap-4 md:col-span-2">
-                     <div class="bg-green-100 p-2 rounded-full mt-1 flex-shrink-0"><i data-lucide="check" class="w-5 h-5 text-green-700"></i></div>
-                    <p class="text-slate-700"><strong class="text-slate-900">Relatórios com autoria docente:</strong> Transformar registros em rascunhos de relatórios, mantendo sua voz e responsabilidade.</p>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Course Structure Section -->
-        <section id="structure" class="mb-20">
-            <div class="text-center mb-12">
-                <h2 class="section-title">Estrutura do Curso</h2>
-                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">5 oficinas práticas e 5 plantões de dúvidas opcionais para apoio individualizado.</p>
-            </div>
-            <div class="max-w-3xl mx-auto">
-                <!-- Setembro -->
-                <h3 class="text-2xl font-bold text-sky-800 mb-6">Setembro</h3>
-                <div class="relative pl-12 pb-8 timeline-item">
-                    <div class="timeline-dot dot-oficina"></div>
-                    <p class="font-semibold text-slate-500">11/09 – Oficina 1 (Presencial)</p>
-                    <h4 class="text-lg font-semibold text-slate-900 mt-1">Descobrindo o potencial da IA</h4>
-                    <p class="text-slate-600">Demonstrações práticas e primeiros comandos de texto e imagem.</p>
-                </div>
-                 <div class="relative pl-12 pb-8 timeline-item">
-                    <div class="timeline-dot dot-plantao"></div>
-                    <p class="font-semibold text-slate-500">18/09 – Plantão de Dúvidas (opcional)</p>
-                    <p class="text-slate-600 text-sm mt-1">Você pode vir presencialmente, na Secretaria de Educação, ou entrar via Google Meet.</p>
-                </div>
-                <div class="relative pl-12 pb-8 timeline-item">
-                    <div class="timeline-dot dot-oficina"></div>
-                    <p class="font-semibold text-slate-500">25/09 – Oficina 2 (Presencial)</p>
-                    <h4 class="text-lg font-semibold text-slate-900 mt-1">Comandos pedagógicos</h4>
-                    <p class="text-slate-600">Como estruturar pedidos claros e contextualizados para a IA.</p>
-                </div>
-
-                <!-- Outubro -->
-                <h3 class="text-2xl font-bold text-sky-800 my-6">Outubro</h3>
-                <div class="relative pl-12 pb-8 timeline-item">
-                    <div class="timeline-dot dot-plantao"></div>
-                    <p class="font-semibold text-slate-500">02/10 – Plantão de Dúvidas (opcional)</p>
-                    <p class="text-slate-600 text-sm mt-1">Você pode vir presencialmente, na Secretaria de Educação, ou entrar via Google Meet.</p>
-                </div>
-                <div class="relative pl-12 pb-8 timeline-item">
-                    <div class="timeline-dot dot-oficina"></div>
-                    <p class="font-semibold text-slate-500">09/10 – Oficina 3 (Presencial)</p>
-                    <h4 class="text-lg font-semibold text-slate-900 mt-1">Seu Caderno Inteligente</h4>
-                    <p class="text-slate-600">Fluxo simples para registrar observações de forma ágil.</p>
-                </div>
-                 <div class="relative pl-12 pb-8 timeline-item">
-                    <div class="timeline-dot dot-plantao"></div>
-                    <p class="font-semibold text-slate-500">16/10 – Plantão de Dúvidas (opcional)</p>
-                    <p class="text-slate-600 text-sm mt-1">Você pode vir presencialmente, na Secretaria de Educação, ou entrar via Google Meet.</p>
-                </div>
-                <div class="relative pl-12 pb-8 timeline-item">
-                    <div class="timeline-dot dot-oficina"></div>
-                    <p class="font-semibold text-slate-500">23/10 – Oficina 4 (Presencial)</p>
-                    <h4 class="text-lg font-semibold text-slate-900 mt-1">Da ideia ao plano de aula</h4>
-                    <p class="text-slate-600">Gerar ideias criativas e formalizar planos de aula no formato da Plataforma APUS.</p>
-                </div>
-                <div class="relative pl-12 pb-8 timeline-item">
-                    <div class="timeline-dot dot-plantao"></div>
-                    <p class="font-semibold text-slate-500">30/10 – Plantão de Dúvidas (opcional)</p>
-                    <p class="text-slate-600 text-sm mt-1">Você pode vir presencialmente, na Secretaria de Educação, ou entrar via Google Meet.</p>
-                </div>
-
-                <!-- Novembro -->
-                <h3 class="text-2xl font-bold text-sky-800 my-6">Novembro</h3>
-                <div class="relative pl-12 pb-8 timeline-item">
-                    <div class="timeline-dot dot-oficina"></div>
-                    <p class="font-semibold text-slate-500">06/11 – Oficina 5 (Presencial)</p>
-                    <h4 class="text-lg font-semibold text-slate-900 mt-1">Da anotação ao relatório</h4>
-                    <p class="text-slate-600">Gerando rascunhos de relatórios a partir de registros.</p>
-                </div>
-                 <div class="relative pl-12 timeline-item">
-                    <div class="timeline-dot dot-plantao"></div>
-                    <p class="font-semibold text-slate-500">13/11 – Plantão de Dúvidas Final (opcional)</p>
-                    <p class="text-slate-600 text-sm mt-1">Você pode vir presencialmente, na Secretaria de Educação, ou entrar via Google Meet.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Methodology & Requirements Section -->
-        <section class="mb-20 grid md:grid-cols-2 gap-12 items-start">
-            <div>
-                <h2 class="section-title mb-8">Como funciona?</h2>
-                <div class="space-y-6">
-                    <div class="flex gap-4">
-                        <i data-lucide="presentation" class="w-8 h-8 text-sky-600 flex-shrink-0 mt-1"></i>
-                        <div>
-                            <h4 class="font-semibold text-lg">Metodologia Mão na Massa</h4>
-                            <p class="text-slate-600">Demonstrações ao vivo e atividades práticas no seu celular ou computador, com tarefas semanais para aplicar o que aprendeu.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-4">
-                        <i data-lucide="users" class="w-8 h-8 text-sky-600 flex-shrink-0 mt-1"></i>
-                        <div>
-                            <h4 class="font-semibold text-lg">Apoio Individualizado</h4>
-                            <p class="text-slate-600">Plantões de dúvidas opcionais (presenciais ou online) para tirar dúvidas e receber ajuda personalizada.</p>
-                        </div>
-                    </div>
-                     <div class="flex gap-4">
-                        <i data-lucide="book-open" class="w-8 h-8 text-sky-600 flex-shrink-0 mt-1"></i>
-                        <div>
-                            <h4 class="font-semibold text-lg">Material de Apoio</h4>
-                            <p class="text-slate-600">Você receberá um guia digital e impresso com links para ferramentas e passo a passo para uso em sala de aula.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card p-8 bg-sky-50 border border-sky-200">
-                <h3 class="text-2xl font-bold text-blue-900 mb-6">O que trazer?</h3>
-                <p class="text-slate-700 mb-6">Para aproveitar ao máximo as oficinas práticas, os participantes devem trazer:</p>
-                <ul class="space-y-4">
-                    <li class="flex items-center gap-3">
-                        <i data-lucide="smartphone" class="w-6 h-6 text-sky-700"></i>
-                        <span class="text-lg">Celular (Smartphone)</span>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <i data-lucide="laptop" class="w-6 h-6 text-sky-700"></i>
-                        <span class="text-lg">Notebook ou Chromebook</span>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Call to Action Section -->
-        <section id="inscricao" class="gradient-bg rounded-2xl p-12 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-blue-900">Pronto para ter uma rotina mais leve?</h2>
-            <p class="mt-4 text-lg text-sky-800 max-w-2xl mx-auto">Inscreva-se e descubra como a IA pode ser uma grande aliada, sem abrir mão da qualidade pedagógica que você já oferece.</p>
-            <div class="mt-8 flex flex-wrap justify-center gap-4">
-                <!-- ALTERAÇÃO 2: Botão agora é um bom link direto -->
-                <a href="https://forms.gle/4x1A8UmJiXe7EubBA" target="_blank" class="btn btn-primary text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                    Quero me inscrever!
-                </a>
-                <button id="shareButton2" class="btn btn-secondary text-lg flex items-center gap-2">
-                    <i data-lucide="share-2" class="w-5 h-5"></i>
-                    Compartilhar
-                </button>
-            </div>
-        </section>
-
-    </main>
-    
-    <footer class="text-center py-8 bg-slate-100">
-        <p class="text-slate-500">&copy; 2025 - Raul Cabral França - Todos os direitos reservados.</p>
-    </footer>
-
-    <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
-
-        // Share Logic
-        const shareData = {
-            title: 'Curso: Sua Rotina Mais Leve na Escola',
-            text: 'Olha que legal este curso sobre como usar Inteligência Artificial para simplificar o dia a dia na escola!',
-            url: 'https://raulfranca.github.io/cursoia/'
-        };
-
-        const shareFunction = async () => {
-            // Rastreia a tentativa de compartilhamento
-            gtag('event', 'share', { 'method': navigator.share ? 'Web Share API' : 'Clipboard' });
-            if (navigator.share) {
-                try {
-                    await navigator.share(shareData);
-                } catch (err) {
-                    console.error('Erro ao compartilhar:', err);
-                }
-            } else {
-                try {
-                    const textArea = document.createElement('textarea');
-                    textArea.value = shareData.url;
-                    textArea.style.position = 'fixed';
-                    textArea.style.opacity = '0';
-                    document.body.appendChild(textArea);
-                    textArea.focus();
-                    textArea.select();
-                    document.execCommand('copy');
-                    document.body.removeChild(textArea);
-                    showToast();
-                } catch (err) {
-                    console.error('Não foi possível copiar o link:', err);
-                }
-            }
-        };
-        
-        const shareButton = document.getElementById('shareButton');
-        const shareButton2 = document.getElementById('shareButton2');
-
-        shareButton.addEventListener('click', shareFunction);
-        shareButton2.addEventListener('click', shareFunction);
-
-        // Toast notification function
-        function showToast() {
-            const toast = document.getElementById('toast');
-            toast.style.opacity = '1';
-            toast.style.transform = 'translateY(0)';
-            setTimeout(() => {
-                toast.style.opacity = '0';
-                toast.style.transform = 'translateY(0.5rem)';
-            }, 3000);
-        }
-    </script>
 </body>
 </html>

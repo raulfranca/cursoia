@@ -1,0 +1,49 @@
+:root{
+  --font-display:"Bricolage Grotesque","Instrument Sans",system-ui,sans-serif;
+  --font-body:"Instrument Sans",system-ui,-apple-system,sans-serif;
+  --font-hand:"Caveat","Instrument Sans",cursive;
+  --font-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,monospace;
+
+  /* Type scale — 1.25 major third, base 17px */
+  --size-2xs:12px;
+  --size-xs:13px;
+  --size-sm:15px;
+  --size-md:17px;
+  --size-lg:20px;
+  --size-xl:25px;
+  --size-2xl:31px;
+  --size-3xl:39px;
+  --size-4xl:49px;
+  --size-5xl:61px;
+  --size-6xl:76px;
+
+  --lh-tight:1.06; /* @kind font */
+  --lh-snug:1.18; /* @kind font */
+  --lh-normal:1.35; /* @kind font */
+  --lh-relaxed:1.55; /* @kind font */
+  --lh-loose:1.7; /* @kind font */
+
+  --weight-light:300; /* @kind font */
+  --weight-regular:400; /* @kind font */
+  --weight-medium:500; /* @kind font */
+  --weight-semibold:600; /* @kind font */
+  --weight-bold:700; /* @kind font */
+
+  --track-tight:-0.02em; /* @kind font */
+  --track-snug:-0.01em; /* @kind font */
+  --track-normal:0; /* @kind font */
+  --track-wide:0.06em; /* @kind font */
+  --track-caps:0.14em; /* @kind font */
+
+  /* Semantic roles */
+  --text-display:var(--weight-semibold) var(--size-5xl)/var(--lh-tight) var(--font-display);
+  --text-h1:var(--weight-semibold) var(--size-4xl)/var(--lh-tight) var(--font-display);
+  --text-h2:var(--weight-semibold) var(--size-2xl)/var(--lh-snug) var(--font-display);
+  --text-h3:var(--weight-semibold) var(--size-xl)/var(--lh-snug) var(--font-display);
+  --text-lead:var(--weight-regular) var(--size-lg)/var(--lh-relaxed) var(--font-body);
+  --text-base:var(--weight-regular) var(--size-md)/var(--lh-relaxed) var(--font-body);
+  --text-small:var(--weight-regular) var(--size-sm)/var(--lh-normal) var(--font-body);
+  --text-caption-font:var(--weight-regular) var(--size-xs)/var(--lh-normal) var(--font-body);
+  --text-eyebrow:var(--weight-semibold) var(--size-2xs)/1.2 var(--font-mono);
+  --text-note:var(--weight-medium) var(--size-lg)/1.25 var(--font-hand);
+}

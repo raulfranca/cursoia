@@ -1,0 +1,6 @@
+# Recursos de trabalho usados apenas pelo Claude Cowork (não versionados)
+/work/*
+!/work/.gitkeep
+
+# Configuração local do Obsidian
+/.obsidian/

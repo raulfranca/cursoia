@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Landing do curso" description="Página de venda completa: herói com ilustração, números, benefícios, programa, depoimento e CTA." -->
+<helmet><script src="./ds-base.js"></script><style>body{margin:0;background:#F4F1E7}</style></helmet>
+<div style="font-family:'Instrument Sans',system-ui,sans-serif;color:#14130E;background:#F4F1E7">
+
+<header style="position:sticky;top:0;z-index:20;background:#F4F1E7;border-bottom:1px solid #C9C4B4"><div style="max-width:1120px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;gap:32px">
+<span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:19px;line-height:1.05;letter-spacing:-.03em">IA para<br>Professores</span>
+<nav style="display:flex;gap:26px;margin-left:12px;font-size:15px;font-weight:500"><a href="#programa" style="color:#6B675B;text-decoration:none">Programa</a><a href="#depoimentos" style="color:#6B675B;text-decoration:none">Depoimentos</a><a href="#inscricao" style="color:#6B675B;text-decoration:none">Inscrição</a></nav>
+<span style="margin-left:auto"><x-import component-from-global-scope="IAParaProfessoresDesignSystem_518ecc.Button" size="sm" hint-size="150px,34px">Inscrever-se</x-import></span>
+</div></header>
+
+<section style="max-width:1120px;margin:0 auto;padding:72px 32px 56px;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center">
+<div style="display:flex;flex-direction:column;gap:22px">
+<span style="font-family:'JetBrains Mono',monospace;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#C2543A">Formação de 4 semanas · online</span>
+<h1 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:61px;line-height:1.04;letter-spacing:-.025em">IA que cabe na sua aula de segunda-feira</h1>
+<p style="margin:0;font-size:20px;line-height:1.55;color:#3D3A31;max-width:42ch">Você não precisa virar programadora. Precisa de quatro semanas, um caderno e uma turma real para testar.</p>
+<div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+<x-import component-from-global-scope="IAParaProfessoresDesignSystem_518ecc.Button" size="lg" iconRight="arrow-right" hint-size="220px,52px">Quero participar</x-import>
+<x-import component-from-global-scope="IAParaProfessoresDesignSystem_518ecc.Button" size="lg" variant="ghost" icon="play" hint-size="230px,52px">Assistir à aula aberta</x-import>
+</div>
+<div style="display:flex;align-items:center;gap:18px;padding-top:6px"><span style="font-size:15px;color:#6B675B">Turma de março · 40 vagas · R$ 390</span><span style="font-family:Caveat,cursive;font-size:20px;font-weight:500;color:#C2543A;display:inline-block;transform:rotate(-1.2deg)">últimas 8 vagas</span></div>
+</div>
+<img src="../../assets/illustrations/professora-no-laptop.png" alt="Professora planejando aula no laptop" style="width:100%;display:block">
+</section>
+
+<section style="border-top:1px solid #C9C4B4;border-bottom:1px solid #C9C4B4;background:#EDE8DA"><div style="max-width:1120px;margin:0 auto;padding:32px;display:flex;gap:56px">
+<x-import component-from-global-scope="IAParaProfessoresDesignSystem_518ecc.Stat" value="4 semanas" label="Duração total" hint-size="150px,60px"></x-import>
+<x-import component-from-global-scope="IAParaProfessoresDesignSystem_518ecc.Stat" value="45 min" label="Por encontro" variant="rule" hint-size="150px,60px"></x-import>
+<x-import component-from-global-scope="IAParaProfessoresDesignSystem_518ecc.Stat" value="+1.200" label="Professores formados" variant="rule" hint-size="180px,60px"></x-import>
+<x-import component-from-global-scope="IAParaProfessoresDesignSystem_518ecc.Stat" value="12 materiais" label="Prontos para usar" variant="rule" hint-size="180px,60px"></x-import>
+</div></section>
+
+<section style="max-width:1120px;margin:0 auto;padding:96px 32px">
+<div style="display:flex;flex-direction:column;gap:16px;max-width:62ch">
+<span style="font-family:'JetBrains Mono',monospace;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#C2543A">O que muda</span>
+<h2 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:39px;line-height:1.1;letter-spacing:-.025em">Você sai com material pronto, não com teoria</h2>
+<p style="margin:0;font-size:20px;line-height:1.55;color:#3D3A31">Cada semana termina com uma coisa que você usa na aula seguinte.</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px">
+<div style="background:#FBF9F2;border:1px solid #C9C4B4;border-radius:14px;overflow:hidden">
+<div style="height:168px;background:#F4F1E7;border-bottom:1px solid #C9C4B4"><img src="../../assets/illustrations/professora-tem-ideias.png" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+<div style="padding:24px;display:flex;flex-direction:column;gap:8px"><strong style="font-family:'Bricolage Grotesque',sans-serif;font-size:20px;letter-spacing:-.01em">Plano de aula em 15 minutos</strong><p style="margin:0;font-size:15px;line-height:1.5;color:#3D3A31">Do objetivo à atividade, com a sua voz e a sua turma no meio.</p></div></div>
+<div style="background:#FBF9F2;border:1px solid #C9C4B4;border-radius:14px;overflow:hidden">
+<div style="height:168px;background:#F4F1E7;border-bottom:1px solid #C9C4B4"><img src="../../assets/illustrations/atividade-em-sala.png" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+<div style="padding:24px;display:flex;flex-direction:column;gap:8px"><strong style="font-family:'Bricolage Grotesque',sans-serif;font-size:20px;letter-spacing:-.01em">Uma atividade, três níveis</strong><p style="margin:0;font-size:15px;line-height:1.5;color:#3D3A31">Adaptar leitura e enunciado sem reescrever tudo do zero.</p></div></div>
+<div style="background:#FBF9F2;border:1px solid #C9C4B4;border-radius:14px;overflow:hidden">
+<div style="height:168px;background:#F4F1E7;border-bottom:1px solid #C9C4B4"><img src="../../assets/illustrations/montando-robo.png" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+<div style="padding:24px;display:flex;flex-direction:column;gap:8px"><strong style="font-family:'Bricolage Grotesque',sans-serif;font-size:20px;letter-spacing:-.01em">Correção com critério</strong><p style="margin:0;font-size:15px;line-height:1.5;color:#3D3A31">Feedback mais rápido sem terceirizar a avaliação.</p></div></div>
+</div>
+</section>
+
+<section id="programa" style="background:#FBF9F2;border-top:1px solid #C9C4B4;border-bottom:1px solid #C9C4B4"><div style="max-width:1120px;margin:0 auto;padding:80px 32px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start">
+<div style="display:flex;flex-direction:column;gap:24px">
+<span style="font-family:'JetBrains Mono',monospace;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#C2543A">O programa</span>
+<h2 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:39px;line-height:1.1;letter-spacing:-.025em">Quatro terças, 19h30</h2>
+<x-import component-from-global-scope="IAParaProfessoresDesignSystem_518ecc.Checklist" hint-size="100%,160px" dc-props="{{ aprendizados }}"></x-import>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<x-import component-from-global-scope="IAParaProfessoresDesignSystem_518ecc.ModuleCard" index="01" title="A IA como colega de planejamento" description="Onde ela ajuda e onde ela erra." duration="45 min" format="Vídeo + prática" hint-size="100%,110px"></x-import>
+<x-import component-from-global-scope="IAParaProfessoresDesignSystem_518ecc.ModuleCard" index="02" title="Prompts que viram plano de aula" description="A estrutura de pedido que devolve material na sua voz." duration="45 min" format="Vídeo + modelo" hint-size="100%,110px"></x-import>
+<x-import component-from-global-scope="IAParaProfessoresDesignSystem_518ecc.ModuleCard" index="03" title="Adaptação e avaliação" description="Uma atividade em três níveis; rubricas com critério seu." duration="50 min" format="Oficina ao vivo" hint-size="100%,110px"></x-import>
+<x-import component-from-global-scope="IAParaProfessoresDesignSystem_518ecc.ModuleCard" index="04" title="Uso responsável na escola" description="Dados de aluno, plágio e combinados de turma." duration="45 min" format="Roda de conversa" hint-size="100%,110px"></x-import>
+</div>
+</div></section>
+
+<section id="depoimentos" style="max-width:1120px;margin:0 auto;padding:96px 32px;display:grid;grid-template-columns:repeat(3,1fr);gap:40px">
+<x-import component-from-global-scope="IAParaProfessoresDesignSystem_518ecc.Quote" name="Marina Alves" role="Ciências, 7º ano" hint-size="100%,140px">Saí da primeira aula com uma atividade pronta. Isso nunca aconteceu em formação nenhuma.</x-import>
+<x-import component-from-global-scope="IAParaProfessoresDesignSystem_518ecc.Quote" name="Rafael Duarte" role="História, Ensino Médio" hint-size="100%,140px">Eu já usava, mas de qualquer jeito. Agora tenho um jeito meu, com critério.</x-import>
+<x-import component-from-global-scope="IAParaProfessoresDesignSystem_518ecc.Quote" name="Sônia Prado" role="Coordenação pedagógica" hint-size="100%,140px">Levei o material da semana 4 para a reunião de professores. Virou nossa política de uso.</x-import>
+</section>
+
+<section id="inscricao" style="background:#35604F;color:#FBF9F2"><div style="max-width:1120px;margin:0 auto;padding:80px 32px;display:flex;align-items:center;justify-content:space-between;gap:40px">
+<div style="display:flex;flex-direction:column;gap:14px;max-width:46ch">
+<h2 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:39px;line-height:1.1;letter-spacing:-.025em;color:#FBF9F2">A próxima turma começa em 9 de março</h2>
+<p style="margin:0;font-size:20px;line-height:1.5;color:#DDE7E1">Quatro terças, 19h30. Gravado se você não puder ao vivo.</p>
+</div>
+<x-import component-from-global-scope="IAParaProfessoresDesignSystem_518ecc.Button" variant="ink" size="lg" iconRight="arrow-right" hint-size="260px,52px">Garantir minha vaga</x-import>
+</div></section>
+
+<footer style="background:#14130E;color:#FBF9F2;padding:56px 32px 32px"><div style="max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap">
+<div style="display:flex;flex-direction:column;gap:14px"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:22px;line-height:1.05;letter-spacing:-.03em">IA para<br>Professores</span><p style="margin:0;font-size:15px;line-height:1.6;color:#E3DCC9;max-width:34ch">Formação prática em inteligência artificial para quem dá aula.</p></div>
+<div style="display:flex;flex-direction:column;gap:10px;font-size:15px"><a href="#programa" style="color:#EDE8DA;text-decoration:none">Programa</a><a href="#inscricao" style="color:#EDE8DA;text-decoration:none">Inscrição</a><a href="#" style="color:#EDE8DA;text-decoration:none">contato@iaparaprofessores.br</a></div>
+</div></footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      aprendizados: {
+        items: [
+          'Escrever prompts que devolvem plano de aula utilizável',
+          'Adaptar uma mesma atividade para três níveis de leitura',
+          'Montar avaliações e rubricas em metade do tempo',
+          'Conversar com a sua escola sobre uso responsável de IA',
+        ],
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

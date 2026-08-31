@@ -1,0 +1,4 @@
+/* Webfonts. NOTE: no brand font files were provided — these are Google Fonts
+   substitutions chosen to match the monoline, hand-drawn illustration style.
+   Replace with real brand binaries + local @font-face when available. */
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Caveat:wght@400..700&family=JetBrains+Mono:wght@400;500;700&display=swap");
