@@ -7,7 +7,18 @@
       "PowerShell(Get-ChildItem design\\\\assets\\\\illustrations -File -ErrorAction SilentlyContinue | Select-Object Name, @{n='KB';e={[math]::Round\\($_.Length/1KB,1\\)}} | Format-Table -AutoSize)",
       "PowerShell(git status --short --ignored; Write-Output '--- .obsidian ---'; Get-ChildItem -Recurse -File .obsidian -ErrorAction SilentlyContinue | Select-Object @{n='Path';e={$_.FullName.Substring\\(\\(Get-Location\\).Path.Length+1\\)}}, @{n='KB';e={[math]::Round\\($_.Length/1KB,1\\)}} | Format-Table -AutoSize)",
       "PowerShell(git check-ignore -v .claude/settings.local.json .obsidian/app.json)",
-      "PowerShell(git add -A)"
+      "PowerShell(git add -A)",
+      "PowerShell(git fetch origin 2>&1)",
+      "PowerShell(git rebase origin/main 2>&1)",
+      "PowerShell(git stash push -m \"settings.json desta sessao\" -- .claude/settings.json 2>&1)",
+      "PowerShell(git reset -q)",
+      "PowerShell(git clean -f index.html assets/eu.jpg 2>&1)",
+      "PowerShell(git checkout -- index.html)",
+      "PowerShell(git rebase --autostash origin/main 2>&1)",
+      "PowerShell(git push origin main 2>&1)",
+      "PowerShell(git stash list; Write-Output '=== stash@{0} vs arquivo atual ==='; git diff stash@{0} -- .claude/settings.json 2>$null | Select-Object -First 40)",
+      "PowerShell(git show 'stash@{0}:.claude/settings.json' | Out-File -Encoding utf8 \"$env:TEMP\\\\stash-settings.json\"; $a = \\(Get-Content \"$env:TEMP\\\\stash-settings.json\" -Raw | ConvertFrom-Json\\).permissions.allow; $b = \\(Get-Content .claude\\\\settings.json -Raw | ConvertFrom-Json\\).permissions.allow; Write-Output \"stash: $\\($a.Count\\) permissoes | atual: $\\($b.Count\\) permissoes\"; Write-Output '=== no stash e ausentes no atual ==='; Compare-Object $a $b | Where-Object SideIndicator -eq '<=' | Select-Object -ExpandProperty InputObject)",
+      "PowerShell(git stash drop 'stash@{0}'; Remove-Item \"$env:TEMP\\\\stash-settings.json\" -ErrorAction SilentlyContinue; git add .claude/settings.json; git status --short)"
     ]
   }
 }
