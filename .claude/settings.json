@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Recurse -File work | Select-Object @{n='Path';e={$_.FullName.Substring\\(\\(Get-Location\\).Path.Length+1\\)}}, @{n='KB';e={[math]::Round\\($_.Length/1KB,1\\)}} | Sort-Object Path | Format-Table -AutoSize)",
+      "PowerShell(git add .gitignore work)",
+      "PowerShell(Get-ChildItem -Recurse -Force .claude | Select-Object @{n='Path';e={$_.FullName.Substring\\(\\(Get-Location\\).Path.Length+1\\)}}, @{n='KB';e={if\\($_.PSIsContainer\\){''}else{[math]::Round\\($_.Length/1KB,1\\)}}} | Format-Table -AutoSize)",
+      "PowerShell(Get-ChildItem design\\\\assets\\\\illustrations -File -ErrorAction SilentlyContinue | Select-Object Name, @{n='KB';e={[math]::Round\\($_.Length/1KB,1\\)}} | Format-Table -AutoSize)",
+      "PowerShell(git status --short --ignored; Write-Output '--- .obsidian ---'; Get-ChildItem -Recurse -File .obsidian -ErrorAction SilentlyContinue | Select-Object @{n='Path';e={$_.FullName.Substring\\(\\(Get-Location\\).Path.Length+1\\)}}, @{n='KB';e={[math]::Round\\($_.Length/1KB,1\\)}} | Format-Table -AutoSize)",
+      "PowerShell(git check-ignore -v .claude/settings.local.json .obsidian/app.json)",
+      "PowerShell(git add -A)"
+    ]
+  }
+}

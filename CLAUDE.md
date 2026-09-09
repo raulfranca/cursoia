@@ -10,7 +10,7 @@ Publicado por GitHub Pages a partir da raiz: <https://raulfranca.github.io/curso
 | `index.html` | **Não existe no momento.** A landing da turma 2026 ainda não foi escrita. |
 | `old/index.html` | Landing do piloto de 2025 ("Sua Rotina Mais Leve na Escola"), arquivada. Referência de conteúdo, não de forma. |
 | `design/` | **Design system da marca — referência, não código de produção.** Ver abaixo. |
-| `work/` | Conteúdo do curso (tópicos, ementa). Tem `CLAUDE.md` próprio. **Não versionado** (`.gitignore`). |
+| `work/` | Conteúdo do curso (tópicos, ementa). Tem `CLAUDE.md` próprio. Versionado. |
 
 **Atenção:** sem `index.html` na raiz, o GitHub Pages responde 404. O site fica fora do ar até
 a nova landing ser publicada — é uma situação conhecida e intencional, não um bug a corrigir
