@@ -78,6 +78,21 @@ azul, feita antes do design system e **fora da marca**. Não a use como referên
 copie o CSS dela. Vale como fonte de *conteúdo* (estrutura de seções, textos, links de
 formulário, tag do Google Analytics `G-GS6YNMGLZ9`, hoje também na landing nova).
 
+## Ensinar junto, não só resolver
+
+O Raul não quer só o problema resolvido: quer entender o que aconteceu, para não ficar
+defasado nem dependente do agente. **Se você está explicando como fazer algo, é porque ele
+ainda não sabe fazer sozinho — então explique o significado, não só o clique.**
+
+Modelo mental antes do passo a passo; cada etapa com o seu porquê; em tela de permissão,
+credencial ou configuração externa, sempre dizer o que está sendo autorizado, para quem e
+como se desfaz. Linguagem simples, termo técnico definido na primeira vez. Ao terminar,
+dizer o que ficou diferente e o que ele precisa saber para fazer sozinho na próxima.
+
+**Sinal de que está errado:** uma sequência de cliques sem explicação do que cada um faz.
+
+Versão completa na seção 0.2 do `AGENTS.md` do `curso-ia-ava`.
+
 ## Escrita
 
 Português do Brasil em tudo (código, commits, conteúdo). Tom direto, frases curtas, sem emoji.
