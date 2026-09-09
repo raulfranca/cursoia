@@ -10,10 +10,26 @@ Publicado por GitHub Pages a partir da raiz: <https://raulfranca.github.io/curso
 | `index.html` | Landing da turma 2026, no ar. Arquivo único: CSS e sprite de ícones SVG inline. |
 | `old/index.html` | Landing do piloto de 2025 ("Sua Rotina Mais Leve na Escola"), arquivada. Referência de conteúdo, não de forma. |
 | `design/` | **Design system da marca — referência, não código de produção.** Ver abaixo. |
-| `work/` | Conteúdo do curso (tópicos, ementa). Tem `AGENTS.md` próprio. Versionado. |
 
 **Deploy:** o GitHub Pages republica a raiz da `main` a cada push. Não há build nem dependência
 a instalar — editar `index.html` e empurrar é o fluxo inteiro.
+
+**Este repositório é público.** Nada de dado pessoal de professor inscrito, planilha de
+inscrição ou credencial entra aqui — nem sequer não-commitado na pasta, porque um `git add .`
+distraído publica para sempre.
+
+## O outro repositório
+
+O conteúdo do curso mudou de casa. O que era `work/` agora vive em
+`C:\Dev\curso-ia-ava` (repositório **privado** `curso-ia-ava`): tópicos, ementa, dados de
+inscrição e o CLI que opera o Google Sala de Aula. Este repositório aqui é só a landing.
+
+Os dois abrem juntos no VSCode pelo workspace `C:\Dev\curso-ia.code-workspace`. São
+repositórios independentes: cada um tem seu próprio commit e seu próprio push, e não existe
+merge entre eles.
+
+Quando um título ou subtítulo de tópico muda, a fonte canônica é
+`curso-ia-ava/conteudo/curso-topicos.md` — a landing deriva dele, nunca o contrário.
 
 ## Design — como consultar
 
@@ -52,4 +68,4 @@ formulário, tag do Google Analytics `G-GS6YNMGLZ9`, hoje também na landing nov
 
 Português do Brasil em tudo (código, commits, conteúdo). Tom direto, frases curtas, sem emoji.
 As regras completas de voz da marca estão na seção 1 de `design/INDEX.md`; as regras de
-conteúdo pedagógico do curso estão em `work/AGENTS.md`.
+conteúdo pedagógico do curso estão no repositório `curso-ia-ava`, em `AGENTS.md`.
