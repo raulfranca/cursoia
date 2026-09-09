@@ -7,14 +7,13 @@ Publicado por GitHub Pages a partir da raiz: <https://raulfranca.github.io/curso
 
 | Caminho | O que é |
 |---|---|
-| `index.html` | **Não existe no momento.** A landing da turma 2026 ainda não foi escrita. |
+| `index.html` | Landing da turma 2026, no ar. Arquivo único: CSS e sprite de ícones SVG inline. |
 | `old/index.html` | Landing do piloto de 2025 ("Sua Rotina Mais Leve na Escola"), arquivada. Referência de conteúdo, não de forma. |
 | `design/` | **Design system da marca — referência, não código de produção.** Ver abaixo. |
 | `work/` | Conteúdo do curso (tópicos, ementa). Tem `CLAUDE.md` próprio. Versionado. |
 
-**Atenção:** sem `index.html` na raiz, o GitHub Pages responde 404. O site fica fora do ar até
-a nova landing ser publicada — é uma situação conhecida e intencional, não um bug a corrigir
-por conta própria.
+**Deploy:** o GitHub Pages republica a raiz da `main` a cada push. Não há build nem dependência
+a instalar — editar `index.html` e empurrar é o fluxo inteiro.
 
 ## Design — como consultar
 
@@ -39,12 +38,15 @@ verde lousa `#35604F` é o primário; terracota `#C2543A` e ocre `#E0A02E` são 
 zero gradiente; sombra é `4px 4px 0` sólida, não difusa; botão é pílula; caixa de sentença em
 tudo; sem emoji. Se o layout parece colorido, está errado.
 
-**Estado atual:** a landing arquivada em `old/index.html` usa Tailwind CDN, fonte Inter e
-paleta azul — foi feita antes do design system e **não segue a marca**. Não a use como
-referência visual nem copie o CSS dela. Ela serve como fonte de *conteúdo* (estrutura de
-seções, textos, links de formulário, tag do Google Analytics `G-GS6YNMGLZ9`). A landing nova
-deve ser composta a partir de `design/templates/landing-curso/LandingCurso.dc.html` e dos
-tokens do sistema.
+**Estado atual:** a landing da raiz segue a marca — tokens do sistema, Bricolage Grotesque e
+Instrument Sans, classes `iap-*` para os componentes e `pg-*` para o que é só dela. Mexer nela
+é editar CSS inline; não há Tailwind. Ao acrescentar seção ou componente, reaproveite o
+vocabulário `iap-*` que já está no arquivo antes de inventar classe nova.
+
+A landing arquivada em `old/index.html` é outra história: Tailwind CDN, fonte Inter e paleta
+azul, feita antes do design system e **fora da marca**. Não a use como referência visual nem
+copie o CSS dela. Vale como fonte de *conteúdo* (estrutura de seções, textos, links de
+formulário, tag do Google Analytics `G-GS6YNMGLZ9`, hoje também na landing nova).
 
 ## Escrita
 
