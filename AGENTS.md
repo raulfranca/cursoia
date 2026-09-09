@@ -24,9 +24,23 @@ O conteúdo do curso mudou de casa. O que era `work/` agora vive em
 `C:\Dev\curso-ia-ava` (repositório **privado** `curso-ia-ava`): tópicos, ementa, dados de
 inscrição e o CLI que opera o Google Sala de Aula. Este repositório aqui é só a landing.
 
-Os dois abrem juntos no VSCode pelo workspace `C:\Dev\curso-ia.code-workspace`. São
-repositórios independentes: cada um tem seu próprio commit e seu próprio push, e não existe
-merge entre eles.
+Os dois abrem juntos no VSCode pelo workspace
+`C:\Dev\curso-ia-ava\curso-ia.code-workspace`, que espera os dois clonados lado a lado em
+`C:\Dev`. São repositórios independentes: cada um tem seu próprio commit e seu próprio push,
+e não existe merge entre eles.
+
+Em um computador novo, clone os dois e instale as dependências do CLI:
+
+```powershell
+cd C:\Dev
+git clone https://github.com/raulfranca/cursoia.git
+git clone https://github.com/raulfranca/curso-ia-ava.git
+cd curso-ia-ava\classroom
+npm install
+```
+
+O passo a passo completo — incluindo as credenciais, que não vêm pelo git — está na seção
+0.1 do `AGENTS.md` do `curso-ia-ava`.
 
 Quando um título ou subtítulo de tópico muda, a fonte canônica é
 `curso-ia-ava/conteudo/curso-topicos.md` — a landing deriva dele, nunca o contrário.
