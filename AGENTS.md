@@ -18,32 +18,47 @@ a instalar — editar `index.html` e empurrar é o fluxo inteiro.
 inscrição ou credencial entra aqui — nem sequer não-commitado na pasta, porque um `git add .`
 distraído publica para sempre.
 
-## O outro repositório
+## As outras pastas do projeto
 
-O conteúdo do curso mudou de casa. O que era `work/` agora vive em
-`C:\Dev\curso-ia-ava` (repositório **privado** `curso-ia-ava`): tópicos, ementa, dados de
-inscrição e o CLI que opera o Google Sala de Aula. Este repositório aqui é só a landing.
+Este repositório é só a landing. O projeto inteiro vive em quatro pastas, e o critério
+é simples: **em git só entra software; todo conteúdo do curso mora na pasta do Drive.**
 
-Os dois abrem juntos no VSCode pelo workspace
-`C:\Dev\curso-ia-ava\curso-ia.code-workspace`, que espera os dois clonados lado a lado em
-`C:\Dev`. São repositórios independentes: cada um tem seu próprio commit e seu próprio push,
-e não existe merge entre eles.
+| Pasta | O que é | O que vive lá |
+|---|---|---|
+| `C:\Dev\cursoia` (esta) | git público | landing e design system |
+| `C:\Dev\curso-ia-ava` | git privado, **repositório-chefe** | CLI do Google Sala de Aula e o roteamento do workspace |
+| `C:\Dev\video` | git | ferramentas e projetos de edição de vídeo |
+| `C:\Dev\conteudo` | Google Drive via junction, **sem git** | tópicos, ementa, roteiros, materiais, dados de inscrição |
+| `C:\Dev\ilustracoes` | Google Drive via junction, **sem git** | geração de personagens e cenas |
 
-Em um computador novo, clone os dois e instale as dependências do CLI:
+`C:\Dev\conteudo` e `C:\Dev\ilustracoes` não são pastas de verdade: são junctions, portas
+que apontam para dentro do Google Drive. O endereço real embute o nome de usuário do
+Windows e muda de máquina para máquina; a junction absorve a diferença, e por isso todo
+caminho deste projeto é igual em qualquer computador.
+
+As cinco abrem juntas no VSCode pelo workspace
+`C:\Dev\curso-ia-ava\curso-ia.code-workspace`, que espera os três repositórios clonados
+lado a lado em `C:\Dev` e a pasta do Drive sincronizada. São repositórios independentes:
+cada um tem seu próprio commit e seu próprio push, e não existe merge entre eles.
+
+Em um computador novo, clone os três e instale as dependências do CLI:
 
 ```powershell
 cd C:\Dev
 git clone https://github.com/raulfranca/cursoia.git
 git clone https://github.com/raulfranca/curso-ia-ava.git
+git clone https://github.com/raulfranca/video.git
 cd curso-ia-ava\classroom
 npm install
 ```
 
 O passo a passo completo — incluindo as credenciais, que não vêm pelo git — está na seção
-0.1 do `AGENTS.md` do `curso-ia-ava`.
+0.1 do `AGENTS.md` do `curso-ia-ava`, que é também onde está a regra de roteamento entre
+as pastas.
 
 Quando um título ou subtítulo de tópico muda, a fonte canônica é
-`curso-ia-ava/conteudo/curso-topicos.md` — a landing deriva dele, nunca o contrário.
+`C:\Dev\conteudo\curso-topicos.md`, na pasta do Drive — a landing deriva dele, nunca
+o contrário.
 
 ## Design — como consultar
 
@@ -97,4 +112,4 @@ Versão completa na seção 0.2 do `AGENTS.md` do `curso-ia-ava`.
 
 Português do Brasil em tudo (código, commits, conteúdo). Tom direto, frases curtas, sem emoji.
 As regras completas de voz da marca estão na seção 1 de `design/INDEX.md`; as regras de
-conteúdo pedagógico do curso estão no repositório `curso-ia-ava`, em `AGENTS.md`.
+conteúdo pedagógico do curso estão no `AGENTS.md` de `C:\Dev\conteudo`, a pasta do Drive.
