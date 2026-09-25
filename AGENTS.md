@@ -1,6 +1,7 @@
-# cursoia — Curso de IA para Professores
+# cursoia — Inteligência Artificial para Educadores
 
-Repositório do curso de introdução à IA para a rede municipal de Pindamonhangaba.
+Repositório de **Inteligência Artificial para Educadores**, curso de introdução à IA
+para a rede municipal de Pindamonhangaba.
 Publicado por GitHub Pages a partir da raiz: <https://raulfranca.github.io/cursoia/>.
 
 ## Estrutura
