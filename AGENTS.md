@@ -28,17 +28,17 @@ Este repositório é só a landing. O projeto inteiro vive em quatro pastas, e o
 | `C:\Dev\cursoia` (esta) | git público | landing e design system |
 | `C:\Dev\curso-ia-ava` | git privado, **repositório-chefe** | CLI do Google Sala de Aula e o roteamento do workspace |
 | `C:\Dev\video` | git | ferramentas e projetos de edição de vídeo |
-| `C:\Dev\conteudo` | Google Drive via junction, **sem git** | tópicos, ementa, roteiros, materiais, dados de inscrição |
-| `C:\Dev\ilustracoes` | Google Drive via junction, **sem git** | geração de personagens e cenas |
+| projeto Codex `Curso IA - Conteúdo` | pasta física do Google Drive, **sem git** | tópicos, ementa, roteiros, materiais, dados de inscrição |
+| projeto Codex de ilustrações | pasta física do Google Drive, **sem git** | geração de personagens e cenas |
 
-`C:\Dev\conteudo` e `C:\Dev\ilustracoes` não são pastas de verdade: são junctions, portas
-que apontam para dentro do Google Drive. O endereço real embute o nome de usuário do
-Windows e muda de máquina para máquina; a junction absorve a diferença, e por isso todo
-caminho deste projeto é igual em qualquer computador.
+As pastas do Drive são cadastradas diretamente no Codex em cada computador. O endereço
+físico muda conforme o usuário do Windows e fica apenas nessa configuração local. Não
+criar junctions nem registrar caminhos absolutos em documentos.
 
-As cinco abrem juntas no VSCode pelo workspace
-`C:\Dev\curso-ia-ava\curso-ia.code-workspace`, que espera os três repositórios clonados
-lado a lado em `C:\Dev` e a pasta do Drive sincronizada. São repositórios independentes:
+No VS Code, cada computador pode ter seu próprio espaço de trabalho com os três
+repositórios. Esse arquivo fica fora do Git, pois a localização das pastas varia entre
+máquinas. Conteúdo e ilustrações abrem como projetos separados no Codex. Os
+repositórios são independentes:
 cada um tem seu próprio commit e seu próprio push, e não existe merge entre eles.
 
 Em um computador novo, clone os três e instale as dependências do CLI:
@@ -57,7 +57,7 @@ O passo a passo completo — incluindo as credenciais, que não vêm pelo git �
 as pastas.
 
 Quando um título ou subtítulo de tópico muda, a fonte canônica é
-`C:\Dev\conteudo\curso-topicos.md`, na pasta do Drive — a landing deriva dele, nunca
+`curso-topicos.md`, na raiz do projeto de conteúdo — a landing deriva dele, nunca
 o contrário.
 
 ## Design — como consultar
@@ -112,4 +112,4 @@ Versão completa na seção 0.2 do `AGENTS.md` do `curso-ia-ava`.
 
 Português do Brasil em tudo (código, commits, conteúdo). Tom direto, frases curtas, sem emoji.
 As regras completas de voz da marca estão na seção 1 de `design/INDEX.md`; as regras de
-conteúdo pedagógico do curso estão no `AGENTS.md` de `C:\Dev\conteudo`, a pasta do Drive.
+conteúdo pedagógico do curso estão no `AGENTS.md` do projeto `Curso IA - Conteúdo`.
