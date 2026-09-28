@@ -230,6 +230,19 @@ img{display:block;max-width:100%;height:auto}
 .pg-footer a:hover{color:var(--ocre-300)}
 .pg-footer__base{max-width:var(--container);margin:var(--space-9) auto 0;padding-top:var(--space-6);border-top:var(--border-hairline) solid var(--ink-2);font-size:var(--size-xs);color:var(--ink-4);display:flex;justify-content:space-between;gap:var(--space-5);flex-wrap:wrap}
 
+/* Recado que abre junto com a página: um card com o traço e a sombra
+   desenhada do design system, sobre um véu escuro. */
+.pg-recado{width:min(520px,calc(100% - 32px));max-height:calc(100dvh - 32px);margin:auto;padding:0;overflow:auto;background:var(--surface-card);color:var(--text-body);border:var(--border-heavy) solid var(--line-strong);border-radius:var(--radius-card);box-shadow:6px 6px 0 0 var(--ink-1)}
+.pg-recado::backdrop{background:rgba(20,19,14,.55)}
+.pg-recado[open]{animation:pg-recado-in var(--dur-base) var(--ease-out)}
+@keyframes pg-recado-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.pg-recado__in{position:relative;display:flex;flex-direction:column;gap:var(--space-5);padding:var(--space-8)}
+.pg-recado__fechar{position:absolute;top:var(--space-4);right:var(--space-4);display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;background:transparent;color:var(--ink-3);border:0;border-radius:var(--radius-pill);cursor:pointer;transition:var(--transition-ui)}
+.pg-recado__fechar:hover{color:var(--ink-1);background:var(--paper-2)}
+.pg-recado__tit{font-size:clamp(24px,5vw,var(--size-2xl));line-height:1.1;letter-spacing:-.025em;padding-right:var(--space-8)}
+.pg-recado__txt{font:var(--text-base);color:var(--text-muted)}
+.pg-recado__ok{align-self:center;font-size:var(--size-md);padding:12px 26px;margin-top:var(--space-2)}
+
 /* ---------- Responsivo ---------- */
 @media (max-width:980px){
   .pg-hero,.pg-split{grid-template-columns:1fr;gap:var(--space-9)}
@@ -276,6 +289,8 @@ img{display:block;max-width:100%;height:auto}
   .pg-est__tit--lab{font-size:18px}
   .pg-est__txt{font-size:16px}
   .pg-footer__in{flex-direction:column;gap:var(--space-8)}
+  .pg-recado__in{padding:var(--space-7) var(--space-6)}
+  .pg-recado__ok{align-self:stretch}
 }
 </style>
 </head>
@@ -299,7 +314,19 @@ img{display:block;max-width:100%;height:auto}
 <symbol id="i-book-open" viewBox="0 0 24 24"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></symbol>
 <symbol id="i-messages" viewBox="0 0 24 24"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></symbol>
 <symbol id="i-file-check" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
 </defs></svg>
+
+<!-- ============ Recado (abre ao carregar a página) ============ -->
+<dialog class="pg-recado" id="recado" aria-labelledby="recado-tit">
+  <div class="pg-recado__in">
+    <button class="pg-recado__fechar" type="button" data-fechar aria-label="Fechar recado"><svg class="ico"><use href="#i-x"/></svg></button>
+    <span class="iap-badge iap-badge--warning" style="align-self:flex-start"><svg class="ico ico--sm"><use href="#i-calendar"/></svg>Recado</span>
+    <h2 class="pg-recado__tit" id="recado-tit">O curso inicia nesta segunda-feira, 28/09</h2>
+    <p class="pg-recado__txt">Enviamos para o seu <strong>e-mail institucional</strong> (@educa.pindamonhangaba.sp.gov.br) um link para o grupo de recados do curso no WhatsApp, e por lá você também receberá o acesso ao Google Sala de Aula, onde estão as atividades do curso.</p>
+    <button class="iap-btn iap-btn--ink pg-recado__ok" type="button" data-fechar>Entendi</button>
+  </div>
+</dialog>
 
 <header class="pg-header">
   <div class="pg-wrap pg-header__in">
@@ -536,7 +563,7 @@ img{display:block;max-width:100%;height:auto}
         <p>Uma formação prática para realizar várias tarefas cotidianas com ajuda da IA. Se você chegou até aqui lendo, é para você.</p>
       </div>
       <div class="pg-cta__side">
-        <a class="iap-btn iap-btn--lg iap-btn--ink" href="https://forms.gle/xyfS3JNkyYsXTvneA" target="_blank" rel="noopener" onclick="gtag('event','clique_inscricao')">Quero participar <svg class="ico"><use href="#i-arrow-right"/></svg></a>
+        <a class="iap-btn iap-btn--lg iap-btn--ink" id="btn-inscricao" href="https://forms.gle/xyfS3JNkyYsXTvneA" target="_blank" rel="noopener" onclick="gtag('event','clique_inscricao')">Quero participar <svg class="ico"><use href="#i-arrow-right"/></svg></a>
         <span class="pg-cta__note">Para profissionais da Rede Municipal de Pindamonhangaba, sem custo.</span>
       </div>
     </div>
@@ -594,6 +621,35 @@ img{display:block;max-width:100%;height:auto}
     <span>Raul Cabral França, 2026.</span>
   </div>
 </footer>
+
+<script>
+// Estado do curso. true = curso iniciado: o recado abre ao carregar a
+// página e o botão de inscrição vira "Inscrições encerradas", que reabre
+// o recado. false = botão "Quero participar" normal, sem recado.
+var CURSO_INICIADO=true;
+
+(function(){
+  var d=document.getElementById('recado');
+  var btn=document.getElementById('btn-inscricao');
+  if(!CURSO_INICIADO||!d||typeof d.showModal!=='function')return;
+
+  btn.textContent='Inscrições encerradas';
+  btn.removeAttribute('onclick');
+  btn.removeAttribute('target');
+  btn.setAttribute('href','#recado');
+  btn.addEventListener('click',function(e){
+    e.preventDefault();
+    gtag('event','clique_inscricoes_encerradas');
+    d.showModal();
+  });
+
+  // Fecha pelo botão, pelo Esc (nativo do <dialog>) ou clicando no véu.
+  d.addEventListener('click',function(e){
+    if(e.target===d||e.target.closest('[data-fechar]'))d.close();
+  });
+  d.showModal();
+})();
+</script>
 
 </body>
 </html>
