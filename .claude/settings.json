@@ -113,7 +113,15 @@
       "PowerShell($h = \\(Invoke-WebRequest \"https://www.youtube.com/watch?v=fEk5loGvWwI\" -UseBasicParsing -Headers @{\"Accept-Language\"=\"pt-BR\"}\\).Content; if \\($h -match '\"lengthSeconds\":\"\\(\\\\d+\\)\"'\\) { \"duracao\\(s\\): $\\($Matches[1]\\)\" } else { \"sem duracao\" }; Get-ChildItem \"c:\\\\Users\\\\rfranca\\\\Meu Drive\\\\Curso IA - Conteúdo\" -Directory | Select-Object -ExpandProperty Name)",
       "PowerShell(Start-Process -FilePath \"c:\\\\Users\\\\rfranca\\\\Meu Drive\\\\Curso IA - Conte�do\\\\emails\\\\boas-vindas.html\")",
       "PowerShell($d = \"C:\\\\Users\\\\rfranca\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--dev-cursoia\\\\341f3233-fd58-4670-b4ed-2fc24fa09357\\\\scratchpad\"; Invoke-WebRequest \"https://i.ytimg.com/vi/fEk5loGvWwI/maxresdefault.jpg?t=$\\(Get-Random\\)\" -OutFile \"$d\\\\thumb-now.jpg\" -UseBasicParsing; \"ok\")",
-      "PowerShell(Start-Process -FilePath \"c:\\\\Users\\\\rfranca\\\\Meu Drive\\\\Curso IA - Conte�do\\\\emails\\\\boas-vindas-alternativa-3-primeiros-passos-fonte-maior.html\")"
+      "PowerShell(Start-Process -FilePath \"c:\\\\Users\\\\rfranca\\\\Meu Drive\\\\Curso IA - Conte�do\\\\emails\\\\boas-vindas-alternativa-3-primeiros-passos-fonte-maior.html\")",
+      "Bash(cd /c/dev/curso-ia-ava/classroom; head -80 cli.js; ls /c/Dev/.secrets/classroom/)",
+      "Read(//c/Dev/.secrets/classroom//**)",
+      "Bash(PYTHONIOENCODING=utf-8 python -c ' *)",
+      "Bash(CLASSROOM_SECRETS='C:\\\\Dev\\\\.secrets\\\\classroom\\\\cursoia' node cli.js whoami)",
+      "Bash(CLASSROOM_SECRETS='C:\\\\Dev\\\\.secrets\\\\classroom\\\\cursoia' node cli.js list courses.list '{\"teacherId\":\"me\"}')",
+      "Bash(node -e \"let s='';process.stdin.on\\('data',d=>s+=d\\).on\\('end',\\(\\)=>{const j=JSON.parse\\(s\\);\\(j.courses||j\\).forEach\\(c=>console.log\\(c.id,c.enrollmentCode,c.courseState,c.name\\)\\)}\\)\")",
+      "Read(//c/Users/rfranca/AppData/Local/Temp/claude/c--dev-cursoia/e7262489-285d-46b9-981f-24c0b71b3b85/scratchpad/**)",
+      "Bash(node -e \"const r=require\\('./cruzamento.json'\\);console.log\\(r.erro[0].e\\);console.log\\(r.erro[0].msg\\)\")"
     ],
     "additionalDirectories": [
       "C:\\Dev\\conteudo",

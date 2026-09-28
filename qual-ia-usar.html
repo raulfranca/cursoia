@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qual IA usar? · Inteligência Artificial para Educadores</title>
+<meta name="description" content="Existem muitas ferramentas de IA e elas mudam toda semana. Neste curso, a gente aprende a função antes do botão.">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Qual IA usar?">
+<meta property="og:description" content="Existem muitas ferramentas de IA e elas mudam toda semana. Neste curso, a gente aprende a função antes do botão.">
+<meta property="og:url" content="https://raulfranca.github.io/cursoia/qual-ia-usar.html">
+<meta property="og:image" content="https://raulfranca.github.io/cursoia/assets/ilustracoes/professora-indecisa-logos-ia.webp">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS6YNMGLZ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GS6YNMGLZ9');
+</script>
+
+<style>
+/* ============================================================
+   Tokens — copiados de design/tokens/*.css (design system
+   "IA para Professores"). Página autônoma, como a index.html.
+   ============================================================ */
+:root{
+  --paper-0:#FBF9F2; --paper-1:#F4F1E7; --paper-2:#EDE8DA; --paper-3:#E3DCC9;
+  --ink-1:#14130E; --ink-2:#3D3A31; --ink-3:#6B675B; --ink-4:#9C978A; --ink-5:#C9C4B4;
+  --lousa-700:#224035; --lousa-600:#2E574A; --lousa-500:#35604F; --lousa-300:#8FAEA2; --lousa-100:#DDE7E1;
+  --terracota-500:#C2543A; --ocre-300:#EFCE8C; --ocre-500:#E0A02E;
+
+  --bg-canvas:var(--paper-1); --bg-sheet:var(--paper-0); --bg-brand-soft:var(--lousa-100);
+  --text-body:var(--ink-1); --text-muted:var(--ink-2); --text-caption:var(--ink-3);
+  --text-link:var(--lousa-600); --text-link-hover:var(--terracota-500);
+  --line-hairline:var(--ink-5); --line-strong:var(--ink-1);
+  --surface-card:var(--paper-0);
+  --accent-primary:var(--lousa-500); --accent-secondary:var(--terracota-500); --accent-highlight:var(--ocre-500);
+  --focus-ring:var(--terracota-500);
+
+  --font-display:"Bricolage Grotesque","Instrument Sans",system-ui,sans-serif;
+  --font-body:"Instrument Sans",system-ui,-apple-system,sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,monospace;
+  --size-2xs:12px; --size-xs:13px; --size-sm:15px; --size-md:17px; --size-lg:20px;
+  --size-xl:25px; --size-2xl:31px; --size-3xl:39px; --size-4xl:49px;
+  --lh-tight:1.06; --lh-snug:1.18; --lh-normal:1.35; --lh-relaxed:1.55; --lh-loose:1.7;
+  --weight-regular:400; --weight-medium:500; --weight-semibold:600;
+  --track-tight:-0.02em; --track-snug:-0.01em; --track-caps:0.14em;
+  --text-lead:var(--weight-regular) var(--size-lg)/var(--lh-relaxed) var(--font-body);
+  --text-base:var(--weight-regular) var(--size-md)/var(--lh-relaxed) var(--font-body);
+  --text-small:var(--weight-regular) var(--size-sm)/var(--lh-normal) var(--font-body);
+  --text-caption-font:var(--weight-regular) var(--size-xs)/var(--lh-normal) var(--font-body);
+  --text-eyebrow:var(--weight-semibold) var(--size-2xs)/1.2 var(--font-mono);
+
+  --space-2:6px; --space-3:8px; --space-4:12px; --space-5:16px; --space-6:20px;
+  --space-7:24px; --space-8:32px; --space-9:40px; --space-10:56px; --space-11:72px; --space-12:96px;
+  --container:1120px; --container-prose:680px;
+
+  --radius-sm:4px; --radius-card:14px; --radius-pill:999px;
+  --border-hairline:1px; --border-ink:1.5px; --border-heavy:2px;
+  --shadow-ink-sm:2px 2px 0 0 var(--ink-1); --shadow-ink:4px 4px 0 0 var(--ink-1);
+  --dur-fast:140ms; --ease-out:cubic-bezier(.22,.61,.36,1);
+  --transition-ui:color var(--dur-fast) var(--ease-out),background-color var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out),box-shadow var(--dur-fast) var(--ease-out),transform var(--dur-fast) var(--ease-out);
+}
+
+/* ---------- Base ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg-canvas);color:var(--text-body);font:var(--text-base);text-wrap:pretty;-webkit-font-smoothing:antialiased}
+h1,h2,h3{margin:0;font-family:var(--font-display);font-weight:var(--weight-semibold);letter-spacing:var(--track-tight);color:var(--text-body)}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+a{color:var(--text-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;transition:var(--transition-ui)}
+a:hover{color:var(--text-link-hover)}
+img{display:block;max-width:100%;height:auto}
+::selection{background:var(--ocre-300);color:var(--ink-1)}
+:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ---------- Ícones (Lucide, inline) ---------- */
+.ico{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ico--sm{width:16px;height:16px}
+.ico--lg{width:22px;height:22px}
+
+/* ---------- Componentes do design system (prefixo iap-) ---------- */
+.iap-eyebrow{font:var(--text-eyebrow);text-transform:uppercase;letter-spacing:var(--track-caps);color:var(--accent-secondary)}
+
+.iap-btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--space-3);font-family:var(--font-body);font-weight:var(--weight-semibold);letter-spacing:var(--track-snug);border-radius:var(--radius-pill);border:var(--border-ink) solid transparent;cursor:pointer;text-decoration:none;transition:var(--transition-ui);white-space:nowrap}
+.iap-btn--ghost{background:transparent;color:var(--text-link);border-color:transparent;padding:9px 12px;font-size:var(--size-sm)}
+.iap-btn--ghost:hover{color:var(--terracota-500);background:var(--paper-2)}
+
+.iap-illo{display:block;background:var(--paper-1);overflow:hidden;margin:0}
+.iap-illo--framed{border:var(--border-hairline) solid var(--line-hairline);border-radius:var(--radius-card)}
+.iap-illo img{width:100%;display:block}
+
+.iap-callout{display:flex;gap:var(--space-5);padding:var(--space-6);border-radius:var(--radius-card);border:var(--border-hairline) solid var(--line-hairline);background:var(--paper-0)}
+.iap-callout__icon{color:var(--accent-primary);margin-top:2px}
+.iap-callout__title{font-family:var(--font-display);font-weight:var(--weight-semibold);font-size:var(--size-md);margin-bottom:var(--space-2)}
+.iap-callout__body{font:var(--text-small);color:var(--text-muted)}
+.iap-callout--brand{background:var(--bg-brand-soft);border-color:var(--lousa-300)}
+.iap-callout--brand .iap-callout__icon{color:var(--lousa-700)}
+
+.iap-card{display:flex;flex-direction:column;background:var(--surface-card);border:var(--border-hairline) solid var(--line-hairline);border-radius:var(--radius-card);overflow:hidden}
+.iap-card--ink{border:var(--border-ink) solid var(--line-strong);box-shadow:var(--shadow-ink)}
+.iap-card__body{display:flex;flex-direction:column;gap:var(--space-4);padding:var(--space-8)}
+
+.iap-checklist{display:flex;flex-direction:column;gap:var(--space-4)}
+.iap-checklist__item{display:flex;gap:var(--space-4);font-size:var(--size-md);line-height:var(--lh-relaxed);color:var(--text-muted)}
+.iap-checklist__mark{flex:none;margin-top:5px;color:var(--accent-primary)}
+
+/* ---------- Estruturas da página (prefixo pg-) ---------- */
+.pg-header{background:var(--paper-1);border-bottom:var(--border-hairline) solid var(--line-hairline)}
+.pg-header__in{max-width:var(--container);margin:0 auto;padding:14px var(--space-8);display:flex;align-items:center;justify-content:space-between;gap:var(--space-6)}
+.pg-wordmark{font-family:var(--font-display);font-weight:var(--weight-semibold);font-size:19px;line-height:1.05;letter-spacing:-.03em;color:var(--ink-1);text-decoration:none}
+.pg-wordmark:hover{color:var(--lousa-600)}
+
+.pg-post{max-width:var(--container-prose);margin:0 auto;padding:var(--space-11) var(--space-8) var(--space-12)}
+.pg-post__head{display:flex;flex-direction:column;gap:var(--space-5)}
+.pg-post__title{font-size:clamp(38px,6vw,var(--size-4xl));line-height:var(--lh-tight);letter-spacing:-.03em}
+.pg-post__lead{font:var(--text-lead);color:var(--text-muted)}
+.pg-post__meta{font:var(--text-caption-font);color:var(--text-caption);font-family:var(--font-mono);letter-spacing:.02em}
+.pg-byline{display:flex;align-items:center;gap:var(--space-4);margin-top:var(--space-2)}
+.pg-byline__foto{width:48px;height:48px;border-radius:var(--radius-pill);border:var(--border-ink) solid var(--line-strong);object-fit:cover}
+.pg-byline__nome{font-size:var(--size-sm);font-weight:var(--weight-semibold);color:var(--text-body)}
+.pg-byline__meta{font:var(--text-caption-font);color:var(--text-caption)}
+
+.pg-post__figure{margin:var(--space-10) calc(-1 * var(--space-10))}
+
+.pg-prose{display:flex;flex-direction:column;gap:var(--space-6)}
+.pg-prose p{line-height:var(--lh-loose);color:var(--text-muted)}
+.pg-prose p:first-child{color:var(--text-body)}
+.pg-prose h2{font-size:clamp(25px,3.4vw,var(--size-2xl));line-height:var(--lh-snug);margin-top:var(--space-9)}
+.pg-prose strong{color:var(--text-body);font-weight:var(--weight-semibold)}
+.pg-prose .iap-callout,.pg-prose .iap-card{margin:var(--space-4) 0}
+
+.pg-tools{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--space-5);margin:var(--space-3) 0}
+.pg-tool{padding:var(--space-6);background:var(--surface-card);border:var(--border-hairline) solid var(--line-hairline);border-radius:var(--radius-card)}
+.pg-tool__name{font-family:var(--font-display);font-weight:var(--weight-semibold);font-size:var(--size-xl);letter-spacing:var(--track-tight);line-height:var(--lh-snug)}
+.pg-tool__by{font:var(--text-small);color:var(--text-caption);margin-top:var(--space-2)}
+
+.pg-prose .pg-next__title{font-family:var(--font-display);font-weight:var(--weight-semibold);font-size:clamp(23px,3.4vw,var(--size-2xl));line-height:var(--lh-snug);letter-spacing:var(--track-tight);color:var(--text-body)}
+
+.pg-footer{background:var(--ink-1);color:var(--paper-0);padding:var(--space-10) var(--space-8) var(--space-8)}
+.pg-footer__in{max-width:var(--container);margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end;gap:var(--space-8);flex-wrap:wrap}
+.pg-footer__brand{font-family:var(--font-display);font-weight:var(--weight-semibold);font-size:22px;line-height:1.05;letter-spacing:-.03em}
+.pg-footer p{font-size:var(--size-sm);line-height:1.6;color:var(--paper-3);max-width:38ch;margin-top:14px}
+.pg-footer a{color:var(--paper-2);text-decoration:none;font-size:var(--size-sm)}
+.pg-footer a:hover{color:var(--ocre-300)}
+
+@media (max-width:760px){
+  .pg-header__in{padding:12px 16px}
+  .pg-post{padding:var(--space-9) 16px var(--space-11)}
+  .pg-post__figure{margin:var(--space-8) 0}
+  .pg-tools{grid-template-columns:1fr}
+  .iap-card__body{padding:var(--space-7) var(--space-6)}
+  .pg-footer{padding:var(--space-9) 16px var(--space-8)}
+}
+@media (min-width:761px) and (max-width:900px){
+  .pg-post__figure{margin-left:0;margin-right:0}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
+  <symbol id="i-lightbulb" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+</svg>
+
+<header class="pg-header">
+  <div class="pg-header__in">
+    <a class="pg-wordmark" href="./">Inteligência Artificial para Educadores</a>
+    <a class="iap-btn iap-btn--ghost" href="./"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-left"/></svg>Voltar ao curso</a>
+  </div>
+</header>
+
+<main>
+  <article class="pg-post">
+    <header class="pg-post__head">
+      <span class="iap-eyebrow">Tópico 1 · A IA já está aqui</span>
+      <h1 class="pg-post__title">Qual IA usar?</h1>
+      <p class="pg-post__lead">Existem muitas ferramentas de inteligência artificial, e elas mudam toda semana. Neste curso, a gente aprende a função antes do botão.</p>
+      <div class="pg-byline">
+        <img class="pg-byline__foto" src="assets/avatar-raul.webp" width="48" height="48" alt="">
+        <div>
+          <p class="pg-byline__nome">Raul Cabral França</p>
+          <p class="pg-byline__meta"><time datetime="2026-09-28T15:35-03:00">28 de setembro de 2026, 15h35</time></p>
+        </div>
+      </div>
+      <p class="pg-post__meta">Leitura de 4 minutos</p>
+    </header>
+
+    <figure class="iap-illo pg-post__figure">
+      <img src="assets/ilustracoes/professora-indecisa-logos-ia.webp" width="1400" height="788" alt="Professora com a mão no queixo, pensativa, cercada de balões de pensamento com os logotipos de várias ferramentas de inteligência artificial" fetchpriority="high">
+    </figure>
+
+    <div class="pg-prose">
+      <p>ChatGPT, Gemini, Copilot, Meta AI. Você provavelmente já usou alguma dessas ferramentas. Outras, talvez tenha apenas ouvido o nome e ficado em dúvida: para que serve cada uma? Qual é a melhor, afinal?</p>
+
+      <p>Existem várias ferramentas de inteligência artificial generativa. Algumas produzem texto. Outras criam imagens, áudios ou vídeos. E algumas já conseguem fazer tudo isso no mesmo lugar.</p>
+
+      <p>Esse cenário muda muito rápido. Toda semana aparece uma novidade: um modelo novo, uma função diferente, uma melhoria que muda a forma de realizar as tarefas.</p>
+
+      <p>Eu acho interessante acompanhar essas mudanças. Mas, se a gente tentar usar sempre a ferramenta mais nova ou mais avançada, corre o risco de passar mais tempo trocando de ferramenta do que realizando o nosso trabalho.</p>
+
+      <h2>A função antes do botão</h2>
+
+      <p>Por isso, neste curso, a gente não vai aprender apenas qual botão apertar. Vamos aprender <strong>qual é a função que estamos procurando</strong>.</p>
+
+      <p>Quando você sabe o que deseja fazer, consegue procurar um caminho. O botão pode mudar de lugar, mas a função ainda pode estar disponível em outro menu, com outro nome ou por uma forma diferente de acesso.</p>
+
+      <p>É claro que, nos vídeos de passo a passo, eu vou mostrar a tela e indicar onde clicar. Isso é importante para que todo mundo consiga acompanhar. Mas o clique não é o conhecimento principal. O mais importante é compreender o que aquela função permite fazer.</p>
+
+      <div class="iap-callout iap-callout--brand">
+        <svg class="ico ico--lg iap-callout__icon" aria-hidden="true"><use href="#i-lightbulb"/></svg>
+        <div>
+          <p class="iap-callout__title">Quando a tela mudar, você não começa do zero</p>
+          <p class="iap-callout__body">Você sabe o que está procurando e pode encontrar um novo caminho para chegar ao mesmo resultado.</p>
+        </div>
+      </div>
+
+      <p>Além disso, as ferramentas de inteligência artificial têm muitas funções em comum. Como essas empresas concorrem entre si, quando uma lança uma função nova, ela aparece algum tempo depois nas outras.</p>
+
+      <p>Você não precisa conhecer todas as ferramentas para começar. Vai perceber que é possível levar os mesmos métodos para outras ferramentas. Ao longo do curso, observe o que estamos tentando fazer em cada atividade. Se você entender a função, consegue usá-la em qualquer ferramenta que tiver na mão.</p>
+
+      <h2>As duas ferramentas do curso</h2>
+
+      <p>Ao longo deste curso, vamos trabalhar com duas ferramentas principais. Com elas é possível fazer praticamente tudo o que vamos aprender.</p>
+
+      <div class="pg-tools">
+        <div class="pg-tool">
+          <p class="pg-tool__name">ChatGPT</p>
+          <p class="pg-tool__by">da OpenAI</p>
+        </div>
+        <div class="pg-tool">
+          <p class="pg-tool__name">Gemini</p>
+          <p class="pg-tool__by">do Google</p>
+        </div>
+      </div>
+
+      <h2>Vamos começar pela prática</h2>
+
+      <div class="iap-card iap-card--ink">
+        <div class="iap-card__body">
+          <span class="iap-eyebrow">Próximos vídeos</span>
+          <p class="pg-next__title">Semana da Criança: começando a conversa</p>
+          <ul class="iap-checklist">
+            <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-check"/></svg><span>Acessar o ChatGPT pelo computador ou Chromebook.</span></li>
+            <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-check"/></svg><span>Planejar sugestões para a Semana da Criança de um CMEI, uma situação genérica, sem dados pessoais.</span></li>
+            <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-check"/></svg><span>Continuar a conversa pelo celular e ajustar as configurações de privacidade.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <p>Depois dessa primeira experiência, você vai estar pronta para levar a ferramenta para outras tarefas do trabalho escolar.</p>
+    </div>  </article>
+</main>
+
+<footer class="pg-footer">
+  <div class="pg-footer__in">
+    <div>
+      <span class="pg-footer__brand">Inteligência Artificial para Educadores</span>
+      <p>Curso de introdução à inteligência artificial para professores e gestores da Rede Municipal de Pindamonhangaba.</p>
+    </div>
+    <a href="./">Voltar à página do curso</a>
+  </div>
+</footer>
+
+</body>
+</html>
