@@ -121,7 +121,21 @@
       "Bash(CLASSROOM_SECRETS='C:\\\\Dev\\\\.secrets\\\\classroom\\\\cursoia' node cli.js list courses.list '{\"teacherId\":\"me\"}')",
       "Bash(node -e \"let s='';process.stdin.on\\('data',d=>s+=d\\).on\\('end',\\(\\)=>{const j=JSON.parse\\(s\\);\\(j.courses||j\\).forEach\\(c=>console.log\\(c.id,c.enrollmentCode,c.courseState,c.name\\)\\)}\\)\")",
       "Read(//c/Users/rfranca/AppData/Local/Temp/claude/c--dev-cursoia/e7262489-285d-46b9-981f-24c0b71b3b85/scratchpad/**)",
-      "Bash(node -e \"const r=require\\('./cruzamento.json'\\);console.log\\(r.erro[0].e\\);console.log\\(r.erro[0].msg\\)\")"
+      "Bash(node -e \"const r=require\\('./cruzamento.json'\\);console.log\\(r.erro[0].e\\);console.log\\(r.erro[0].msg\\)\")",
+      "Bash(node -e \"const d=require\\('./painel.json'\\);console.log\\(d.alunos.filter\\(a=>a.situacao==='inexistente'\\).map\\(a=>a.emailInst.length\\)\\)\")",
+      "Bash(node -e \"const d=require\\('./painel.json'\\);const f=d.alunos.map\\(a=>{const p=a.nome.trim\\(\\).split\\(/\\\\s+/\\)[0];return p.charAt\\(0\\).toUpperCase\\(\\)+p.slice\\(1\\).toLowerCase\\(\\)}\\);const odd=f.filter\\(p=>p.length<3||/[^A-Za-zÀ-ÿ]/.test\\(p\\)\\);console.log\\('total',f.length,'suspeitos',odd\\)\")",
+      "Bash(npm --version)",
+      "Read(//c/Users/rfranca/AppData/Local/Google/Chrome//**)",
+      "Bash(tasklist)",
+      "Bash(ls -la --time=birth \"/c/Users/rfranca/Meu Drive/Curso IA - Conteúdo/dados/\" | grep -iv desktop; ls -t /c/Users/rfranca/Downloads 2>/dev/null | head -5)",
+      "Read(//c/Users/rfranca/Downloads/**)",
+      "Read(//c/Users/rfranca/AppData/Local/Temp/claude/c--dev-cursoia/e7262489-285d-46b9-981f-24c0b71b3b85/scratchpad/zap/**)",
+      "Bash(sed -n '20,93p' *.txt)",
+      "Read(//c/Users/rfranca/AppData/Local/Temp/claude/c--dev-cursoia/e7262489-285d-46b9-981f-24c0b71b3b85/scratchpad/zap2/**)",
+      "Bash(sed -n '1,135p' *.txt)",
+      "Bash(break)",
+      "Bash(python \"C:/Users/rfranca/AppData/Local/Temp/claude/c--dev-cursoia/dfe5e7b6-c35e-4738-96f8-fe221d9070db/scratchpad/leitura.py\" dados-dos-alunos.html treinamento-chatgpt.html qual-ia-usar.html)",
+      "PowerShell(Get-Process | Where-Object { $_.Name -match 'whatsapp|msedgewebview2' } | Select-Object Name, Id, StartTime, @{n='Path';e={$_.Path}} | Format-Table -AutoSize)"
     ],
     "additionalDirectories": [
       "C:\\Dev\\conteudo",

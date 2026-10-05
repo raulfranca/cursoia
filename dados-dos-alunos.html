@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dado de aluno fica na conta da escola · Inteligência Artificial para Educadores</title>
+<title>Dados de aluno só em conta institucional · Inteligência Artificial para Educadores</title>
 <meta name="description" content="Por que dados de alunos só entram no Gemini da conta institucional, o que a LGPD tem a ver com isso e como usar o ChatGPT no celular sem expor as crianças.">
 
 <meta property="og:type" content="article">
@@ -141,7 +141,7 @@ img{display:block;max-width:100%;height:auto}
 .pg-prose strong{color:var(--text-body);font-weight:var(--weight-semibold)}
 .pg-prose .iap-callout,.pg-prose .iap-card{margin:var(--space-4) 0}
 
-.pg-tools{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--space-5);margin:var(--space-3) 0}
+.pg-tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-5);margin:var(--space-3) 0}
 .pg-tool{padding:var(--space-6);background:var(--surface-card);border:var(--border-hairline) solid var(--line-hairline);border-radius:var(--radius-card)}
 .pg-tool__name{font-family:var(--font-display);font-weight:var(--weight-semibold);font-size:var(--size-xl);letter-spacing:var(--track-tight);line-height:var(--lh-snug)}
 .pg-tool__by{font:var(--text-small);color:var(--text-caption);margin-top:var(--space-2)}
@@ -169,10 +169,10 @@ img{display:block;max-width:100%;height:auto}
 
 /* ---------- Passo a passo com capturas de tela ---------- */
 .pg-steps{list-style:none;padding:0;display:flex;flex-direction:column;gap:var(--space-8);margin:var(--space-3) 0}
-.pg-step{display:flex;flex-direction:column;gap:var(--space-5)}
-.pg-step__text{display:flex;gap:var(--space-4);align-items:flex-start}
-.pg-step__text p{color:var(--text-body)}
-.pg-step__num{flex:none;display:grid;place-items:center;width:30px;height:30px;margin-top:2px;border-radius:var(--radius-pill);background:var(--lousa-500);color:var(--paper-0);font-family:var(--font-display);font-weight:var(--weight-semibold);font-size:var(--size-sm)}
+.pg-step{display:grid;grid-template-columns:30px minmax(0,1fr);column-gap:var(--space-4);row-gap:var(--space-5);align-items:start}
+.pg-step__num{grid-column:1;grid-row:1;display:grid;place-items:center;width:30px;height:30px;border-radius:var(--radius-pill);background:var(--lousa-500);color:var(--paper-0);font-family:var(--font-display);font-weight:var(--weight-semibold);font-size:var(--size-sm)}
+.pg-step .pg-shot{grid-column:2;grid-row:1}
+.pg-step p{grid-column:2;grid-row:2;color:var(--text-body)}
 .pg-shot{margin:0;background:var(--paper-0);border:var(--border-hairline) solid var(--line-hairline);border-radius:var(--radius-card);overflow:hidden}
 .pg-shot img{width:100%}
 .pg-shot figcaption{font:var(--text-caption-font);color:var(--text-caption);padding:var(--space-3) var(--space-5);border-top:var(--border-hairline) solid var(--line-hairline)}
@@ -182,7 +182,7 @@ img{display:block;max-width:100%;height:auto}
 .pg-tool .iap-checklist__item{font-size:var(--size-sm);line-height:var(--lh-relaxed)}
 .pg-tool--nao .iap-checklist__mark{color:var(--terracota-500)}
 @media (max-width:760px){
-  .pg-step__text{gap:var(--space-3)}
+  .pg-step{column-gap:var(--space-3)}
 }
 .pg-shot--estreita{max-width:300px}
 .pg-shot--media{max-width:464px}
@@ -208,7 +208,7 @@ img{display:block;max-width:100%;height:auto}
   <article class="pg-post">
     <header class="pg-post__head">
       <span class="iap-eyebrow">Tópico 2 · Contexto é tudo</span>
-      <h1 class="pg-post__title">Dados de aluno só na conta institucional</h1>
+      <h1 class="pg-post__title">Dados de aluno só em conta institucional</h1>
       <p class="pg-post__lead">Por que a Lei Geral de Proteção de Dados (LGPD) determina que dados de alunos nunca entrem em contas pessoais</p>
       <div class="pg-byline">
         <img class="pg-byline__foto" src="assets/avatar-raul.webp" width="48" height="48" alt="">
@@ -225,25 +225,23 @@ img{display:block;max-width:100%;height:auto}
     </figure>
 
     <div class="pg-prose">
-      <p>Desligar o treinamento do ChatGPT protege o que você escreve na sua conta pessoal. Mas não responde a uma pergunta que vai aparecer em quase toda tarefa da escola: onde os dados dos alunos podem entrar? A resposta depende menos da ferramenta e mais da conta que está aberta.</p>
+      <p>Desligar o treinamento do ChatGPT protege o que você escreve na sua conta pessoal. Porém, existe uma pergunta séria a ser feita em quase toda tarefa da escola, porque existe lei para isso: onde posso inserir dados de alunos? A resposta não é só a ferramenta, mas também a conta que você está usando.</p>
 
-      <h2>Usar o Gemini pela conta institucional</h2>
+      <h2>Usar a inteligência artificial pela conta institucional</h2>
 
-      <p>Conta institucional é o e-mail que a rede fornece a você (@educa.pindamonhangaba.sp.gov.br), e não o seu Gmail pessoal. A diferença entre as duas está em quem fez o acordo com a empresa. Na conta pessoal, o acordo é entre você e a empresa, nos termos que ela escreveu. Na conta institucional, o acordo é entre a rede municipal e o Google, e o uso dos dados segue regras diferentes.</p>
-
-      <p>Para o Gemini usado com esse tipo de conta, o Google assume estes compromissos na sua <a href="https://knowledge.workspace.google.com/admin/generative-ai/generative-ai-in-google-workspace-privacy-hub" target="_blank" rel="noopener">página oficial de privacidade</a>:</p>
+      <p>A rede municipal de Pindamonhangaba tem um contrato que fornece contas institucionais e educacionais do Google para os servidores: o e-mail <i>@educa.pindamonhangaba.sp.gov.br</i> que você está usando para fazer este curso. E o Google tem a sua própria inteligência artificial, chamada <b>Gemini</b>, que funciona de forma parecida com o ChatGPT e usaremos a partir do próximo vídeo. </p><p> Ao usar o Gemini pela sua conta institucional, são aplicadas regras especiais de privacidade. O que muda entre as duas contas é quem fez o acordo com a empresa: na conta pessoal, o acordo é entre você e a empresa, nos termos que ela definiu; na conta institucional, o acordo é entre a rede municipal e o Google, e o uso dos dados é controlado por essa <a href="https://knowledge.workspace.google.com/admin/generative-ai/generative-ai-in-google-workspace-privacy-hub" target="_blank" rel="noopener">política de privacidade</a>:</p>
 
       <ul class="iap-checklist">
         <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-check"/></svg><span>As conversas e os arquivos enviados não são lidos por revisores humanos nem usados para treinar modelos de IA sem permissão.</span></li>
-        <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-check"/></svg><span>O conteúdo não é compartilhado fora da organização, que no nosso caso é a rede, sem permissão.</span></li>
-        <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-check"/></svg><span>Quem define se as conversas ficam guardadas, e por quanto tempo, é o administrador da rede.</span></li>
+        <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-check"/></svg><span>O conteúdo não é compartilhado fora da instituição (rede municipal), sem permissão.</span></li>
+        <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-check"/></svg><span>Quem define se as conversas ficam guardadas, e por quanto tempo, é o administrador responsável pela rede.</span></li>
       </ul>
 
-      <p>Por isso, na rede municipal de Pindamonhangaba, o Gemini da conta institucional é o ambiente aprovado para tarefas que usam dados de alunos. Antes de escrever, confira qual conta está aberta: o Gemini, acessado com um Gmail pessoal, não segue as regras institucionais, mas as da conta pessoal.</p>
+      <p>Por isso, na rede municipal de Pindamonhangaba, <b>o Gemini da conta institucional é o ambiente autorizado para tarefas que usam dados de alunos</b>. Antes de escrever, confira qual conta está aberta: o Gemini, acessado com um Gmail pessoal, não segue as regras institucionais, mas as da conta pessoal.</p>
 
       <h2>O que a LGPD tem a ver com isso</h2>
 
-      <p>A Lei Geral de Proteção de Dados, a LGPD (Lei nº 13.709/2018), regula o uso de qualquer informação que identifique uma pessoa. Nome, foto, voz, nota, frequência, relatório de desenvolvimento, laudo: tudo isso é dado pessoal. Informações de saúde e de deficiência são dados sensíveis, com proteção maior. E os dados de crianças e adolescentes só podem ser usados tendo em vista o melhor interesse deles.</p>
+      <p>A Lei Geral de Proteção de Dados - LGPD (Lei nº 13.709/2018), regula o uso de qualquer informação que identifique uma pessoa. Nome, foto, voz, nota, frequência, relatório de desenvolvimento, laudo: tudo isso é dado pessoal. Informações de saúde e de deficiência são dados sensíveis, com proteção maior. E os dados de crianças e adolescentes só podem ser usados tendo em vista o melhor interesse deles.</p>
 
       <p>Em nossas escolas, quem responde por esses dados é a rede municipal. Ela precisa saber para que eles são usados, onde ficam guardados e quem tem acesso. Quando um relatório de aluno é colado numa conta pessoal, esses dados saem do ambiente que a rede controla e vão para uma empresa sem nenhuma proteção contratual. A intenção pode ser a melhor possível; o uso, ainda assim, não está autorizado.</p>
 
@@ -253,17 +251,29 @@ img{display:block;max-width:100%;height:auto}
         <svg class="ico ico--lg iap-callout__icon" aria-hidden="true"><use href="#i-shield-alert"/></svg>
         <div>
           <p class="iap-callout__title">Dados de alunos, só no Gemini da conta institucional</p>
-          <p class="iap-callout__body">E, mesmo lá, envie apenas o que a tarefa exige. A ferramenta ajuda a organizar e a redigir; a avaliação e a decisão continuam com você e com a equipe.</p>
+          <p class="iap-callout__body">E, mesmo lá, envie apenas o que a tarefa exige. A ferramenta te ajuda a organizar e a redigir; a avaliação e a decisão continuam com você e com a equipe.</p>
         </div>
       </div>
 
       <h2>O problema: não dá para usar o Gemini institucional pelo celular</h2>
 
       <p>O Gemini da conta institucional não está liberado no celular. É por isso que o ChatGPT continua útil no curso: é a IA que conseguimos usar pelo celular para fotografar um material, ditar em vez de digitar e aproveitar o intervalo entre uma aula e outra. Porém, a condição é sempre a mesma: nada que identifique uma criança.</p>
+      <h3>Em resumo:</h3>
 
       <div class="pg-tools">
         <div class="pg-tool">
-          <p class="pg-tool__name">Pode no ChatGPT</p>
+          <p class="pg-tool__name">Gemini institucional</p>
+          <p class="pg-tool__by">No computador ou Chromebook, com a conta institucional:</p>
+          <ul class="iap-checklist">
+            <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-check"/></svg><span>Analisar foto de criança, de caderno com nome ou de trabalho identificável.</span></li>
+            <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-check"/></svg><span>Trabalhar com relatório de desenvolvimento, PEI, laudo ou ficha de matrícula.</span></li>
+            <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-check"/></svg><span>Organizar lista de chamada, notas ou frequência.</span></li>
+            <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-check"/></svg><span>Transcrever e organizar o áudio sobre o caso de um aluno.</span></li>
+          </ul>
+        </div>
+        <div class="pg-tool">
+          <p class="pg-tool__name">ChatGPT pessoal</p>
+          <p class="pg-tool__by">No celular, sem nenhum dado sensível de aluno, funcionário ou familiar:</p>
           <ul class="iap-checklist">
             <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-check"/></svg><span>Ditar as anotações soltas de uma reunião de HTPC para organizar a ata.</span></li>
             <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-check"/></svg><span>Fotografar a página de um livro e pedir ideias de atividade.</span></li>
@@ -271,18 +281,15 @@ img{display:block;max-width:100%;height:auto}
             <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-check"/></svg><span>Descrever uma situação da turma de forma genérica, sem nomes nem detalhes que permitam reconhecer alguém.</span></li>
           </ul>
         </div>
-        <div class="pg-tool pg-tool--nao">
-          <p class="pg-tool__name">Não use ChatGPT</p>
-          <ul class="iap-checklist">
-            <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-x"/></svg><span>Foto de criança, de caderno com nome ou de trabalho identificável.</span></li>
-            <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-x"/></svg><span>Relatório de desenvolvimento, PEI, laudo ou ficha de matrícula.</span></li>
-            <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-x"/></svg><span>Lista de chamada, notas ou frequência.</span></li>
-            <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-x"/></svg><span>Áudio contando o caso de um aluno que se possa reconhecer.</span></li>
-          </ul>
-        </div>
       </div>
 
-      <p>Se a tarefa precisa de dados de um aluno, deixe para o computador, no Gemini da conta institucional. Antes de enviar qualquer coisa, olhe duas coisas: qual conta está aberta e se o conteúdo identifica alguém.</p>
+      <h3>Dicas</h3>
+
+      <ul class="iap-checklist">
+        <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-check"/></svg><span>Antes de enviar qualquer coisa, cheque se o conteúdo identifica alguém.</span></li>
+        <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-check"/></svg><span>Antes de enviar qualquer coisa para o Gemini, olhe qual conta está aberta.</span></li>
+        <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-check"/></svg><span>Você pode usar o gravador de voz / câmera do celular para fazer registros que envolvam alunos, e depois, no computador, anexar ao Gemini institucional.</span></li>
+      </ul>
     </div>
   </article>
 </main>

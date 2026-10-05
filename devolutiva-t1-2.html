@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Revisão: Tópicos 1.2 a 1.4</title>
+<meta name="description" content="O que a turma respondeu bem sobre continuar uma conversa ou começar outra, sobre corrigir o texto você mesmo e cinco ideias que vale ajustar.">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Mesma tarefa, mesma conversa">
+<meta property="og:description" content="Devolutiva das questões conceituais dos vídeos T1.2 a T1.4: o que a turma acertou e cinco ideias que vale ajustar.">
+<meta property="og:url" content="https://raulfranca.github.io/cursoia/devolutiva-t1-2.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS6YNMGLZ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GS6YNMGLZ9');
+</script>
+
+<style>
+/* ============================================================
+   Tokens — copiados de design/tokens/*.css (design system
+   "IA para Professores"). Página autônoma, como a index.html.
+   ============================================================ */
+:root{
+  --paper-0:#FBF9F2; --paper-1:#F4F1E7; --paper-2:#EDE8DA; --paper-3:#E3DCC9;
+  --ink-1:#14130E; --ink-2:#3D3A31; --ink-3:#6B675B; --ink-4:#9C978A; --ink-5:#C9C4B4;
+  --lousa-700:#224035; --lousa-600:#2E574A; --lousa-500:#35604F; --lousa-300:#8FAEA2; --lousa-100:#DDE7E1;
+  --terracota-600:#A6432C; --terracota-500:#C2543A; --terracota-300:#E0A292; --terracota-100:#F6E3DC;
+  --ocre-300:#EFCE8C; --ocre-500:#E0A02E;
+
+  --bg-canvas:var(--paper-1); --bg-sheet:var(--paper-0); --bg-brand-soft:var(--lousa-100);
+  --text-body:var(--ink-1); --text-muted:var(--ink-2); --text-caption:var(--ink-3);
+  --text-link:var(--lousa-600); --text-link-hover:var(--terracota-500);
+  --line-hairline:var(--ink-5); --line-strong:var(--ink-1);
+  --surface-card:var(--paper-0);
+  --accent-primary:var(--lousa-500); --accent-secondary:var(--terracota-500); --accent-highlight:var(--ocre-500);
+  --focus-ring:var(--terracota-500);
+
+  --font-display:"Bricolage Grotesque","Instrument Sans",system-ui,sans-serif;
+  --font-body:"Instrument Sans",system-ui,-apple-system,sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,monospace;
+  --size-2xs:12px; --size-xs:13px; --size-sm:15px; --size-md:17px; --size-lg:20px;
+  --size-xl:25px; --size-2xl:31px; --size-3xl:39px; --size-4xl:49px;
+  --lh-tight:1.06; --lh-snug:1.18; --lh-normal:1.35; --lh-relaxed:1.55; --lh-loose:1.7;
+  --weight-regular:400; --weight-medium:500; --weight-semibold:600;
+  --track-tight:-0.02em; --track-snug:-0.01em; --track-caps:0.14em;
+  --text-lead:var(--weight-regular) var(--size-lg)/var(--lh-relaxed) var(--font-body);
+  --text-base:var(--weight-regular) var(--size-md)/var(--lh-relaxed) var(--font-body);
+  --text-small:var(--weight-regular) var(--size-sm)/var(--lh-normal) var(--font-body);
+  --text-caption-font:var(--weight-regular) var(--size-xs)/var(--lh-normal) var(--font-body);
+  --text-eyebrow:var(--weight-semibold) var(--size-2xs)/1.2 var(--font-mono);
+
+  --space-2:6px; --space-3:8px; --space-4:12px; --space-5:16px; --space-6:20px;
+  --space-7:24px; --space-8:32px; --space-9:40px; --space-10:56px; --space-11:72px; --space-12:96px;
+  --container:1120px; --container-prose:680px;
+
+  --radius-sm:4px; --radius-md:8px; --radius-card:14px; --radius-pill:999px;
+  --border-hairline:1px; --border-ink:1.5px; --border-heavy:2px;
+  --shadow-ink-sm:2px 2px 0 0 var(--ink-1); --shadow-ink:4px 4px 0 0 var(--ink-1);
+  --dur-fast:140ms; --ease-out:cubic-bezier(.22,.61,.36,1);
+  --transition-ui:color var(--dur-fast) var(--ease-out),background-color var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out),box-shadow var(--dur-fast) var(--ease-out),transform var(--dur-fast) var(--ease-out);
+}
+
+/* ---------- Base ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg-canvas);color:var(--text-body);font:var(--text-base);text-wrap:pretty;-webkit-font-smoothing:antialiased}
+h1,h2,h3{margin:0;font-family:var(--font-display);font-weight:var(--weight-semibold);letter-spacing:var(--track-tight);color:var(--text-body)}
+p{margin:0}
+ul,ol{margin:0;padding:0;list-style:none}
+a{color:var(--text-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;transition:var(--transition-ui)}
+a:hover{color:var(--text-link-hover)}
+::selection{background:var(--ocre-300);color:var(--ink-1)}
+:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ---------- Ícones (Lucide, inline) ---------- */
+.ico{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ico--sm{width:16px;height:16px}
+.ico--lg{width:22px;height:22px}
+
+/* ---------- Componentes do design system (prefixo iap-) ---------- */
+.iap-eyebrow{font:var(--text-eyebrow);text-transform:uppercase;letter-spacing:var(--track-caps);color:var(--accent-secondary)}
+
+.iap-btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--space-3);font-family:var(--font-body);font-weight:var(--weight-semibold);letter-spacing:var(--track-snug);border-radius:var(--radius-pill);border:var(--border-ink) solid transparent;cursor:pointer;text-decoration:none;transition:var(--transition-ui);white-space:nowrap}
+.iap-btn--ghost{background:transparent;color:var(--text-link);border-color:transparent;padding:9px 12px;font-size:var(--size-sm)}
+.iap-btn--ghost:hover{color:var(--terracota-500);background:var(--paper-2)}
+
+.iap-checklist{display:flex;flex-direction:column;gap:var(--space-4)}
+.iap-checklist__item{display:flex;gap:var(--space-4);font-size:var(--size-md);line-height:var(--lh-relaxed);color:var(--text-muted)}
+.iap-checklist__mark{flex:none;margin-top:5px;color:var(--accent-primary)}
+
+.iap-quote{margin:0;padding:var(--space-2) 0 var(--space-2) var(--space-6);border-left:var(--border-heavy) solid var(--lousa-500)}
+.iap-quote__text{font-family:var(--font-display);font-weight:var(--weight-medium);font-size:var(--size-lg);line-height:var(--lh-normal);letter-spacing:var(--track-snug);color:var(--text-body)}
+
+/* ---------- Estruturas da página (prefixo pg-) ---------- */
+.pg-header{background:var(--paper-1);border-bottom:var(--border-hairline) solid var(--line-hairline)}
+.pg-header__in{max-width:var(--container);margin:0 auto;padding:14px var(--space-8);display:flex;align-items:center;justify-content:space-between;gap:var(--space-6)}
+.pg-wordmark{font-family:var(--font-display);font-weight:var(--weight-semibold);font-size:19px;line-height:1.05;letter-spacing:-.03em;color:var(--ink-1);text-decoration:none}
+.pg-wordmark:hover{color:var(--lousa-600)}
+
+.pg-post{max-width:var(--container-prose);margin:0 auto;padding:var(--space-11) var(--space-8) var(--space-12)}
+.pg-post__head{display:flex;flex-direction:column;gap:var(--space-5);margin-bottom:var(--space-9)}
+.pg-post__title{font-size:clamp(38px,6vw,var(--size-4xl));line-height:var(--lh-tight);letter-spacing:-.03em}
+.pg-post__lead{font:var(--text-lead);color:var(--text-muted)}
+.pg-byline{display:flex;align-items:center;gap:var(--space-4);margin-top:var(--space-2)}
+.pg-byline__foto{width:48px;height:48px;border-radius:var(--radius-pill);border:var(--border-ink) solid var(--line-strong);object-fit:cover}
+.pg-byline__nome{font-size:var(--size-sm);font-weight:var(--weight-semibold);color:var(--text-body)}
+.pg-byline__meta{font:var(--text-caption-font);color:var(--text-caption)}
+
+.pg-prose{display:flex;flex-direction:column;gap:var(--space-6)}
+.pg-prose p{line-height:var(--lh-loose);color:var(--text-muted)}
+.pg-prose strong{color:var(--text-body);font-weight:var(--weight-semibold)}
+.pg-prose h3{font-size:var(--size-xl);line-height:var(--lh-snug);margin-top:var(--space-4)}
+.pg-prose h4{margin:var(--space-5) 0 0;font-family:var(--font-display);font-weight:var(--weight-semibold);font-size:var(--size-md);letter-spacing:var(--track-snug);color:var(--text-body)}
+
+/* Abertura de seção: cada questão (e a Atenção) é o nível mais alto da página */
+.pg-secao{display:flex;flex-direction:column;gap:var(--space-4);margin-top:var(--space-11);padding-top:var(--space-7);border-top:var(--border-heavy) solid var(--line-strong)}
+.pg-secao:first-child{margin-top:0}
+.pg-prose .pg-secao h2{font-size:clamp(31px,4.4vw,var(--size-3xl));line-height:var(--lh-tight);letter-spacing:-.025em;margin:0}
+.pg-secao--atencao h2{color:var(--terracota-500)}
+.pg-prose .pg-secao .pg-secao__enunciado{font-size:var(--size-lg);line-height:var(--lh-relaxed);color:var(--text-muted);max-width:56ch}
+
+/* Esquema comparativo em duas colunas */
+.pg-duas{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-5);margin:var(--space-3) 0}
+.pg-modo{display:flex;flex-direction:column;gap:var(--space-5);padding:var(--space-6);background:var(--surface-card);border:var(--border-hairline) solid var(--line-hairline);border-radius:var(--radius-card)}
+.pg-modo__verbo{font:var(--text-eyebrow);text-transform:uppercase;letter-spacing:var(--track-caps);color:var(--lousa-600)}
+.pg-prose .pg-modo p{font-size:var(--size-sm);line-height:var(--lh-relaxed)}
+.pg-prose .pg-modo .pg-modo__nome{font-family:var(--font-display);font-weight:var(--weight-semibold);font-size:var(--size-xl);letter-spacing:var(--track-tight);line-height:var(--lh-snug);color:var(--text-body);margin-top:calc(-1 * var(--space-3))}
+.pg-modo__uso{display:flex;flex-direction:column;gap:var(--space-3);padding-top:var(--space-4);border-top:var(--border-hairline) solid var(--line-hairline);margin-top:auto}
+.pg-modo__uso .iap-checklist{gap:var(--space-3)}
+.pg-modo__uso .iap-checklist__item{font-size:var(--size-sm)}
+.pg-modo__rotulo{font:var(--text-eyebrow);text-transform:uppercase;letter-spacing:var(--track-caps);color:var(--text-caption)}
+
+/* Conversa: o que a IA lê antes de responder */
+.pg-conversa{display:flex;flex-direction:column;gap:var(--space-3);padding:var(--space-4);background:var(--paper-1);border:var(--border-hairline) solid var(--line-hairline);border-radius:var(--radius-md)}
+.pg-lida{display:flex;flex-direction:column;gap:var(--space-3);padding:var(--space-4) var(--space-3) var(--space-3);border:var(--border-ink) dashed var(--lousa-500);border-radius:var(--radius-md);position:relative}
+.pg-lida__rotulo{position:absolute;top:-9px;left:10px;padding:0 6px;background:var(--paper-1);font:var(--text-eyebrow);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--lousa-600)}
+.pg-msg{max-width:88%;font:var(--text-caption-font);color:var(--text-muted);padding:6px 10px;border-radius:10px}
+.pg-msg--voce{align-self:flex-end;background:var(--lousa-100);color:var(--ink-1)}
+.pg-msg--nova{border:var(--border-ink) solid var(--lousa-500)}
+.pg-msg--ia{align-self:flex-start;display:flex;flex-direction:column;gap:5px;width:78%;background:var(--paper-0);border:var(--border-hairline) solid var(--line-hairline)}
+.pg-msg--ia b{display:block;height:5px;border-radius:var(--radius-pill);background:var(--ink-5)}
+.pg-msg--duvida{align-self:flex-start;font-style:italic;color:var(--terracota-600);background:var(--terracota-100)}
+
+/* Texto corrigido: mudanças pedidas e não pedidas */
+.pg-versao{font-size:var(--size-sm);line-height:var(--lh-relaxed);color:var(--text-body);padding:var(--space-4);background:var(--paper-1);border:var(--border-hairline) solid var(--line-hairline);border-radius:var(--radius-md)}
+.pg-versao strong{font-family:var(--font-display)}
+.pg-pedida{background:var(--ocre-300);color:var(--ink-1);padding:0 3px;border-radius:3px}
+.pg-extra{background:var(--terracota-100);color:var(--terracota-600);padding:0 1px;border-radius:3px;text-decoration:underline wavy var(--terracota-500);text-underline-offset:3px;text-decoration-thickness:1px}
+.pg-legenda{display:flex;flex-wrap:wrap;gap:var(--space-3) var(--space-6);font:var(--text-caption-font);color:var(--text-caption)}
+.pg-legenda span{display:inline-flex;align-items:center;gap:var(--space-3)}
+.pg-legenda i{display:inline-block;width:22px;height:12px;border-radius:3px}
+.pg-nota{font:var(--text-caption-font);color:var(--text-caption)}
+
+/* Trechos de respostas da turma */
+.pg-trechos{display:flex;flex-direction:column;gap:var(--space-7);margin:var(--space-4) 0}
+
+/* Seção Atenção */
+.pg-atencao{display:flex;flex-direction:column;gap:var(--space-5);margin:var(--space-3) 0}
+.pg-ajuste{display:flex;flex-direction:column;background:var(--surface-card);border:var(--border-hairline) solid var(--line-hairline);border-radius:var(--radius-card);overflow:hidden}
+.pg-ajuste__ideia{display:flex;gap:var(--space-4);align-items:flex-start;padding:var(--space-5) var(--space-6);border-bottom:var(--border-hairline) solid var(--line-hairline)}
+.pg-ajuste__ideia .ico{color:var(--terracota-500);margin-top:3px}
+.pg-prose .pg-ajuste__ideia p{font-family:var(--font-display);font-weight:var(--weight-semibold);font-size:var(--size-lg);line-height:var(--lh-snug);letter-spacing:var(--track-snug);color:var(--text-body)}
+.pg-ajuste__fato{display:flex;gap:var(--space-4);align-items:flex-start;padding:var(--space-5) var(--space-6)}
+.pg-ajuste__fato .ico{color:var(--lousa-500);margin-top:5px}
+.pg-ajuste__fato div{display:flex;flex-direction:column;gap:var(--space-3)}
+.pg-prose .pg-ajuste__fato p{font-size:var(--size-md);line-height:var(--lh-relaxed)}
+
+.pg-footer{background:var(--ink-1);color:var(--paper-0);padding:var(--space-10) var(--space-8) var(--space-8)}
+.pg-footer__in{max-width:var(--container);margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end;gap:var(--space-8);flex-wrap:wrap}
+.pg-footer__brand{font-family:var(--font-display);font-weight:var(--weight-semibold);font-size:22px;line-height:1.05;letter-spacing:-.03em}
+.pg-footer p{font-size:var(--size-sm);line-height:1.6;color:var(--paper-3);max-width:38ch;margin-top:14px}
+.pg-footer a{color:var(--paper-2);text-decoration:none;font-size:var(--size-sm)}
+.pg-footer a:hover{color:var(--ocre-300)}
+
+@media (max-width:760px){
+  .pg-header__in{padding:12px 16px}
+  .pg-post{padding:var(--space-9) 16px var(--space-11)}
+  .pg-duas{grid-template-columns:1fr}
+  .iap-quote__text{font-size:var(--size-md)}
+  .pg-ajuste__ideia,.pg-ajuste__fato{padding:var(--space-5)}
+  .pg-footer{padding:var(--space-9) 16px var(--space-8)}
+}
+</style>
+
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+</svg>
+
+<header class="pg-header">
+  <div class="pg-header__in">
+    <a class="pg-wordmark" href="./">Inteligência Artificial para Educadores</a>
+    <a class="iap-btn iap-btn--ghost" href="./"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-left"/></svg>Voltar ao curso</a>
+  </div>
+</header>
+
+<main>
+  <article class="pg-post">
+    <header class="pg-post__head">
+      <span class="iap-eyebrow">Tópico 1 · A IA já está aqui</span>
+      <h1 class="pg-post__title">Revisão: Tópicos 1.2 a 1.4</h1>
+      <p class="pg-post__lead">Vamos revisar o que aprendemos, a partir das ideias trazidas por vocês nas respostas às questões.</p>
+      <div class="pg-byline">
+        <img class="pg-byline__foto" src="assets/avatar-raul.webp" width="48" height="48" alt="">
+        <div>
+          <p class="pg-byline__nome">Raul Cabral França</p>
+          <p class="pg-byline__meta"><time datetime="2026-10-05">5 de outubro de 2026</time></p>
+        </div>
+      </div>
+    </header>
+
+    <div class="pg-prose">
+
+      <div class="pg-secao">
+        <h2>Questão 1</h2>
+        <p class="pg-secao__enunciado">Qual a diferença entre começar uma conversa do zero no ChatGPT ou continuar uma conversa já existente? Em quais casos você deve escolher cada opção?</p>
+      </div>
+
+      <h3>Na mesma conversa, a IA relê tudo o que veio antes</h3>
+
+      <p>Cada vez que você envia uma mensagem, o ChatGPT não lê só ela: <strong>lê a conversa inteira</strong>, com seus pedidos e as respostas dele, e escreve uma continuação. Foi por isso que, no vídeo T1.3, bastou ditar que, na terça-feira, a corrida da coleta viraria uma brincadeira cooperativa. O contexto da Semana da Criança já estava lá.</p>
+
+      <p>Uma conversa nova começa sem nada disso. A IA volta a ser a estagiária no primeiro dia: não conhece a escola, a turma nem o que foi combinado.</p>
+
+      <div class="pg-duas">
+        <div class="pg-modo">
+          <span class="pg-modo__verbo">Continuar</span>
+          <p class="pg-modo__nome">Mesma conversa</p>
+          <div class="pg-conversa" aria-hidden="true">
+            <div class="pg-lida">
+              <span class="pg-lida__rotulo">O que a IA lê</span>
+              <span class="pg-msg pg-msg--voce">Trabalho em um CMEI e estamos planejando a Semana da Criança…</span>
+              <span class="pg-msg pg-msg--ia"><b style="width:94%"></b><b style="width:80%"></b><b style="width:62%"></b></span>
+              <span class="pg-msg pg-msg--voce">São crianças de 0 a 4 anos…</span>
+              <span class="pg-msg pg-msg--ia"><b style="width:90%"></b><b style="width:70%"></b></span>
+              <span class="pg-msg pg-msg--voce pg-msg--nova">Na terça, troque a corrida por uma brincadeira cooperativa.</span>
+            </div>
+          </div>
+          <p>O pedido curto funciona, porque tudo o que veio antes entra como contexto.</p>
+          <div class="pg-modo__uso">
+            <span class="pg-modo__rotulo">Mais adequado para</span>
+            <ul class="iap-checklist">
+              <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-check"/></svg><span>Refinar ou ampliar o mesmo trabalho.</span></li>
+              <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-check"/></svg><span>Trazer para o texto o que a equipe decidiu.</span></li>
+              <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-check"/></svg><span>Retomar em outro aparelho, com a mesma conta.</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="pg-modo">
+          <span class="pg-modo__verbo">Começar do zero</span>
+          <p class="pg-modo__nome">Conversa nova</p>
+          <div class="pg-conversa" aria-hidden="true">
+            <div class="pg-lida">
+              <span class="pg-lida__rotulo">O que a IA lê</span>
+              <span class="pg-msg pg-msg--voce pg-msg--nova">Na terça, troque a corrida por uma brincadeira cooperativa.</span>
+            </div>
+            <span class="pg-msg pg-msg--duvida">Que terça? Que corrida? Para quem?</span>
+          </div>
+          <p>O mesmo pedido curto fica sem sentido. Numa conversa nova, o contexto precisa ser dado de novo.</p>
+          <div class="pg-modo__uso">
+            <span class="pg-modo__rotulo">Mais adequado para</span>
+            <ul class="iap-checklist">
+              <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-check"/></svg><span>Outro assunto ou outra tarefa.</span></li>
+              <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-check"/></svg><span>Evitar que pedidos diferentes se misturem.</span></li>
+              <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-check"/></svg><span>Recomeçar quando a conversa ficou confusa.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <p>A regra prática que apareceu em muitas respostas resume bem: <strong>mesma tarefa, mesma conversa; outra tarefa, conversa nova</strong>. A conversa antiga não se perde: fica salva na lista da sua conta, e você pode voltar a ela quando quiser.</p>
+
+      <h4>Boas ideias da turma</h4>
+
+      <div class="pg-trechos">
+        <blockquote class="iap-quote">
+          <p class="iap-quote__text">“Quando você conversa com a IA, ela lê o histórico daquela conversa específica para entender o fio da meada.”</p>
+        </blockquote>
+        <blockquote class="iap-quote">
+          <p class="iap-quote__text">“Agora, começar uma conversa nova é o nosso famoso "apagar a lousa". É a regra de ouro para quando você vai mudar totalmente de assunto.”</p>
+        </blockquote>
+        <blockquote class="iap-quote">
+          <p class="iap-quote__text">“Ex: estava pedindo ideias para a Semana da Criança e agora quero ajuda para escrever um bilhete para os pais sobre piolho. Se eu continuar na mesma conversa, a IA pode misturar os assuntos.”</p>
+        </blockquote>
+        <blockquote class="iap-quote">
+          <p class="iap-quote__text">“Começar do zero é como falar com alguém que nunca me viu. […] Continuar uma conversa já existente é como continuar falando com a mesma pessoa, ela já lembra do tema, do estilo de texto que pedi, da turma que estou trabalhando, etc.”</p>
+        </blockquote>
+      </div>
+
+      <p>A comparação com uma pessoa ajuda a escolher entre as duas opções. Só que <i>a pessoa guarda lembranças, e a IA relê o texto</i>. A “memória” dela é a própria conversa, escrita na tela, e vale só para aquela conversa.</p>
+
+      <div class="pg-secao">
+        <h2>Questão 2</h2>
+        <p class="pg-secao__enunciado">Quando a IA entrega um texto e você tem pequenas correções pontuais a fazer, é melhor enviar uma nova mensagem pedindo as correções ou fazer a correção você mesmo, no texto final? Por quê?</p>
+      </div>
+
+      <h3>Para um detalhe, corrija você mesmo</h3>
+
+      <p>A IA não edita o texto que já existe. A cada pedido, <strong>ela gera uma versão nova inteira</strong>, e nessa nova versão pode mudar o que ninguém pediu: simplificar uma atividade, trocar uma palavra, tirar um detalhe que estava bom. Foi o que o vídeo T1.3 mostrou: depois de cada mensagem, é preciso conferir tudo de novo.</p>
+
+      <div class="pg-duas">
+        <div class="pg-modo">
+          <span class="pg-modo__verbo">Você corrige</span>
+          <p class="pg-modo__nome">No Google Docs</p>
+          <p class="pg-versao"><strong>Terça-feira.</strong> Coleta coletiva: as crianças recolhem garrafas PET e tampinhas pelo <span class="pg-pedida">parque</span> e, juntas, enchem o grande cesto da turma.</p>
+          <p>Muda só o que você mudou. O resto continua igual à versão que a equipe aprovou.</p>
+        </div>
+        <div class="pg-modo">
+          <span class="pg-modo__verbo">Você pede à IA</span>
+          <p class="pg-modo__nome">“Troque pátio por parque”</p>
+          <p class="pg-versao"><strong>Terça-feira.</strong> <span class="pg-extra">Mutirão da reciclagem</span>: <span class="pg-extra">os pequenos juntam</span> tampinhas e garrafas PET pelo <span class="pg-pedida">parque</span> e <span class="pg-extra">depositam tudo em caixas coloridas</span>.</p>
+          <p>A palavra foi trocada, mas o texto voltou diferente. Agora é preciso reler tudo.</p>
+        </div>
+      </div>
+      <div class="pg-legenda">
+        <span><i style="background:var(--ocre-300)"></i>Mudança pedida</span>
+        <span><i style="background:var(--terracota-100);border:1px solid var(--terracota-500)"></i>Mudança que ninguém pediu</span>
+      </div>
+      <p class="pg-nota">Exemplo ilustrativo. A versão gerada muda a cada pedido; às vezes muda pouco, às vezes muito.</p>
+
+      <p>Há também uma questão de tempo: escrever o pedido de correção dá mais trabalho do que fazer a correção. E há uma questão de autoria. No vídeo T1.4, a IA deu o ponto de partida, e <strong>a revisão e a versão final ficaram com os profissionais</strong>.</p>
+
+      <p>Pedir à IA continua sendo uma boa opção quando a mudança mexe na estrutura: reorganizar o planejamento, substituir uma atividade inteira, encurtar um parágrafo. Nesses casos, reescrever é justamente o que você quer.</p>
+
+      <h4>Boas ideias da turma</h4>
+
+      <div class="pg-trechos">
+        <blockquote class="iap-quote">
+          <p class="iap-quote__text">“[…] a IA não funciona como nós, que vamos lá com uma borracha, apagamos só uma palavra e escrevemos outra por cima. Quando pedimos para ela alterar um detalhezinho, a ferramenta costuma regerar o bloco de texto inteiro.”</p>
+        </blockquote>
+        <blockquote class="iap-quote">
+          <p class="iap-quote__text">“[…] a cada novo pedido para a IA é possível que pequenas alterações sejam feitas por ela, o que acarretaria em novas correções, gerando mais trabalho.”</p>
+        </blockquote>
+        <blockquote class="iap-quote">
+          <p class="iap-quote__text">“Além de ser mais rápido escrever as próprias alterações ao invés de escrever um pedido de alteração.”</p>
+        </blockquote>
+        <blockquote class="iap-quote">
+          <p class="iap-quote__text">“Eu só peço para a IA corrigir quando a correção muda a estrutura do texto tipo: refaça esse parágrafo para ser mais curto.”</p>
+        </blockquote>
+      </div>
+
+      <div class="pg-secao pg-secao--atencao">
+        <h2>Atenção!</h2>
+        <p class="pg-secao__enunciado">Cinco ideias para ajustar</p>
+      </div>
+
+      <p>Algumas respostas trouxeram ideias que parecem razoáveis, mas não descrevem bem como as ferramentas funcionam.</p>
+
+      <div class="pg-atencao">
+        <div class="pg-ajuste">
+          <div class="pg-ajuste__ideia"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg><p>“A cada nova pergunta, a IA esquece o que veio antes.”</p></div>
+          <div class="pg-ajuste__fato"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-check"/></svg><div>
+            <p>Dentro da mesma conversa, não esquece: cada resposta é escrita relendo as mensagens anteriores. O que acontece a cada pedido é outra coisa: o texto é gerado de novo, e por isso uma parte pode voltar diferente. É um motivo para conferir, não para recomeçar.</p>
+          </div></div>
+        </div>
+
+        <div class="pg-ajuste">
+          <div class="pg-ajuste__ideia"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg><p>“Numa conversa nova, a IA já me conhece e lembra das conversas anteriores.”</p></div>
+          <div class="pg-ajuste__fato"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-check"/></svg><div>
+            <p>A conversa nova não carrega o histórico das outras. O ChatGPT tem uma função de memória que guarda algumas informações soltas sobre você, como a profissão ou uma preferência, e pode usá-las em outras conversas. Mas ela não guarda a tarefa: a turma, o projeto, o que a equipe decidiu. Numa conversa nova, explique o contexto de novo.</p>
+          </div></div>
+        </div>
+
+        <div class="pg-ajuste">
+          <div class="pg-ajuste__ideia"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg><p>“Começar do zero sempre traz respostas mais precisas.”</p></div>
+          <div class="pg-ajuste__fato"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-check"/></svg><div>
+            <p>Sem contexto, a resposta tende a ser genérica. O que deixa a resposta precisa é o contexto certo. O problema da conversa longa é o contexto misturado, com assuntos diferentes no mesmo lugar. Por isso a conversa nova é para outra tarefa, e não para a mesma tarefa recomeçada.</p>
+          </div></div>
+        </div>
+
+        <div class="pg-ajuste">
+          <div class="pg-ajuste__ideia"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg><p>“Começar do zero é entrar sem conta; continuar é entrar com a conta.”</p></div>
+          <div class="pg-ajuste__fato"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-check"/></svg><div>
+            <p>A conta guarda todas as suas conversas. Começar do zero é clicar em “Nova conversa” dentro da mesma conta, e as anteriores continuam na lista. Usar o ChatGPT sem entrar na conta é outra situação: nada fica salvo, e não dá para retomar depois nem em outro aparelho.</p>
+          </div></div>
+        </div>
+
+        <div class="pg-ajuste">
+          <div class="pg-ajuste__ideia"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg><p>“Se a IA pediu desculpas, ela entendeu o erro e corrigiu.”</p></div>
+          <div class="pg-ajuste__fato"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-check"/></svg><div>
+            <p>O pedido de desculpas também é texto gerado: é a forma mais provável de começar uma resposta depois de uma correção. Ele não garante que a correção foi feita, nem que o resto ficou igual. Confira a nova versão inteira.</p>
+          </div></div>
+        </div>
+      </div>
+
+    </div>
+  </article>
+</main>
+
+<footer class="pg-footer">
+  <div class="pg-footer__in">
+    <div>
+      <span class="pg-footer__brand">Inteligência Artificial para Educadores</span>
+      <p>Curso de introdução à inteligência artificial para professores e gestores da Rede Municipal de Pindamonhangaba.</p>
+    </div>
+    <a href="./">Voltar à página do curso</a>
+  </div>
+</footer>
+
+</body>
+</html>

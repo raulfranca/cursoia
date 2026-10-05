@@ -57,6 +57,10 @@ O passo a passo completo — incluindo as credenciais, que não vêm pelo git �
 0.1 do `AGENTS.md` do `curso-ia-ava`, que é também onde está a regra de roteamento entre
 as pastas.
 
+Para atualizar o **painel interno da turma** (artifact "Turma IA para Educadores"), o
+passo a passo está na seção 0.2 do `AGENTS.md` do projeto de conteúdo. Os scripts e os
+dados ficam em `dados/painel/` lá, nunca aqui, porque têm dado pessoal.
+
 Quando um título ou subtítulo de tópico muda, a fonte canônica é
 `curso-topicos.md`, na raiz do projeto de conteúdo — a landing deriva dele, nunca
 o contrário.
@@ -114,3 +118,76 @@ Versão completa na seção 0.2 do `AGENTS.md` do `curso-ia-ava`.
 Português do Brasil em tudo (código, commits, conteúdo). Tom direto, frases curtas, sem emoji.
 As regras completas de voz da marca estão na seção 1 de `design/INDEX.md`; as regras de
 conteúdo pedagógico do curso estão no `AGENTS.md` do projeto `Curso IA - Conteúdo`.
+
+## Botões
+
+Botão de chamada para ação dentro de um box ou card (por exemplo, "Ir para a próxima
+leitura" no fim de um artigo) fica **centralizado horizontalmente**, abaixo do conteúdo do
+box. Estilo: `iap-btn iap-btn--lg iap-btn--ink`, com seta `i-arrow-right` depois do texto.
+Num card em coluna (`iap-card__body`), use `align-self:center`. Se a página não tiver as
+regras `iap-btn--lg`/`--ink` nem o símbolo da seta, copie-as de `index.html`.
+
+## Tempo de leitura dos artigos
+
+O `Leitura de N minutos` (`pg-post__meta`) de cada artigo HTML é **calculado, nunca estimado
+a olho**, e recalculado sempre que o texto muda. Algoritmo: **palavras ÷ 200, arredondado ao
+inteiro mais próximo, mínimo 1 minuto** (200 palavras por minuto é a faixa conservadora de
+leitura em português na tela).
+
+Conta-se o texto visível de dentro do `<article class="pg-post">`: título (h1), subtítulo
+(`pg-post__lead`) e todo o `pg-prose`, incluindo listas, quadros e callouts. Não entram:
+eyebrow, autoria e data (`pg-byline`), a própria linha de tempo, figuras (`alt` incluso) e
+ícones SVG. Palavra é qualquer trecho separado por espaço que contenha letra ou número.
+
+## Páginas de devolutiva
+
+Depois de cada bloco de questões conceituais, a turma recebe uma devolutiva coletiva em
+página HTML. Modelo: `devolutiva-t1-1.html`. Nome do arquivo: `devolutiva-t<tópico>-<n>.html`.
+
+**Por que página e não comentário:** a API do Classroom não escreve comentário em entrega
+e não devolve atividade criada pela interface. A devolutiva é coletiva, não individual.
+
+### Fluxo
+
+1. **Exportar as respostas** com `exportar-respostas.js`, no `curso-ia-ava` (ver seção 1 do
+   `AGENTS.md` de lá). O `.md` gerado tem nome de aluno: vai para
+   `devolutivas/T<n>/` no projeto de conteúdo, nunca para este repositório.
+2. **Montar a rubrica.** O agente principal lê o enunciado, o `indice-conteudo.md` e a
+   transcrição `.srt` do vídeo em `FINAL/`. A referência de correção é o que o vídeo ensinou.
+3. **Relatório por subagente Haiku** (sempre Haiku para volume de texto): nível de 1 a 5 por
+   aluno, conceitos equivocados com trechos literais, dificuldades relatadas, respostas de
+   destaque. Sai em `devolutivas/T<n>/T<x>-relatorio.md`, no projeto de conteúdo.
+4. **Conferir o relatório por script antes de usar.** O Haiku erra contas: recalcular a
+   distribuição a partir da tabela por aluno, checar que toda citação é literal e revisar
+   notas que contradizem a própria justificativa.
+5. **Escrever a página** a partir do relatório, seguindo a estrutura abaixo.
+6. Conferir em Chrome headless (desktop e 390px), e só publicar com o aval do Raul.
+
+### O que entra e o que não entra
+
+Entra: os conceitos que respondem corretamente, trechos de boas respostas e os equívocos
+desfeitos. **Não entra:** nome de aluno, nível, nota, distribuição, porcentagem ou contagem
+de quem errou. Este repositório é público. Citação é anônima e literal (corte com `[…]`,
+sem reescrever); o aluno reconhece a própria frase, e isso é desejado.
+
+### Estrutura da página
+
+- Cabeçalho, rodapé, tokens e classes copiados de `devolutiva-t1-1.html`. Diferente dos
+  artigos, **sem ilustração no topo e sem tempo de leitura**; mantém eyebrow
+  (`Tópico N · Devolutiva das questões conceituais`), h1, lead e autoria com data.
+- **Uma seção por questão**, aberta por `.pg-secao`: régua grossa de tinta no topo, `h2`
+  curto ("Questão 1") e o enunciado em `.pg-secao__enunciado`, em tamanho de leitura.
+  O enunciado nunca vira título: texto longo em letra grande polui a página.
+- Dentro da seção: `h3` com a resposta em forma de frase com verbo ("O Google encontra, o
+  ChatGPT escreve"), prosa curta, **um recurso visual** que explique o conceito (esquema
+  comparativo `.pg-duas`, gráfico de barras `.pg-grafico`, quadro de dois eixos
+  `.pg-quadro`) e um `h4` com os trechos da turma em `.iap-quote`, sem autoria.
+- Quando um trecho usa uma metáfora, dizer onde ela deixa de valer (guia de linguagem, §7).
+- **Seção "Atenção!"**, também em `.pg-secao` (`--atencao`, título em terracota): um card
+  `.pg-ajuste` por equívoco, com a ideia equivocada (x terracota) em cima e o que acontece
+  de fato (check lousa) embaixo. Escrever a ideia como frase genérica, não como citação de
+  aluno. Dúvidas que apareceram nas respostas entram logo depois, em `h4`.
+- **Fecho** em `iap-card--ink` (o único da página) com o que levar para a prática.
+
+Hierarquia: h1 da página > `h2` da seção (Questão / Atenção) > `h3` explicativo > `h4`.
+Valores de gráfico inventados para ilustrar levam a nota "Valores ilustrativos".
