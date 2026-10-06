@@ -166,13 +166,26 @@ e não devolve atividade criada pela interface. A devolutiva é coletiva, não i
 ### O que entra e o que não entra
 
 Entra: os conceitos que respondem corretamente, trechos de boas respostas e os equívocos
-desfeitos. **Não entra:** nome de aluno, nível, nota, distribuição, porcentagem ou contagem
-de quem errou. Este repositório é público. Citação é anônima e literal (corte com `[…]`,
-sem reescrever); o aluno reconhece a própria frase, e isso é desejado.
+desfeitos. **Não entra:** nível, nota, distribuição, porcentagem ou contagem de quem errou,
+nem nome ligado a equívoco. Este repositório é público. Citação é literal (corte com `[…]`,
+sem reescrever) e leva o nome completo de quem escreveu, como está no Classroom, em
+`<footer class="iap-quote__who"><strong>Nome</strong></footer>` dentro do `blockquote`.
+O nome aparece só em citação de ideia correta, nunca em equívoco.
+
+**Variar as pessoas citadas.** Antes de escolher um trecho, conferir quem já foi citado
+nas devolutivas do mesmo tópico. Só repetir alguém quando a ideia for muito boa, e evitar
+repetir no mesmo tópico e, menos ainda, na mesma questão. Havendo trecho de outra pessoa
+com o mesmo teor, usar o dela.
+
+**Autoria vem do arquivo de respostas, nunca do relatório.** Cada trecho é localizado,
+literal, no `.md` exportado (`T<x>-respostas.md`). Se o arquivo não existir, exportar pelo
+CLI do Classroom (`exportar-respostas.js`, com `CLASSROOM_SECRETS` na pasta `cursoia`)
+antes de atribuir. Não deduzir autor pelo relatório do Haiku.
 
 ### Estrutura da página
 
-- Cabeçalho, rodapé, tokens e classes copiados de `devolutiva-t1-1.html`. Diferente dos
+- Cabeçalho, rodapé, tokens e classes copiados de `devolutiva-t1-1.html`. O cabeçalho tem
+  só o wordmark: **nunca** colocar o atalho "Voltar ao curso" (em nenhuma página). Diferente dos
   artigos, **sem ilustração no topo e sem tempo de leitura**; mantém eyebrow
   (`Tópico N · Devolutiva das questões conceituais`), h1, lead e autoria com data.
 - **Uma seção por questão**, aberta por `.pg-secao`: régua grossa de tinta no topo, `h2`
@@ -181,13 +194,15 @@ sem reescrever); o aluno reconhece a própria frase, e isso é desejado.
 - Dentro da seção: `h3` com a resposta em forma de frase com verbo ("O Google encontra, o
   ChatGPT escreve"), prosa curta, **um recurso visual** que explique o conceito (esquema
   comparativo `.pg-duas`, gráfico de barras `.pg-grafico`, quadro de dois eixos
-  `.pg-quadro`) e um `h4` com os trechos da turma em `.iap-quote`, sem autoria.
+  `.pg-quadro`) e um `h4` com os trechos da turma em `.iap-quote`, com o nome do autor.
 - Quando um trecho usa uma metáfora, dizer onde ela deixa de valer (guia de linguagem, §7).
 - **Seção "Atenção!"**, também em `.pg-secao` (`--atencao`, título em terracota): um card
   `.pg-ajuste` por equívoco, com a ideia equivocada (x terracota) em cima e o que acontece
   de fato (check lousa) embaixo. Escrever a ideia como frase genérica, não como citação de
   aluno. Dúvidas que apareceram nas respostas entram logo depois, em `h4`.
 - **Fecho** em `iap-card--ink` (o único da página) com o que levar para a prática.
+- Quando existe uma devolutiva seguinte, o fim do artigo leva o botão "Ir para o próximo"
+  (`.pg-proximo` com `iap-btn--primary`) apontando para ela.
 
 Hierarquia: h1 da página > `h2` da seção (Questão / Atenção) > `h3` explicativo > `h4`.
 Valores de gráfico inventados para ilustrar levam a nota "Valores ilustrativos".
