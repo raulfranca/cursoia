@@ -135,7 +135,8 @@
       "Bash(sed -n '1,135p' *.txt)",
       "Bash(break)",
       "Bash(python \"C:/Users/rfranca/AppData/Local/Temp/claude/c--dev-cursoia/dfe5e7b6-c35e-4738-96f8-fe221d9070db/scratchpad/leitura.py\" dados-dos-alunos.html treinamento-chatgpt.html qual-ia-usar.html)",
-      "PowerShell(Get-Process | Where-Object { $_.Name -match 'whatsapp|msedgewebview2' } | Select-Object Name, Id, StartTime, @{n='Path';e={$_.Path}} | Format-Table -AutoSize)"
+      "PowerShell(Get-Process | Where-Object { $_.Name -match 'whatsapp|msedgewebview2' } | Select-Object Name, Id, StartTime, @{n='Path';e={$_.Path}} | Format-Table -AutoSize)",
+      "ClaudeInChromeDomain(studio.youtube.com)"
     ],
     "additionalDirectories": [
       "C:\\Dev\\conteudo",
