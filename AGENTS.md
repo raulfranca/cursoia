@@ -280,7 +280,8 @@ entrega também recebe um comentário particular curto ao ser devolvida (ver aba
 ### Comentário particular por aluno
 
 1. **Esqueleto do `.md` por script** (sem ler as respostas no contexto principal): um bloco
-   por entrega `TURNED_IN`, com nome, `<!-- submission: id · status: pendente · link /u/3/ -->`,
+   por entrega `TURNED_IN`, com nome, `<!-- submission: id · status: pendente · link -->`
+   (o `/u/N/` do link não importa: o script de devolução escolhe a conta pelo e-mail),
    resposta citada e `**Devolutiva:**` vazia. Vai para `devolutivas/T<n>/` no projeto de
    conteúdo (modelo: `T1.1-devolutivas-individuais.md`). O Raul (entrega de teste) fica fora.
 2. **Subagentes Haiku escrevem**, em lotes de ~20, com as regras de estilo do Raul (2 a 4
