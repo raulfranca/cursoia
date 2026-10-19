@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Do caderno ao registro de observação · Inteligência Artificial para Educadores</title>
+<meta name="description" content="Como ditar ao Gemini as anotações soltas do caderno e receber registros de observação claros, organizados por data e por área, prontos para o relatório de desenvolvimento.">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Do caderno ao registro de observação">
+<meta property="og:description" content="Como ditar ao Gemini as anotações soltas do caderno e receber registros de observação claros, organizados por data e por área, prontos para o relatório de desenvolvimento.">
+<meta property="og:url" content="https://raulfranca.github.io/cursoia/t3/ditado-observacoes.html">
+<meta property="og:image" content="https://raulfranca.github.io/cursoia/assets/ilustracoes/og-curso-ia.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Caveat:wght@400;700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS6YNMGLZ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GS6YNMGLZ9');
+</script>
+
+<link rel="stylesheet" href="../assets/artigos.css">
+
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-shield-alert" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M12 8v4"/><path d="M12 16h.01"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+</svg>
+
+<header class="pg-header">
+  <div class="pg-header__in">
+    <a class="pg-wordmark" href="../">Inteligência Artificial para Educadores</a>
+  </div>
+</header>
+
+<main>
+  <article class="pg-post">
+    <header class="pg-post__head">
+      <span class="iap-eyebrow">Tópico 3 · IA como assistente de texto</span>
+      <h1 class="pg-post__title">Do caderno ao registro de observação</h1>
+      <p class="pg-post__lead">Leia em voz alta as anotações soltas sobre a turma e deixe o Gemini passar a limpo</p>
+      <div class="pg-byline">
+        <img class="pg-byline__foto" src="../assets/avatar-raul.webp" width="48" height="48" alt="">
+        <div>
+          <p class="pg-byline__nome">Raul Cabral França</p>
+          <p class="pg-byline__meta"><time datetime="2026-10-13T12:00-03:00">13 de outubro de 2026, 12h00</time></p>
+        </div>
+      </div>
+      <p class="pg-post__meta">Leitura de 5 minutos</p>
+    </header>
+
+    <div class="pg-prose">
+      <p>No tópico 2, o relatório da Alice nasceu de registros já organizados, um por data. Na rotina, não é assim que eles nascem: aparecem no caderno, entre uma atividade e outra, em pedaços, abreviações e setas. Passar a limpo fica para depois, e o depois nem sempre chega. Aqui, a proposta é ler o caderno em voz alta, falar do jeito que vier e deixar o Gemini organizar.</p>
+
+      <h2>O ponto de partida: o caderno</h2>
+
+      <p>Estas são as anotações de um trimestre sobre a Alice, a criança do exemplo do tópico 2. Só quem escreveu entende tudo o que está aí. A IA também não vai entender, se você só fotografar a página. Mas, se você ler em voz alta e explicar cada nota como explicaria para uma colega, ela entende.</p>
+
+      <figure class="pg-caderno">
+        <div class="pg-caderno__folha">
+          <ul>
+            <li><b>3/2</b> 1º dia. Tranq., não chorou. Mãe no portão → cantinho bonecas</li>
+            <li><b>5/2</b> escolheu sozinha. "quero o carrinho vermelho"</li>
+            <li><b>12/2</b> parque: chorou p/ voltar (escorregador). conversa → mão dada</li>
+            <li><b>19/2</b> roda: cachorro. levantou antes do fim</li>
+            <li><b>26/2</b> cobra q dorme no copo: recontou início, personagens ok. "1, 2, 3 e já". 3 blocos → pegou 5</li>
+            <li><b>4/3</b> alinhavo ~15 min, terminou sozinha</li>
+            <li><b>11/3</b> circuito: 2 pés, rola, túnel. saiu no meio</li>
+            <li><b>18/3</b> descanso: correria/gritos. colo → acalmou</li>
+            <li><b>alim.</b> recusa fruta 2x, leite. jantar ok</li>
+            <li><b>banh.</b> avisa (aux. acompanha)</li>
+          </ul>
+        </div>
+        <figcaption>Anotações fictícias, coerentes com o relatório de exemplo do tópico 2.</figcaption>
+      </figure>
+
+      <h2>Primeiro a instrução, depois a fala</h2>
+
+      <p>Antes de ditar, diga ao Gemini o que ele deve fazer com o que vem depois. Sem isso, ele pode responder com um resumo, com conselhos pedagógicos ou já com um relatório pronto, quando o que você quer é só o registro passado a limpo. Digite esta instrução na caixa de texto (ou dite também):</p>
+
+      <div class="pg-prompt">
+        <span class="pg-prompt__rotulo">Instrução</span>
+        <p>Vou ditar as anotações que fiz no meu caderno sobre uma criança da turma do Infantil I A, ao longo do trimestre. Transforme o que eu falar em registros de observação claros e organizados: um registro por data, em ordem cronológica, com frases completas. Depois, agrupe as mesmas observações em quatro áreas: desenvolvimento socioemocional, aprendizagem, motricidade e cuidados. Regras: use somente o que eu disser, sem acrescentar interpretações, conclusões ou sugestões; tire as repetições e hesitações típicas da fala; se algum trecho estiver confuso ou incompleto, não adivinhe, liste no final como dúvida para eu conferir.</p>
+      </div>
+
+      <p>Cada parte da instrução tem uma função:</p>
+
+      <ul class="iap-checklist">
+        <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-check"/></svg><span><strong>As quatro áreas</strong> são as mesmas seções do relatório do tópico 2. Assim, o registro já sai organizado do jeito que o relatório vai precisar.</span></li>
+        <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-check"/></svg><span><strong>"Use somente o que eu disser"</strong> separa o registro da avaliação. Registro descreve o que aconteceu. Interpretar é tarefa sua, depois.</span></li>
+        <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-check"/></svg><span><strong>"Liste como dúvida"</strong> dá à IA uma saída que não seja inventar. Lembre do tópico 1: ela gera a continuação mais provável. Diante de uma lacuna, a tendência é preencher, a não ser que você peça outra coisa.</span></li>
+      </ul>
+
+      <h2>Ditar: leia o caderno e fale</h2>
+
+      <ol class="pg-steps">
+        <li class="pg-step">
+          <span class="pg-step__num">1</span>
+          <figure class="pg-shot pg-shot--media"><img src="../assets/capturas/ditado-1-microfone.webp" width="772" height="232" alt="Caixa de texto do Gemini com o cursor sobre o ícone de microfone e a dica Ditar, com o atalho Ctrl Shift D" loading="lazy"></figure>
+          <p>Depois de digitar a instrução, pule uma linha (Shift + Enter) e clique no <strong>microfone</strong> da caixa de texto, ou use o atalho Ctrl + Shift + D. Na primeira vez, o Chrome pergunta se o Gemini pode usar o microfone. Clique em <strong>Permitir</strong>. A permissão vale só para esse site e pode ser retirada no ícone à esquerda do endereço.</p>
+        </li>
+        <li class="pg-step">
+          <span class="pg-step__num">2</span>
+          <figure class="pg-shot pg-shot--media"><img src="../assets/capturas/ditado-2-fala.webp" width="698" height="275" alt="Caixa de texto do Gemini com um longo trecho ditado, sem pontuação: alinhavo ficou concentrada uns 15 minutos terminou o cartão sozinha, dia 11 circuito pulou com os dois pés, e assim por diante" loading="lazy"></figure>
+          <p>Leia o caderno em voz alta, completando o que cada nota quer dizer. Não precisa se preocupar com pontuação, ordem perfeita ou um "ah, e..." no final. O texto chega à caixa todo emendado, como na imagem. Comece cada nota pela data ("dia 12"): é por ela que o Gemini vai se guiar. Antes de enviar, só confira se o ditado não trocou um nome ou um número.</p>
+        </li>
+      </ol>
+
+      <h2>O que volta</h2>
+
+      <p>Em menos de um minuto, os fragmentos viram frases completas, em ordem. "Pro" vira "para", o "então vamos lá" desaparece, e a fala do caderno, entre aspas, continua entre aspas.</p>
+
+      <figure class="pg-shot"><img src="../assets/capturas/ditado-3-registros.webp" width="747" height="563" alt="Resposta do Gemini com os registros em ordem cronológica, de 3 de fevereiro a 4 de março, cada um com a data em negrito e um parágrafo curto" loading="lazy"><figcaption>Primeira parte da resposta: um registro por data.</figcaption></figure>
+
+      <p>Na segunda parte, as mesmas observações aparecem nas quatro áreas do relatório.</p>
+
+      <figure class="pg-shot"><img src="../assets/capturas/ditado-4-areas.webp" width="747" height="375" alt="Agrupamento do Gemini na área Desenvolvimento socioemocional, com registros como Dificuldade na transição, Participação inicial e dispersão, e Opção por brincar sozinha após concluir o circuito" loading="lazy"><figcaption>Segunda parte: as mesmas observações, agrupadas por área.</figcaption></figure>
+
+      <p>Na terceira parte, as dúvidas: o Gemini percebeu que "recusou fruta duas vezes essa semana" não dizia se aquilo valia só para aquela semana ou para o trimestre inteiro. É justamente a pergunta que faltava fazer.</p>
+
+      <figure class="pg-shot"><img src="../assets/capturas/ditado-5-duvidas.webp" width="747" height="230" alt="Seção Dúvidas e trechos para conferir, com três perguntas: a abrangência da alimentação, a contagem dos blocos e o título da história" loading="lazy"><figcaption>As dúvidas que a instrução pediu para listar, em vez de adivinhar.</figcaption></figure>
+
+      <h2>Revise antes de usar</h2>
+
+      <p>Mesmo com a regra "use somente o que eu disser", a primeira resposta trouxe três tipos de problema. Os trechos destacados mostram onde:</p>
+
+      <div class="pg-versao">
+        <strong>11/03:</strong> Opção por brincar sozinha no canto <span class="pg-extra">após concluir o circuito</span>.<br>
+        <strong>12/02:</strong> <span class="pg-extra">Dificuldade na transição</span>/encerramento da atividade no parque.<br>
+        <strong>19/02:</strong> Participação inicial na roda de conversa e <span class="pg-extra">dispersão</span> antes do encerramento.<br>
+        <strong>05/02:</strong> Escolheu <span class="pg-extra">sozinhos</span> onde queria brincar.
+      </div>
+
+      <ul class="iap-checklist iap-checklist--nao">
+        <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-x"/></svg><span><strong>Fato trocado.</strong> No ditado, a Alice "saiu do circuito" no meio. No agrupamento, ela foi brincar "após concluir o circuito". O sentido ficou invertido.</span></li>
+        <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-x"/></svg><span><strong>Rótulos.</strong> "Dificuldade na transição", "dispersão" e "agitação" são interpretações que o professor não fez. Num documento que a família vai ler, cada palavra faz diferença.</span></li>
+        <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-x"/></svg><span><strong>Erro de português.</strong> "Escolheu sozinhos". A IA também erra concordância.</span></li>
+      </ul>
+
+      <p>A correção é na mesma conversa, e pode ser falada também. Responda às dúvidas e diga o que precisa mudar:</p>
+
+      <figure class="pg-shot pg-shot--media"><img src="../assets/capturas/ditado-6-resposta.webp" width="673" height="201" alt="Caixa de texto do Gemini com a resposta ditada: a alimentação vale para o trimestre todo, nos blocos não teve nova tentativa, o nome da história está certo, no dia 11 de março ela não concluiu o circuito, e tire os rótulos" loading="lazy"></figure>
+
+      <figure class="pg-shot"><img src="../assets/capturas/ditado-7-corrigido.webp" width="747" height="269" alt="Versão corrigida dos registros de 11 e 18 de março e um registro novo sobre a alimentação ao longo do trimestre" loading="lazy"><figcaption>A versão corrigida: o circuito ficou certo, e "agitação" deu lugar a "correu e gritou".</figcaption></figure>
+
+      <p>A nova versão resolveu o que foi pedido, mas trouxe outra mudança: "recusou fruta duas vezes essa semana" virou "duas vezes por semana" ao longo do trimestre. Não é a mesma coisa. Corrigir uma parte pode mexer em outra, por isso a leitura final é feita com o caderno do lado, conferindo datas, números, quem fez o quê e o que foi ou não concluído.</p>
+
+      <div class="iap-callout iap-callout--brand">
+        <svg class="ico ico--lg iap-callout__icon" aria-hidden="true"><use href="#i-shield-alert"/></svg>
+        <div>
+          <p class="iap-callout__title">Observação sobre aluno, só no Gemini institucional</p>
+          <p class="iap-callout__body">É dado pessoal de criança, protegido pela LGPD. Faça no computador ou no Chromebook, com a conta da rede, mesmo que ditar no ChatGPT do celular pareça mais cômodo. O porquê está em <a href="../t2/dados-dos-alunos.html">Dados de aluno só em conta institucional</a>.</p>
+        </div>
+      </div>
+
+      <h2>Daqui para o relatório</h2>
+
+      <p>Esses registros são a matéria-prima do vídeo do tópico 2. Abra uma nova conversa, cole o comando do relatório (ou o prompt gerado a partir do seu modelo) e, no fim, os registros revisados. A regra também vale para o ditado: <strong>uma criança, uma conversa</strong>. Assim, as anotações de uma criança não se misturam às de outra.</p>
+
+      <h3>Dicas</h3>
+
+      <ul class="iap-checklist">
+        <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-check"/></svg><span>Guarde a instrução num documento e cole sempre a mesma. Ajuste as áreas ao modelo de relatório da sua etapa.</span></li>
+        <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-check"/></svg><span>Diga a data antes de cada nota. Sem ela, o Gemini pode juntar observações de dias diferentes.</span></li>
+        <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-check"/></svg><span>Não precisa esperar o fim do trimestre. Ditar as notas da semana na sexta-feira dá menos trabalho e você ainda lembra do contexto.</span></li>
+        <li class="iap-checklist__item"><svg class="ico ico--sm iap-checklist__mark" aria-hidden="true"><use href="#i-check"/></svg><span>Quando o ditado errar um nome, corrija antes de enviar. Depois, o erro se espalha por todos os registros.</span></li>
+      </ul>
+    </div>
+  </article>
+</main>
+
+<footer class="pg-footer">
+  <div class="pg-footer__in">
+    <div>
+      <span class="pg-footer__brand">Inteligência Artificial para Educadores</span>
+      <p>Curso de introdução à inteligência artificial para professores e gestores da Rede Municipal de Pindamonhangaba.</p>
+    </div>
+    <a href="../">Voltar à página do curso</a>
+  </div>
+</footer>
+
+</body>
+</html>

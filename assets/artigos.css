@@ -77,6 +77,9 @@ img{display:block;max-width:100%;height:auto}
 .iap-btn--ink{background:var(--accent-highlight);color:var(--ink-1);border-color:var(--line-strong);box-shadow:var(--shadow-ink-sm)}
 .iap-btn--ink:hover{color:var(--ink-1);box-shadow:var(--shadow-ink);transform:translate(-1px,-1px)}
 .iap-btn--ink:active{box-shadow:0 0 0 0 var(--ink-1);transform:translate(2px,2px)}
+/* Botão discreto: navegação e ações secundárias */
+.iap-btn--quieto{background:var(--paper-0);color:var(--text-body);border-color:var(--line-strong)}
+.iap-btn--quieto:hover{background:var(--paper-2);color:var(--text-body)}
 
 .iap-illo{display:block;background:var(--paper-1);overflow:hidden;margin:0}
 .iap-illo--framed{border:var(--border-hairline) solid var(--line-hairline);border-radius:var(--radius-card)}
@@ -97,6 +100,7 @@ img{display:block;max-width:100%;height:auto}
 .iap-checklist{display:flex;flex-direction:column;gap:var(--space-4)}
 .iap-checklist__item{display:flex;gap:var(--space-4);font-size:var(--size-md);line-height:var(--lh-relaxed);color:var(--text-muted)}
 .iap-checklist__mark{flex:none;margin-top:5px;color:var(--accent-primary)}
+.iap-checklist--nao .iap-checklist__mark{color:var(--terracota-500)}
 
 /* Citação: fala em Bricolage, autor em Instrument Sans com o nome em negrito */
 .iap-quote{margin:0;padding:var(--space-2) 0 var(--space-2) var(--space-6);border-left:var(--border-heavy) solid var(--lousa-500)}
@@ -167,6 +171,20 @@ img{display:block;max-width:100%;height:auto}
 .pg-shot figcaption{font:var(--text-caption-font);color:var(--text-caption);padding:var(--space-3) var(--space-5);border-top:var(--border-hairline) solid var(--line-hairline)}
 .pg-shot--estreita{max-width:300px}
 .pg-shot--media{max-width:464px}
+
+/* Página de caderno com anotações à mão */
+.pg-caderno{margin:var(--space-3) 0;background:var(--paper-0);border:var(--border-hairline) solid var(--line-hairline);border-radius:var(--radius-card);overflow:hidden}
+.pg-caderno__folha{padding:var(--space-6) var(--space-6) var(--space-6) 64px;position:relative}
+.pg-caderno__folha::before{content:"";position:absolute;top:0;bottom:0;left:46px;border-left:var(--border-hairline) solid var(--terracota-300)}
+.pg-caderno ul{display:flex;flex-direction:column}
+.pg-caderno li{font-family:"Caveat",cursive;font-size:23px;line-height:1.5;color:var(--ink-2);border-bottom:var(--border-hairline) solid var(--lousa-100);padding-top:2px}
+.pg-caderno li b{font-weight:700;color:var(--lousa-700);margin-right:6px}
+.pg-caderno figcaption{font:var(--text-caption-font);color:var(--text-caption);padding:var(--space-3) var(--space-5);border-top:var(--border-hairline) solid var(--line-hairline)}
+
+/* Instrução para copiar */
+.pg-prompt{display:flex;flex-direction:column;gap:var(--space-3);padding:var(--space-5) var(--space-6);background:var(--paper-0);border:var(--border-ink) solid var(--line-strong);border-radius:var(--radius-card);box-shadow:var(--shadow-ink-sm)}
+.pg-prompt__rotulo{font:var(--text-eyebrow);text-transform:uppercase;letter-spacing:var(--track-caps);color:var(--lousa-600)}
+.pg-prose .pg-prompt p{font-size:var(--size-md);line-height:var(--lh-relaxed);color:var(--text-body)}
 
 /* Chamada para a próxima leitura */
 .pg-prose .pg-next__cta{align-self:center;margin-top:var(--space-4)}
@@ -283,6 +301,10 @@ img{display:block;max-width:100%;height:auto}
   .pg-post__figure{margin:var(--space-8) 0}
   .pg-tools,.pg-duas{grid-template-columns:1fr}
   .pg-step{column-gap:var(--space-3)}
+  .pg-caderno__folha{padding:var(--space-5) var(--space-4) var(--space-5) 44px}
+  .pg-caderno__folha::before{left:30px}
+  .pg-caderno li{font-size:20px}
+  .pg-prompt{padding:var(--space-5)}
   .iap-card__body{padding:var(--space-7) var(--space-6)}
   .iap-quote__text{font-size:var(--size-md)}
   .pg-grafico{padding:var(--space-6) var(--space-5)}
@@ -293,4 +315,181 @@ img{display:block;max-width:100%;height:auto}
 }
 @media (min-width:761px) and (max-width:900px){
   .pg-post__figure{margin-left:0;margin-right:0}
+}
+
+/* ============================================================
+   Tutorial guiado: uma tela, um passo por vez (prefixo tt-)
+   Ativado por <body class="pg-tutorial">. Modelo: t3/ditado-tutorial.html
+   ============================================================ */
+.pg-tutorial{display:flex;flex-direction:column;height:100dvh;overflow:hidden}
+.pg-tutorial .pg-header__in{max-width:1280px}
+.tt-topo{display:flex;align-items:center;gap:var(--space-5)}
+.tt-progresso{display:flex;gap:4px}
+.tt-progresso i{display:block;width:22px;height:4px;border-radius:var(--radius-pill);background:var(--paper-3);transition:var(--transition-ui)}
+.tt-progresso i.feito{background:var(--lousa-300)}
+.tt-progresso i.agora{background:var(--lousa-500)}
+.tt-contagem{min-width:88px;text-align:right;white-space:nowrap;font:var(--text-eyebrow);letter-spacing:.06em;color:var(--text-caption)}
+
+.tt-palco{flex:1;min-height:0;position:relative}
+.tt-passo{position:absolute;inset:0;display:none;grid-template-columns:minmax(0,1.3fr) minmax(320px,.7fr);gap:var(--space-10);max-width:1280px;margin:0 auto;padding:var(--space-8)}
+.tt-passo.ativo{display:grid;animation:tt-entra .32s var(--ease-out)}
+@keyframes tt-entra{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.tt-passo.ativo{animation:none}}
+
+/* A "mesa": a parte visual de cada passo fica numa área rebaixada. O padding dá
+   folga às sombras desenhadas, que o overflow cortaria rente à borda. */
+.tt-visual{min-height:0;display:flex;align-items:center;justify-content:center;overflow:auto;background:var(--paper-2);border-radius:22px;padding:var(--space-9)}
+.tt-texto{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:var(--space-5);min-height:0;max-width:440px}
+.tt-num{font:var(--text-eyebrow);text-transform:uppercase;letter-spacing:var(--track-caps);color:var(--accent-secondary)}
+.tt-titulo{font-family:var(--font-display);font-weight:var(--weight-semibold);font-size:clamp(30px,3.2vw,var(--size-3xl));line-height:var(--lh-tight);letter-spacing:-.03em}
+.tt-dicas{display:flex;flex-direction:column;gap:var(--space-4);padding-top:var(--space-5);border-top:var(--border-hairline) solid var(--line-hairline);width:100%}
+.tt-dicas li{display:flex;gap:var(--space-4);font-size:var(--size-md);line-height:var(--lh-normal);color:var(--text-muted)}
+.tt-dicas li::before{content:"";flex:none;width:7px;height:7px;margin-top:8px;border-radius:var(--radius-pill);background:var(--ocre-500)}
+.tt-dicas strong{color:var(--text-body);font-weight:var(--weight-semibold)}
+.tt-aviso{font:var(--text-small);color:var(--lousa-700);background:var(--lousa-100);border:var(--border-hairline) solid var(--lousa-300);border-radius:var(--radius-md);padding:var(--space-4) var(--space-5)}
+.tt-aviso--alerta{color:var(--terracota-600);background:var(--terracota-100);border-color:var(--terracota-300)}
+.tt-copiar{align-self:flex-start;margin-top:var(--space-3)}
+
+/* Rodapé */
+.tt-rodape{border-top:var(--border-hairline) solid var(--line-hairline);background:var(--paper-1)}
+.tt-rodape__in{max-width:1280px;margin:0 auto;padding:var(--space-4) var(--space-8);display:flex;align-items:center;gap:var(--space-6)}
+.tt-rodape .iap-btn[disabled]{visibility:hidden}
+.tt-atalho{display:flex;align-items:center;gap:var(--space-2);margin-right:auto;font:var(--text-caption-font);color:var(--text-caption)}
+.tt-atalho kbd{display:inline-grid;place-items:center;min-width:24px;height:22px;padding:0 5px;font:500 14px/1 var(--font-body);color:var(--ink-2);background:var(--paper-0);border:var(--border-hairline) solid var(--ink-5);border-bottom-width:2px;border-radius:var(--radius-sm)}
+.tt-seguir{display:flex;flex-direction:column;align-items:flex-end;gap:2px;text-align:right}
+.tt-seguir span{font:var(--text-eyebrow);text-transform:uppercase;letter-spacing:var(--track-caps);color:var(--text-caption)}
+.tt-seguir b{font-family:var(--font-display);font-weight:var(--weight-semibold);font-size:var(--size-sm);letter-spacing:var(--track-snug);color:var(--text-body)}
+.tt-seguir:empty{display:none}
+
+/* ---------- Capa ---------- */
+.tt-capa{grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);align-items:center}
+.tt-capa .tt-texto{max-width:520px;gap:var(--space-6)}
+.tt-capa .tt-titulo{font-size:clamp(44px,5.4vw,61px);letter-spacing:-.035em}
+.tt-capa__lead{font:var(--text-lead);color:var(--text-muted);max-width:30ch}
+.tt-capa__meta{display:flex;flex-wrap:wrap;gap:var(--space-3)}
+.tt-capa__meta li{display:inline-flex;align-items:center;gap:var(--space-3);padding:6px 12px 6px 10px;font:var(--text-small);color:var(--text-muted);background:var(--paper-0);border:var(--border-hairline) solid var(--line-hairline);border-radius:var(--radius-pill)}
+.tt-capa__meta .ico{color:var(--lousa-500)}
+.tt-capa__meta b{color:var(--text-body);font-weight:var(--weight-semibold)}
+.tt-capa .iap-btn--ink{margin-top:var(--space-3)}
+.tt-capa .tt-visual{height:100%;max-height:640px;padding:var(--space-8) var(--space-9)}
+
+/* Esquema do processo: caderno → voz → registro */
+.tt-fluxo{display:flex;flex-direction:column;width:100%;max-width:500px}
+.tt-fluxo > *{animation:tt-surge .5s var(--ease-out) both}
+.tt-fluxo > :nth-child(2){animation-delay:.12s}
+.tt-fluxo > :nth-child(3){animation-delay:.24s}
+.tt-fluxo > :nth-child(4){animation-delay:.36s}
+.tt-fluxo > :nth-child(5){animation-delay:.48s}
+@keyframes tt-surge{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.tt-fluxo > *{animation:none}}
+.tt-fluxo__etiqueta{display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-3);font:var(--text-eyebrow);text-transform:uppercase;letter-spacing:var(--track-caps);color:var(--lousa-600)}
+
+.tt-fluxo__caderno{position:relative;width:90%;align-self:flex-start;padding:var(--space-5) var(--space-6) var(--space-4) 52px;background:var(--paper-0);border:var(--border-hairline) solid var(--ink-5);border-radius:var(--radius-md);rotate:-1.5deg}
+.tt-fluxo__caderno::before{content:"";position:absolute;top:0;bottom:0;left:36px;border-left:var(--border-hairline) solid var(--terracota-300)}
+.tt-fluxo__caderno li{font-family:"Caveat",cursive;font-size:22px;line-height:1.45;color:var(--ink-2);border-bottom:var(--border-hairline) solid var(--lousa-100)}
+.tt-fluxo__caderno li b{color:var(--lousa-700);margin-right:6px}
+.tt-fluxo__nome{margin:0 0 2px;font-family:"Caveat",cursive;font-size:26px;font-weight:700;line-height:1.2;color:var(--terracota-600);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+
+.tt-fluxo__passa{display:flex;align-items:center;gap:var(--space-3);align-self:center;padding:var(--space-4) 0;font-family:"Caveat",cursive;font-size:22px;line-height:1;color:var(--terracota-600)}
+.tt-fluxo__passa .ico{color:var(--terracota-500)}
+
+.tt-fluxo__voz{display:flex;gap:var(--space-4);align-items:flex-start;width:80%;align-self:flex-end;padding:var(--space-4) var(--space-5);background:var(--paper-0);border:var(--border-hairline) solid var(--ink-5);border-radius:22px 22px 6px 22px}
+.tt-fluxo__mic{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:var(--radius-pill);background:var(--terracota-100);color:var(--terracota-500)}
+.tt-fluxo__onda{display:flex;align-items:center;gap:3px;height:16px;margin:4px 0 var(--space-3)}
+.tt-fluxo__onda i{display:block;width:3px;border-radius:2px;background:var(--terracota-300)}
+.tt-fluxo__voz p{font-size:var(--size-sm);line-height:var(--lh-normal);color:var(--text-caption)}
+
+.tt-fluxo__registro{width:92%;align-self:flex-start;padding:var(--space-5) var(--space-6);background:var(--paper-0);border:var(--border-ink) solid var(--line-strong);border-radius:var(--radius-card);box-shadow:4px 4px 0 0 var(--lousa-500)}
+.tt-fluxo__registro p{font-size:var(--size-sm);line-height:var(--lh-relaxed);color:var(--text-muted)}
+.tt-fluxo__registro p + p{margin-top:var(--space-3);padding-top:var(--space-3);border-top:var(--border-hairline) solid var(--line-hairline)}
+.tt-fluxo__registro b{font-family:var(--font-mono);font-size:var(--size-xs);font-weight:700;color:var(--lousa-700);margin-right:8px}
+
+/* ---------- Conteúdo dos passos ---------- */
+.tt-visual .pg-caderno{margin:0;width:100%;max-width:620px;max-height:100%;overflow:auto;border:var(--border-ink) solid var(--line-strong);box-shadow:var(--shadow-ink-sm)}
+.pg-caderno li{transition:background-color .2s var(--ease-out)}
+.pg-caderno li.lendo{background:var(--ocre-300)}
+.pg-caderno li.lido{color:var(--ink-4)}
+
+.tt-visual .pg-shot{width:100%;max-width:720px;box-shadow:var(--shadow-ink);border:var(--border-ink) solid var(--line-strong)}
+.tt-visual .pg-prompt{max-width:620px;padding:var(--space-7) var(--space-8);box-shadow:var(--shadow-ink)}
+.tt-visual .pg-prompt p{font-size:var(--size-md);line-height:var(--lh-relaxed);color:var(--text-body)}
+
+/* Ditado animado */
+.tt-visual--ditado{align-items:stretch;padding:var(--space-7)}
+.tt-ditado{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-6);width:100%;max-height:100%;min-height:0;align-items:stretch;padding:0 4px 4px 0}
+.tt-ditado .pg-caderno{max-height:100%}
+.tt-ditado .pg-caderno__folha{min-height:100%}
+.tt-ditado .pg-caderno li{font-size:18px;line-height:1.35}
+.tt-ditado .pg-caderno__folha{padding:var(--space-4) var(--space-4) var(--space-4) 40px}
+.tt-ditado .pg-caderno__folha::before{left:26px}
+.tt-fala{display:flex;flex-direction:column;gap:var(--space-4);padding:var(--space-5) var(--space-6);background:var(--paper-0);border:var(--border-ink) solid var(--line-strong);border-radius:22px 22px 6px 22px;box-shadow:var(--shadow-ink-sm);min-height:0}
+.tt-fala__rotulo{display:flex;align-items:center;gap:var(--space-3);font:var(--text-eyebrow);text-transform:uppercase;letter-spacing:var(--track-caps);color:var(--text-caption)}
+.tt-fala__rotulo .ico{color:var(--terracota-500)}
+.tt-fala__rotulo em{margin-left:auto;font-style:normal;color:var(--terracota-500);visibility:hidden}
+.tt-fala.ouvindo .tt-fala__rotulo em{visibility:visible}
+.tt-fala__texto{font-size:var(--size-sm);line-height:var(--lh-relaxed);color:var(--text-body);overflow:auto;flex:1;min-height:0}
+.tt-fala__texto:empty::before{content:"O que você falar aparece aqui.";color:var(--ink-4)}
+
+/* Antes e depois */
+.tt-visual--comparar{align-items:stretch;padding:var(--space-7)}
+.tt-comparar{width:100%;display:flex;flex-direction:column;gap:var(--space-3);max-height:100%;min-height:0}
+.tt-comparar__cab{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:var(--space-5);font:var(--text-eyebrow);text-transform:uppercase;letter-spacing:var(--track-caps);color:var(--text-caption);padding:0 var(--space-5)}
+.tt-pares{display:flex;flex-direction:column;gap:var(--space-2);overflow:auto;padding:2px 6px 6px 2px}
+.tt-par{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:var(--space-5);align-items:start;width:100%;padding:var(--space-3) var(--space-5);text-align:left;background:var(--paper-0);border:var(--border-ink) solid transparent;border-radius:var(--radius-md);cursor:pointer;font:inherit;color:inherit;transition:var(--transition-ui)}
+.tt-par:hover{border-color:var(--lousa-300)}
+.tt-par.aberto{border-color:var(--line-strong);box-shadow:4px 4px 0 0 var(--lousa-500)}
+.tt-par__antes{font-family:"Caveat",cursive;font-size:20px;line-height:1.25;color:var(--ink-2)}
+.tt-par__antes b{color:var(--lousa-700);margin-right:4px}
+.tt-par__depois{font-size:var(--size-sm);line-height:var(--lh-normal);color:var(--text-muted)}
+.tt-par__depois b{font-family:var(--font-mono);font-size:var(--size-xs);color:var(--lousa-700);margin-right:4px}
+.tt-par:not(.aberto) .tt-par__depois{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;color:var(--text-caption)}
+
+/* ---------- Telas médias e estreitas ---------- */
+@media (max-width:1100px){
+  .tt-passo{gap:var(--space-8)}
+  .tt-visual{padding:var(--space-7)}
+}
+@media (max-width:860px){
+  .tt-passo{grid-template-columns:1fr;grid-template-rows:minmax(0,1fr) auto;gap:var(--space-5);padding:var(--space-4) 16px var(--space-5)}
+  .tt-visual{padding:var(--space-4);border-radius:16px}
+  .tt-texto{justify-content:flex-start;gap:var(--space-3);max-height:42dvh;max-width:none;overflow:auto;padding:0 4px 4px 0}
+  .tt-titulo{font-size:24px}
+  .tt-dicas{gap:var(--space-3);padding-top:var(--space-3)}
+  .tt-dicas li{font-size:var(--size-sm)}
+  .tt-dicas li::before{margin-top:6px}
+  .tt-aviso{padding:var(--space-3) var(--space-4)}
+  .tt-rodape__in{padding:var(--space-3) 16px}
+  .pg-tutorial .pg-wordmark{font-size:15px}
+  .tt-atalho,.tt-seguir{display:none}
+  .tt-rodape [data-voltar]{margin-right:auto}
+  .tt-topo .tt-progresso{display:none}
+
+  .tt-capa{grid-template-columns:1fr;grid-template-rows:auto auto;align-content:start;overflow:auto;padding-top:var(--space-7)}
+  .tt-capa > *{min-height:auto}
+  .tt-capa .tt-texto{max-height:none;overflow:visible;gap:var(--space-4);justify-content:flex-start}
+  .tt-capa .tt-titulo{font-size:40px}
+  .tt-capa__lead{font-size:var(--size-md)}
+  .tt-capa__meta li{font-size:var(--size-xs);padding:4px 10px 4px 8px}
+  .tt-capa .tt-visual{height:auto;overflow:visible;padding:var(--space-6) var(--space-5)}
+  .tt-fluxo__caderno{width:92%;padding:var(--space-3) var(--space-4) var(--space-3) 40px}
+  .tt-fluxo__caderno::before{left:28px}
+  .tt-fluxo__caderno li{font-size:19px}
+  .tt-fluxo__caderno li + li,.tt-fluxo__registro p + p{display:none}
+  .tt-fluxo__voz{width:90%}
+  .tt-fluxo__passa{font-size:19px;padding:var(--space-3) 0}
+  .tt-fluxo__registro{width:96%;padding:var(--space-4) var(--space-5)}
+
+  .tt-visual--ditado,.tt-visual--comparar{padding:var(--space-3)}
+  .tt-ditado{gap:var(--space-3)}
+  .tt-ditado .pg-caderno li{font-size:15px}
+  .tt-ditado .pg-caderno__folha{padding:var(--space-3) var(--space-3) var(--space-3) 26px}
+  .tt-ditado .pg-caderno__folha::before{left:16px}
+  .tt-fala{padding:var(--space-4);border-radius:16px 16px 4px 16px}
+  .tt-fala__texto{font-size:var(--size-xs)}
+  .tt-par{gap:var(--space-3);padding:var(--space-3)}
+  .tt-par__antes{font-size:16px}
+  .tt-par__depois{font-size:var(--size-xs)}
+  .tt-visual .pg-prompt{padding:var(--space-5);box-shadow:var(--shadow-ink-sm)}
+  .tt-visual .pg-prompt p{font-size:var(--size-sm)}
+  .tt-visual .pg-shot{box-shadow:var(--shadow-ink-sm)}
 }
