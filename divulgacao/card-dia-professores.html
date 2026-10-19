@@ -1,0 +1,35 @@
+<!doctype html>
+<!--
+  Card 1:1 (1080×1080) do Dia dos Professores para o grupo de WhatsApp.
+  Mesma base visual de card-whatsapp.html. Renderizar com o Chrome headless:
+    "C:\Program Files\Google\Chrome\Application\chrome.exe" --headless=new --disable-gpu
+      --hide-scrollbars --allow-file-access-from-files --virtual-time-budget=4000
+      --window-size=1080,1080 --screenshot=<saida.png> file:///C:/Dev/cursoia/divulgacao/card-dia-professores.html
+-->
+<html lang="pt-BR"><head><meta charset="utf-8">
+<title>Card Dia dos Professores</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600&family=Instrument+Sans:wght@400;600&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1080px;background:#F4F1E7;color:#14130E;overflow:hidden}
+.card{width:1080px;height:1080px;padding:64px 72px 56px;display:flex;flex-direction:column}
+h1{font:600 104px/0.98 'Bricolage Grotesque',sans-serif;letter-spacing:-.035em}
+h1 em{font-style:normal;color:#2E574A}
+.illo{flex:1;display:flex;align-items:center;justify-content:center;margin:36px 0 32px;min-height:0}
+.illo img{max-width:100%;max-height:100%;display:block}
+.val{font:600 54px/1.05 'Bricolage Grotesque',sans-serif;letter-spacing:-.03em;color:#2E574A}
+.data{font:400 30px/1.2 'Instrument Sans',sans-serif;color:#14130E;margin-top:12px}
+.bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
+.ass{font:600 34px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;color:#14130E;white-space:nowrap}
+</style></head>
+<body><div class="card">
+  <h1>O seu olhar<br><em>é o que muda tudo!</em></h1>
+  <div class="illo"><img src="ilustracoes/professora-na-classe.png" alt=""></div>
+  <div class="bottom">
+    <div>
+      <div class="val">Feliz dia dos professores!</div>
+      <div class="data">15 de outubro</div>
+    </div>
+    <div class="ass">Prof. Raul</div>
+  </div>
+</div></body></html>

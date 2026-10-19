@@ -1,0 +1,52 @@
+<!doctype html>
+<!--
+  Matriz de card 1:1 (1080×1080) para o grupo de WhatsApp da turma.
+  Receita completa: seção 7.4 do AGENTS.md da pasta de conteúdo (Drive).
+
+  Trocar só o que está marcado com EDITAR. Layout, cores e fontes ficam fixos.
+  Renderizar com o Chrome headless (a partir de C:\Dev\cursoia):
+    "C:\Program Files\Google\Chrome\Application\chrome.exe" --headless=new --disable-gpu
+      --hide-scrollbars --allow-file-access-from-files --virtual-time-budget=4000
+      --window-size=1080,1080 --screenshot=<saida.png> file:///C:/Dev/cursoia/divulgacao/card-whatsapp.html
+-->
+<html lang="pt-BR"><head><meta charset="utf-8">
+<title>Card WhatsApp</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600&family=Instrument+Sans:wght@400;600&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1080px;background:#F4F1E7;color:#14130E;overflow:hidden}
+.card{width:1080px;height:1080px;padding:64px 72px 56px;display:flex;flex-direction:column}
+.top{display:flex;justify-content:space-between;align-items:center}
+.eyebrow{font:700 22px/1 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#2E574A}
+.badge{font:700 20px/1 'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase;background:#E0A02E;color:#14130E;padding:12px 22px;border-radius:999px;border:2px solid #14130E}
+h1{font:600 96px/1.0 'Bricolage Grotesque',sans-serif;letter-spacing:-.035em;margin-top:40px}
+h2{font:600 54px/1.05 'Bricolage Grotesque',sans-serif;letter-spacing:-.03em;color:#2E574A;margin-top:10px}
+/* Ilustração com fundo transparente e já recortada na cena (ver divulgacao/ilustracoes/). */
+.illo{flex:1;display:flex;align-items:center;justify-content:center;margin:22px 0 26px;min-height:0}
+.illo img{max-width:100%;max-height:100%;display:block}
+.lbl{font:700 18px/1 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#2E574A}
+.val{font:600 38px/1.1 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;margin-top:10px}
+.addr{font:400 24px/1.3 'Instrument Sans',sans-serif;margin-top:6px;color:#3D3A31}
+.foot{display:flex;justify-content:space-between;align-items:baseline;margin-top:28px;padding-top:22px;border-top:1px solid #C9C4B4;font:400 20px/1.3 'Instrument Sans',sans-serif;color:#6B675B}
+.wm{font:600 26px/1.05 'Bricolage Grotesque',sans-serif;letter-spacing:-.03em;color:#14130E}
+</style></head>
+<body><div class="card">
+  <div class="top">
+    <span class="eyebrow">Lab 1 · Vamos resolver juntos</span>  <!-- EDITAR: "Lab N · <título do lab>" -->
+    <span class="badge">Hoje</span>                                <!-- EDITAR: Hoje / Amanhã / Prazo / Novo -->
+  </div>
+  <h1>Laboratório presencial</h1>          <!-- EDITAR: o que é, em uma linha -->
+  <h2>Quinta-feira, 08/10, às 18h</h2>     <!-- EDITAR: quando, com dia, data e horário -->
+  <br>
+  <!-- EDITAR: ilustração de fundo transparente em divulgacao/ilustracoes/ (receita no AGENTS.md) -->
+  <div class="illo"><img src="ilustracoes/montando-robo.png" alt=""></div>
+  <br>
+  <div class="onde">
+    <div class="val">Secretaria Municipal de Educação</div>
+    <div class="addr">Rua General Julio Salgado, 996, Santana, Pindamonhangaba</div>
+  </div>
+  <div class="foot">
+    <span class="wm">Inteligência Artificial para Educadores</span>
+    <span>Opcional · conta 1h30 na carga horária</span>  <!-- EDITAR: nota curta ou vazio -->
+  </div>
+</div></body></html>
