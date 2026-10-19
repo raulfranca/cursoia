@@ -33,7 +33,7 @@ Este repositório é a landing e as páginas do curso. O projeto inteiro vive em
 |---|---|---|
 | `C:\Dev\cursoia` (esta) | git público | landing, páginas do curso (artigos, devolutivas, tutoriais) e design system |
 | `C:\Dev\curso-ia-ava` | git privado, **repositório-chefe** | CLI do Google Sala de Aula e o roteamento do workspace |
-| `C:\Dev\video` | git | ferramentas e projetos de edição de vídeo |
+| `C:\Dev\video-edit` | git | ferramentas e projetos de edição de vídeo |
 | projeto Codex `Curso IA - Conteúdo` | pasta física do Google Drive, **sem git** | tópicos, ementa, roteiros, materiais, dados de inscrição |
 | projeto Codex de ilustrações | pasta física do Google Drive, **sem git** | geração de personagens e cenas |
 
@@ -53,7 +53,7 @@ Em um computador novo, clone os três e instale as dependências do CLI:
 cd C:\Dev
 git clone https://github.com/raulfranca/cursoia.git
 git clone https://github.com/raulfranca/curso-ia-ava.git
-git clone https://github.com/raulfranca/video.git
+git clone https://github.com/raulfranca/video-edit.git
 cd curso-ia-ava\classroom
 npm install
 ```
@@ -65,6 +65,10 @@ as pastas.
 Para atualizar o **painel interno da turma** (artifact "Turma IA para Educadores"), o
 passo a passo está na seção 0.2 do `AGENTS.md` do projeto de conteúdo. Os scripts e os
 dados ficam em `dados/painel/` lá, nunca aqui, porque têm dado pessoal.
+
+**Memória do agente:** fica em `memoria/`, no projeto de conteúdo, nunca na memória local
+do Claude. Ao começar, ler `memoria/INDICE.md` lá; para registrar, seguir a seção 11 do
+`AGENTS.md` do projeto de conteúdo.
 
 Quando um título ou subtítulo de tópico muda, a fonte canônica é
 `curso-topicos.md`, na raiz do projeto de conteúdo — a landing deriva dele, nunca
