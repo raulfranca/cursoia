@@ -28,11 +28,13 @@
 </script>
 
 <link rel="stylesheet" href="../assets/artigos.css">
+<script src="../assets/tutoriais.js" defer></script>
 
 <body class="pg-tutorial">
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
   <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
   <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
   <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></symbol>
@@ -44,7 +46,10 @@
 
 <header class="pg-header">
   <div class="pg-header__in">
-    <a class="pg-wordmark" href="../">Inteligência Artificial para Educadores</a>
+    <div class="tt-marca">
+      <a class="iap-btn iap-btn--quieto tt-lista" href="./"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-left"/></svg>Tutoriais</a>
+      <a class="pg-wordmark" href="../">Inteligência Artificial para Educadores</a>
+    </div>
     <div class="tt-topo">
       <div class="tt-progresso" aria-hidden="true"></div>
       <span class="tt-contagem" aria-live="polite"></span>
@@ -62,7 +67,7 @@
       <p class="tt-capa__lead">Peça ao Gemini para revisar os problemas da sua prova, compare versões diferentes e escolha a que o aluno entende melhor</p>
       <ul class="tt-capa__meta">
         <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-list"/></svg><span><b>7</b> passos</span></li>
-        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-clock"/></svg><span><b>10</b> minutos</span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-clock"/></svg><span><b>6</b> minutos</span></li>
         <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-shield-check"/></svg><span><b>Sem dados sensíveis</b>: ChatGPT ou Gemini</span></li>
       </ul>
       <button class="iap-btn iap-btn--lg iap-btn--ink" type="button" data-ir="1">Começar <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
@@ -233,6 +238,7 @@ Para cada versão, diga em uma linha o que ela facilita e o que pode atrapalhar.
     <button class="iap-btn iap-btn--md iap-btn--quieto" type="button" data-voltar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-left"/></svg>Voltar</button>
     <p class="tt-seguir" data-seguir aria-hidden="true"></p>
     <button class="iap-btn iap-btn--md iap-btn--primary" type="button" data-avancar>Próximo <svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+    <a class="iap-btn iap-btn--md iap-btn--ink" href="./" data-concluir hidden>Concluir <svg class="ico ico--sm" aria-hidden="true"><use href="#i-check"/></svg></a>
   </div>
 </nav>
 
@@ -258,6 +264,7 @@ Para cada versão, diga em uma linha o que ela facilita e o que pode atrapalhar.
   var contagem = document.querySelector(".tt-contagem");
   var btVoltar = document.querySelector("[data-voltar]");
   var btAvancar = document.querySelector("[data-avancar]");
+  var btConcluir = document.querySelector("[data-concluir]");
   var seguir = document.querySelector("[data-seguir]");
   var atual = -1;
 
@@ -268,7 +275,8 @@ Para cada versão, diga em uma linha o que ela facilita e o que pode atrapalhar.
     pontos.forEach(function(p,k){ p.className = k<i ? "feito" : (k===i ? "agora" : ""); });
     contagem.textContent = i===0 ? "" : "Passo "+i+" de "+(passos.length-1);
     btVoltar.disabled = i===0;
-    btAvancar.disabled = i===passos.length-1;
+    btAvancar.hidden = i===passos.length-1;
+    btConcluir.hidden = !btAvancar.hidden;
     var prox = passos[i+1] && passos[i+1].querySelector(".tt-titulo");
     seguir.innerHTML = prox ? "<span>A seguir</span><b>"+esc(prox.textContent)+"</b>" : "";
     atual = i;

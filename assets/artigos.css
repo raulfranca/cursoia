@@ -108,6 +108,16 @@ img{display:block;max-width:100%;height:auto}
 .iap-quote__who{margin-top:var(--space-3);font-family:var(--font-body);letter-spacing:normal;text-transform:none;font-size:var(--size-sm);color:var(--text-caption)}
 .iap-quote__who strong{color:var(--text-body);font-weight:var(--weight-semibold)}
 
+/* Módulo numerado: item de uma lista de etapas; .is-done troca o número pelo check */
+.iap-module{display:flex;gap:var(--space-6);align-items:flex-start;padding:var(--space-7);background:var(--surface-card);border:var(--border-hairline) solid var(--line-hairline);border-radius:var(--radius-card);color:inherit;text-decoration:none;transition:var(--transition-ui)}
+a.iap-module:hover{color:inherit;border-color:var(--line-strong)}
+.iap-module__num{flex:none;width:44px;height:44px;display:grid;place-items:center;border-radius:var(--radius-pill);border:var(--border-ink) solid var(--line-strong);font-family:var(--font-mono);font-size:var(--size-sm);font-weight:var(--weight-medium);color:var(--text-body)}
+.iap-module.is-done .iap-module__num{background:var(--ink-1);color:var(--paper-0)}
+.iap-module__body{flex:1;min-width:0}
+.iap-module__title{display:block;font-family:var(--font-display);font-weight:var(--weight-semibold);font-size:var(--size-lg);line-height:var(--lh-snug);letter-spacing:var(--track-snug)}
+.iap-module__desc{display:block;font:var(--text-small);color:var(--text-muted);margin-top:var(--space-2)}
+.iap-module__meta{display:flex;flex-wrap:wrap;gap:var(--space-2) var(--space-5);margin-top:var(--space-4);font:var(--text-caption-font);color:var(--text-caption)}
+
 /* ============================================================
    Estruturas comuns às páginas (prefixo pg-)
    ============================================================ */
@@ -318,11 +328,50 @@ img{display:block;max-width:100%;height:auto}
 }
 
 /* ============================================================
+   Lista de tutoriais do tópico (t<n>/index.html)
+   Porta de entrada vinda do Classroom; o check vem de assets/tutoriais.js
+   ============================================================ */
+.pg-trilha{max-width:760px;margin:0 auto;padding:var(--space-11) var(--space-8) var(--space-12)}
+/* Barra compacta presa no topo: entra e sai deslizando, sem mexer na altura da página */
+.pg-trilha__barra{position:fixed;top:0;left:0;right:0;z-index:5;background:var(--bg-canvas);border-bottom:var(--border-hairline) solid var(--line-hairline);transform:translateY(-100%);visibility:hidden;transition:transform .2s var(--ease-out),visibility 0s .2s}
+.pg-trilha__barra.is-visivel{transform:none;visibility:visible;transition:transform .2s var(--ease-out)}
+.pg-trilha__barra-in{max-width:760px;margin:0 auto;padding:var(--space-4) var(--space-8);display:flex;align-items:center;justify-content:space-between;gap:var(--space-6)}
+.pg-trilha__barra-titulo{font-family:var(--font-display);font-weight:var(--weight-semibold);font-size:var(--size-md);letter-spacing:-.02em;color:var(--ink-1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.pg-trilha__barra .pg-trilha__progresso{margin:0;flex:none}
+.pg-trilha__barra .pg-trilha__trilho{width:120px}
+.pg-trilha__progresso{margin-top:var(--space-2)}
+.pg-trilha__progresso{display:flex;align-items:center;gap:var(--space-5);margin-top:var(--space-4);font:var(--text-small);color:var(--text-muted)}
+.pg-trilha__progresso b{font-weight:var(--weight-semibold);color:var(--text-body)}
+.pg-trilha__trilho{flex:1;max-width:240px;height:6px;border-radius:var(--radius-pill);background:var(--paper-3);overflow:hidden}
+.pg-trilha__trilho i{display:block;height:100%;width:0;background:var(--lousa-500);transition:width .4s var(--ease-out)}
+.pg-trilha__lista{display:flex;flex-direction:column;gap:var(--space-4);margin-top:var(--space-9);counter-reset:none}
+.pg-trilha__lista .iap-module{align-items:center}
+.pg-trilha__lista .iap-module__num .ico{display:none}
+.pg-trilha__lista .is-done .iap-module__num span{display:none}
+.pg-trilha__lista .is-done .iap-module__num .ico{display:block}
+.pg-trilha__feito{display:none;align-items:center;gap:4px;font-weight:var(--weight-semibold);color:var(--lousa-600)}
+.is-done .pg-trilha__feito{display:inline-flex}
+.pg-trilha__ir{flex:none;color:var(--ink-4);transition:var(--transition-ui)}
+a.iap-module:hover .pg-trilha__ir{color:var(--lousa-600);transform:translateX(3px)}
+.pg-trilha__nota{margin-top:var(--space-8);font:var(--text-caption-font);color:var(--text-caption)}
+@media (max-width:760px){
+  .pg-trilha{padding:var(--space-9) 16px var(--space-11)}
+  .pg-trilha .pg-post__title{font-size:34px}
+  .pg-trilha__barra-in{padding:var(--space-3) 16px;flex-direction:column;align-items:stretch;gap:var(--space-2)}
+  .pg-trilha__barra .pg-trilha__trilho{width:auto;max-width:none}
+  .pg-trilha__lista .iap-module{gap:var(--space-4);padding:var(--space-5)}
+  .pg-trilha__lista .iap-module__num{width:36px;height:36px}
+  .pg-trilha__ir{display:none}
+}
+
+/* ============================================================
    Tutorial guiado: uma tela, um passo por vez (prefixo tt-)
    Ativado por <body class="pg-tutorial">. Modelo: t3/ditado-tutorial.html
    ============================================================ */
 .pg-tutorial{display:flex;flex-direction:column;height:100dvh;overflow:hidden}
 .pg-tutorial .pg-header__in{max-width:1280px}
+.tt-marca{display:flex;align-items:center;gap:var(--space-5);min-width:0}
+.tt-marca .tt-lista{padding:6px 14px 6px 10px;font-size:var(--size-sm)}
 .tt-topo{display:flex;align-items:center;gap:var(--space-5)}
 .tt-progresso{display:flex;gap:4px}
 .tt-progresso i{display:block;width:22px;height:4px;border-radius:var(--radius-pill);background:var(--paper-3);transition:var(--transition-ui)}
@@ -356,6 +405,7 @@ img{display:block;max-width:100%;height:auto}
 .tt-rodape{border-top:var(--border-hairline) solid var(--line-hairline);background:var(--paper-1)}
 .tt-rodape__in{max-width:1280px;margin:0 auto;padding:var(--space-4) var(--space-8);display:flex;align-items:center;gap:var(--space-6)}
 .tt-rodape .iap-btn[disabled]{visibility:hidden}
+.tt-rodape .iap-btn[hidden]{display:none}
 .tt-atalho{display:flex;align-items:center;gap:var(--space-2);margin-right:auto;font:var(--text-caption-font);color:var(--text-caption)}
 .tt-atalho kbd{display:inline-grid;place-items:center;min-width:24px;height:22px;padding:0 5px;font:500 14px/1 var(--font-body);color:var(--ink-2);background:var(--paper-0);border:var(--border-hairline) solid var(--ink-5);border-bottom-width:2px;border-radius:var(--radius-sm)}
 .tt-seguir{display:flex;flex-direction:column;align-items:flex-end;gap:2px;text-align:right}
@@ -867,3 +917,5 @@ img{display:block;max-width:100%;height:auto}
 .tt-carrossel__pontos button.agora{background:#0b57d0;transform:scale(1.2)}
 @media (prefers-reduced-motion:reduce){.tt-carrossel__trilho{scroll-behavior:auto}}
 @media (max-width:760px){.tt-gemini{padding:var(--space-4) var(--space-4);box-shadow:var(--shadow-ink-sm)}.tt-gemini__md{font-size:14px}.tt-gemini__resp{grid-template-columns:22px minmax(0,1fr);gap:var(--space-3)}.tt-gemini__estrela{width:20px;height:20px}.tt-carrossel{box-shadow:var(--shadow-ink-sm)}.tt-carrossel__card{padding:var(--space-5) var(--space-5) var(--space-4)}.tt-carrossel__seta{display:none}}
+/* Celular: no cabeçalho do tutorial fica só o botão da lista, o nome do curso sai */
+@media (max-width:560px){.tt-marca .pg-wordmark{display:none}}

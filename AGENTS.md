@@ -182,15 +182,39 @@ vez, como uma apresentação. **Modelo e guia de estilo: `t3/ditado-tutorial.htm
 tutorial novo parte de uma cópia dele: mesmo cabeçalho, mesmo rodapé de navegação, mesmo
 script de passos, trocando o conteúdo. Nome do arquivo: `<tema>-tutorial.html`.
 
+### Lista de tutoriais do tópico
+
+Cada pasta de tópico com tutoriais tem uma página de entrada, `t<n>/index.html` (endereço
+`https://raulfranca.github.io/cursoia/t<n>/`). É ela que vai para o Classroom, não os
+tutoriais soltos. Modelo: `t3/index.html`.
+
+- Um card (`iap-module`) por tutorial, com número, título igual ao `h1` da capa, uma frase
+  do que se faz, passos e minutos iguais aos da capa.
+- **Ordem: do mais simples ao mais complexo, e quem ensina vem antes de quem reaproveita.**
+  Se um tutorial explica em detalhe um recurso (abrir o Gemini e conferir o escudo,
+  microfone, Ctrl + A/C/V/F, anexar arquivo pelo +) e outro só o cita de passagem, o que
+  explica vem primeiro. No tópico 3: ditado (escudo, Shift + Enter, microfone), termos
+  (atalhos de copiar, colar e buscar), prova, metamorfose, bilhete (anexar pelo +),
+  biografias, edital e cartazes (duas conversas e tradução de volta).
+- **Tutorial novo do tópico entra nessa lista**, ou a cursista não chega a ele.
+- O botão **Concluir** do último passo grava no navegador (`localStorage`, chave
+  `cursoia:tutoriais-concluidos`) e volta para a lista, que mostra o check e "N de M
+  concluídos". O registro é por navegador: não segue a cursista para outro computador, e a
+  página avisa isso. Quem só abre e fecha, ou volta pelo botão do cabeçalho, não conclui.
+- O código que lê e grava está em `assets/tutoriais.js`, usado pela lista e pelos tutoriais.
+
 ### Formato
 
 - **Sem rolagem no computador.** A página ocupa a tela (`body.pg-tutorial`): cabeçalho com
+  o botão "Tutoriais" no canto superior esquerdo (volta para a lista do tópico, `href="./"`),
   wordmark, barra de progresso e "Passo N de M"; palco no meio; rodapé com Voltar, "A
-  seguir: <título do próximo passo>" e Próximo. Setas do teclado navegam. O endereço guarda
+  seguir: <título do próximo passo>" e Próximo. No último passo, o Próximo dá lugar ao
+  **Concluir** (`data-concluir`, `iap-btn--ink`), que marca o tutorial como feito e volta
+  para a lista. Setas do teclado navegam. O endereço guarda
   o passo (`#passo-3`), então dá para mandar o link direto para um passo.
 - **Passo 0 é a capa:** eyebrow `Tópico N · <nome do tópico>`; `h1` com a tarefa no
   infinitivo ("Passar registros a limpo"); lead de uma frase, sem ponto final, dizendo o que
-  a pessoa vai fazer; três pílulas (`tt-capa__meta`) com número de passos, tempo da prática e
+  a pessoa vai fazer; três pílulas (`tt-capa__meta`) com número de passos, tempo de leitura e
   ferramenta/conta; botão "Começar" (`iap-btn--ink`). À direita, um esquema animado do
   processo inteiro, da entrada à saída (`tt-fluxo`), com dados do próprio exemplo.
 - **Cada passo** tem a "mesa" à esquerda (`tt-visual`, fundo rebaixado) e o texto à direita
@@ -232,13 +256,21 @@ Um elemento por passo, escolhido pelo que o passo pede:
   anotada no código.
 - **Último passo fecha com o ganho e a responsabilidade:** o que a pessoa acabou de fazer,
   quanto tempo economizou e que deve conferir o resultado antes de usar.
-- Sem byline, sem tempo de leitura e sem rodapé de página: o tempo da capa é o da prática,
-  estimado ao fazer o tutorial de verdade.
+- Sem byline e sem rodapé de página. O tempo da capa (e do card na lista do tópico) é o de
+  **ler o tutorial com atenção**, sem reproduzir a tarefa no computador. É **calculado, não
+  estimado**, e recalculado quando o texto muda. Regra: palavras das dicas (`tt-texto`)
+  inteiras + palavras da mesa (`tt-visual`) a 60%, no máximo 250 por passo, porque abas,
+  carrossel e antes e depois escondem a maior parte + 120 palavras por captura com resposta
+  do Gemini; tudo a 200 palavras por minuto. Somar 8 segundos por passo, contando a capa, e
+  a duração das animações de ditado. Arredondar ao minuto mais próximo. A contagem é do
+  texto já montado pelo script, em Chrome headless.
 
 ### Código
 
+- O `<head>` carrega `../assets/tutoriais.js` (com `defer`) depois do `artigos.css`; sem
+  ele, o Concluir volta para a lista mas não marca o check.
 - Estrutura por atributos: cada passo é `<section class="tt-passo" data-passo>`; botões com
-  `data-ir`, `data-copiar`, `data-tocar`; ações ao entrar com `data-ao-entrar`. O script de
+  `data-ir`, `data-copiar`, `data-tocar`, `data-concluir`; ações ao entrar com `data-ao-entrar`. O script de
   navegação do modelo conta os passos sozinho: acrescentar ou tirar uma `section` basta.
 - Os dados do exemplo ficam num array no topo do `<script>` e alimentam todas as peças que
   os repetem (caderno, animação, antes e depois), para nunca divergirem.
