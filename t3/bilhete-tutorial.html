@@ -39,6 +39,9 @@
   <symbol id="i-list" viewBox="0 0 24 24"><path d="M3 12h.01"/><path d="M3 18h.01"/><path d="M3 6h.01"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M8 6h13"/></symbol>
   <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
   <symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M6 3l14 9-14 9V3z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></symbol>
+  <symbol id="i-laptop" viewBox="0 0 24 24"><path d="M18 5a2 2 0 0 1 2 2v8.5H4V7a2 2 0 0 1 2-2z"/><path d="M2 19h20"/></symbol>
   <symbol id="i-file-check" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></symbol>
 </svg>
 
@@ -68,14 +71,18 @@
       <button class="iap-btn iap-btn--lg iap-btn--ink" type="button" data-ir="1">Começar <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
     </div>
     <div class="tt-visual">
-      <div class="tt-fluxo" role="img" aria-label="A foto de um bilhete escrito à mão na agenda vira, com a fala da professora, uma resposta curta e acolhedora para a família">
-        <figure class="pg-shot tt-bilhete-foto"><img src="../assets/capturas/bilhete-0-foto.webp" width="605" height="807" alt=""></figure>
-        <span class="tt-fluxo__passa"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-mic"/></svg>a foto e a sua fala, o Gemini ajusta o tom</span>
+      <div class="tt-fluxo" role="img" aria-label="Foto do bilhete que a mãe enviou na agenda. Você responde com as suas palavras e o Gemini ajusta a linguagem, chegando a uma resposta curta, educada e neutra para a família">
+        <div class="tt-bilhete-linha">
+          <figure class="pg-shot tt-bilhete-foto"><img src="../assets/capturas/bilhete-0-capa.webp" width="1140" height="750" alt=""></figure>
+          <span class="tt-seta tt-seta--foto"><svg viewBox="0 0 44 34" aria-hidden="true"><path d="M42 30C36 12 22 6 4 8"/><path d="M11 2 4 8l8 5"/></svg>Bilhete que a mãe enviou na agenda</span>
+        </div>
+        <span class="tt-seta tt-seta--desce"><svg viewBox="0 0 30 52" aria-hidden="true"><path d="M8 2c12 10 14 26 8 46"/><path d="m9 41 7 7 6-8"/></svg>Você responde com as suas palavras e o Gemini ajusta a linguagem</span>
         <div class="tt-enunciado tt-enunciado--depois">
           <span class="tt-fluxo__etiqueta"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-file-check"/></svg>Resposta para a agenda</span>
-          <p>Olá! Entendo a sua preocupação e sei como é ruim quando sentimos que uma situação está se repetindo.</p>
-          <p>Eu estava ali e vi o que aconteceu na fila ontem. Conversei com os dois logo em seguida sobre o respeito e o cuidado que precisam ter uns com os outros.</p>
-          <p>Estou bem atenta e vou continuar de olho na fila. Se quiser conversar com mais calma, estou à disposição na saída nesta quinta-feira!</p>
+          <p>Prezada mãe,</p>
+          <p>Compreendo a sua preocupação em relação à situação na fila. Sobre o ocorrido ontem, presenciei o momento e conversei com os dois alunos imediatamente. Na ocasião, ambos estavam se empurrando mutuamente, e orientei sobre o comportamento adequado.</p>
+          <p>Acompanho a turma de perto e estou com atenção redobrada na fila. Se desejar conversar pessoalmente, estarei à disposição na saída de quinta-feira.</p>
+          <p>Atenciosamente,</p>
         </div>
       </div>
     </div>
@@ -84,7 +91,7 @@
   <!-- 1. O bilhete -->
   <section class="tt-passo" data-passo>
     <div class="tt-visual">
-      <figure class="pg-shot pg-shot--estreita"><img src="../assets/capturas/bilhete-0-foto.webp" width="605" height="807" alt="Bilhete escrito à mão na agenda: Professor, ontem o Miguel chegou em casa reclamando que o Lorenzo empurrou ele na fila de novo. Não aceito que o meu filho seja agredido na escola e espero que tomem providências."></figure>
+      <figure class="pg-shot tt-foto-cabe"><img src="../assets/capturas/bilhete-0-capa.webp" width="1140" height="750" alt="Bilhete escrito à mão na agenda: Professor, ontem o Miguel chegou em casa reclamando que o Lorenzo empurrou ele na fila de novo. Não aceito que o meu filho seja agredido na escola e espero que tomem providências."></figure>
     </div>
     <div class="tt-texto">
       <span class="tt-num">Passo 1</span>
@@ -97,107 +104,129 @@
     </div>
   </section>
 
-  <!-- 2. Anexar a foto -->
+  <!-- 2. Levar a foto para o computador -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <div class="tt-rotas">
+        <div class="tt-rota">
+          <span class="tt-fluxo__etiqueta">Pelo Google Drive</span>
+          <ol>
+            <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-phone"/></svg><span>No celular, abra a foto, toque em <b>Compartilhar</b> e escolha <b>Drive</b>, na conta @educa.</span></li>
+            <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-laptop"/></svg><span>No computador, no Gemini, clique no <b>+</b> e em <b>Adicionar do Drive</b>.</span></li>
+          </ol>
+        </div>
+        <div class="tt-rota">
+          <span class="tt-fluxo__etiqueta">Pelo WhatsApp</span>
+          <ol>
+            <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-phone"/></svg><span>No celular, mande a foto <b>para você mesma</b>: a conversa com o seu próprio número.</span></li>
+            <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-laptop"/></svg><span>No computador, abra o <b>WhatsApp Web</b> e baixe a foto.</span></li>
+            <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-laptop"/></svg><span>No Gemini, clique no <b>+</b> e em <b>Enviar arquivos</b>.</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 2</span>
+      <h2 class="tt-titulo">Leve a foto para o computador</h2>
+      <ul class="tt-dicas">
+        <li><span>O Gemini da <strong>conta @educa</strong> não abre no celular. Tire a foto no celular e faça o resto no computador.</span></li>
+        <li><span>O caminho mais curto é o <strong>Google Drive</strong>: a foto fica na sua conta e o Gemini acha direto.</span></li>
+        <li><span>WhatsApp ou e-mail para você mesma também funciona. Depois de enviar, é só abrir pelo computador e baixar a foto.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3. Anexar a foto -->
   <section class="tt-passo" data-passo>
     <div class="tt-visual">
       <figure class="pg-shot"><img src="../assets/capturas/bilhete-1-anexo.webp" width="676" height="246" alt="Caixa de mensagem do Gemini com a foto do bilhete anexada, o botão de mais à esquerda e o botão do microfone à direita"></figure>
     </div>
     <div class="tt-texto">
-      <span class="tt-num">Passo 2</span>
-      <h2 class="tt-titulo">Anexe a foto do bilhete</h2>
+      <span class="tt-num">Passo 3</span>
+      <h2 class="tt-titulo">No Gemini: Anexe a foto</h2>
       <ul class="tt-dicas">
-        <li><span>Tire uma foto da agenda com o celular. No Gemini, toque no <strong>+</strong> e em <strong>Enviar arquivos</strong>, ou use a câmera direto no app.</span></li>
-        <li><span>O Gemini lê a letra de mão. Assim você não precisa digitar o bilhete.</span></li>
-        <li><span>O bilhete tem nome de criança. Use a <strong>conta @educa</strong>: nela, as conversas não são usadas para treinar a IA.</span></li>
+        <li><span>No Gemini do computador, clique no <strong>+</strong>.</span></li>
+        <li><span>Se você salvou a foto no drive, clique em <strong>Adicionar do Drive</strong>.</span></li>
+        <li><span>Se você baixou a foto no computador, use <strong>Enviar arquivos</strong>.</span></li>
+        <li><span>O Gemini é capaz de <b>ler a letra de mão</b>. Assim você não precisa digitar o bilhete.</span></li>
       </ul>
     </div>
   </section>
 
-  <!-- 3. Falar -->
-  <section class="tt-passo" data-passo>
+  <!-- 4. Falar -->
+  <section class="tt-passo" data-passo data-ao-entrar="ditado">
     <div class="tt-visual">
-      <div class="tt-fala">
-        <span class="tt-fala__rotulo"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-mic"/></svg>O que a professora falou no microfone</span>
-        <p>me ajuda a responder esse bilhete da mãe do Miguel que eu mandei a foto então assim eu vi sim que teve um empurra-empurra na fila ontem mas não foi bem assim os dois estavam brincando de empurrar e o Miguel também empurrou mas eu entendo que ela tá preocupada né é mãe e eu quero que ela saiba que eu tô atenta eu já conversei com os dois na hora e vou ficar de olho na fila e eu queria chamar ela pra conversar pessoalmente se ela quiser pode ser na saída na quinta-feira mas eu não quero parecer que eu tô brigando com ela nem me defendendo demais sabe e tem que caber na agenda</p>
+      <div class="tt-fala tt-fala--grande">
+        <span class="tt-fala__rotulo"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-mic"/></svg>O que a professora falou no microfone<em>ouvindo…</em></span>
+        <p class="tt-fala__texto" data-fala>me ajuda a responder esse bilhete da mãe do Miguel que eu mandei a foto então assim eu vi sim que teve um empurra-empurra na fila ontem mas não foi bem assim os dois estavam brincando de empurrar e o Miguel também empurrou mas eu entendo que ela tá preocupada né é mãe e eu quero que ela saiba que eu tô atenta eu já conversei com os dois na hora e vou ficar de olho na fila e eu queria chamar ela pra conversar pessoalmente se ela quiser pode ser na saída na quinta-feira mas eu não quero parecer que eu tô brigando com ela nem me defendendo demais sabe quero um tom mais neutro e educado mais formal mas com palavras simples e tem que caber na agenda</p>
       </div>
     </div>
     <div class="tt-texto">
-      <span class="tt-num">Passo 3</span>
+      <span class="tt-num">Passo 4</span>
       <h2 class="tt-titulo">Fale o que você quer dizer</h2>
       <ul class="tt-dicas">
         <li><span>Toque no <strong>microfone</strong> e fale como se estivesse contando para uma colega. Não precisa pontuar nem falar bonito.</span></li>
         <li><span>Conte <strong>o que aconteceu, o que você já fez, o que vai fazer</strong> e o que oferece à família.</span></li>
-        <li><span>Diga também <strong>como não quer soar</strong>: "não quero parecer que estou brigando". Isso orienta o tom.</span></li>
+        <li><span>Diga também <strong>como quer soar</strong> e como não quer: "mais neutro e educado, mas com palavras simples", "não quero parecer que estou brigando". Isso orienta o tom.</span></li>
       </ul>
+      <button class="iap-btn iap-btn--md iap-btn--quieto tt-copiar" type="button" data-tocar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-play"/></svg><span>Ver de novo</span></button>
     </div>
   </section>
 
-  <!-- 4. Rascunho -->
+  <!-- 5. Rascunho -->
   <section class="tt-passo" data-passo>
     <div class="tt-visual">
-      <figure class="pg-shot"><img src="../assets/capturas/bilhete-2-rascunho.webp" width="740" height="564" alt="A foto do bilhete e a fala da professora na conversa, e a primeira resposta do Gemini: a opção 1, acolhedora e direta, diz que se tratava de uma brincadeira em que ambos acabaram se empurrando reciprocamente"></figure>
-    </div>
-    <div class="tt-texto">
-      <span class="tt-num">Passo 4</span>
-      <h2 class="tt-titulo">Leia o primeiro rascunho</h2>
-      <ul class="tt-dicas">
-        <li><span>A fala corrida virou um bilhete organizado, e o "não foi bem assim" sumiu. O rascunho <strong>não cita o outro aluno</strong>.</span></li>
-        <li><span>Mas ficou formal demais para a agenda: "tratava-se", "reciprocamente". Não é assim que você fala com as famílias.</span></li>
-        <li><span>E faltou o principal: a mãe escreveu <strong>"de novo"</strong>, e a resposta não toca nisso. Chamar de "brincadeira" pode soar como pouco caso.</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- 5. Ajuste -->
-  <section class="tt-passo" data-passo>
-    <div class="tt-visual">
-      <figure class="pg-shot"><img src="../assets/capturas/bilhete-3-ajuste.webp" width="740" height="532" alt="Pedido de ajuste falado pela professora, pedindo um texto mais simples e que fale do de novo, e a nova opção do Gemini, que agora diz conversei com o Miguel e com o Lorenzo"></figure>
+      <figure class="pg-shot"><img src="../assets/capturas/bilhete-2-rascunho.webp" width="760" height="584" alt="A foto do bilhete e a fala da professora na conversa, e o primeiro rascunho do Gemini: começa com Olá!, diz que conversou com o Miguel e o Lorenzo e que se tratava de uma brincadeira de empurrões entre os dois"></figure>
     </div>
     <div class="tt-texto">
       <span class="tt-num">Passo 5</span>
-      <h2 class="tt-titulo">Ajuste falando de novo</h2>
+      <h2 class="tt-titulo">Leia o primeiro rascunho</h2>
       <ul class="tt-dicas">
-        <li><span>Diga com as suas palavras o que não gostou: "ficou formal demais", "ela escreveu que foi de novo".</span></li>
-        <li><span>O tom melhorou e o "de novo" apareceu: <strong>"sei como é ruim quando a gente sente que uma situação está se repetindo"</strong>.</span></li>
-        <li><span>Mas leia com atenção: agora o bilhete diz <strong>"conversei com o Miguel e com o Lorenzo"</strong>. A IA pegou o nome do bilhete e colocou na resposta.</span></li>
+        <li><span>A fala corrida virou um bilhete organizado, num tom calmo, com o convite para quinta-feira e espaço para a assinatura.</span></li>
+        <li><span>Agora é hora de<strong> revisar e fazer ajustes</strong>.</span></li>
+        <li><span>Por exemplo: <strong>"tratava-se de uma brincadeira"</strong> pode soar como pouco caso. Vamos pensar em outras formas de dizer?</span></li>
+        <li><span>Talvez você sinta necessidade de <strong>dar novas orientações</strong> para melhorar a resposta.</span></li>
       </ul>
     </div>
   </section>
 
-  <!-- 6. Proteger a outra criança -->
-  <section class="tt-passo" data-passo>
+  <!-- 6. Ajuste -->
+  <section class="tt-passo" data-passo data-ao-entrar="ditado">
     <div class="tt-visual">
-      <figure class="pg-shot"><img src="../assets/capturas/bilhete-4-final.webp" width="740" height="418" alt="Pedido da professora para tirar o nome do Lorenzo e a resposta do Gemini em duas opções: uma diz conversei com os dois, a outra conversei com o Miguel e com o colega"></figure>
+      <div class="tt-fala tt-fala--grande">
+        <span class="tt-fala__rotulo"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-mic"/></svg>O ajuste que a professora falou<em>ouvindo…</em></span>
+        <p class="tt-fala__texto" data-fala>o tom ficou bom mas tira esse tratava-se de uma brincadeira que parece que eu tô fazendo pouco caso e ela escreveu que foi de novo então a resposta tem que falar disso também e começa sem o olá com exclamação e outra coisa tira o nome do Lorenzo não posso falar de outra criança no bilhete de outra família fala só os dois sem dizer quem</p>
+      </div>
     </div>
     <div class="tt-texto">
       <span class="tt-num">Passo 6</span>
-      <h2 class="tt-titulo">Proteja a outra criança</h2>
+      <h2 class="tt-titulo">Ajuste falando de novo</h2>
       <ul class="tt-dicas">
-        <li><span>Nome de outra criança <strong>não vai</strong> no bilhete de outra família. A outra família tem o direito de ser ouvida por você, e não pela agenda alheia.</span></li>
-        <li><span>Peça para tirar e diga o porquê. O Gemini trocou por <strong>"os dois"</strong> ou <strong>"o colega"</strong>.</span></li>
+        <li><span>Diga com as suas palavras o que não gostou: "parece que eu tô fazendo pouco caso", "ela escreveu que foi de novo".</span></li>
+        <li><span>Outro ponto de atenção: <strong>nome de outra criança não deve ser citado</strong> no bilhete de outra família. Peça para a IA tirar.</span></li>
+        <li><span>Junte tudo numa fala só: o Gemini refaz o bilhete de uma vez.</span></li>
       </ul>
-      <p class="tt-aviso tt-aviso--alerta">A IA não sabe o que pode ou não ir num bilhete escolar. Cada ajuste pode trazer um problema novo: leia a versão final inteira antes de copiar.</p>
+      <button class="iap-btn iap-btn--md iap-btn--quieto tt-copiar" type="button" data-tocar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-play"/></svg><span>Ver de novo</span></button>
     </div>
   </section>
 
   <!-- 7. Revisar e copiar -->
   <section class="tt-passo" data-passo>
     <div class="tt-visual">
-      <div class="tt-enunciado tt-enunciado--depois" style="width:100%;max-width:520px">
-        <span class="tt-fluxo__etiqueta"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-file-check"/></svg>Versão escolhida: opção 1</span>
-        <p>Olá! Entendo a sua preocupação e sei como é ruim quando sentimos que uma situação está se repetindo.</p>
-        <p>Eu estava ali e vi o que aconteceu na fila ontem: os dois acabaram se empurrando naquele momento. Por isso, conversei com os dois logo em seguida sobre o respeito e o cuidado que precisam ter uns com os outros.</p>
-        <p>Estou bem atenta e vou continuar de olho na fila. Se você quiser conversar com mais calma, estou à disposição na saída nesta quinta-feira!</p>
-        <p>Um abraço!</p>
+      <div class="tt-enunciado tt-enunciado--depois tt-versao-final">
+        <span class="tt-fluxo__etiqueta"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-file-check"/></svg>Versão final</span>
+        <p>Prezada mãe,</p>
+        <p>Compreendo a sua preocupação em relação à situação na fila. Sobre o ocorrido ontem, presenciei o momento e conversei com os dois alunos imediatamente. Na ocasião, ambos estavam se empurrando mutuamente, e orientei sobre o comportamento adequado.</p>
+        <p>Acompanho a turma de perto e estou com atenção redobrada na fila. Se desejar conversar pessoalmente, estarei à disposição na saída de quinta-feira.</p>
+        <p>Atenciosamente,</p>
       </div>
     </div>
     <div class="tt-texto">
       <span class="tt-num">Passo 7</span>
-      <h2 class="tt-titulo">Revise antes de copiar</h2>
+      <h2 class="tt-titulo">Revise e copie</h2>
       <ul class="tt-dicas">
-        <li><span>Confira se é <strong>verdade</strong> tudo o que está escrito: você estava lá? Pode mesmo na quinta-feira, na saída?</span></li>
-        <li><span>Prometa só o que dá para cumprir. "Vou continuar de olho na fila" é possível; "isso nunca mais vai acontecer", não.</span></li>
-        <li><span>Copie na agenda, assine e, se a família diz que se repete, <strong>avise a coordenação</strong>.</span></li>
+        <li><span>Uma última lida para ver se <strong>todas as informações estão corretas</strong>.</span></li>
+        <li><span>Se já estiver <strong>"quase lá"</strong>, não precisa pedir novas correções à IA. Você ajusta na hora de escrever na agenda.</span></li>
       </ul>
     </div>
   </section>
@@ -205,14 +234,14 @@
   <!-- 8. Antes e depois -->
   <section class="tt-passo" data-passo data-ao-entrar="comparar">
     <div class="tt-visual tt-visual--comparar">
-      <div class="tt-comparar">
-        <div class="tt-comparar__cab"><span>O que ela falou</span><span>Como ficou no bilhete</span></div>
+      <div class="tt-comparar tt-comparar--folga">
+        <div class="tt-comparar__cab"><span>O que a professora falou</span><span>Como ficou no bilhete</span></div>
         <div class="tt-pares tt-pares--fontes" data-pares></div>
       </div>
     </div>
     <div class="tt-texto">
       <span class="tt-num">Passo 8</span>
-      <h2 class="tt-titulo">Veja o que mudou</h2>
+      <h2 class="tt-titulo">Da intenção para o bilhete escrito</h2>
       <ul class="tt-dicas">
         <li><span><strong>Interativo:</strong> toque em um trecho da fala para ver como ele ficou no bilhete.</span></li>
         <li><span>As ideias são todas <strong>suas</strong>. A IA mudou a ordem, a forma e o tom.</span></li>
@@ -234,20 +263,22 @@
 
 <script>
 (function(){
-  // Trechos da fala da professora e como ficaram na versão final (resposta real do Gemini, 19/10/2026)
+  // Trechos da fala da professora e como ficaram na versão final (Gemini, 20/10/2026, com ajustes à mão)
   var partes = [
-    {de:"O que ela sentiu", antes:"eu entendo que ela tá preocupada né é mãe",
-     para:"Acolher", depois:"Olá! Entendo a sua preocupação e sei como é ruim quando sentimos que uma situação está se repetindo."},
+    {de:"O que a mãe sente", antes:"eu entendo que ela tá preocupada né é mãe",
+     para:"Acolher", depois:"Compreendo a sua preocupação em relação à situação na fila."},
     {de:"O que aconteceu", antes:"eu vi sim que teve um empurra-empurra na fila ontem mas não foi bem assim os dois estavam brincando de empurrar",
-     para:"Contar sem acusar", depois:"Eu estava ali e vi o que aconteceu na fila ontem: os dois acabaram se empurrando naquele momento."},
-    {de:"O que ela fez", antes:"eu já conversei com os dois na hora",
-     para:"A providência", depois:"Por isso, conversei com os dois logo em seguida sobre o respeito e o cuidado que precisam ter uns com os outros."},
+     para:"Contar sem acusar", depois:"Na ocasião, ambos estavam se empurrando mutuamente."},
+    {de:"O que já fez", antes:"eu já conversei com os dois na hora",
+     para:"A providência", depois:"Presenciei o momento e conversei com os dois alunos imediatamente (...) e orientei sobre o comportamento adequado."},
     {de:"O que vai fazer", antes:"eu quero que ela saiba que eu tô atenta e vou ficar de olho na fila",
-     para:"O compromisso", depois:"Estou bem atenta e vou continuar de olho na fila."},
+     para:"O compromisso", depois:"Acompanho a turma de perto e estou com atenção redobrada na fila."},
     {de:"O convite", antes:"eu queria chamar ela pra conversar pessoalmente se ela quiser pode ser na saída na quinta-feira",
-     para:"Abrir a conversa", depois:"Se você quiser conversar com mais calma, estou à disposição na saída nesta quinta-feira!"},
+     para:"Abrir a conversa", depois:"Se desejar conversar pessoalmente, estarei à disposição na saída de quinta-feira."},
+    {de:"O tom pedido", antes:"quero um tom mais neutro e educado mais formal mas com palavras simples",
+     para:"Neutro e educado", depois:"Abre com \"Prezada mãe\" e fecha com \"Atenciosamente\", sem exclamação."},
     {de:"O que não queria", antes:"eu não quero parecer que eu tô brigando com ela nem me defendendo demais",
-     para:"O tom", depois:"Sumiram o \"não foi bem assim\" e o \"o Miguel também empurrou\". O bilhete não diz quem começou: não acusa nem defende ninguém."}
+     para:"Sem acusar nem defender", depois:"Sumiram o \"não foi bem assim\" e a \"brincadeira\". O bilhete diz que ambos se empurravam, sem dizer quem começou."}
   ];
 
   function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;"); }
@@ -255,6 +286,39 @@
   document.querySelector("[data-pares]").innerHTML = partes.map(function(p){
     return '<button class="tt-par" type="button"><span class="tt-par__antes"><b>'+esc(p.de)+'</b>'+esc(p.antes)+'</span><span class="tt-par__depois"><b>'+esc(p.para)+'</b>'+esc(p.depois)+'</span></button>';
   }).join("");
+
+  // Ditado animado: as palavras aparecem uma a uma, como no microfone.
+  // O texto inteiro fica no lugar, invisível, para a caixa não mudar de tamanho.
+  var reduzir = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var timer = null;
+  var tocando = null;
+
+  function pararDitado(){
+    clearTimeout(timer); timer = null;
+    if (!tocando) return;
+    tocando.caixa.classList.remove("ouvindo");
+    tocando.spans.forEach(function(w){ w.className = ""; });
+    tocando = null;
+  }
+  function tocarDitado(d){
+    pararDitado();
+    if (reduzir) return;
+    tocando = d;
+    d.spans.forEach(function(w){ w.className = "oculta"; });
+    d.caixa.classList.add("ouvindo");
+    var p = 0;
+    function escrever(){
+      if (p < d.spans.length){ d.spans[p++].className = ""; timer = setTimeout(escrever, 70); }
+      else d.caixa.classList.remove("ouvindo");
+    }
+    timer = setTimeout(escrever, 400);
+  }
+  document.querySelectorAll('[data-ao-entrar="ditado"]').forEach(function(passo){
+    var fala = passo.querySelector("[data-fala]");
+    fala.innerHTML = fala.textContent.trim().split(/\s+/).map(function(w){ return "<span>"+esc(w)+"</span>"; }).join(" ");
+    passo._ditado = { caixa: fala.closest(".tt-fala"), spans: [].slice.call(fala.children) };
+    passo.querySelector("[data-tocar]").addEventListener("click", function(){ tocarDitado(passo._ditado); });
+  });
 
   var passos = [].slice.call(document.querySelectorAll("[data-passo]"));
   var barra = document.querySelector(".tt-progresso");
@@ -278,7 +342,9 @@
     seguir.innerHTML = prox ? "<span>A seguir</span><b>"+esc(prox.textContent)+"</b>" : "";
     atual = i;
     try { history.replaceState(null, "", "#passo-"+i); } catch(e){}
-    if (passos[i].getAttribute("data-ao-entrar") === "comparar") abrirPar(0);
+    var acao = passos[i].getAttribute("data-ao-entrar");
+    if (acao === "ditado") tocarDitado(passos[i]._ditado); else pararDitado();
+    if (acao === "comparar") abrirPar(0);
   }
 
   btVoltar.addEventListener("click", function(){ ir(atual-1); });

@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Padronizar biografias · Inteligência Artificial para Educadores</title>
+<title>Padronizar textos · Inteligência Artificial para Educadores</title>
 <meta name="description" content="Tutorial guiado: crie um molde de biografia de uma página e deixe o Gemini encaixar nele as fontes que você pesquisou sobre cada personalidade.">
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Padronizar biografias">
+<meta property="og:title" content="Padronizar textos">
 <meta property="og:description" content="Tutorial guiado: crie um molde de biografia de uma página e deixe o Gemini encaixar nele as fontes que você pesquisou sobre cada personalidade.">
 <meta property="og:url" content="https://raulfranca.github.io/cursoia/t3/biografias-tutorial.html">
 <meta property="og:image" content="https://raulfranca.github.io/cursoia/assets/ilustracoes/og-curso-ia.jpg">
@@ -38,8 +38,12 @@
   <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></symbol>
   <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
   <symbol id="i-list" viewBox="0 0 24 24"><path d="M3 12h.01"/><path d="M3 18h.01"/><path d="M3 6h.01"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M8 6h13"/></symbol>
-  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
   <symbol id="i-file-check" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></symbol>
+  <symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-paperclip" viewBox="0 0 24 24"><path d="m16 6-8.414 8.586a2 2 0 0 0 2.829 2.829l8.414-8.586a4 4 0 1 0-5.657-5.657l-8.379 8.551a6 6 0 1 0 8.485 8.485l8.379-8.551"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></symbol>
   <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></symbol>
 </svg>
 
@@ -59,12 +63,12 @@
   <section class="tt-passo tt-capa" data-passo>
     <div class="tt-texto">
       <span class="iap-eyebrow">Tópico 3 · IA como assistente de texto</span>
-      <h1 class="tt-titulo">Padronizar biografias</h1>
-      <p class="tt-capa__lead">Crie um molde de uma página e deixe o Gemini encaixar nele o que você pesquisou sobre cada personalidade</p>
+      <h1 class="tt-titulo">Padronizar textos</h1>
+      <p class="tt-capa__lead">Neste exemplo, colocaremos diversas biografias em um formato padronizado, a partir de informações de múltiplas fontes.</p>
       <ul class="tt-capa__meta">
-        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-list"/></svg><span><b>10</b> passos</span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-list"/></svg><span><b>8</b> passos</span></li>
         <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-clock"/></svg><span><b>10</b> minutos</span></li>
-        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-shield"/></svg><span>Gemini da <b>conta institucional</b></span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-shield-check"/></svg><span><b>Sem dados sensíveis</b>: ChatGPT ou Gemini</span></li>
       </ul>
       <button class="iap-btn iap-btn--lg iap-btn--ink" type="button" data-ir="1">Começar <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
     </div>
@@ -101,9 +105,9 @@
       <span class="tt-num">Passo 1</span>
       <h2 class="tt-titulo">Reúna as fontes</h2>
       <ul class="tt-dicas">
-        <li><span>No exemplo, são <strong>dez personalidades negras</strong>, cinco mulheres e cinco homens, para um caderno de biografias da turma.</span></li>
-        <li><span>Cada uma foi pesquisada em lugares diferentes: verbete, reportagem, anotações de um documentário. <strong>Tamanhos e tons diferentes.</strong></span></li>
-        <li><span>Copie os trechos que você leu e anote <strong>de onde veio</strong> cada um. Você vai precisar disso para conferir no final.</span></li>
+        <li><span>No exemplo, o projeto é reunir <strong>biografias de dez personalidades negras</strong> em um material para a turma.</span></li>
+        <li><span>Para fazer sua pesquisa, você olhou em lugares diferentes: verbetes, reportagens, documentários. Suas referências têm <strong>tamanhos e tons diferentes.</strong></span></li>
+        <li><span>Copie os trechos que você selecionou e anote <strong>de onde veio</strong> cada um. Você vai precisar disso para conferir no final.</span></li>
       </ul>
     </div>
   </section>
@@ -119,12 +123,11 @@
     </div>
     <div class="tt-texto">
       <span class="tt-num">Passo 2</span>
-      <h2 class="tt-titulo">Desenhe o molde</h2>
+      <h2 class="tt-titulo">Qual o formato?</h2>
       <ul class="tt-dicas">
-        <li><span>Antes de abrir a IA, decida <strong>o que toda biografia vai ter</strong>, e em que ordem.</span></li>
-        <li><span>Mesma ordem em todas as folhas: a criança sabe onde procurar e consegue <strong>comparar</strong> uma vida com outra.</span></li>
-        <li><span>Inclua o que serve à sua aula. "Palavras novas", por exemplo, não está em fonte nenhuma: é um pedido seu, para ajudar na leitura.</span></li>
-        <li><span>Você concebe, a IA executa.</span></li>
+        <li><span><strong>Padronizar pode ser uma estratégia</strong> para ajudar a criança a compreender o objetivo de uma biografia e comparar as diferentes trajetórias de vida.</span></li>
+        <li><span>É preciso definir <strong>o que toda biografia vai ter</strong>, e como será feita a apresentação.</span></li>
+        <li><span>Você pode dizer a IA como fazer ou pedir ajuda para criar o modelo.</span></li>
       </ul>
     </div>
   </section>
@@ -138,7 +141,8 @@
       <span class="tt-num">Passo 3</span>
       <h2 class="tt-titulo">Abra o Gemini</h2>
       <ul class="tt-dicas">
-        <li><span>No <strong>computador ou Chromebook</strong>, com a conta @educa (institucional).</span></li>
+        <li><span>No <strong>computador ou Chromebook</strong>.</span></li>
+        <li><span>Por não tratar dados sensíveis, o <strong>ChatGPT</strong> também pode fazer a tarefa.</span></li>
         <li><span>Comece uma <strong>conversa nova</strong>: o molde vale para tudo o que vier depois dele, na mesma conversa.</span></li>
       </ul>
     </div>
@@ -149,7 +153,7 @@
     <div class="tt-visual">
       <div class="pg-prompt pg-prompt--longo">
         <span class="pg-prompt__rotulo">Comando (Prompt)</span>
-<p data-instrucao>Estou preparando um caderno de biografias de personalidades negras importantes da história, para alunos do 4º ano (9 anos). Para cada personalidade, vou colar textos de fontes diferentes que consultei. Com eles, escreva uma biografia de uma página, sempre neste molde:
+<p data-instrucao>Estou preparando um caderno de biografias de personalidades negras importantes da história, para alunos do <mark>4º ano (9 anos)</mark>. Para cada personalidade, vou enviar fontes diferentes que consultei. Com eles, escreva uma biografia de uma página, sempre neste molde:
 
 Nome
 Nascimento e morte: cidade e ano
@@ -161,9 +165,7 @@ Frase: uma frase dita ou escrita pela pessoa, entre aspas (só se aparecer nas f
 Você sabia?: uma curiosidade
 Palavras novas: até três palavras difíceis do texto, explicadas
 
-Regras: no máximo 300 palavras; frases curtas e vocabulário para 9 anos; use somente as informações das fontes, sem acrescentar nada; se uma parte do molde não estiver nas fontes, escreva [não encontrado nas fontes]; se as fontes discordarem, não escolha: avise.
-
-Depois da biografia, separado por uma linha, faça uma lista para eu conferir: cada data, número e nome que você usou, e de qual fonte veio.
+Regras: no máximo 300 palavras; frases curtas e vocabulário para <mark>9 anos</mark>; <mark>use somente as informações das fontes, sem acrescentar nada</mark>; se uma parte do molde não estiver nas fontes, escreva [não encontrado nas fontes]; se as fontes discordarem, não escolha: avise.
 
 Se entendeu, responda apenas "Entendi" e espere as fontes da primeira personalidade.</p>
         <button class="iap-btn iap-btn--md iap-btn--quieto tt-copiar" type="button" data-copiar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-copy"/></svg><span>Copiar instrução</span></button>
@@ -171,12 +173,11 @@ Se entendeu, responda apenas "Entendi" e espere as fontes da primeira personalid
     </div>
     <div class="tt-texto">
       <span class="tt-num">Passo 4</span>
-      <h2 class="tt-titulo">Envie o molde</h2>
+      <h2 class="tt-titulo">Envie a instrução e o modelo</h2>
       <ul class="tt-dicas">
-        <li><span>A primeira mensagem leva <strong>só o molde</strong>, sem fonte nenhuma. O Gemini responde "Entendi" e espera.</span></li>
-        <li><span><strong>"Use somente as fontes"</strong>: sem essa regra, a IA completa as lacunas com o que acha que sabe, e pode inventar.</span></li>
-        <li><span>A <strong>lista para conferir</strong> já prepara a verificação do final.</span></li>
-        <li><span>Troque o ano e a idade pelos da sua turma. Para pular linha sem enviar: <strong>Shift + Enter</strong>.</span></li>
+        <li><span>A primeira mensagem é apenas uma <strong>instrução e um modelo de como fazer</strong>. O Gemini responde "Entendi" e espera.</span></li>
+        <li><span><mark>"Use somente as fontes"</mark>: sem essa regra, a IA completa as lacunas com o que acha que sabe, e pode inventar.</span></li>
+        <li><span>Troque <mark>o ano e a idade</mark> pelos da sua turma. Para pular linha sem enviar: <strong>Shift + Enter</strong>.</span></li>
       </ul>
     </div>
   </section>
@@ -184,15 +185,38 @@ Se entendeu, responda apenas "Entendi" e espere as fontes da primeira personalid
   <!-- 5. Fontes no Gemini -->
   <section class="tt-passo" data-passo>
     <div class="tt-visual">
-      <figure class="pg-shot"><img src="../assets/capturas/biografia-2-fontes.webp" width="720" height="494" alt="Conversa no Gemini: a resposta Entendi logo abaixo do molde e, na caixa de texto, as fontes coladas, terminando nas anotações do documentário em tópicos"></figure>
+      <div class="tt-envio" role="img" aria-label="Caixa de texto do Gemini com uma mensagem só: o arquivo da reportagem anexado, o nome Carolina Maria de Jesus, o link do verbete e as anotações coladas com Ctrl + V">
+        <div class="tt-envio__item tt-envio__item--anexo">
+          <span class="tt-envio__arquivo"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-paperclip"/></svg><span>reportagem-revista.pdf<small>PDF</small></span></span>
+          <span class="tt-envio__como">anexe arquivos</span>
+        </div>
+        <div class="tt-envio__item">
+          <p class="tt-envio__nome">Carolina Maria de Jesus</p>
+          <span class="tt-envio__como">digite o nome</span>
+        </div>
+        <div class="tt-envio__item">
+          <p class="tt-envio__link"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-link"/></svg>https://pt.wikipedia.org/wiki/Carolina_Maria_de_Jesus</p>
+          <span class="tt-envio__como">cole links</span>
+        </div>
+        <div class="tt-envio__item">
+          <p class="tt-envio__texto">- nasceu em MG, 1914<br>- estudou só 2 anos, mas lia tudo<br>- SP: catava papel e ferro-velho</p>
+          <span class="tt-envio__como">cole textos</span>
+        </div>
+        <div class="tt-envio__barra">
+          <svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg>
+          <span class="tt-envio__enviar"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-up"/></svg></span>
+        </div>
+      </div>
     </div>
     <div class="tt-texto">
       <span class="tt-num">Passo 5</span>
-      <h2 class="tt-titulo">Cole as fontes</h2>
+      <h2 class="tt-titulo">Inclua as fontes</h2>
       <ul class="tt-dicas">
-        <li><span>Comece pelo <strong>nome da personalidade</strong> e cole as fontes logo abaixo.</span></li>
-        <li><span>Dê um nome a cada uma: <strong>Fonte 1, Fonte 2, Fonte 3</strong>. É assim que o Gemini vai dizer de onde tirou cada informação.</span></li>
-        <li><span>Pode colar do jeito que estiver, até anotação em tópicos. Clique na <strong>seta</strong> para enviar.</span></li>
+        <li><span>Escreva o <strong>nome da personalidade</strong> e junte as fontes na mesma mensagem, do jeito mais fácil para cada uma:</span></li>
+        <li><span><strong>Copiar e colar:</strong> trechos de texto podem ser copiados usando <b>Ctrl + C</b> e <strong>Ctrl + V</strong>. Vale até anotação em tópicos.</span></li>
+        <li><span><strong>Anexar arquivo:</strong> clique no <strong>+</strong>, escolha <strong>Enviar arquivos</strong> (PDF, documento) ou <strong>Adicionar do Drive</strong>.</span></li>
+        <li><span><strong>Link:</strong> pode colar diretamente o endereço da página. O Gemini abre e lê o conteúdo, desde que a página não peça login.</span></li>
+        <li><span>Clique na <strong>seta</strong> para enviar.</span></li>
       </ul>
     </div>
   </section>
@@ -204,10 +228,10 @@ Se entendeu, responda apenas "Entendi" e espere as fontes da primeira personalid
     </div>
     <div class="tt-texto">
       <span class="tt-num">Passo 6</span>
-      <h2 class="tt-titulo">Leia a biografia</h2>
+      <h2 class="tt-titulo">Confira o resultado</h2>
       <ul class="tt-dicas">
-        <li><span>Três textos desencontrados viraram <strong>uma biografia no molde</strong>, com 271 palavras e frases para 9 anos.</span></li>
-        <li><span>Repare no fim de "O que fez": as fontes discordam sobre as traduções do livro, e o Gemini <strong>avisou em vez de escolher</strong>. Foi isso que pedimos.</span></li>
+        <li><span>Três textos diferentes viraram <strong>uma biografia no molde</strong>, com 271 palavras e frases adaptadas para crianças de 9 anos.</span></li>
+        <li><span>O Gemini <mark>encontrou uma divergência e avisou</mark>, como pedimos.</span></li>
       </ul>
     </div>
   </section>
@@ -219,66 +243,41 @@ Se entendeu, responda apenas "Entendi" e espere as fontes da primeira personalid
     </div>
     <div class="tt-texto">
       <span class="tt-num">Passo 7</span>
-      <h2 class="tt-titulo">Mande só as fontes da próxima</h2>
+      <h2 class="tt-titulo">Faça a próxima, com o mesmo modelo</h2>
       <ul class="tt-dicas">
-        <li><span>Na <strong>mesma conversa</strong>, cole o nome e as fontes da próxima personalidade. Nada de instrução.</span></li>
+        <li><span>Na <strong>mesma conversa</strong>, que já tem as instruções e o contexto, cole o nome e as fontes da próxima personalidade. Nada além é necessário.</span></li>
         <li><span>O Gemini lembra do molde e devolve a biografia <strong>no mesmo padrão</strong>.</span></li>
         <li><span>Repita até completar as dez.</span></li>
       </ul>
-      <p class="tt-aviso tt-aviso--alerta">Se a conversa ficar longa e o Gemini começar a fugir do molde, abra uma conversa nova e envie o molde de novo. Guarde o molde num documento para ter sempre à mão.</p>
+      <p class="tt-aviso tt-aviso--alerta">Se a conversa ficar longa e o Gemini começar a errar, abra uma conversa nova e envie as instruções iniciais de novo.</p>
     </div>
   </section>
 
   <!-- 8. Conferir -->
   <section class="tt-passo" data-passo>
     <div class="tt-visual">
-      <figure class="pg-shot"><img src="../assets/capturas/biografia-5-conferencia.webp" width="740" height="277" alt="Lista de conferência do Gemini: cada data, número e nome com a fonte de origem, incluindo 13 idiomas pela Fonte 1 e mais de 14 línguas pela Fonte 2"></figure>
+      <div class="tt-conferir">
+        <div class="tt-conferir__caso">
+          <span class="tt-conferir__rotulo">Luiz Gama · Infância</span>
+          <p><b>Na fonte</b>pai <mark>de origem portuguesa</mark></p>
+          <p><b>Na biografia</b>filho de um <mark>fidalgo português</mark></p>
+        </div>
+        <div class="tt-conferir__caso">
+          <span class="tt-conferir__rotulo">Carolina Maria de Jesus · O que fez</span>
+          <p><b>Verbete</b>traduzido para <mark>13 idiomas</mark></p>
+          <p><b>Reportagem</b>traduzido para <mark>mais de 14 línguas</mark></p>
+        </div>
+      </div>
     </div>
     <div class="tt-texto">
       <span class="tt-num">Passo 8</span>
       <h2 class="tt-titulo">Confira cada informação</h2>
       <ul class="tt-dicas">
-        <li><span>A lista no fim da resposta diz <strong>de qual fonte</strong> veio cada data, nome e número. Abra a fonte e confira.</span></li>
+        <li><span><b>Confira nas fontes</b> as informações que aparecem na biografia.</span></li>
         <li><span>Onde as fontes discordam, <strong>a decisão é sua</strong>: procure uma terceira fonte confiável.</span></li>
-        <li><span>Atenção ao erro sutil. Na biografia de Luiz Gama, a fonte dizia pai "de origem portuguesa" e a IA escreveu "fidalgo <strong>português</strong>". Parece igual, mas não é.</span></li>
+        <li><span>Atenção aos erros sutis. Por exemplo: na biografia de Luiz Gama, a fonte dizia pai "de origem portuguesa" e a IA escreveu "fidalgo português". <b>Parece igual, mas não é</b>.</span></li>
       </ul>
-      <p class="tt-aviso">A IA ajuda a organizar, mas não garante que a fonte esteja certa nem que ela própria leu tudo direito. Material para criança só vai para a turma depois de conferido.</p>
-    </div>
-  </section>
-
-  <!-- 9. Documentos -->
-  <section class="tt-passo" data-passo>
-    <div class="tt-visual">
-      <figure class="pg-shot"><img src="../assets/capturas/biografia-6-exportar.webp" width="648" height="280" alt="Menu aberto pelos três pontinhos abaixo da resposta do Gemini, com as opções Ramificar em uma nova conversa, Ouvir, Exportar para o Google Docs e Criar rascunho no Gmail"></figure>
-    </div>
-    <div class="tt-texto">
-      <span class="tt-num">Passo 9</span>
-      <h2 class="tt-titulo">Monte a folha no Documentos</h2>
-      <ul class="tt-dicas">
-        <li><span>Nos <strong>três pontinhos</strong> abaixo da resposta, escolha <strong>Exportar para o Google Docs</strong>.</span></li>
-        <li><span>No documento, <strong>apague a lista de conferência</strong>: ela é para você, não para a criança.</span></li>
-        <li><span>Coloque a foto em <strong>Inserir → Imagem</strong>.</span></li>
-      </ul>
-      <p class="tt-aviso">Use uma foto real, de acervo confiável, e escreva o crédito. Não peça para a IA gerar o retrato: ela inventa um rosto que não é o da pessoa.</p>
-    </div>
-  </section>
-
-  <!-- 10. Antes e depois -->
-  <section class="tt-passo" data-passo data-ao-entrar="comparar">
-    <div class="tt-visual tt-visual--comparar">
-      <div class="tt-comparar">
-        <div class="tt-comparar__cab"><span>Nas fontes</span><span>Na biografia</span></div>
-        <div class="tt-pares tt-pares--fontes" data-pares></div>
-      </div>
-    </div>
-    <div class="tt-texto">
-      <span class="tt-num">Passo 10</span>
-      <h2 class="tt-titulo">Veja o padrão</h2>
-      <ul class="tt-dicas">
-        <li><span><strong>Interativo:</strong> toque em uma parte do molde para ver de onde ela veio.</span></li>
-        <li><span>Você escreveu o molde uma vez. Daí em diante, cada biografia custou <strong>só colar as fontes</strong>.</span></li>
-        <li><span>O tempo que sobrou vai para o que a IA não faz por você: escolher boas fontes e <strong>conferir</strong> o resultado.</span></li>
-      </ul>
+      <p class="tt-aviso">A IA ajuda a organizar, mas não garante que a fonte esteja certa nem que ela própria leu tudo direito. É preciso conferir tudo para não ensinar com erros.</p>
     </div>
   </section>
 
@@ -308,34 +307,6 @@ Se entendeu, responda apenas "Entendi" e espere as fontes da primeira personalid
   // Partes do molde, na ordem da folha
   var molde = ["Quem foi","Infância","O que fez","Por que é importante até hoje","Frase","Você sabia?","Palavras novas"];
 
-  // De onde veio cada parte: trecho das fontes e o que o Gemini escreveu (resposta real, 19/10/2026)
-  var partes = [
-    {parte:"Nascimento e morte",
-     antes:"<b>Fontes 1 e 3</b>(Sacramento, Minas Gerais, 14 de março de 1914 – São Paulo, 13 de fevereiro de 1977) · nasceu em MG, 1914",
-     depois:"Nascimento: Sacramento, 1914. Morte: São Paulo, 1977."},
-    {parte:"Quem foi",
-     antes:"<b>Fonte 1</b>foi uma escritora brasileira, considerada uma das primeiras e mais importantes escritoras negras do país.",
-     depois:"Foi uma das primeiras e mais importantes escritoras negras do Brasil."},
-    {parte:"Infância",
-     antes:"<b>Fonte 1</b>Neta de pessoas escravizadas, frequentou a escola por apenas dois anos, no Colégio Allan Kardec, em Sacramento, onde aprendeu a ler e a escrever.",
-     depois:"Neta de pessoas escravizadas, nasceu em Sacramento, Minas Gerais. Estudou apenas dois anos no Colégio Allan Kardec, onde aprendeu a ler e a escrever."},
-    {parte:"O que fez",
-     antes:"<b>Fontes 1 e 3</b>…criou sozinha os três filhos, João José, José Carlos e Vera Eunice, trabalhando como catadora de papel. Nos cadernos que recolhia do lixo… · SP: catava papel e ferro-velho para comprar comida",
-     depois:"Em 1937, mudou-se para São Paulo e depois passou a viver na favela do Canindé. Para criar sozinha os três filhos, trabalhava catando papel e ferro-velho. Nos cadernos achados no lixo, registrava o cotidiano da favela em forma de diário. Em 1958, o jornalista Audálio Dantas conheceu esses cadernos."},
-    {parte:"Por que é importante até hoje",
-     antes:"<b>Fontes 1 e 2</b>…o que leu virou um dos livros mais importantes da literatura brasileira. · Em 2021, recebeu o título póstumo de Doutora Honoris Causa…",
-     depois:"Seu livro virou uma obra muito importante na literatura brasileira por mostrar a luta diária contra a fome. Em 2021, recebeu o título póstumo de Doutora Honoris Causa da Universidade Federal do Rio de Janeiro."},
-    {parte:"Frase",
-     antes:"<b>Fonte 2</b>\"A fome também é professora\", escreveu.",
-     depois:"\"A fome também é professora\""},
-    {parte:"Você sabia?",
-     antes:"<b>Fonte 3</b>sonhava com uma casa de tijolos (\"casa de alvenaria\" = nome do 2º livro)",
-     depois:"O nome do seu segundo livro, Casa de Alvenaria, vem do sonho que ela tinha de ter uma casa de tijolos."},
-    {parte:"Palavras novas",
-     antes:"<b>Nenhuma fonte</b>Não estava nas fontes: é o pedido da professora para a turma.",
-     depois:"Póstumo: homenagem concedida depois que a pessoa já morreu. Alvenaria: construção feita com tijolos. Exemplares: cópias impressas de um livro."}
-  ];
-
   function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;"); }
 
   document.querySelector("[data-fontes]").innerHTML = fontes.map(function(f){
@@ -346,10 +317,6 @@ Se entendeu, responda apenas "Entendi" e espere as fontes da primeira personalid
   document.querySelector("[data-molde]").innerHTML = molde.map(function(m){
     return "<li><b>"+esc(m)+"</b><i></i><i></i></li>";
   }).join("");
-  document.querySelector("[data-pares]").innerHTML = partes.map(function(p){
-    return '<button class="tt-par" type="button"><span class="tt-par__antes">'+p.antes+'</span><span class="tt-par__depois"><b>'+esc(p.parte)+'</b>'+esc(p.depois)+'</span></button>';
-  }).join("");
-
   var passos = [].slice.call(document.querySelectorAll("[data-passo]"));
   var barra = document.querySelector(".tt-progresso");
   barra.innerHTML = passos.map(function(){ return "<i></i>"; }).join("");
@@ -372,7 +339,6 @@ Se entendeu, responda apenas "Entendi" e espere as fontes da primeira personalid
     seguir.innerHTML = prox ? "<span>A seguir</span><b>"+esc(prox.textContent)+"</b>" : "";
     atual = i;
     try { history.replaceState(null, "", "#passo-"+i); } catch(e){}
-    if (passos[i].getAttribute("data-ao-entrar") === "comparar") abrirPar(0);
   }
 
   btVoltar.addEventListener("click", function(){ ir(atual-1); });
@@ -396,13 +362,6 @@ Se entendeu, responda apenas "Entendi" e espere as fontes da primeira personalid
       navigator.clipboard.writeText(texto).then(ok, function(){ rotulo.textContent = "Selecione e copie"; });
     } catch(e){ rotulo.textContent = "Selecione e copie"; }
   });
-
-  // Antes e depois
-  var pares = [].slice.call(document.querySelectorAll(".tt-par"));
-  function abrirPar(i){
-    pares.forEach(function(b,k){ b.classList.toggle("aberto", k===i); b.setAttribute("aria-expanded", k===i); });
-  }
-  pares.forEach(function(b,i){ b.addEventListener("click", function(){ abrirPar(i); }); });
 
   var inicio = parseInt((location.hash.match(/passo-(\d+)/) || [])[1], 10);
   ir(isNaN(inicio) ? 0 : inicio);

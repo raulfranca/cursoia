@@ -38,7 +38,7 @@
   <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></symbol>
   <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
   <symbol id="i-list" viewBox="0 0 24 24"><path d="M3 12h.01"/><path d="M3 18h.01"/><path d="M3 6h.01"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M8 6h13"/></symbol>
-  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
+  <symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
   <symbol id="i-file-check" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></symbol>
 </svg>
 
@@ -61,9 +61,9 @@
       <h1 class="tt-titulo">Enunciados mais claros</h1>
       <p class="tt-capa__lead">Peça ao Gemini para revisar os problemas da sua prova, compare versões diferentes e escolha a que o aluno entende melhor</p>
       <ul class="tt-capa__meta">
-        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-list"/></svg><span><b>9</b> passos</span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-list"/></svg><span><b>7</b> passos</span></li>
         <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-clock"/></svg><span><b>10</b> minutos</span></li>
-        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-shield"/></svg><span>Gemini da <b>conta institucional</b></span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-shield-check"/></svg><span><b>Sem dados sensíveis</b>: ChatGPT ou Gemini</span></li>
       </ul>
       <button class="iap-btn iap-btn--lg iap-btn--ink" type="button" data-ir="1">Começar <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
     </div>
@@ -98,11 +98,11 @@
     </div>
     <div class="tt-texto">
       <span class="tt-num">Passo 1</span>
-      <h2 class="tt-titulo">Comece pela sua prova</h2>
+      <h2 class="tt-titulo">O que você quer avaliar?</h2>
       <ul class="tt-dicas">
-        <li><span>Os problemas são <strong>seus</strong>: você escolheu o conteúdo, os números e o que quer avaliar.</span></li>
-        <li><span>O que a IA vai cuidar é da <strong>escrita</strong>: frase longa, palavra difícil, informação que dá para entender de dois jeitos.</span></li>
-        <li><span>Na hora da prova, a criança lê <strong>sozinha</strong>. Se ela erra porque não entendeu o texto, a prova não mediu a matemática.</span></li>
+        <li><span>Você pensou as questões baseado <b>no conteúdo, nos números e no que quer avaliar</b>.</span></li>
+        <li><span>Porém, talvez <b>a forma de perguntar</b> não esteja ainda tão clara: frase longa, palavra difícil, informação que poderia ser interpretada de dois jeitos diferentes.</span></li>
+        <li><span>Na hora da prova, a criança <strong>lê sozinha</strong>. Se ela erra a resposta porque não entendeu o texto do problema, talvez a prova não esteja medindo o conhecimento de matemática.</span></li>
       </ul>
     </div>
   </section>
@@ -116,7 +116,8 @@
       <span class="tt-num">Passo 2</span>
       <h2 class="tt-titulo">Abra o Gemini</h2>
       <ul class="tt-dicas">
-        <li><span>No <strong>computador ou Chromebook</strong>, com a conta @educa (institucional).</span></li>
+        <li><span>No <strong>computador ou Chromebook</strong>.</span></li>
+        <li><span>Por não tratar dados sensíveis, o <strong>ChatGPT</strong> também pode fazer a tarefa.</span></li>
         <li><span>Comece uma <strong>conversa nova</strong>: tudo o que você pedir depois vai se apoiar nesta primeira mensagem.</span></li>
       </ul>
     </div>
@@ -146,7 +147,7 @@ Problema 3: …</p>
       <h2 class="tt-titulo">Peça a revisão</h2>
       <ul class="tt-dicas">
         <li><span>Diga <strong>quem vai ler</strong>: idade, ano e a situação de prova. É isso que orienta o que é "simples".</span></li>
-        <li><span><strong>"Não mude os números nem a matemática"</strong>: sem essa regra, a IA pode facilitar a conta junto com o texto, e a questão deixa de avaliar o que você queria.</span></li>
+        <li><span><strong>"Não mude os números nem a matemática"</strong>: sem essa regra, a IA pode tentar <b>facilitar a conta</b> junto com o texto, e a questão deixa de avaliar o que você queria.</span></li>
         <li><span>Troque as reticências pelos seus problemas. Para pular linha sem enviar: <strong>Shift + Enter</strong>.</span></li>
       </ul>
     </div>
@@ -188,7 +189,6 @@ Para cada versão, diga em uma linha o que ela facilita e o que pode atrapalhar.
       <ul class="tt-dicas">
         <li><span>Uma versão só é uma opinião. Com <strong>três jeitos diferentes</strong> de escrever, você tem com o que comparar.</span></li>
         <li><span>Diga <strong>como</strong> cada versão deve ser diferente. Assim elas não saem parecidas.</span></li>
-        <li><span><strong>"Não escolha por mim"</strong>: a escolha é sua. Da IA, você quer os prós e contras.</span></li>
       </ul>
     </div>
   </section>
@@ -225,41 +225,6 @@ Para cada versão, diga em uma linha o que ela facilita e o que pode atrapalhar.
     </div>
   </section>
 
-  <!-- 8. Conferir -->
-  <section class="tt-passo" data-passo>
-    <div class="tt-visual">
-      <figure class="pg-shot"><img src="../assets/capturas/prova-4-conferencia.webp" width="740" height="406" alt="Verificação dos resultados no Gemini: 3 ônibus, 40 páginas e 5 lápis, iguais na versão original e na nova, com a conta 112 dividido por 45 igual a 2,48"></figure>
-    </div>
-    <div class="tt-texto">
-      <span class="tt-num">Passo 8</span>
-      <h2 class="tt-titulo">Resolva você mesmo</h2>
-      <ul class="tt-dicas">
-        <li><span>O Gemini mostrou que as respostas não mudaram: <strong>3 ônibus, 40 páginas, 5 lápis</strong>. Mesmo assim, resolva a versão final.</span></li>
-        <li><span>Olhe a conta do Problema 1: 112 ÷ 45 dá 2,488…, que arredonda para <strong>2,49</strong>, e não 2,48. A resposta é a mesma, mas mostra que a conta da IA também se confere.</span></li>
-      </ul>
-      <p class="tt-aviso">A IA ajuda a escrever, mas não é garantia de conta certa nem de enunciado sem brecha. Prova só vai para a turma depois de você resolver a versão final.</p>
-    </div>
-  </section>
-
-  <!-- 9. Antes e depois -->
-  <section class="tt-passo" data-passo data-ao-entrar="comparar">
-    <div class="tt-visual tt-visual--comparar">
-      <div class="tt-comparar">
-        <div class="tt-comparar__cab"><span>Antes</span><span>Depois</span></div>
-        <div class="tt-pares tt-pares--fontes" data-pares></div>
-      </div>
-    </div>
-    <div class="tt-texto">
-      <span class="tt-num">Passo 9</span>
-      <h2 class="tt-titulo">Veja a prova revisada</h2>
-      <ul class="tt-dicas">
-        <li><span><strong>Interativo:</strong> toque em um problema para ver como ficou.</span></li>
-        <li><span>Os números, as perguntas e as respostas são os mesmos. Mudou só o <strong>caminho até entender</strong>.</span></li>
-        <li><span>Mais claro não é sempre mais curto: o Problema 1 perdeu só 3 palavras, mas virou <strong>seis frases</strong> em vez de uma.</span></li>
-      </ul>
-    </div>
-  </section>
-
 </main>
 
 <nav class="tt-rodape" aria-label="Navegação do tutorial">
@@ -280,23 +245,10 @@ Para cada versão, diga em uma linha o que ela facilita e o que pode atrapalhar.
     "Em uma caixa há 5 dúzias de lápis. A professora distribuiu-os igualmente entre 12 alunos, não sobrando nenhum. Quantos lápis cada aluno recebeu?"
   ];
 
-  // Versões finais (resposta real do Gemini, 19/10/2026; a do Problema 1 depois do ajuste pedido)
-  var partes = [
-    {antes:"Problema 1", depois:"Versão B, ajustada",
-     novo:"Uma escola tem 4 turmas de 5º ano. Cada turma tem 28 alunos. Os alunos vão fazer um passeio de ônibus. Cada ônibus tem capacidade para 45 passageiros. Os professores não entram nessa conta. Quantos ônibus, no mínimo, serão necessários para levar todos os alunos?"},
-    {antes:"Problema 2", depois:"Versão mais simples",
-     novo:"Um livro tem 120 páginas. Na segunda-feira, Ana leu 1/3 do livro. Na terça-feira, ela leu a metade das páginas que ainda sobravam. Quantas páginas faltam para ela terminar de ler o livro?"},
-    {antes:"Problema 3", depois:"Versão mais simples",
-     novo:"Em uma caixa há 5 dúzias de lápis. A professora dividiu todos esses lápis igualmente entre 12 alunos. Quantos lápis cada aluno recebeu?"}
-  ];
-
   function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;"); }
 
   document.querySelector("[data-prova]").innerHTML = prova.map(function(p){
     return "<li><span>"+esc(p)+"</span><i></i></li>";
-  }).join("");
-  document.querySelector("[data-pares]").innerHTML = partes.map(function(p,i){
-    return '<button class="tt-par" type="button"><span class="tt-par__antes"><b>'+esc(p.antes)+'</b>'+esc(prova[i])+'</span><span class="tt-par__depois"><b>'+esc(p.depois)+'</b>'+esc(p.novo)+'</span></button>';
   }).join("");
 
   var passos = [].slice.call(document.querySelectorAll("[data-passo]"));
@@ -321,7 +273,6 @@ Para cada versão, diga em uma linha o que ela facilita e o que pode atrapalhar.
     seguir.innerHTML = prox ? "<span>A seguir</span><b>"+esc(prox.textContent)+"</b>" : "";
     atual = i;
     try { history.replaceState(null, "", "#passo-"+i); } catch(e){}
-    if (passos[i].getAttribute("data-ao-entrar") === "comparar") abrirPar(0);
   }
 
   btVoltar.addEventListener("click", function(){ ir(atual-1); });
@@ -346,13 +297,6 @@ Para cada versão, diga em uma linha o que ela facilita e o que pode atrapalhar.
       } catch(e){ rotulo.textContent = "Selecione e copie"; }
     });
   });
-
-  // Antes e depois
-  var pares = [].slice.call(document.querySelectorAll(".tt-par"));
-  function abrirPar(i){
-    pares.forEach(function(b,k){ b.classList.toggle("aberto", k===i); b.setAttribute("aria-expanded", k===i); });
-  }
-  pares.forEach(function(b,i){ b.addEventListener("click", function(){ abrirPar(i); }); });
 
   var inicio = parseInt((location.hash.match(/passo-(\d+)/) || [])[1], 10);
   ir(isNaN(inicio) ? 0 : inicio);

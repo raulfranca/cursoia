@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Traduzir e entender um texto em outra língua · Inteligência Artificial para Educadores</title>
+<meta name="description" content="Tutorial guiado: anexe um edital em PDF no Gemini, peça uma visão geral, entenda as regras trecho por trecho e confira prazo e requisitos antes de se inscrever.">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Traduzir e entender um texto em outra língua">
+<meta property="og:description" content="Tutorial guiado: anexe um edital em PDF no Gemini, peça uma visão geral, entenda as regras trecho por trecho e confira prazo e requisitos antes de se inscrever.">
+<meta property="og:url" content="https://raulfranca.github.io/cursoia/t3/edital-tutorial.html">
+<meta property="og:image" content="https://raulfranca.github.io/cursoia/assets/ilustracoes/og-curso-ia.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Caveat:wght@400;700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS6YNMGLZ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GS6YNMGLZ9');
+</script>
+
+<link rel="stylesheet" href="../assets/artigos.css">
+
+<body class="pg-tutorial">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+  <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M3 12h.01"/><path d="M3 18h.01"/><path d="M3 6h.01"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M8 6h13"/></symbol>
+  <symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-file-check" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+  <symbol id="i-paperclip" viewBox="0 0 24 24"><path d="m16 6-8.414 8.586a2 2 0 0 0 2.829 2.829l8.414-8.586a4 4 0 1 0-5.657-5.657l-8.379 8.551a6 6 0 1 0 8.485 8.485l8.379-8.551"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></symbol>
+  <linearGradient id="g-gemini" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4285f4"/><stop offset=".55" stop-color="#9b72cb"/><stop offset="1" stop-color="#d96570"/></linearGradient>
+  <symbol id="i-gemini" viewBox="0 0 24 24"><path fill="url(#g-gemini)" stroke="none" d="M12 0C12 6.6 17.4 12 24 12C17.4 12 12 17.4 12 24C12 17.4 6.6 12 0 12C6.6 12 12 6.6 12 0Z"/></symbol>
+</svg>
+
+<header class="pg-header">
+  <div class="pg-header__in">
+    <a class="pg-wordmark" href="../">Inteligência Artificial para Educadores</a>
+    <div class="tt-topo">
+      <div class="tt-progresso" aria-hidden="true"></div>
+      <span class="tt-contagem" aria-live="polite"></span>
+    </div>
+  </div>
+</header>
+
+<main class="tt-palco">
+
+  <!-- Prêmio e fundação inventados para o tutorial: o edital é nosso e pode aparecer inteiro. -->
+
+  <!-- 0. Capa -->
+  <section class="tt-passo tt-capa" data-passo>
+    <div class="tt-texto">
+      <span class="iap-eyebrow">Tópico 3 · IA como assistente de texto</span>
+      <h1 class="tt-titulo">Traduzir e entender um texto em outra língua</h1>
+      <p class="tt-capa__lead">Neste exemplo, vamos fazer nossa inscrição em um prêmio internacional de práticas pedagógicas que leva os finalistas para Nova Iorque. Professores do mundo inteiro podem participar e inscrever projetos em suas próprias línguas, mas o edital está todo em inglês.</p>
+      <ul class="tt-capa__meta">
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-list"/></svg><span><b>7</b> passos</span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-clock"/></svg><span><b>12</b> minutos</span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-shield-check"/></svg><span><b>Sem dados sensíveis</b>: ChatGPT ou Gemini</span></li>
+      </ul>
+      <button class="iap-btn iap-btn--lg iap-btn--ink" type="button" data-ir="1">Começar <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+    </div>
+    <div class="tt-visual">
+      <div class="tt-fluxo" role="img" aria-label="Trecho do edital em inglês, sobre quem pode participar e o prazo, e o que ele quer dizer: full-time é jornada completa, in good standing é situação funcional regular, e o prazo é 1º de março às 23h59 de Nova York">
+        <div class="tt-enunciado tt-enunciado--antes">
+          <span>Trecho do edital · em inglês</span>
+          <p lang="en">Full-time public school teachers, in good standing with their school district.<br>Entries close 03/01/2027 at 11:59 p.m. ET.</p>
+        </div>
+        <span class="tt-fluxo__passa"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-down"/></svg>o Gemini explica, você confere</span>
+        <div class="tt-enunciado tt-enunciado--depois">
+          <span class="tt-fluxo__etiqueta"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-file-check"/></svg>O que o trecho quer dizer</span>
+          <p><b>"Full-time".</b> Jornada completa. Se 30 horas contam, o edital não diz.</p>
+          <p><b>"In good standing".</b> Situação funcional regular. Nada a ver com ficar em pé.</p>
+          <p><b>"03/01/2027".</b> Nos EUA o mês vem antes: 1º de março, não 3 de janeiro.</p>
+          <p><b>"11:59 p.m. ET".</b> 23h59 em Nova York, onde é o encontro: em Brasília, já é 1h59 do dia 2.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. Objetivo -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="tt-fontes__fig">
+        <div class="tt-fontes">
+          <div class="tt-fonte"><span class="tt-fonte__tipo">Em inglês</span><p class="tt-fonte__titulo" lang="en">The fine print.</p></div>
+          <div class="tt-fonte tt-fonte--reportagem"><span class="tt-fonte__tipo">Tradução ao pé da letra</span><p class="tt-fonte__titulo">A impressão fina.</p></div>
+          <div class="tt-fonte tt-fonte--reportagem"><span class="tt-fonte__tipo">Tradução do sentido</span><p class="tt-fonte__titulo">As letras miúdas.</p></div>
+        </div>
+      </figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 1</span>
+      <h2 class="tt-titulo">Entenda, não só traduza</h2>
+      <ul class="tt-dicas">
+        <li><span>No exemplo, encontramos o <strong>Chalkline Teacher Awards</strong>: um prêmio internacional de práticas pedagógicas que leva os finalistas a um encontro em Nova York.</span></li>
+        <li><span>O projeto pode ser inscrito em português e o encontro tem tradução simultânea. Não é preciso falar inglês para concorrer, só para <strong>entender as regras</strong>.</span></li>
+        <li><span>Vamos em duas etapas: primeiro uma <strong>visão geral</strong> do edital inteiro; depois, <strong>trecho por trecho</strong>, com a sua situação.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 2. Baixar o edital -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <!-- Página do PDF de exemplo (assets/materiais/chalkline-edital-2027.pdf) -->
+      <figure class="pg-shot tt-foto-cabe"><img src="../assets/capturas/edital-1-pdf.webp" width="1632" height="2112" alt="Primeira página do edital em PDF do Chalkline Teacher Awards 2027: título, as seções What's in it for you, Who can apply e How to apply, um quadro com três datas e, no rodapé, em letra bem pequena, The fine print"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 2</span>
+      <h2 class="tt-titulo">Baixe o edital</h2>
+      <ul class="tt-dicas">
+        <li><span>Edital costuma vir em <strong>PDF</strong>. No site do prêmio, procure o botão de download ou nomes como "Call for entries", "Official rules" ou "Terms".</span></li>
+        <li><span>Baixe do <strong>site de quem organiza</strong>. Edital repassado em grupo de WhatsApp pode estar cortado ou desatualizado.</span></li>
+      </ul>
+      <p class="tt-aviso">O prêmio e a fundação são inventados para este exemplo. Caso queira praticar, baixe o PDF de exemplo. Com um edital de verdade, o caminho será o mesmo.</p>
+      <a class="iap-btn iap-btn--md iap-btn--primary tt-baixar" href="../assets/materiais/chalkline-edital-2027.pdf" download>Baixar o edital do exemplo (PDF) <svg class="ico ico--sm" aria-hidden="true"><use href="#i-download"/></svg></a>
+    </div>
+  </section>
+
+  <!-- 3. Anexar o PDF -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <div class="tt-envio" role="img" aria-label="Caixa de texto da IA com o arquivo chalkline-edital-2027.pdf anexado, o botão de mais à esquerda e a seta de enviar à direita">
+        <div class="tt-envio__item tt-envio__item--anexo">
+          <span class="tt-envio__arquivo"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-paperclip"/></svg><span>chalkline-edital-2027.pdf<small>PDF</small></span></span>
+          <span class="tt-envio__como">clique no +</span>
+        </div>
+        <div class="tt-envio__item">
+          <p class="tt-envio__texto">Peça ao Gemini</p>
+          <span class="tt-envio__como">o pedido vem no passo 4</span>
+        </div>
+        <div class="tt-envio__barra">
+          <svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg>
+          <span class="tt-envio__enviar"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-up"/></svg></span>
+        </div>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 3</span>
+      <h2 class="tt-titulo">Anexe o PDF</h2>
+      <ul class="tt-dicas">
+        <li><span>No <strong>computador ou Chromebook</strong>. O edital é público e não tem dado de aluno: o <strong>ChatGPT</strong> ou a sua conta pessoal também servem.</span></li>
+        <li><span>Comece uma <strong>conversa nova</strong>, só para o edital. Ela vai durar alguns pedidos, e cada um se apoia no anterior.</span></li>
+        <li><span>Clique no <strong>+</strong> (no Gemini, Enviar arquivos; no ChatGPT, Adicionar fotos e arquivos) e escolha o PDF na pasta Downloads.</span></li>
+        <li><span>Anexada, a IA lê o <strong>edital inteiro</strong>, inclusive o rodapé. Nesta etapa, não precisa copiar nada.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 4. Pedido 1: visão geral -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <div class="pg-prompt pg-prompt--longo">
+        <span class="pg-prompt__rotulo">Comando (Prompt)</span>
+<p data-instrucao>Sou professor de uma escola pública municipal no Brasil, no ensino fundamental, e não leio inglês com segurança. Anexei o edital de um prêmio para professores que leva os finalistas a uma viagem ao exterior. Antes de ler as regras uma por uma, quero uma visão geral para decidir se vale a pena continuar.
+
+Resuma o edital em português, em tópicos curtos:
+- o que é o prêmio e o que o finalista ganha;
+- quem pode participar;
+- como se inscrever;
+- as datas importantes, convertidas para o formato brasileiro (dia/mês/ano) e, quando houver horário, para o horário de Brasília.
+
+Sobre as regras, use só o que está escrito no edital. Se algo não estiver escrito, diga que não está.</p>
+        <button class="iap-btn iap-btn--md iap-btn--quieto tt-copiar" type="button" data-copiar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-copy"/></svg><span>Copiar instrução</span></button>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 4</span>
+      <h2 class="tt-titulo">Peça uma visão geral</h2>
+      <ul class="tt-dicas">
+        <li><span>Escreva o pedido na <strong>mesma mensagem</strong> do PDF anexado e clique na seta. Para pular linha sem enviar: <strong>Shift + Enter</strong>.</span></li>
+        <li><span><strong>Formato brasileiro e horário de Brasília</strong>: nos EUA o mês vem antes do dia, e o prazo está no horário de Nova York.</span></li>
+        <li><span><strong>"Use só o que está escrito"</strong>: sem essa regra, a IA completa o que falta com o que parece provável.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 5. Ler a visão geral -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <!-- Resposta real do Gemini (Flash), 20/10/2026, recriada em HTML (trechos). A resposta se repetiu no começo (falha do Gemini); os trechos são da versão completa que veio logo depois. -->
+      <div class="tt-gemini" role="img" aria-label="Resposta do Gemini com a visão geral do edital, cada linha com um selo PDF: viagem a Nova York de 14 a 18 de junho, visto e seguro por conta do finalista, a forma de envio do vídeo que não está no documento e as datas no formato brasileiro">
+        <p class="tt-gemini__voce">Sou professor de uma escola pública municipal no Brasil, no ensino fundamental…</p>
+        <div class="tt-gemini__resp">
+          <svg class="tt-gemini__estrela" aria-hidden="true"><use href="#i-gemini"/></svg>
+          <div class="tt-gemini__md">
+            <p><b>O que é o prêmio e o que o finalista ganha</b></p>
+            <ul>
+              <li>Doze finalistas ganham uma viagem com todas as despesas pagas para o Chalkline Summit em Nova York, de 14 a 18 de junho de 2027. <span class="tt-gemini__pdf">PDF</span></li>
+              <li>Custos de visto e seguro de viagem não são cobertos (são de responsabilidade do finalista). <span class="tt-gemini__pdf">PDF</span></li>
+            </ul>
+            <p><b>Como se inscrever</b></p>
+            <ul>
+              <li><mark>A forma exata de envio do vídeo (se por formulário, e-mail ou plataforma específica) não está descrita no documento.</mark> <span class="tt-gemini__pdf">PDF</span></li>
+            </ul>
+            <p><b>Datas importantes</b></p>
+            <ul>
+              <li><b>Encerramento das inscrições:</b> 01/03/2027 às 23:59 ET […] 01:59 da madrugada do dia 02/03/2027 (no horário oficial de Brasília). <span class="tt-gemini__pdf">PDF</span></li>
+              <li><b>Anúncio dos finalistas:</b> 15/04/2027, por e-mail. <span class="tt-gemini__pdf">PDF</span></li>
+              <li><b>Prazo limite para ter o visto americano válido:</b> 15/05/2027. <span class="tt-gemini__pdf">PDF</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 5</span>
+      <h2 class="tt-titulo">Leia a visão geral</h2>
+      <ul class="tt-dicas">
+        <li><span>Cada linha termina num selo <strong>PDF</strong>. Clique nele para ver de que parte do edital a informação saiu.</span></li>
+        <li><span>Repare no que <strong>não está escrito</strong>: o edital não diz por onde enviar o vídeo. Isso vira pergunta para os organizadores.</span></li>
+        <li><span>As datas já vêm no formato brasileiro. O prêmio interessa? Então vale ler as regras <strong>uma por uma</strong>.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6. Pedido 2: trecho por trecho -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <div class="pg-prompt pg-prompt--longo">
+        <span class="pg-prompt__rotulo">Comando (Prompt)</span>
+<p data-instrucao>Agora quero entender o edital ponto a ponto. Vou colar um trecho de cada vez. Minha situação: sou professor efetivo da rede municipal há seis anos, com jornada de 30 horas semanais. Não tenho passaporte. O projeto que eu mandaria foi feito com uma turma de 4º ano: [descreva o projeto].
+
+O que significa: [cole aqui o trecho]</p>
+        <button class="iap-btn iap-btn--md iap-btn--quieto tt-copiar" type="button" data-copiar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-copy"/></svg><span>Copiar instrução</span></button>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 6</span>
+      <h2 class="tt-titulo">Interessou? Entenda o edital ponto a ponto</h2>
+      <ul class="tt-dicas">
+        <li><span>Apresente <strong>o seu contexto</strong> na conversa e a IA usará essa informação para interpretar os trechos do edital.</span></li>
+        <li><span>No PDF, selecione um trecho com o mouse, copie com <strong>Ctrl + C</strong> e cole com <strong>Ctrl + V</strong>.</span></li>
+      </ul>
+      <p class="tt-aviso tt-aviso--alerta">Se o Gemini responder "Sou apenas um modelo de linguagem", tente novamente.</p>
+    </div>
+  </section>
+
+  <!-- 7. Pedido 3: e-mail aos organizadores (opcional) -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <div class="pg-prompt pg-prompt--longo">
+        <span class="pg-prompt__rotulo">Comando (Prompt) · opcional</span>
+<p data-instrucao>Quero tirar três dúvidas com os organizadores antes de me inscrever. Escreva aqui na conversa, sem criar rascunho no Gmail, um e-mail curto em inglês simples com estas perguntas:
+
+1. Minha jornada é de 30 horas semanais. Isso conta como "full-time"?
+2. O edital não diz por onde enviar o vídeo. Como faço a inscrição?
+3. Se eu for finalista, terei só um mês, de 15 de abril a 15 de maio, para tirar o visto. Posso apresentar o agendamento da entrevista, se ela for depois de 15 de maio?
+
+Logo abaixo, escreva a tradução do e-mail em português, para eu saber exatamente o que estou enviando.</p>
+        <button class="iap-btn iap-btn--md iap-btn--quieto tt-copiar" type="button" data-copiar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-copy"/></svg><span>Copiar instrução</span></button>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 7</span>
+      <h2 class="tt-titulo">Tire as dúvidas por e-mail</h2>
+      <ul class="tt-dicas">
+        <li><span>Anote os trechos que você <strong>não entendeu</strong> ou que não se encaixam na sua situação e escreva as perguntas em português, do seu jeito. Troque as do exemplo pelas suas.</span></li>
+        <li><span>Leia a <strong>tradução</strong> antes de enviar: o e-mail tem de perguntar o que você perguntou, sem afirmar nada por você.</span></li>
+        <li><span>"Sem criar rascunho no Gmail": às vezes o Gemini abre o rascunho direto no Gmail e esquece a tradução. Para saber para qual e-mail enviar, busque no <strong>site do prêmio</strong>.</span></li>
+      </ul>
+      <p class="tt-aviso">A IA explicou o edital em minutos e ajudou a escrever as perguntas. Conferir prazo e requisitos no edital original, e decidir se inscrever, continua sendo com você.</p>
+    </div>
+  </section>
+
+
+</main>
+
+<nav class="tt-rodape" aria-label="Navegação do tutorial">
+  <div class="tt-rodape__in">
+    <span class="tt-atalho">Use <kbd aria-label="seta para a esquerda">←</kbd><kbd aria-label="seta para a direita">→</kbd> no teclado</span>
+    <button class="iap-btn iap-btn--md iap-btn--quieto" type="button" data-voltar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-left"/></svg>Voltar</button>
+    <p class="tt-seguir" data-seguir aria-hidden="true"></p>
+    <button class="iap-btn iap-btn--md iap-btn--primary" type="button" data-avancar>Próximo <svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+  </div>
+</nav>
+
+<script>
+(function(){
+  function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;"); }
+
+  var passos = [].slice.call(document.querySelectorAll("[data-passo]"));
+  var barra = document.querySelector(".tt-progresso");
+  barra.innerHTML = passos.map(function(){ return "<i></i>"; }).join("");
+  var pontos = [].slice.call(barra.children);
+  var contagem = document.querySelector(".tt-contagem");
+  var btVoltar = document.querySelector("[data-voltar]");
+  var btAvancar = document.querySelector("[data-avancar]");
+  var seguir = document.querySelector("[data-seguir]");
+  var atual = -1;
+
+  function ir(i){
+    i = Math.max(0, Math.min(passos.length-1, i));
+    if (i === atual) return;
+    passos.forEach(function(p,k){ p.classList.toggle("ativo", k===i); p.hidden = k!==i; });
+    pontos.forEach(function(p,k){ p.className = k<i ? "feito" : (k===i ? "agora" : ""); });
+    contagem.textContent = i===0 ? "" : "Passo "+i+" de "+(passos.length-1);
+    btVoltar.disabled = i===0;
+    btAvancar.disabled = i===passos.length-1;
+    var prox = passos[i+1] && passos[i+1].querySelector(".tt-titulo");
+    seguir.innerHTML = prox ? "<span>A seguir</span><b>"+esc(prox.textContent)+"</b>" : "";
+    atual = i;
+    try { history.replaceState(null, "", "#passo-"+i); } catch(e){}
+  }
+
+  btVoltar.addEventListener("click", function(){ ir(atual-1); });
+  btAvancar.addEventListener("click", function(){ ir(atual+1); });
+  document.querySelectorAll("[data-ir]").forEach(function(b){
+    b.addEventListener("click", function(){ ir(+b.getAttribute("data-ir")); });
+  });
+  document.addEventListener("keydown", function(e){
+    if (e.target.closest && e.target.closest("input,textarea")) return;
+    if (e.key === "ArrowRight") ir(atual+1);
+    if (e.key === "ArrowLeft") ir(atual-1);
+  });
+
+  // Copiar instrução: cada botão copia o comando do seu próprio quadro, com as quebras de linha
+  document.querySelectorAll("[data-copiar]").forEach(function(bt){
+    bt.addEventListener("click", function(){
+      var texto = bt.closest(".pg-prompt").querySelector("[data-instrucao]").textContent;
+      var rotulo = bt.querySelector("span");
+      function ok(){ rotulo.textContent = "Copiado"; setTimeout(function(){ rotulo.textContent = "Copiar instrução"; }, 2000); }
+      try {
+        navigator.clipboard.writeText(texto).then(ok, function(){ rotulo.textContent = "Selecione e copie"; });
+      } catch(e){ rotulo.textContent = "Selecione e copie"; }
+    });
+  });
+
+  var inicio = parseInt((location.hash.match(/passo-(\d+)/) || [])[1], 10);
+  ir(isNaN(inicio) ? 0 : inicio);
+})();
+</script>
+
+</body>
+</html>

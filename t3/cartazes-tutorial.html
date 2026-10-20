@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cartazes em várias línguas · Inteligência Artificial para Educadores</title>
+<title>Traduzir de português para outras línguas · Inteligência Artificial para Educadores</title>
 <meta name="description" content="Tutorial guiado: traduza uma estrofe para várias línguas com o Gemini, confira cada tradução pelo caminho de volta e monte cartazes para a mostra cultural da escola.">
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Cartazes em várias línguas">
+<meta property="og:title" content="Traduzir de português para outras línguas">
 <meta property="og:description" content="Tutorial guiado: traduza uma estrofe para várias línguas com o Gemini, confira cada tradução pelo caminho de volta e monte cartazes para a mostra cultural da escola.">
 <meta property="og:url" content="https://raulfranca.github.io/cursoia/t3/cartazes-tutorial.html">
 <meta property="og:image" content="https://raulfranca.github.io/cursoia/assets/ilustracoes/og-curso-ia.jpg">
@@ -40,7 +40,7 @@
   <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></symbol>
   <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
   <symbol id="i-list" viewBox="0 0 24 24"><path d="M3 12h.01"/><path d="M3 18h.01"/><path d="M3 6h.01"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M8 6h13"/></symbol>
-  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
+  <symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
 </svg>
 
@@ -60,19 +60,19 @@
   <section class="tt-passo tt-capa" data-passo>
     <div class="tt-texto">
       <span class="iap-eyebrow">Tópico 3 · IA como assistente de texto</span>
-      <h1 class="tt-titulo">Cartazes em várias línguas</h1>
-      <p class="tt-capa__lead">Traduza uma estrofe com o Gemini, confira cada versão pelo caminho de volta e monte os cartazes da mostra cultural</p>
+      <h1 class="tt-titulo">Traduzir de português para outras línguas</h1>
+      <p class="tt-capa__lead">Neste exemplo, temos um projeto sobre diferenças e queremos traduzir uma estrofe para várias línguas diferentes.</p>
       <ul class="tt-capa__meta">
-        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-list"/></svg><span><b>10</b> passos</span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-list"/></svg><span><b>7</b> passos</span></li>
         <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-clock"/></svg><span><b>15</b> minutos</span></li>
-        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-shield"/></svg><span>Gemini da <b>conta institucional</b></span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-shield-check"/></svg><span><b>Sem dados sensíveis</b>: ChatGPT ou Gemini</span></li>
       </ul>
       <button class="iap-btn iap-btn--lg iap-btn--ink" type="button" data-ir="1">Começar <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
     </div>
     <div class="tt-visual">
       <div class="tt-fluxo" role="img" aria-label="A estrofe Somos todos diferentes, em português, vira seis cartazes pequenos com o primeiro verso em espanhol, inglês, árabe, japonês, russo e hindi">
         <div class="tt-cartaz tt-cartaz--original">
-          <span class="tt-cartaz__lingua">Português · a estrofe da professora</span>
+          <span class="tt-cartaz__lingua">Português · a estrofe da música</span>
           <p class="tt-cartaz__texto" data-capa-original></p>
         </div>
         <span class="tt-fluxo__passa"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-down"/></svg>o Gemini traduz, quem fala a língua confere</span>
@@ -98,74 +98,37 @@
     </div>
     <div class="tt-texto">
       <span class="tt-num">Passo 1</span>
-      <h2 class="tt-titulo">Comece pela estrofe</h2>
+      <h2 class="tt-titulo">O que você quer traduzir?</h2>
       <ul class="tt-dicas">
-        <li><span>O texto é <strong>seu</strong>: a ideia, as palavras e o tema da mostra. A IA só vai levá-lo para outras línguas.</span></li>
-        <li><span>Em poesia, cada palavra foi escolhida pelo <strong>som e pelo sentido</strong>. Traduzir palavra por palavra costuma perder os dois.</span></li>
-        <li><span>A rima quase sempre se perde em outra língua. Tudo bem: o que não pode se perder é a <strong>mensagem</strong>.</span></li>
+        <li><span>A inteligência artificial generativa é extremamente <b>competente para tradução</b>. Ela é especialista em <b>padrões de associação de palavras</b>, e sabe fazer isso em várias línguas.</span></li>
+        <li><span><b>Traduzir poesia não é fácil</b>, com ou sem IA. Cada palavra na língua original foi escolhida pelo som e pelo sentido, e isso muda de língua para língua.</span></li>
+        <li><span>Mesmo assim, a IA pode tentar encontrar opções de tradução que preservem a <strong>sonoridade e o significado</strong>.</span></li>
       </ul>
     </div>
   </section>
 
-  <!-- 2. Escolher as línguas -->
-  <section class="tt-passo" data-passo>
-    <div class="tt-visual">
-      <div class="tt-cartaz-linguas">
-        <div class="tt-cartaz-linguas__grupo">
-          <span>Das famílias da sua escola</span>
-          <ul><li lang="es">Español</li><li lang="en">English</li><li class="tt-cartaz-linguas__vazio">a que você descobrir</li></ul>
-        </div>
-        <div class="tt-cartaz-linguas__grupo">
-          <span>Indígenas do Brasil</span>
-          <ul><li lang="gn">Avañe'ẽ <small>guarani</small></li><li lang="yrl">Nheengatu</li></ul>
-        </div>
-        <div class="tt-cartaz-linguas__grupo">
-          <span>De quem chegou de longe</span>
-          <ul><li lang="it">Italiano</li><li lang="ja">日本語 <small>japonês</small></li><li lang="ar"><bdi>العربية</bdi> <small>árabe</small></li></ul>
-        </div>
-        <div class="tt-cartaz-linguas__grupo">
-          <span>Com outros alfabetos</span>
-          <ul><li lang="ru">Русский <small>russo</small></li><li lang="hi">हिन्दी <small>hindi</small></li></ul>
-        </div>
-        <div class="tt-cartaz-linguas__grupo tt-cartaz-linguas__grupo--libras">
-          <span>Língua de sinais</span>
-          <ul><li>Libras <small>não se escreve: veja o aviso</small></li></ul>
-        </div>
-      </div>
-    </div>
-    <div class="tt-texto">
-      <span class="tt-num">Passo 2</span>
-      <h2 class="tt-titulo">Escolha as línguas</h2>
-      <ul class="tt-dicas">
-        <li><span>Comece pelas línguas <strong>das famílias da sua escola</strong>. A criança que se vê no cartaz entende o tema da mostra na hora.</span></li>
-        <li><span>Inclua uma <strong>língua indígena</strong>: o Brasil tem mais de 270, e quase ninguém sabe disso.</span></li>
-        <li><span>Uma língua de <strong>outro alfabeto</strong> mostra, só de olhar, que existem muitos jeitos de escrever.</span></li>
-      </ul>
-      <p class="tt-aviso">Libras é uma língua de sinais, com gramática própria, e não tem versão escrita para colar na parede. Para incluí-la, peça a quem sinaliza que grave a estrofe em vídeo e coloque um QR code no cartaz.</p>
-    </div>
-  </section>
-
-  <!-- 3. Abrir o Gemini -->
+  <!-- 2. Abrir o Gemini -->
   <section class="tt-passo" data-passo>
     <div class="tt-visual">
       <figure class="pg-shot"><img src="../assets/capturas/ditado-0-inicio.webp" width="700" height="180" alt="Tela inicial do Gemini com a caixa Peça ao Gemini e o ícone de escudo à esquerda do texto"></figure>
     </div>
     <div class="tt-texto">
-      <span class="tt-num">Passo 3</span>
+      <span class="tt-num">Passo 2</span>
       <h2 class="tt-titulo">Abra o Gemini</h2>
       <ul class="tt-dicas">
-        <li><span>No <strong>computador ou Chromebook</strong>, com a conta @educa (institucional).</span></li>
-        <li><span>Comece uma <strong>conversa nova</strong>. Vamos usar duas conversas neste tutorial, e o passo 6 explica por quê.</span></li>
+        <li><span>No <strong>computador ou Chromebook</strong>.</span></li>
+        <li><span>Por não tratar dados sensíveis, o <strong>ChatGPT</strong> também pode fazer a tarefa.</span></li>
+        <li><span>Comece uma <strong>conversa nova</strong>. Vamos usar duas conversas neste tutorial, e o passo 4 explica por quê.</span></li>
       </ul>
     </div>
   </section>
 
-  <!-- 4. Pedido de tradução -->
+  <!-- 3. Pedido de tradução -->
   <section class="tt-passo" data-passo>
     <div class="tt-visual">
       <div class="pg-prompt pg-prompt--longo">
         <span class="pg-prompt__rotulo">Comando (Prompt)</span>
-<p data-instrucao>Estou preparando uma mostra cultural na escola com o tema "as diferenças". Quero traduzir a estrofe abaixo para fazer cartazes que serão colados pela escola e lidos por crianças de 6 a 11 anos e pelas famílias.
+<p data-instrucao>Estou preparando uma mostra cultural na escola com o tema "as diferenças". Quero traduzir a estrofe abaixo para <mark>fazer cartazes que serão colados pela escola e lidos por crianças de 6 a 11 anos e pelas famílias</mark>.
 
 Somos todos diferentes
 Cada um tem o seu jeito
@@ -175,80 +138,48 @@ E todos merecem respeito
 Traduza para: espanhol, inglês, guarani, árabe, japonês, russo e hindi.
 
 Regras:
-1. Traduza o sentido, não palavra por palavra. O texto precisa soar natural para quem fala a língua.
+1. <mark>Traduza o sentido, não palavra por palavra.</mark> O texto precisa soar natural para quem fala a língua.
 2. Se a rima se perder, avise e dê prioridade ao sentido. Não acrescente ideias que não estão na estrofe só para rimar.
 3. Se algum verso puder ser entendido de dois jeitos, diga qual sentido você escolheu.
 4. Para cada língua, escreva o nome da língua nela mesma e em português, depois a estrofe. Nas línguas que não usam o nosso alfabeto, mostre também como se pronuncia, para as crianças lerem em voz alta.
-5. No fim, diga em quais línguas a sua tradução é menos confiável e por quê.</p>
+5. <mark>No fim, diga em quais línguas a sua tradução é menos confiável e por quê.</mark></p>
         <button class="iap-btn iap-btn--md iap-btn--quieto tt-copiar" type="button" data-copiar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-copy"/></svg><span>Copiar instrução</span></button>
       </div>
     </div>
     <div class="tt-texto">
-      <span class="tt-num">Passo 4</span>
+      <span class="tt-num">Passo 3</span>
       <h2 class="tt-titulo">Peça a tradução</h2>
       <ul class="tt-dicas">
-        <li><span>Conte <strong>para que e para quem</strong> é o texto: cartaz, crianças, famílias. Isso muda a escolha das palavras.</span></li>
-        <li><span><strong>"Traduza o sentido"</strong>: sem esse pedido, a IA pode entregar uma tradução certinha que ninguém falaria daquele jeito.</span></li>
-        <li><span>A última regra faz a IA dizer <strong>onde ela é mais fraca</strong>, em vez de entregar tudo com a mesma segurança.</span></li>
+        <li><span>Conte <mark>para que e para quem</mark> é o texto: cartaz, crianças, famílias. Isso muda a escolha das palavras.</span></li>
+        <li><span><mark>"Traduza o sentido"</mark>: sem esse pedido, a IA pode entregar uma tradução literal que nenhum falante nativo diria.</span></li>
+        <li><span>A última regra faz a IA dizer <mark>onde ela é mais fraca</mark>, em vez de entregar tudo com a mesma segurança.</span></li>
       </ul>
     </div>
   </section>
 
-  <!-- 5. Resposta -->
-  <section class="tt-passo" data-passo>
-    <div class="tt-visual">
-      <figure class="pg-shot"><img src="../assets/capturas/cartaz-1-traducao.webp" width="740" height="358" alt="Bloco do árabe na resposta do Gemini: o nome da língua em árabe e em português, a estrofe em árabe com os pontos finais caídos do lado esquerdo, a pronúncia em letras do nosso alfabeto e a nota de que a rima foi deixada de lado"></figure>
-    </div>
-    <div class="tt-texto">
-      <span class="tt-num">Passo 5</span>
-      <h2 class="tt-titulo">Leia as traduções</h2>
-      <ul class="tt-dicas">
-        <li><span>Antes de traduzir, o Gemini explicou o verso 3: "ninguém é igual à gente" virou <strong>"ninguém é igual a nós"</strong>. Era isso mesmo.</span></li>
-        <li><span>No fim, ele marcou o <strong>guarani e o árabe</strong> como menos confiáveis. São os primeiros a conferir.</span></li>
-        <li><span>Repare no árabe: na tela, os pontos finais caíram do <strong>lado esquerdo</strong>. Copiar e colar escrita da direita para a esquerda pode desarrumar o texto.</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- 6. Pedido da volta -->
+  <!-- 4. Pedido da volta -->
   <section class="tt-passo" data-passo>
     <div class="tt-visual">
       <div class="pg-prompt pg-prompt--longo">
         <span class="pg-prompt__rotulo">Comando (Prompt) · numa conversa nova</span>
-<p data-instrucao>Traduza para o português cada um dos textos abaixo, o mais literalmente possível, verso por verso. Não melhore, não corrija e não tente adivinhar o que o autor quis dizer. Se algum trecho estiver estranho, errado ou artificial na língua original, avise.
+<p data-instrucao><mark>Traduza para o português</mark> cada um dos textos abaixo, o mais literalmente possível, verso por verso. Não melhore, não corrija e não tente adivinhar o que o autor quis dizer. Se algum trecho estiver estranho, errado ou artificial na língua original, avise.
 
 …</p>
         <button class="iap-btn iap-btn--md iap-btn--quieto tt-copiar" type="button" data-copiar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-copy"/></svg><span>Copiar instrução</span></button>
       </div>
     </div>
     <div class="tt-texto">
-      <span class="tt-num">Passo 6</span>
-      <h2 class="tt-titulo">Peça a volta</h2>
+      <span class="tt-num">Passo 4</span>
+      <h2 class="tt-titulo">Teste a tradução</h2>
       <ul class="tt-dicas">
-        <li><span>A volta é o <strong>caminho contrário</strong>: cada tradução traduzida de novo para o português. Se a ideia voltar inteira, é bom sinal.</span></li>
-        <li><span>Abra uma <strong>conversa nova</strong>. Na primeira, o Gemini já leu a estrofe e tende a "acertar" a volta de memória.</span></li>
-        <li><span>Troque as reticências pelas traduções, <strong>sem a estrofe em português</strong>.</span></li>
+        <li><span>Se você traduziu para um idioma que não conhece, como saber se ficou certo? </span></li>
+        <li><span>Uma ideia é fazer o <mark>caminho contrário</mark>: pedir para a IA traduzir de volta para o português. Se a ideia não se distorcer, é bom sinal.</span></li>
+        <li><span>Abra uma <strong>conversa nova</strong>, para zerar o contexto. Se fizer na mesma conversa, o Gemini vai lembrar a original e "acertar" de memória.</span></li>
       </ul>
     </div>
   </section>
 
-  <!-- 7. Comparar a volta -->
-  <section class="tt-passo" data-passo>
-    <div class="tt-visual">
-      <figure class="pg-shot"><img src="../assets/capturas/cartaz-2-volta.webp" width="740" height="462" alt="Volta do japonês para o português, feita numa conversa nova: o verso 2 voltou como em cada pessoa há o seu próprio lado bom e o verso 4 como de mãos dadas, vamos nos respeitar mutuamente; o Gemini aponta que a tradução trocou jeito por lado bom e acrescentou a imagem das mãos dadas"></figure>
-    </div>
-    <div class="tt-texto">
-      <span class="tt-num">Passo 7</span>
-      <h2 class="tt-titulo">Compare com o original</h2>
-      <ul class="tt-dicas">
-        <li><span>Palavra diferente é normal: "jeito" voltou como "maneira" no espanhol. <strong>Ideia diferente</strong> é sinal de problema.</span></li>
-        <li><span>O japonês voltou com <strong>"de mãos dadas"</strong>, que não está na estrofe. A volta também achou um erro de grafia no árabe e um "precisam de respeito" no guarani.</span></li>
-        <li><span>Achou um verso torto? Volte à primeira conversa, diga o que mudou e <strong>peça outra versão</strong> daquele verso.</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- 8. Conferir com quem fala -->
+  <!-- 5. Conferir com quem fala -->
   <section class="tt-passo" data-passo>
     <div class="tt-visual">
       <div class="tt-cartaz-confere" role="img" aria-label="Lista de conferência das traduções: espanhol e inglês já conferidos por uma mãe da escola e pela professora de inglês; guarani, japonês e árabe aguardando alguém que fala a língua">
@@ -258,46 +189,47 @@ Regras:
       </div>
     </div>
     <div class="tt-texto">
-      <span class="tt-num">Passo 8</span>
+      <span class="tt-num">Passo 5</span>
       <h2 class="tt-titulo">Confira com quem fala a língua</h2>
       <ul class="tt-dicas">
-        <li><span>A IA aprende com o que está escrito na internet. Língua com <strong>pouco texto publicado</strong>, como o guarani e o nheengatu, sai com mais erro.</span></li>
+        <li><span>Para línguas com <strong>pouco texto publicado</strong>, como o guarani e o nheengatu, a IA tem menos treinamento e comete mais erros.</span></li>
         <li><span>Procure uma <strong>família da escola</strong>, a professora de inglês ou de espanhol da rede, uma comunidade ou associação da língua.</span></li>
-        <li><span>Convidar alguém para conferir também é <strong>parte da mostra</strong>: a família vira coautora do cartaz.</span></li>
+        <li><span>Convidar alguém para conferir também é <strong>parte do projeto</strong>: a família / comunidade vira coautora do cartaz.</span></li>
       </ul>
-      <p class="tt-aviso tt-aviso--alerta">A volta não prova que a tradução está certa: ela só mostra se a ideia se perdeu. Em língua indígena, a IA pode errar nas duas direções. Nenhum cartaz vai para a parede sem alguém que fala a língua ter lido.</p>
+      <p class="tt-aviso tt-aviso--alerta">O teste anterior, feito pela própria IA, não prova que a tradução está boa, apenas que deu para decifrar a ideia de volta. O ideal é que nenhum material seja exposto sem alguém que fala a língua ter lido.</p>
     </div>
   </section>
 
-  <!-- 9. Pedido do cartaz -->
+  <!-- 6. Pedido do cartaz -->
   <section class="tt-passo" data-passo>
     <div class="tt-visual">
       <div class="pg-prompt pg-prompt--longo">
         <span class="pg-prompt__rotulo">Comando (Prompt) · na primeira conversa</span>
 <p data-instrucao>Agora me ajude a montar os cartazes, um para cada língua, incluindo o português, em folha A4 na vertical. Para cada cartaz, organize:
-- Título: o nome da língua escrito nela mesma, em letra grande, e embaixo o nome em português.
+- Título: <mark>o nome da língua escrito nela mesma</mark>, em letra grande, e embaixo o nome em português.
 - A estrofe na língua.
 - A pronúncia, quando a língua não usa o nosso alfabeto.
 - Uma curiosidade sobre a língua ou sobre quem a fala, em uma frase curta que uma criança de 8 anos entenda.
-- Cuidados na hora de montar: direção da escrita, que tipo de fonte mostra as letras corretamente e o que não pode ser cortado ou separado.
+- Cuidados na hora de montar: <mark>direção da escrita, que tipo de fonte mostra as letras corretamente</mark> e o que não pode ser cortado ou separado.
 
-Não use bandeiras de países para representar as línguas.</p>
+<mark>Não use bandeiras de países para representar as línguas.</mark></p>
         <button class="iap-btn iap-btn--md iap-btn--quieto tt-copiar" type="button" data-copiar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-copy"/></svg><span>Copiar instrução</span></button>
       </div>
     </div>
     <div class="tt-texto">
-      <span class="tt-num">Passo 9</span>
+      <span class="tt-num">Passo 6</span>
       <h2 class="tt-titulo">Peça o cartaz</h2>
       <ul class="tt-dicas">
-        <li><span>O <strong>nome da língua escrito nela mesma</strong> é o primeiro presente para quem fala: ver a própria língua do jeito certo.</span></li>
-        <li><span>Árabe e hebraico se escrevem <strong>da direita para a esquerda</strong>. Japonês, russo e hindi precisam de uma fonte que tenha aquelas letras, senão aparecem quadradinhos.</span></li>
-        <li><span><strong>Sem bandeiras</strong>: uma língua não é um país. O espanhol e o árabe são falados em cerca de 20 países cada, e o guarani no Brasil, no Paraguai, na Argentina e na Bolívia.</span></li>
+        <li class="tt-dicas__intro"><span>Algumas ideias para pedir ajuda para a IA montar os cartazes:</span></li>
+        <li><span>O <mark>nome da língua escrito nela mesma</mark> é o primeiro presente para quem fala: ver a própria língua do jeito certo.</span></li>
+        <li><span>Árabe e hebraico se escrevem <mark>da direita para a esquerda</mark>. Japonês, russo e hindi precisam de uma <mark>fonte</mark> que tenha aquelas letras, senão aparecem quadradinhos.</span></li>
+        <li><span><mark>Sem bandeiras</mark>: uma língua não é um país. O espanhol e o árabe são falados em cerca de 20 países cada, e o guarani no Brasil, no Paraguai, na Argentina e na Bolívia.</span></li>
       </ul>
-      <p class="tt-aviso tt-aviso--alerta">Se a volta achou erros, liste-os antes deste comando e peça a correção. Depois, confira de novo: ao corrigir o japonês, o Gemini enfiou no último verso uma palavra em tailandês ("และ"). E desconfie das curiosidades: "pipoca" e "jacaré", que ele disse virem do guarani, vêm do tupi.</p>
+      <p class="tt-aviso tt-aviso--alerta">Desconfie das curiosidades: "pipoca" e "jacaré", que ele disse virem do guarani, vêm do tupi.</p>
     </div>
   </section>
 
-  <!-- 10. Os cartazes -->
+  <!-- 7. Os cartazes -->
   <section class="tt-passo" data-passo data-ao-entrar="cartazes">
     <div class="tt-visual tt-visual--comparar">
       <div class="tt-cartaz-galeria">
@@ -306,7 +238,7 @@ Não use bandeiras de países para representar as línguas.</p>
       </div>
     </div>
     <div class="tt-texto">
-      <span class="tt-num">Passo 10</span>
+      <span class="tt-num">Passo 7</span>
       <h2 class="tt-titulo">Veja os cartazes</h2>
       <ul class="tt-dicas">
         <li><span><strong>Interativo:</strong> toque em uma língua para ver o cartaz.</span></li>
@@ -366,7 +298,7 @@ Não use bandeiras de países para representar as línguas.</p>
      curio:"O guarani é falado por povos indígenas do Brasil, inclusive em aldeias do litoral de São Paulo."}
   ];
 
-  // Lista de conferência do passo 8 (exemplo fictício)
+  // Lista de conferência do passo 5 (exemplo fictício)
   var confere = [
     {lingua:"Espanhol", quem:"Mãe do Pedro, que é boliviana", ok:true},
     {lingua:"Inglês", quem:"Professora de inglês da rede", ok:true},

@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Entender os termos de uso · Inteligência Artificial para Educadores</title>
-<meta name="description" content="Tutorial guiado: peça ao Gemini um resumo dos termos de uso do ChatGPT e uma explicação do que eles significam para você e seus alunos, e confira no texto original os pontos que importam.">
+<title>Resumir e entender um contrato · Inteligência Artificial para Educadores</title>
+<meta name="description" content="Tutorial guiado: peça ao Gemini um resumo em linguagem simples dum contrato do ChatGPT, com o trecho original de cada resposta, e confira os pontos que importam.">
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Entender os termos de uso">
-<meta property="og:description" content="Tutorial guiado: peça ao Gemini um resumo dos termos de uso do ChatGPT e uma explicação do que eles significam para você e seus alunos, e confira no texto original os pontos que importam.">
+<meta property="og:title" content="Resumir e entender um contrato">
+<meta property="og:description" content="Tutorial guiado: peça ao Gemini um resumo em linguagem simples dum contrato do ChatGPT, com o trecho original de cada resposta, e confira os pontos que importam.">
 <meta property="og:url" content="https://raulfranca.github.io/cursoia/t3/termos-tutorial.html">
 <meta property="og:image" content="https://raulfranca.github.io/cursoia/assets/ilustracoes/og-curso-ia.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -38,9 +38,10 @@
   <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></symbol>
   <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
   <symbol id="i-list" viewBox="0 0 24 24"><path d="M3 12h.01"/><path d="M3 18h.01"/><path d="M3 6h.01"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M8 6h13"/></symbol>
-  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
+  <symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
   <symbol id="i-file-check" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-clipboard" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></symbol>
   <symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
   <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
 </svg>
@@ -61,17 +62,17 @@
   <section class="tt-passo tt-capa" data-passo>
     <div class="tt-texto">
       <span class="iap-eyebrow">Tópico 3 · IA como assistente de texto</span>
-      <h1 class="tt-titulo">Entender os termos de uso</h1>
-      <p class="tt-capa__lead">Peça ao Gemini um resumo dos termos do ChatGPT, entenda o que eles mudam para você e seus alunos e confira no original o que importa</p>
+      <h1 class="tt-titulo">Resumir e entender um contrato</h1>
+      <p class="tt-capa__lead">Peça à IA ajuda para ter uma visão geral de um texto longo e complexo, como aqueles termos de uso que ninguém lê antes de usar um site. Neste exemplo, iremos pedir um resumo para saber do que se trata e entender o que importa.</p>
       <ul class="tt-capa__meta">
-        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-list"/></svg><span><b>9</b> passos</span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-list"/></svg><span><b>5</b> passos</span></li>
         <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-clock"/></svg><span><b>10</b> minutos</span></li>
-        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-shield"/></svg><span>Gemini da <b>conta institucional</b></span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-shield-check"/></svg><span><b>Sem dados sensíveis</b>: ChatGPT ou Gemini</span></li>
       </ul>
       <button class="iap-btn iap-btn--lg iap-btn--ink" type="button" data-ir="1">Começar <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
     </div>
     <div class="tt-visual">
-      <div class="tt-fluxo" role="img" aria-label="Um trecho em letra miúda dos termos de uso do ChatGPT, com cerca de 3.500 palavras, vira um resumo por tema: idade mínima, o que acontece com o que você digita e de quem é o texto gerado">
+      <div class="tt-fluxo" role="img" aria-label="Um trecho em letra miúda dum contrato do ChatGPT, com cerca de 3.500 palavras, vira um resumo por tema: para onde vão as suas informações, de quem é o texto gerado e quem responde por erros">
         <div class="tt-enunciado tt-enunciado--antes">
           <span>Termos de uso do ChatGPT · cerca de 3.500 palavras</span>
           <p>Podemos usar o Conteúdo para fornecer, manter, desenvolver e aprimorar nossos Serviços, cumprir a legislação aplicável, fazer cumprir nossos termos e políticas e manter nossos Serviços seguros. […] Se você não deseja que usemos seu Conteúdo para treinar nossos modelos, pode optar por não participar seguindo as instruções neste artigo.</p>
@@ -79,9 +80,9 @@
         <span class="tt-fluxo__passa"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-down"/></svg>o Gemini resume, você confere</span>
         <div class="tt-fluxo__registro">
           <span class="tt-fluxo__etiqueta"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-file-check"/></svg>Resumo por tema</span>
-          <p><b>O que você digita</b>Pode ser usado para treinar a IA, a não ser que você desligue.</p>
-          <p><b>Idade</b>A partir de 13 anos. Abaixo de 18, só com permissão dos pais.</p>
-          <p><b>Texto gerado</b>É seu, mas outra pessoa pode receber um parecido.</p>
+          <p><b>Suas informações</b>Podem ser usadas para treinar a IA, se você não desligar.</p>
+          <p><b>Texto gerado</b>É seu, mas não pode dizer que foi você que escreveu.</p>
+          <p><b>Erros</b>A empresa não assume: confira antes de usar.</p>
         </div>
       </div>
     </div>
@@ -90,7 +91,7 @@
   <!-- 1. Por que ler -->
   <section class="tt-passo" data-passo>
     <div class="tt-visual">
-      <div class="tt-contrato" role="img" aria-label="Página dos termos de uso em letra miúda, com a caixa Li e concordo já marcada e, ao lado, a anotação à mão: será?">
+      <div class="tt-contrato" role="img" aria-label="Página dum contrato em letra miúda, com a caixa Li e concordo já marcada e, ao lado, a anotação à mão: será?">
         <div class="tt-contrato__corpo">
           <h3>Termos de Uso</h3>
           <p class="tt-contrato__data">Em vigor a partir de: 1º de janeiro de 2026</p>
@@ -101,18 +102,18 @@
         </div>
         <div class="tt-contrato__aceite">
           <span class="tt-contrato__caixa"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg></span>
-          <span>Li e concordo com os Termos de Uso</span>
+          <span>Li e concordo com um contrato</span>
           <span class="tt-contrato__nota">será?</span>
         </div>
       </div>
     </div>
     <div class="tt-texto">
       <span class="tt-num">Passo 1</span>
-      <h2 class="tt-titulo">Leia antes de aceitar</h2>
+      <h2 class="tt-titulo">Será que você aceita?</h2>
       <ul class="tt-dicas">
-        <li><span>Os termos de uso são um <strong>contrato</strong>. A primeira frase avisa: ao usar o serviço, você concorda com ele, mesmo sem ter lido.</span></li>
+        <li><span>Um termo de uso é um <strong>contrato</strong>. E no primeiro parágrafo já avisa: ao usar o serviço, você concorda com ele, mesmo sem ter lido.</span></li>
         <li><span>É lá que está escrito o que a empresa pode fazer com o que você digita, quem pode ter conta e quem responde por um erro.</span></li>
-        <li><span>Ninguém lê porque é longo e jurídico. É aí que a IA ajuda: ela <strong>resume e traduz</strong>, e você confere o que importa.</span></li>
+        <li><span>Ninguém (ou quase ninguém) lê porque é longo e está em "juridiquês". É aí que a IA ajuda: ela <strong>resume e traduz</strong>, e você confere o que importa.</span></li>
       </ul>
     </div>
   </section>
@@ -120,25 +121,38 @@
   <!-- 2. Copiar os termos e anotar a data -->
   <section class="tt-passo" data-passo>
     <div class="tt-visual">
-      <div class="tt-contrato" role="img" aria-label="Página oficial dos termos de uso no site da OpenAI, com o endereço no topo e a data Em vigor a partir de 1º de janeiro de 2026 marcada com marca-texto">
+      <div class="tt-contrato tt-copia" role="img" aria-label="Animação: na página dum contrato no site da OpenAI, as teclas Ctrl e A afundam e todo o texto fica selecionado; depois Ctrl e C afundam e o texto vai para a área de transferência">
         <div class="tt-contrato__url"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-lock"/></svg><span>openai.com/pt-BR/policies/terms-of-use</span></div>
         <div class="tt-contrato__corpo">
-          <h3>Termos de Uso</h3>
-          <p class="tt-contrato__data"><mark>Em vigor a partir de: 1º de janeiro de 2026</mark></p>
-          <p>Agradecemos por usar a OpenAI!</p>
-          <p>Estes Termos de Uso se aplicam ao seu uso do ChatGPT, DALL·E e outros serviços da OpenAI para indivíduos, juntamente com quaisquer aplicativos de software e sites associados (em conjunto, “Serviços”). […]</p>
-          <p>Se você reside no Espaço Econômico Europeu, na Suíça ou no Reino Unido, seu uso dos Serviços é regido por estes termos.</p>
-          <p class="tt-contrato__mais">Ctrl + A seleciona tudo · Ctrl + C copia</p>
+          <h3><span class="tt-copia__sel">Termos de Uso</span></h3>
+          <p class="tt-contrato__data"><span class="tt-copia__sel">Em vigor a partir de: 1º de janeiro de 2026</span></p>
+          <p><span class="tt-copia__sel">Agradecemos por usar a OpenAI!</span></p>
+          <p><span class="tt-copia__sel">Estes Termos de Uso se aplicam ao seu uso do ChatGPT, DALL·E e outros serviços da OpenAI para indivíduos, juntamente com quaisquer aplicativos de software e sites associados (em conjunto, “Serviços”). […]</span></p>
+          <p><span class="tt-copia__sel">Se você reside no Espaço Econômico Europeu, na Suíça ou no Reino Unido, seu uso dos Serviços é regido por estes termos.</span></p>
+        </div>
+        <div class="tt-copia__voo" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="tt-copia__barra" aria-hidden="true">
+          <div class="tt-copia__atalho tt-copia__atalho--a">
+            <kbd class="tt-tecla tt-tecla--ctrl">Ctrl</kbd><span class="tt-copia__mais">+</span><kbd class="tt-tecla tt-tecla--x">A</kbd>
+            <span class="tt-copia__rotulo">selecionar tudo</span>
+          </div>
+          <div class="tt-copia__atalho tt-copia__atalho--c">
+            <kbd class="tt-tecla tt-tecla--ctrl">Ctrl</kbd><span class="tt-copia__mais">+</span><kbd class="tt-tecla tt-tecla--x">C</kbd>
+            <span class="tt-copia__rotulo">copiar</span>
+          </div>
+          <div class="tt-copia__prancheta">
+            <svg class="ico" aria-hidden="true"><use href="#i-clipboard"/></svg>
+            <svg class="ico tt-copia__ok" aria-hidden="true"><use href="#i-check"/></svg>
+          </div>
         </div>
       </div>
     </div>
     <div class="tt-texto">
       <span class="tt-num">Passo 2</span>
-      <h2 class="tt-titulo">Copie os termos e anote a data</h2>
+      <h2 class="tt-titulo">Copie tudo</h2>
       <ul class="tt-dicas">
-        <li><span>Abra a <a href="https://openai.com/pt-BR/policies/terms-of-use/" target="_blank" rel="noopener">página oficial dos termos</a>, no site da OpenAI, a empresa do ChatGPT.</span></li>
-        <li><span><strong>Anote a data</strong> que aparece no topo. Termos mudam: o que você vai ler vale para esta versão.</span></li>
-        <li><span>Copie <strong>o texto inteiro</strong> (Ctrl + A, Ctrl + C). Colar só o link não basta: a IA pode não abrir a página e responder de memória.</span></li>
+        <li><span>Para <strong>copiar o texto inteiro</strong>, use o atalho <b>Ctrl + A</b> (selecionar tudo), e depois <b>Ctrl + C</b> (copiar).</span></li>
+        <li><span>Colar apenas o link da página pode não funcionar, pois a IA pode não ter o mesmo acesso que você para visualizar aquele texto.</span></li>
       </ul>
     </div>
   </section>
@@ -152,8 +166,8 @@
       <span class="tt-num">Passo 3</span>
       <h2 class="tt-titulo">Abra o Gemini</h2>
       <ul class="tt-dicas">
-        <li><span>No <strong>computador ou Chromebook</strong>, com a conta @educa (institucional). O escudo ao lado da caixa de texto confirma.</span></li>
-        <li><span>Os termos são um texto público, sem dado de ninguém. Mesmo assim, use a conta de trabalho: é o <strong>hábito</strong> que protege nos dias em que o texto não for público.</span></li>
+        <li><span>No <strong>computador ou Chromebook</strong>.</span></li>
+        <li><span>Por não tratar dados sensíveis, o <strong>ChatGPT</strong> também pode fazer a tarefa.</span></li>
         <li><span>Comece uma <strong>conversa nova</strong>, só para os termos.</span></li>
       </ul>
     </div>
@@ -164,21 +178,18 @@
     <div class="tt-visual">
       <div class="pg-prompt pg-prompt--longo">
         <span class="pg-prompt__rotulo">Comando (Prompt)</span>
-<p data-instrucao>Sou professora da rede pública municipal e não tenho formação em Direito. Abaixo estão os Termos de Uso do ChatGPT, copiados do site oficial da OpenAI (versão em vigor a partir de 1º de janeiro de 2026).
+<p data-instrucao>Preciso entender esses termos de uso, em linguagem simples, principalmente:
 
-Faça um resumo em linguagem simples, organizado nestes temas:
-1. O que acontece com o que eu digito (inclusive se é usado para treinar a IA)
-2. Idade mínima para usar
-3. De quem é o texto que a IA gera
-4. Erros nas respostas: quem responde por eles
-5. O que é proibido fazer
-6. Cancelamento, encerramento da conta e mudanças nos termos
+1. Para onde vão as informações que eu coloco
+2. O texto gerado é meu? Posso usar e dizer que fui eu que escrevi?
+3. Se eu ganhar dinheiro, tenho que pagar uma parte para o ChatGPT?
+4. E se tiver erros nas respostas, a empresa assume?
+5. O que é proibido fazer e o que acontece se eu fizer?
+6. Se eu assinar uma conta paga, posso cancelar e ser ressarcido?
 
-Para cada tema:
-- explique em até três frases curtas, sem palavras jurídicas;
-- copie entre aspas o trecho original em que você se baseou, para eu conferir.
+Sempre indique o trecho original em que você se baseou, para eu poder conferir.
 
-Regras: use só o texto abaixo. Não invente o que não está escrito. Se um tema não aparecer nos termos, diga "Não está nos termos". Nesta etapa, não dê opinião nem conselho: só o que o texto diz.
+Use apenas o texto abaixo. Não invente o que não está escrito. Se não tiver resposta, diga que o termo não diz nada a respeito.
 
 TERMOS:
 [cole aqui o texto completo dos termos]</p>
@@ -187,125 +198,32 @@ TERMOS:
     </div>
     <div class="tt-texto">
       <span class="tt-num">Passo 4</span>
-      <h2 class="tt-titulo">Peça o resumo por tema</h2>
+      <h2 class="tt-titulo">Direcione o resumo com as suas perguntas</h2>
       <ul class="tt-dicas">
-        <li><span>Os <strong>temas</strong> dizem à IA o que você quer saber. Sem eles, ela resume o que achar importante, e não o que importa para você.</span></li>
-        <li><span><strong>"Copie o trecho entre aspas"</strong>: é o que permite conferir depois. Resumo sem trecho é para acreditar; com trecho, é para checar.</span></li>
-        <li><span>Troque a última linha pelos termos que você copiou (Ctrl + V). Para pular linha sem enviar: <strong>Shift + Enter</strong>.</span></li>
+        <li><span>Você pode obter um <strong>resumo ainda mais relevante</strong> se disser à IA o que você quer saber.</span></li>
+        <li><span>Troque a última linha pelos termos que você copiou <b>(Ctrl + V)</b>.</span></li>
+        <li><span>Leia a resposta e continue conversando enquanto tiver dúvidas.</span></li>
       </ul>
     </div>
   </section>
 
-  <!-- 5. Ler o resumo -->
+  <!-- 5. Conferir no original -->
   <section class="tt-passo" data-passo>
     <div class="tt-visual">
-      <figure class="pg-shot"><img src="../assets/capturas/termos-1-resumo.webp" width="740" height="320" alt="Resumo do Gemini no tema O que acontece com o que eu digito: a explicação em três frases e, logo abaixo, dois trechos originais dos termos entre aspas, sobre o uso do conteúdo e a opção de não participar do treinamento"></figure>
-    </div>
-    <div class="tt-texto">
-      <span class="tt-num">Passo 5</span>
-      <h2 class="tt-titulo">Leia o resumo</h2>
-      <ul class="tt-dicas">
-        <li><span>Cada tema vem com a explicação e o <strong>trecho original</strong> logo abaixo. Leia os dois juntos.</span></li>
-        <li><span>No primeiro tema, o ponto central: o que você digita <strong>pode ser usado para treinar</strong> os modelos da empresa, a não ser que você desligue essa opção.</span></li>
-        <li><span>Compare com o rodapé do Gemini institucional: "suas conversas <strong>não são usadas</strong> para aprimorar nossos modelos". É a diferença entre conta pessoal e conta da rede.</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- 6. Pedido do que significa na prática -->
-  <section class="tt-passo" data-passo>
-    <div class="tt-visual">
-      <div class="pg-prompt pg-prompt--longo">
-        <span class="pg-prompt__rotulo">Comando (Prompt)</span>
-<p data-instrucao>Agora explique o que esses mesmos termos significam na prática para mim, professora de escola pública municipal no Brasil, que trabalha com crianças. Responda a estas perguntas:
-
-1. Posso colar a redação de um aluno, com o nome dele, para pedir uma correção?
-2. Meus alunos podem usar o ChatGPT? E se tiverem menos de 13 anos? E entre 13 e 17?
-3. O texto que o ChatGPT gerar é meu? Posso usar num material e dizer que fui eu que escrevi?
-4. Se a resposta tiver um erro e eu levar para a turma, de quem é a responsabilidade?
-5. Posso usar o ChatGPT para decidir algo sobre um aluno, como nota ou encaminhamento?
-6. Se eu criar a conta com o meu e-mail da prefeitura, muda alguma coisa?
-7. Como faço para que o que eu digito não seja usado para treinar os modelos?
-
-Para cada pergunta, responda em três partes:
-- O que os termos dizem: o trecho original entre aspas.
-- Na prática: o que isso significa para mim, com um exemplo concreto da escola.
-- O que os termos não respondem: quando a resposta depende de outra regra (a LGPD, as orientações da Secretaria de Educação) ou de outro documento.
-
-Separe com clareza o que está escrito do que é interpretação sua. Não invente: se os termos não tratarem do assunto, diga que não tratam.</p>
-        <button class="iap-btn iap-btn--md iap-btn--quieto tt-copiar" type="button" data-copiar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-copy"/></svg><span>Copiar instrução</span></button>
-      </div>
-    </div>
-    <div class="tt-texto">
-      <span class="tt-num">Passo 6</span>
-      <h2 class="tt-titulo">Pergunte o que muda para você</h2>
-      <ul class="tt-dicas">
-        <li><span>Envie na <strong>mesma conversa</strong>: a IA ainda tem os termos à mão e não precisa recebê-los de novo.</span></li>
-        <li><span>Perguntas do seu dia a dia rendem mais que "explique os termos". Troque ou acrescente as <strong>suas dúvidas</strong>.</span></li>
-        <li><span>As <strong>três partes</strong> separam o que está escrito do que é interpretação da IA. É na interpretação que ela mais pode errar.</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- 7. Ler o que muda na prática -->
-  <section class="tt-passo" data-passo>
-    <div class="tt-visual">
-      <figure class="pg-shot"><img src="../assets/capturas/termos-2-pratica.webp" width="740" height="564" alt="Resposta do Gemini à pergunta se os alunos podem usar o ChatGPT: o trecho dos termos sobre idade mínima, menores de 13 anos não podem usar, entre 13 e 17 só com autorização dos responsáveis, e o que os termos não respondem"></figure>
-    </div>
-    <div class="tt-texto">
-      <span class="tt-num">Passo 7</span>
-      <h2 class="tt-titulo">Leia o que muda na prática</h2>
-      <ul class="tt-dicas">
-        <li><span>Aluno com <strong>menos de 13 anos</strong> não pode usar. Entre 13 e 17, só com autorização dos responsáveis. Tarefa no ChatGPT para o fundamental 1 contraria os próprios termos.</span></li>
-        <li><span>É na interpretação que a IA exagera. Na pergunta 6, ela disse que a TI da prefeitura "poderá ver" o seu histórico, mas isso só vale <strong>se</strong> a prefeitura contratar um plano da OpenAI.</span></li>
-        <li><span>Os termos mandam para um artigo de ajuda o passo a passo de desligar o treinamento. O caminho está <a href="../t2/treinamento-chatgpt.html">neste guia do curso</a>.</span></li>
-      </ul>
-      <p class="tt-aviso">Resposta longa pode parar no meio de uma frase. Se acontecer, escreva: "continue de onde parou".</p>
-    </div>
-  </section>
-
-  <!-- 8. Conferir no original -->
-  <section class="tt-passo" data-passo>
-    <div class="tt-visual">
-      <div class="tt-contrato" role="img" aria-label="Página dos termos com a busca do navegador aberta, procurando a palavra treinar, e o trecho correspondente marcado no texto">
-        <div class="tt-contrato__url"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-lock"/></svg><span>openai.com/pt-BR/policies/terms-of-use</span><span class="tt-contrato__busca"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-search"/></svg>treinar <small>1/1</small></span></div>
+      <div class="tt-contrato" role="img" aria-label="Página dos termos com a busca do navegador aberta, procurando a palavra administrador, e o parágrafo sobre domínios corporativos com o trecho marcado">
+        <div class="tt-contrato__url"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-lock"/></svg><span>openai.com/pt-BR/policies/terms-of-use</span><span class="tt-contrato__busca"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-search"/></svg>administrador <small>1/1</small></span></div>
         <div class="tt-contrato__corpo">
-          <p>Nosso uso de conteúdo. Podemos usar o Conteúdo para fornecer, manter, desenvolver e aprimorar nossos Serviços, cumprir a legislação aplicável, fazer cumprir nossos termos e políticas e manter nossos Serviços seguros.</p>
-          <p>Cancelar participação. <mark>Se você não deseja que usemos seu Conteúdo para treinar nossos modelos, pode optar por não participar seguindo as instruções neste artigo.</mark> Observe que, em alguns casos, isso pode limitar a capacidade de nossos Serviços de atender melhor à sua necessidade específica.</p>
-          <p>Precisão. A inteligência artificial e a aprendizagem automática são campos de estudo em rápida evolução. […]</p>
+          <p>Domínios corporativos. Se você criar uma conta usando um endereço de e-mail pertencente a uma organização (por exemplo, seu empregador), essa conta poderá ser adicionada à conta comercial da organização conosco. Nesse caso, notificaremos você para que possa facilitar a transferência da sua conta (a menos que sua organização já tenha notificado você de que pode monitorar e controlar sua conta). <mark>Após a transferência da sua conta, o administrador da organização poderá controlá-la</mark>, incluindo o acesso ao Conteúdo (definido abaixo) e restringir ou remover o seu acesso à conta.</p>
+          <p>Serviços de terceiros. […]</p>
         </div>
       </div>
     </div>
     <div class="tt-texto">
-      <span class="tt-num">Passo 8</span>
+      <span class="tt-num">Passo 5</span>
       <h2 class="tt-titulo">Confira no original</h2>
       <ul class="tt-dicas">
-        <li><span>Escolha os <strong>dois ou três pontos</strong> que mais pesam para você: idade, treinamento, decisões sobre alunos.</span></li>
-        <li><span>Na página dos termos, aperte <strong>Ctrl + F</strong> e busque uma palavra do trecho que a IA citou. Leia o parágrafo inteiro, não só a frase.</span></li>
-        <li><span>Confira se a citação é <strong>igual</strong> ao original e se a explicação não diz mais, nem menos, do que o texto.</span></li>
-        <li><span>Foi assim que achamos uma omissão: o Gemini disse que mudanças são avisadas com 30 dias e deixou de fora a frase seguinte: as <strong>demais</strong> valem assim que publicadas.</span></li>
-      </ul>
-      <p class="tt-aviso tt-aviso--alerta">Se a citação não aparecer na página, a IA errou ou reescreveu o trecho. Vale o que está no original.</p>
-    </div>
-  </section>
-
-  <!-- 9. Antes e depois -->
-  <section class="tt-passo" data-passo data-ao-entrar="comparar">
-    <div class="tt-visual tt-visual--comparar">
-      <div class="tt-comparar">
-        <div class="tt-comparar__cab"><span>O que está escrito</span><span>O que significa na prática</span></div>
-        <div class="tt-pares tt-pares--fontes" data-pares></div>
-      </div>
-    </div>
-    <div class="tt-texto">
-      <span class="tt-num">Passo 9</span>
-      <h2 class="tt-titulo">Veja os termos traduzidos</h2>
-      <ul class="tt-dicas">
-        <li><span><strong>Interativo:</strong> toque em um tema para ver o trecho original e o que ele quer dizer.</span></li>
-        <li><span>Em dez minutos, um contrato de cerca de 3.500 palavras virou <strong>sete pontos</strong> que você sabe explicar a um colega.</span></li>
-        <li><span>Guarde o resumo com a <strong>data da versão</strong> (1º de janeiro de 2026). Quando os termos mudarem, repita o processo.</span></li>
-      </ul>
-      <p class="tt-aviso">A IA resume e traduz, mas pode errar ou generalizar. Antes de repassar a alguém, confira no texto original.</p>
+        <li><span>Se alguma questão é realmente relevante para você, <b>não confie apenas na resposta da IA</b>. Busque no texto original.</span></li>
+        <li><span>Use a busca. Use a tecla <strong>Ctrl + F</strong> para buscar uma palavra ou um trecho.</span></li>
     </div>
   </section>
 
@@ -322,38 +240,7 @@ Separe com clareza o que está escrito do que é interpretação sua. Não inven
 
 <script>
 (function(){
-  // Trechos literais dos Termos de Uso do ChatGPT, versão em português do Brasil em vigor a partir
-  // de 1º/01/2026 (https://openai.com/pt-BR/policies/terms-of-use/), copiados em 19/10/2026.
-  // O campo "pratica" é a explicação real do Gemini (conta @educa, 19/10/2026), resumida.
-  var termos = [
-    {tema:"Idade mínima",
-     escrito:"Você deve ter pelo menos 13 anos de idade ou a idade mínima exigida em seu país para consentir com o uso dos Serviços. Se você for menor de 18 anos, precisa da permissão de seus pais ou responsável legal para usar os Serviços.",
-     pratica:"Menores de 13 anos não podem usar. Entre 13 e 17 anos, podem usar apenas com autorização. Você não pode levar alunos do Ensino Fundamental I ao laboratório de informática para que eles criem contas ou usem o ChatGPT."},
-    {tema:"O que você digita",
-     escrito:"Podemos usar o Conteúdo para fornecer, manter, desenvolver e aprimorar nossos Serviços […]. Se você não deseja que usemos seu Conteúdo para treinar nossos modelos, pode optar por não participar seguindo as instruções neste artigo.",
-     pratica:"A empresa usa o que você digita para manter, melhorar e proteger os serviços. Essas informações também podem ser utilizadas para treinar a IA. Caso não queira, você pode desativar essa função."},
-    {tema:"De quem é o texto",
-     escrito:"Entre você e a OpenAI, e na medida permitida pela lei aplicável, você (a) mantém seus direitos de propriedade sobre a Entrada e (b) é proprietário da Saída.",
-     pratica:"O texto gerado pela plataforma pertence a você e pode ser utilizado em suas aulas ou materiais pedagógicos."},
-    {tema:"Dizer que foi você",
-     escrito:"Você não deve: […] Representar que a saída foi gerada por humanos quando, na verdade, não foi.",
-     pratica:"Você pode imprimir a história e distribuir para a turma, mas não pode colocar no topo da folha “Autora: Professora Fulana” nem dizer aos alunos que foi você quem escreveu a história do zero."},
-    {tema:"Erros nas respostas",
-     escrito:"Os resultados podem nem sempre ser precisos. […] Você deve avaliar a precisão e adequação dos Resultados em função das suas necessidades concretas, inclusive por meio de verificação humana, se apropriado, antes de utilizar ou compartilhar os Resultados dos Serviços.",
-     pratica:"A responsabilidade por conferir as informações e usá-las na aula é exclusivamente sua. A empresa se isenta expressamente de qualquer garantia de exatidão."},
-    {tema:"Decisões sobre alunos",
-     escrito:"Você não deve usar nenhuma informação relacionada a uma pessoa para qualquer finalidade que possa ter um impacto legal ou material sobre essa pessoa, como tomar decisões importantes a seu respeito em relação a crédito, educação, emprego, moradia, seguro, questões legais, saúde ou outras.",
-     pratica:"Você não pode inserir o histórico de notas e o comportamento de uma criança no ChatGPT e pedir que a ferramenta decida se o aluno deve ser aprovado, reprovado ou encaminhado."},
-    {tema:"Mudanças nos termos",
-     escrito:"Iremos notificá-lo com pelo menos 30 dias de antecedência sobre quaisquer alterações a estes Termos que o afetem negativamente de forma significativa […]. Todas as demais alterações entrarão em vigor assim que as publicarmos em nosso site.",
-     pratica:"Se houver mudanças que prejudiquem você de forma importante, a empresa avisará com no mínimo 30 dias de antecedência. (O Gemini não citou a frase seguinte: as demais mudanças valem assim que publicadas.)"}
-  ];
-
   function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;"); }
-
-  document.querySelector("[data-pares]").innerHTML = termos.map(function(t){
-    return '<button class="tt-par" type="button"><span class="tt-par__antes"><b>'+esc(t.tema)+'</b>“'+esc(t.escrito)+'”</span><span class="tt-par__depois"><b>Na prática</b>'+esc(t.pratica)+'</span></button>';
-  }).join("");
 
   var passos = [].slice.call(document.querySelectorAll("[data-passo]"));
   var barra = document.querySelector(".tt-progresso");
@@ -377,7 +264,6 @@ Separe com clareza o que está escrito do que é interpretação sua. Não inven
     seguir.innerHTML = prox ? "<span>A seguir</span><b>"+esc(prox.textContent)+"</b>" : "";
     atual = i;
     try { history.replaceState(null, "", "#passo-"+i); } catch(e){}
-    if (passos[i].getAttribute("data-ao-entrar") === "comparar") abrirPar(0);
   }
 
   btVoltar.addEventListener("click", function(){ ir(atual-1); });
@@ -402,13 +288,6 @@ Separe com clareza o que está escrito do que é interpretação sua. Não inven
       } catch(e){ rotulo.textContent = "Selecione e copie"; }
     });
   });
-
-  // Antes e depois
-  var pares = [].slice.call(document.querySelectorAll(".tt-par"));
-  function abrirPar(i){
-    pares.forEach(function(b,k){ b.classList.toggle("aberto", k===i); b.setAttribute("aria-expanded", k===i); });
-  }
-  pares.forEach(function(b,i){ b.addEventListener("click", function(){ abrirPar(i); }); });
 
   var inicio = parseInt((location.hash.match(/passo-(\d+)/) || [])[1], 10);
   ir(isNaN(inicio) ? 0 : inicio);

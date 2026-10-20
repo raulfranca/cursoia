@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Explicar a metamorfose · Inteligência Artificial para Educadores</title>
+<title>Simplificar uma explicação · Inteligência Artificial para Educadores</title>
 <meta name="description" content="Tutorial guiado: leve suas fontes ao Gemini e pense com ele o jeito mais didático de explicar às crianças como a lagarta vira borboleta.">
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Explicar a metamorfose">
+<meta property="og:title" content="Simplificar uma explicação">
 <meta property="og:description" content="Tutorial guiado: leve suas fontes ao Gemini e pense com ele o jeito mais didático de explicar às crianças como a lagarta vira borboleta.">
 <meta property="og:url" content="https://raulfranca.github.io/cursoia/t3/metamorfose-tutorial.html">
 <meta property="og:image" content="https://raulfranca.github.io/cursoia/assets/ilustracoes/og-curso-ia.jpg">
@@ -38,8 +38,12 @@
   <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></symbol>
   <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
   <symbol id="i-list" viewBox="0 0 24 24"><path d="M3 12h.01"/><path d="M3 18h.01"/><path d="M3 6h.01"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M8 6h13"/></symbol>
-  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
+  <symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
   <symbol id="i-file-check" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></symbol>
+  <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+  <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+  <linearGradient id="g-gemini" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4285f4"/><stop offset=".55" stop-color="#9b72cb"/><stop offset="1" stop-color="#d96570"/></linearGradient>
+  <symbol id="i-gemini" viewBox="0 0 24 24"><path fill="url(#g-gemini)" stroke="none" d="M12 0C12 6.6 17.4 12 24 12C17.4 12 12 17.4 12 24C12 17.4 6.6 12 0 12C6.6 12 12 6.6 12 0Z"/></symbol>
 </svg>
 
 <header class="pg-header">
@@ -58,12 +62,12 @@
   <section class="tt-passo tt-capa" data-passo>
     <div class="tt-texto">
       <span class="iap-eyebrow">Tópico 3 · IA como assistente de texto</span>
-      <h1 class="tt-titulo">Explicar a metamorfose</h1>
-      <p class="tt-capa__lead">Leve suas fontes ao Gemini e pense com ele o jeito mais didático de contar às crianças como a lagarta vira borboleta</p>
+      <h1 class="tt-titulo">Simplificar uma explicação</h1>
+      <p class="tt-capa__lead">Neste exemplo, a IA nos ajuda a adaptar uma explicação à idade encontrar o jeito mais didático de contar às crianças como a lagarta vira borboleta.</p>
       <ul class="tt-capa__meta">
-        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-list"/></svg><span><b>8</b> passos</span></li>
-        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-clock"/></svg><span><b>10</b> minutos</span></li>
-        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-shield"/></svg><span>Gemini da <b>conta institucional</b></span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-list"/></svg><span><b>5</b> passos</span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-clock"/></svg><span><b>5</b> minutos</span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-shield-check"/></svg><span><b>Sem dados sensíveis</b>: ChatGPT ou Gemini</span></li>
       </ul>
       <button class="iap-btn iap-btn--lg iap-btn--ink" type="button" data-ir="1">Começar <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
     </div>
@@ -74,7 +78,7 @@
           <div><span>Site · 54 palavras</span><p>Quando a lagarta entra no casulo, ela praticamente se dissolve!</p><i></i><i></i></div>
           <div><span>Notas · 5 tópicos</span><p>crisálida verde com pontinhos dourados</p></div>
         </div>
-        <span class="tt-fluxo__passa"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-down"/></svg>o Gemini propõe caminhos, você escolhe</span>
+        <span class="tt-fluxo__passa"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-down"/></svg>A partir das fontes, uma explicação didática</span>
         <div class="tt-ciclo">
           <span class="tt-fluxo__etiqueta"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-file-check"/></svg>Caminho escolhido · 4 etapas</span>
           <ol>
@@ -100,8 +104,8 @@
       <span class="tt-num">Passo 1</span>
       <h2 class="tt-titulo">Junte o que você leu</h2>
       <ul class="tt-dicas">
-        <li><span>No exemplo, a aula é para o <strong>2º ano</strong>: como a lagarta vira borboleta.</span></li>
-        <li><span>Cada fonte explica de um jeito: o livro é preciso, mas difícil; o site é animado, mas exagera; as anotações trazem detalhes que encantam.</span></li>
+        <li><span>No exemplo, temos uma <strong>aula de ciências para o 2º&nbsp;ano</strong>: como a lagarta vira borboleta.</span></li>
+        <li><span>Cada fonte explica de um jeito: o livro é preciso, mas difícil; o site é animado, mas pouco informativo; as suas anotações trazem detalhes que você quer incluir.</span></li>
         <li><span>Nenhuma delas está pronta para a criança. <strong>Escolher como explicar</strong> é o seu trabalho, e é nisso que a IA pode ajudar.</span></li>
       </ul>
     </div>
@@ -116,8 +120,9 @@
       <span class="tt-num">Passo 2</span>
       <h2 class="tt-titulo">Abra o Gemini</h2>
       <ul class="tt-dicas">
-        <li><span>No <strong>computador ou Chromebook</strong>, com a conta @educa (institucional).</span></li>
-        <li><span>Comece uma <strong>conversa nova</strong>. Ela vai durar vários pedidos, e cada um se apoia no anterior.</span></li>
+        <li><span>No <strong>computador ou Chromebook</strong>.</span></li>
+        <li><span>Por não tratar dados sensíveis, o <strong>ChatGPT</strong> também pode fazer a tarefa.</span></li>
+        <li><span>Comece uma <strong>conversa nova</strong>, para que nada de conversas anteriores interfira na resposta.</span></li>
       </ul>
     </div>
   </section>
@@ -127,19 +132,19 @@
     <div class="tt-visual">
       <div class="pg-prompt pg-prompt--longo">
         <span class="pg-prompt__rotulo">Comando (Prompt)</span>
-<p data-instrucao>Vou dar uma aula de ciências para o 2º ano (7 anos) sobre como a lagarta vira borboleta. Juntei três fontes, abaixo. Não quero a aula pronta: quero pensar com você qual é o jeito mais didático de explicar isso para as crianças.
+<p data-instrucao>Vou dar uma aula de ciências para o 2º ano (7 anos) sobre como a lagarta vira borboleta. Juntei três fontes, abaixo. <mark>Não quero a aula pronta</mark>: quero pensar com você qual é o jeito mais didático de explicar isso para as crianças.
 
 Proponha três caminhos diferentes. Para cada um, diga:
 - a ideia central, em uma frase que uma criança de 7 anos entenda;
 - uma comparação com algo do dia a dia dela;
 - a ordem em que eu apresentaria;
-- o que pode dar errado: que ideia errada a criança pode levar para casa.
+- <mark>o que pode causar confusão</mark>: que ideia errada a criança pode levar para casa.
 
 Use só o que está nas fontes. Se alguma fonte estiver imprecisa ou discordar de outra, me avise.
 
-Fonte 1 (…): …
+<mark>Fonte 1 (…): …
 Fonte 2 (…): …
-Fonte 3 (…): …</p>
+Fonte 3 (…): …</mark></p>
         <button class="iap-btn iap-btn--md iap-btn--quieto tt-copiar" type="button" data-copiar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-copy"/></svg><span>Copiar instrução</span></button>
       </div>
     </div>
@@ -147,94 +152,125 @@ Fonte 3 (…): …</p>
       <span class="tt-num">Passo 3</span>
       <h2 class="tt-titulo">Peça caminhos, não a aula</h2>
       <ul class="tt-dicas">
-        <li><span><strong>"Não quero a aula pronta"</strong>: você quer opções para pensar, não um texto para ler em voz alta.</span></li>
-        <li><span><strong>"O que pode dar errado"</strong> é o pedido mais valioso: toda comparação simplifica, e algumas ensinam coisa errada.</span></li>
-        <li><span>Cole as fontes no lugar das reticências, cada uma com o nome de onde veio.</span></li>
+        <li><span><mark>"Não quero a aula pronta"</mark>: você quer opções para pensar, não um texto para ler em voz alta.</span></li>
+        <li><span><mark>"O que pode causar confusão"</mark> é o pedido mais valioso: toda comparação simplifica, e algumas ensinam coisa errada.</span></li>
+        <li><span>Cole as fontes <mark>no lugar das reticências</mark>, cada uma com o nome de onde veio.</span></li>
       </ul>
-      <p class="tt-aviso tt-aviso--alerta">Se o Gemini responder "Não consigo ajudar com isso" sem motivo, clique na seta circular abaixo da resposta e em <strong>Tentar de novo</strong>. Na simulação deste tutorial, isso aconteceu algumas vezes.</p>
+      <p class="tt-aviso tt-aviso--alerta">Se o Gemini responder "Não consigo ajudar com isso" sem motivo, <strong>tente de novo</strong>.</p>
     </div>
   </section>
 
   <!-- 4. Avisos -->
   <section class="tt-passo" data-passo>
     <div class="tt-visual">
-      <figure class="pg-shot"><img src="../assets/capturas/metamorfose-1-avisos.webp" width="740" height="338" alt="Início da resposta do Gemini: atenção a divergências nas fontes, com crisálida contra casulo, a metáfora da sopa e os dados da borboleta-monarca tratados como regra geral"></figure>
+      <!-- Resposta real do Gemini (Flash), 20/10/2026, recriada em HTML -->
+      <div class="tt-gemini" role="img" aria-label="Tela do Gemini: início da resposta, com uma ressalva sobre as fontes">
+        <p class="tt-gemini__voce">Vou dar uma aula de ciências para o 2º ano (7 anos) sobre como a lagarta vira borboleta…</p>
+        <div class="tt-gemini__resp">
+          <svg class="tt-gemini__estrela" aria-hidden="true"><use href="#i-gemini"/></svg>
+          <div class="tt-gemini__md">
+            <p>Antes de apresentar os três caminhos, vale fazer uma ressalva importante sobre o material fornecido:</p>
+            <ul>
+              <li><b>Ponto de atenção / Divergência (Fonte 1 vs. Fonte 2):</b><br>A Fonte 1 fala em <b>crisálida</b> e a Fonte 2 menciona a palavra <b>casulo</b>. Embora costumem ser usados como sinônimos na linguagem comum, no contexto científico há uma diferença de vocabulário. Como seu foco é a borboleta (e a Fonte 3 reforça a crisálida verde com pontinhos dourados), <mark>o termo correto para borboletas é <b>crisálida</b></mark>. O termo "casulo" costuma ser a estrutura de seda construída por mariposas.</li>
+              <li><b>Aprofundamento da Fonte 2:</b><br>A Fonte 2 traz uma metáfora forte ("se dissolve / vira sopa") para explicar a transformação interna dos discos imaginais. É uma explicação precisa biologicamente, mas <mark>precisa ser dosada com cuidado para não assustar ou confundir crianças pequenas</mark>.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="tt-texto">
       <span class="tt-num">Passo 4</span>
-      <h2 class="tt-titulo">Leia os avisos primeiro</h2>
+      <h2 class="tt-titulo">Veja os avisos</h2>
       <ul class="tt-dicas">
-        <li><span>Antes dos caminhos, o Gemini apontou o que nas fontes <strong>não serve como está</strong>.</span></li>
-        <li><span><strong>Casulo</strong> é de mariposa. A borboleta forma uma <strong>crisálida</strong>. O site errou, e o livro estava certo.</span></li>
-        <li><span>A "sopa" pode ser levada ao pé da letra, e os 10 a 14 dias valem para a monarca, não para toda borboleta.</span></li>
+        <li><span>O Gemini apontou alguns <b>erros nas fontes</b> que você precisa estar atento para não passar adiante.</span></li>
+        <li><span><strong>Casulo</strong> é de mariposa. <mark>A borboleta forma uma crisálida</mark>. O site errou, e o livro estava certo.</span></li>
+        <li><span>Dizer que a lagarta vira uma "sopa" é uma metáfora que <mark>pode confundir</mark> crianças de 7 anos.</span></li>
       </ul>
     </div>
   </section>
 
   <!-- 5. Caminhos -->
   <section class="tt-passo" data-passo>
-    <div class="tt-visual">
-      <figure class="pg-shot"><img src="../assets/capturas/metamorfose-2-caminho.webp" width="740" height="516" alt="Caminho 2 proposto pelo Gemini, a história em quatro etapas: ideia central, comparação com passar de fase no videogame, as fases ovo, lagarta, crisálida e adulto, e o que pode dar errado"></figure>
+    <div class="tt-visual tt-visual--carrossel">
+      <!-- Os três caminhos da mesma resposta, um por cartão -->
+      <div class="tt-carrossel" data-carrossel>
+        <div class="tt-carrossel__topo"><svg class="tt-gemini__estrela" aria-hidden="true"><use href="#i-gemini"/></svg><span><b>Gemini</b><small>Três caminhos para a aula</small></span><span class="tt-carrossel__conta" data-conta aria-live="polite">1/3</span></div>
+        <button class="tt-carrossel__seta tt-carrossel__seta--ant" type="button" data-ant aria-label="Caminho anterior"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-chevron-left"/></svg></button>
+        <button class="tt-carrossel__seta tt-carrossel__seta--prox" type="button" data-prox aria-label="Próximo caminho"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-chevron-right"/></svg></button>
+        <div class="tt-carrossel__trilho" data-trilho tabindex="0" aria-label="Caminhos propostos pelo Gemini; use as setas para passar">
+          <article class="tt-carrossel__card tt-gemini__md">
+            <h3>Caminho 1: O caminho da "Crescimento e Transformação" (Foco na transformação física)</h3>
+            <ul>
+              <li><b>A ideia central para a criança:</b> "A lagarta é como um bebê borboleta que come muito para conseguir a força necessária e ganhar asas."</li>
+              <li><b>Comparação com o dia a dia:</b> Comparar com as roupas e sapatos da criança. Assim como a criança cresce e precisa <mark>trocar de roupa porque a antiga ficou pequena</mark>, a lagarta cresce tanto que precisa trocar de pele várias vezes até estar pronta para a grande mudança.</li>
+              <li><b>Ordem de apresentação:</b>
+                <ol>
+                  <li>O início: o ovo e a lagarta comendo a própria casca (Fonte 3).</li>
+                  <li>O crescimento: comendo folhas o tempo todo, crescendo e trocando de pele (Fonte 1, 3).</li>
+                  <li>O descanso transformador: fixando-se no galho, formando a crisálida verde com pontos dourados (Fonte 1, 3).</li>
+                  <li>O nascimento e preparo: a borboleta saindo com asas moles/amassadas, bombeando líquido para esticar e secando para voar (Fonte 1, 3).</li>
+                </ol>
+              </li>
+              <li><b>O que pode causar confusão (Ideia errada):</b> A criança pode achar que a lagarta "dorme" na crisálida e acorda como borboleta (como se estivesse <mark>vestindo uma fantasia de borboleta</mark> por cima do corpo antigo), sem perceber que o corpo muda de verdade por dentro.</li>
+            </ul>
+          </article>
+          <article class="tt-carrossel__card tt-gemini__md">
+            <h3>Caminho 2: O caminho da "Desmonta e Monta" (Foco no processo biológico dentro da crisálida)</h3>
+            <ul>
+              <li><b>A ideia central para a criança:</b> "Dentro da crisálida, a lagarta se desfaz inteirinha como se fosse um brinquedo de montar para construir um corpo totalmente novo."</li>
+              <li><b>Comparação com o dia a day:</b> Comparar com <mark>pecinhas de bloco de montar</mark> (ex: Lego). Você monta um carrinho (lagarta), depois desmonta todas as peças para, com as mesmas peças e guardando algumas especiais (os discos imaginais), montar um avião (borboleta).</li>
+              <li><b>Ordem de apresentação:</b>
+                <ol>
+                  <li>A fase de "juntar peças": a lagarta comendo a casca do ovo e folhas para acumular energia (Fonte 1, 3).</li>
+                  <li>A fase de "desmontar": a lagarta entra na crisálida e o corpo vira uma "sopa" (Fonte 2).</li>
+                  <li>A fase de "remontar": os discos imaginais usam a "sopa" para construir asas, antenas, pernas, olhos e a probóscide/canudinho (Fonte 1, 2).</li>
+                  <li>A estreia: a borboleta sai da crisálida <mark>de 10 a 14 dias depois</mark>, estica as asas amassadas bombeando líquido, seca e voa (Fonte 1, 3).</li>
+                </ol>
+              </li>
+              <li><b>O que pode causar confusão (Ideia errada):</b> A criança pode <mark>achar que a lagarta "morre"</mark> ao virar "sopa" ou líquido dentro da crisálida, em vez de entender que aquilo é apenas o corpo dela se reorganizando vivo para criar as novas partes.</li>
+            </ul>
+          </article>
+          <article class="tt-carrossel__card tt-gemini__md">
+            <h3>Caminho 3: O caminho das "Ferramentas e Poderes da Borboleta" (Foco na adaptação e ciclo de vida)</h3>
+            <ul>
+              <li><b>A ideia central para a criança:</b> "A lagarta ganha superpoderes ao longo da vida: primeiro a boca para mastigar folhas, depois a crisálida para se transformar e, no final, asas para voar e um canudinho para beber néctar."</li>
+              <li><b>Comparação com o dia a dia:</b> Comparar com <mark>beber suco ou achocolatado no canudinho</mark>. A lagarta começa mastigando comida dura (folhas e casca), mas quando vira adulta ela ganha um "canudinho próprio" (probóscide) preso no corpo para tomar o alimento das flores.</li>
+              <li><b>Ordem de apresentação:</b>
+                <ol>
+                  <li>As ferramentas da lagarta: dentes/boca para comer a casca do ovo e muitas folhas (Fonte 1, 3).</li>
+                  <li>O <mark>casulo</mark>/crisálida como "oficina secreta": <mark>10 a 14 dias lá dentro</mark> onde nascem as asas, pernas, olhos e o canudinho (Fonte 1, 2, 3).</li>
+                  <li>As novas ferramentas da borboleta: sair da crisálida, bombear líquido para esticar as asas e usar a probóscide para sugar o néctar das flores (Fonte 1, 3).</li>
+                </ol>
+              </li>
+              <li><b>O que pode causar confusão (Ideia errada):</b> A criança pode achar que a borboleta continua comendo folhas com a boca antiga ou que a probóscide (canudinho) <mark>serve para morder ou mastigar</mark>.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="tt-carrossel__pontos" data-pontos></div>
+      </div>
     </div>
     <div class="tt-texto">
       <span class="tt-num">Passo 5</span>
       <h2 class="tt-titulo">Compare os caminhos</h2>
-      <ul class="tt-dicas">
-        <li><span>Vieram três: <strong>desmontar e montar</strong> (como blocos de encaixar), <strong>quatro etapas</strong> (como fases de videogame) e <strong>ferramentas secretas</strong>.</span></li>
-        <li><span>Cada um diz de qual fonte veio cada parte e <strong>o risco</strong> que traz.</span></li>
-        <li><span>Escolha pelo que você conhece da turma. No exemplo, o caminho 2, mas com a comparação dos blocos do caminho 1.</span></li>
+      <span>Passe para o lado para ver cada uma das três ideias para explicar a metamorfose.</span>
+      <ul class="tt-dicas" data-dicas-caminho>
+        <li class="tt-dicas__intro"><span><strong>Caminho 1 · Crescer e trocar de pele</strong></span></li>
+        <li><span>A comparação é a <mark>roupa que fica pequena</mark>: a criança já viveu isso e entende por que a lagarta troca de pele.</span></li>
+        <li><span>Atenção: a criança pode imaginar a borboleta <mark>vestindo uma fantasia</mark> por cima da lagarta. Mostre que o corpo muda por dentro.</span></li>
       </ul>
-    </div>
-  </section>
-
-  <!-- 6. Testar a comparação -->
-  <section class="tt-passo" data-passo>
-    <div class="tt-visual">
-      <figure class="pg-shot"><img src="../assets/capturas/metamorfose-3-comparacao.webp" width="740" height="374" alt="Resposta do Gemini sobre como ajustar a comparação com blocos de encaixar: mostrar que o corpo se desmonta sozinho por dentro, com a expressão caixinha mágica, e que as peças viram coisas novas"></figure>
-    </div>
-    <div class="tt-texto">
-      <span class="tt-num">Passo 6</span>
-      <h2 class="tt-titulo">Teste a comparação</h2>
-      <ul class="tt-dicas">
-        <li><span>Pergunte direto: <strong>"Essa comparação pode ensinar alguma coisa errada?"</strong></span></li>
-        <li><span>O Gemini viu dois riscos: a criança achar que alguém de fora monta a borboleta, e que as asas são peças antigas reaproveitadas.</span></li>
-        <li><span>Mas a fala que ele sugeriu traz <strong>"caixinha mágica"</strong>. Numa aula de ciências, a ideia é justamente que não é mágica. Você corta.</span></li>
+      <ul class="tt-dicas" data-dicas-caminho hidden>
+        <li class="tt-dicas__intro"><span><strong>Caminho 2 · Desmonta e monta</strong></span></li>
+        <li><span>A comparação são os <mark>blocos de montar</mark>: desmontar o carrinho para montar um avião com as mesmas peças.</span></li>
+        <li><span>Atenção: a "sopa" pode fazer a criança <mark>achar que a lagarta "morre"</mark>. O próprio Gemini avisou.</span></li>
+        <li><span><mark>"10 a 14 dias"</mark> é o tempo da monarca (Fonte 3), não de toda borboleta. Aqui o Gemini não avisou: quem pega isso é você.</span></li>
       </ul>
-    </div>
-  </section>
-
-  <!-- 7. Roteiro -->
-  <section class="tt-passo" data-passo>
-    <div class="tt-visual">
-      <figure class="pg-shot"><img src="../assets/capturas/metamorfose-4-roteiro.webp" width="740" height="390" alt="Atividade prática do roteiro: montar a lagarta com blocos, desmontá-la ao sinal Hora da crisálida e construir a borboleta com as mesmas pecinhas"></figure>
-    </div>
-    <div class="tt-texto">
-      <span class="tt-num">Passo 7</span>
-      <h2 class="tt-titulo">Peça o roteiro e revise</h2>
-      <ul class="tt-dicas">
-        <li><span>Só depois de escolher o caminho, peça o roteiro: tempo de aula, recursos e uma <strong>atividade com as mãos</strong>.</span></li>
-        <li><span>Diga também o que <strong>não</strong> quer, como a "caixinha mágica".</span></li>
-        <li><span>Repare no passo 3 da atividade: <strong>"as mesmas pecinhas"</strong>. É o erro que o próprio Gemini tinha avisado. Ajuste: entregue algumas peças de outra cor para as partes novas, como asas e antenas.</span></li>
+      <ul class="tt-dicas" data-dicas-caminho hidden>
+        <li class="tt-dicas__intro"><span><strong>Caminho 3 · As ferramentas da borboleta</strong></span></li>
+        <li><span>A comparação é <mark>beber suco no canudinho</mark>, como a borboleta adulta faz com o néctar.</span></li>
+        <li><span>Atenção: a criança pode achar que o canudinho <mark>serve para morder ou mastigar</mark>.</span></li>
+        <li><span>Voltaram dois erros: <mark>"casulo"</mark>, que o Gemini mesmo corrigiu no aviso, e os <mark>10 a 14 dias</mark> da monarca.</span></li>
       </ul>
-    </div>
-  </section>
-
-  <!-- 8. Conferir -->
-  <section class="tt-passo" data-passo data-ao-entrar="comparar">
-    <div class="tt-visual tt-visual--comparar">
-      <div class="tt-comparar">
-        <div class="tt-comparar__cab"><span>O que estava escrito</span><span>Como fica na aula</span></div>
-        <div class="tt-pares tt-pares--fontes" data-pares></div>
-      </div>
-    </div>
-    <div class="tt-texto">
-      <span class="tt-num">Passo 8</span>
-      <h2 class="tt-titulo">Confira o que vai dizer</h2>
-      <ul class="tt-dicas">
-        <li><span><strong>Interativo:</strong> toque em uma linha para ver como cada trecho das fontes virou fala de aula.</span></li>
-        <li><span>Confirme os termos e os números no <strong>livro adotado</strong> ou numa fonte de museu ou universidade.</span></li>
-      </ul>
-      <p class="tt-aviso">A IA ajudou a pensar e até achou erros nas fontes, mas também errou. A explicação que chega às crianças é sua: confira antes da aula.</p>
+      <p class="tt-aviso">A IA ajudou a pensar e até achou um erro nas fontes, mas também deixou passar outro. A explicação que chega às crianças é sua: confira antes da aula.</p>
     </div>
   </section>
 
@@ -261,22 +297,6 @@ Fonte 3 (…): …</p>
      itens:["a lagarta come primeiro a casca do próprio ovo","depois come folhas o tempo todo e cresce muito","crisálida verde com pontinhos dourados","fica uns 10 a 14 dias lá dentro","ao sair, as asas estão amassadas e moles; ela bombeia líquido nelas para esticar e espera secar antes de voar"]}
   ];
 
-  // Do texto das fontes à fala de aula (respostas reais do Gemini, 19/10/2026)
-  var partes = [
-    {de:"Fonte 2", antes:"Quando a lagarta entra no casulo…",
-     para:"Aviso do Gemini", depois:"Para borboletas, o termo biologicamente preciso é crisálida (o casulo é feito de fios de seda, mais comum em mariposas)."},
-    {de:"Fonte 2", antes:"…ela praticamente se dissolve! Seu corpo vira uma espécie de sopa…",
-     para:"Roteiro", depois:"Dentro da crisálida, o corpo se reorganiza. É como se esse carrinho de blocos se desmontasse sozinho por dentro."},
-    {de:"Fonte 2", antes:"…de pequenos grupos de células que estavam guardados desde o ovo, chamados discos imaginais, nascem as asas, as pernas e os olhos da borboleta.",
-     para:"Roteiro", depois:"Usando pequenos grupos de células que ela guardou desde quando estava no ovo (os discos imaginais), o corpo constrói partes totalmente novas que ela não tinha antes."},
-    {de:"Fonte 1", antes:"…a probóscide, uma espécie de canudinho para sugar o néctar das flores.",
-     para:"Roteiro", depois:"Só aí ela voa para procurar flores e usar seu canudinho (probóscide)."},
-    {de:"Fonte 3", antes:"fica uns 10 a 14 dias lá dentro",
-     para:"Aviso do Gemini", depois:"Apresentar a cor e o tempo exato da Fonte 3 como regra para todas as borboletas seria impreciso."},
-    {de:"Sugestão do Gemini", antes:"É como se um carrinho feito de blocos de encaixar entrasse em uma caixinha mágica (a crisálida)…",
-     para:"Roteiro, depois do seu pedido", depois:"Não existe nenhuma mão de fora mexendo nela e não é mágica: é um processo científico do próprio corpo da lagarta."}
-  ];
-
   function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;"); }
 
   document.querySelector("[data-fontes]").innerHTML = fontes.map(function(f){
@@ -284,10 +304,6 @@ Fonte 3 (…): …</p>
     var titulo = f.titulo ? '<p class="tt-fonte__titulo">'+esc(f.titulo)+'</p>' : "";
     return '<div class="tt-fonte tt-fonte--'+f.classe+'"><span class="tt-fonte__tipo">'+esc(f.tipo)+'</span>'+titulo+corpo+'</div>';
   }).join("");
-  document.querySelector("[data-pares]").innerHTML = partes.map(function(p){
-    return '<button class="tt-par" type="button"><span class="tt-par__antes"><b>'+esc(p.de)+'</b>'+esc(p.antes)+'</span><span class="tt-par__depois"><b>'+esc(p.para)+'</b>'+esc(p.depois)+'</span></button>';
-  }).join("");
-
   var passos = [].slice.call(document.querySelectorAll("[data-passo]"));
   var barra = document.querySelector(".tt-progresso");
   barra.innerHTML = passos.map(function(){ return "<i></i>"; }).join("");
@@ -310,7 +326,6 @@ Fonte 3 (…): …</p>
     seguir.innerHTML = prox ? "<span>A seguir</span><b>"+esc(prox.textContent)+"</b>" : "";
     atual = i;
     try { history.replaceState(null, "", "#passo-"+i); } catch(e){}
-    if (passos[i].getAttribute("data-ao-entrar") === "comparar") abrirPar(0);
   }
 
   btVoltar.addEventListener("click", function(){ ir(atual-1); });
@@ -336,12 +351,42 @@ Fonte 3 (…): …</p>
     });
   });
 
-  // Antes e depois
-  var pares = [].slice.call(document.querySelectorAll(".tt-par"));
-  function abrirPar(i){
-    pares.forEach(function(b,k){ b.classList.toggle("aberto", k===i); b.setAttribute("aria-expanded", k===i); });
-  }
-  pares.forEach(function(b,i){ b.addEventListener("click", function(){ abrirPar(i); }); });
+  // Carrossel dos caminhos
+  document.querySelectorAll("[data-carrossel]").forEach(function(c){
+    var trilho = c.querySelector("[data-trilho]");
+    var cards = [].slice.call(trilho.children);
+    var conta = c.querySelector("[data-conta]");
+    var ant = c.querySelector("[data-ant]"), prox = c.querySelector("[data-prox]");
+    var pontosC = c.querySelector("[data-pontos]");
+    pontosC.innerHTML = cards.map(function(_,k){ return '<button type="button" aria-label="Caminho '+(k+1)+'"></button>'; }).join("");
+    var bolinhas = [].slice.call(pontosC.children);
+    var dicas = [].slice.call(c.closest("[data-passo]").querySelectorAll("[data-dicas-caminho]"));
+    var agora = 0;
+    function marca(i){
+      dicas.forEach(function(d,k){ d.hidden = k!==i; });
+      agora = i;
+      conta.textContent = (i+1)+"/"+cards.length;
+      bolinhas.forEach(function(b,k){ b.classList.toggle("agora", k===i); });
+      ant.disabled = i===0; prox.disabled = i===cards.length-1;
+    }
+    function vai(i){
+      i = Math.max(0, Math.min(cards.length-1, i));
+      trilho.scrollTo({left: i*trilho.clientWidth});
+      marca(i);
+    }
+    ant.addEventListener("click", function(){ vai(agora-1); });
+    prox.addEventListener("click", function(){ vai(agora+1); });
+    bolinhas.forEach(function(b,k){ b.addEventListener("click", function(){ vai(k); }); });
+    trilho.addEventListener("scroll", function(){
+      var i = Math.round(trilho.scrollLeft / trilho.clientWidth);
+      if (i !== agora) marca(i);
+    });
+    // Com o foco no carrossel, as setas passam os caminhos, não os passos
+    trilho.addEventListener("keydown", function(e){
+      if (e.key === "ArrowRight" || e.key === "ArrowLeft"){ e.preventDefault(); e.stopPropagation(); vai(agora + (e.key === "ArrowRight" ? 1 : -1)); }
+    });
+    marca(0);
+  });
 
   var inicio = parseInt((location.hash.match(/passo-(\d+)/) || [])[1], 10);
   ir(isNaN(inicio) ? 0 : inicio);
