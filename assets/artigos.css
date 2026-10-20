@@ -443,6 +443,174 @@ img{display:block;max-width:100%;height:auto}
 .tt-par__depois{font-size:var(--size-sm);line-height:var(--lh-normal);color:var(--text-muted)}
 .tt-par__depois b{font-family:var(--font-mono);font-size:var(--size-xs);color:var(--lousa-700);margin-right:4px}
 .tt-par:not(.aberto) .tt-par__depois{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;color:var(--text-caption)}
+/* Antes e depois com trechos impressos, em vez de letra de caderno */
+.tt-pares--fontes .tt-par__antes{font-family:var(--font-body);font-size:var(--size-sm);line-height:var(--lh-normal);font-style:italic;color:var(--text-muted)}
+.tt-pares--fontes .tt-par__antes b,.tt-pares--fontes .tt-par__depois b{display:block;margin:0 0 2px;font-family:var(--font-mono);font-style:normal;font-size:var(--size-2xs);text-transform:uppercase;letter-spacing:.08em;color:var(--lousa-700)}
+.tt-pares--fontes .tt-par:not(.aberto) .tt-par__antes,.tt-pares--fontes .tt-par:not(.aberto) .tt-par__depois{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+/* Comando longo: preserva as quebras de linha e rola dentro da mesa */
+.tt-visual .pg-prompt--longo{max-height:100%;min-height:0;padding:var(--space-6) var(--space-7)}
+.tt-visual .pg-prompt--longo [data-instrucao]{white-space:pre-line;overflow:auto;min-height:0;font-size:var(--size-sm);line-height:var(--lh-normal)}
+
+/* Fontes da pesquisa: textos de tamanho e tom diferentes, empilhados */
+.tt-fontes{display:flex;flex-direction:column;gap:var(--space-5);width:100%;max-width:620px;max-height:100%;overflow:auto;padding:2px 6px 6px 2px}
+.tt-fontes__fig{margin:0;display:flex;flex-direction:column;gap:var(--space-4);width:100%;max-width:620px;max-height:100%;min-height:0}
+.tt-fontes__fig figcaption{font:var(--text-caption-font);color:var(--text-caption)}
+.tt-fonte{padding:var(--space-5) var(--space-6);background:var(--paper-0);border:var(--border-ink) solid var(--line-strong);border-radius:var(--radius-md);box-shadow:var(--shadow-ink-sm)}
+.tt-fonte__tipo{display:block;margin-bottom:var(--space-3);font:var(--text-eyebrow);text-transform:uppercase;letter-spacing:var(--track-caps);color:var(--lousa-600)}
+.tt-fonte p{font-size:var(--size-xs);line-height:var(--lh-relaxed);color:var(--text-muted)}
+.tt-fonte--verbete p{font-size:12px;line-height:1.5;text-align:justify;hyphens:auto}
+.tt-fonte--reportagem{width:88%;align-self:flex-end;rotate:.6deg}
+.tt-fonte__titulo{margin-bottom:var(--space-2);font-family:var(--font-display);font-weight:var(--weight-semibold);font-size:var(--size-md);line-height:var(--lh-snug);color:var(--text-body)}
+.tt-fonte--anotacao{width:72%;rotate:-1deg;position:relative;padding-left:44px;border-color:var(--ink-5);box-shadow:none}
+.tt-fonte--anotacao::before{content:"";position:absolute;top:0;bottom:0;left:30px;border-left:var(--border-hairline) solid var(--terracota-300)}
+.tt-fonte--anotacao li{font-family:"Caveat",cursive;font-size:20px;line-height:1.35;color:var(--ink-2);border-bottom:var(--border-hairline) solid var(--lousa-100)}
+
+/* Molde: a folha em branco, com o lugar de cada parte */
+.tt-molde{display:block;width:100%;max-width:470px;max-height:100%;overflow:auto;padding:var(--space-7) var(--space-8);background:var(--paper-0);border:var(--border-ink) solid var(--line-strong);border-radius:var(--radius-sm);box-shadow:var(--shadow-ink)}
+.tt-molde__nome{margin-top:var(--space-3);font-family:var(--font-display);font-weight:var(--weight-semibold);font-size:var(--size-xl);line-height:var(--lh-snug);letter-spacing:var(--track-tight)}
+.tt-molde__nome small{display:block;margin-top:4px;font:var(--text-caption-font);letter-spacing:0;color:var(--text-caption)}
+.tt-molde__foto{display:grid;place-items:center;align-content:center;gap:4px;aspect-ratio:3/4;border:var(--border-ink) dashed var(--ink-4);border-radius:var(--radius-sm);font:var(--text-eyebrow);text-transform:uppercase;letter-spacing:.08em;color:var(--text-caption);text-align:center}
+.tt-molde__foto .ico{width:28px;height:28px;color:var(--ink-4)}
+.tt-molde > .tt-molde__foto{float:right;width:100px;margin:0 0 var(--space-4) var(--space-6)}
+.tt-molde__partes{margin-top:var(--space-6);display:flex;flex-direction:column;gap:var(--space-4);counter-reset:parte}
+.tt-molde__partes li{counter-increment:parte}
+.tt-molde__partes b{display:flex;align-items:center;gap:var(--space-3);font-family:var(--font-display);font-weight:var(--weight-semibold);font-size:var(--size-sm)}
+.tt-molde__partes b::before{content:counter(parte);display:grid;place-items:center;width:20px;height:20px;border-radius:var(--radius-pill);background:var(--lousa-500);color:var(--paper-0);font:600 11px/1 var(--font-mono)}
+.tt-molde__partes i{display:block;height:6px;margin-top:6px;border-radius:3px;background:var(--paper-3)}
+.tt-molde__partes i + i{width:72%}
+
+/* Capa: fontes desiguais → molde → folha padronizada */
+.tt-fluxo__fontes{display:flex;align-items:flex-end;gap:var(--space-3);width:100%}
+.tt-fluxo__fontes > div{flex:1;padding:var(--space-3) var(--space-4);background:var(--paper-0);border:var(--border-hairline) solid var(--ink-5);border-radius:var(--radius-md)}
+.tt-fluxo__fontes > div:nth-child(1){rotate:-2deg}
+.tt-fluxo__fontes > div:nth-child(2){rotate:1.5deg}
+.tt-fluxo__fontes > div:nth-child(3){rotate:-1deg;font-family:"Caveat",cursive}
+.tt-fluxo__fontes span{display:block;margin-bottom:4px;font:var(--text-eyebrow);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--lousa-600)}
+.tt-fluxo__fontes i{display:block;height:4px;margin-top:5px;border-radius:2px;background:var(--paper-3)}
+.tt-fluxo__fontes p{font-size:var(--size-xs);line-height:1.3;color:var(--text-caption)}
+.tt-fluxo__fontes > div:nth-child(3) p{font-size:18px;line-height:1.1;color:var(--ink-2)}
+.tt-fluxo__folha{display:grid;grid-template-columns:minmax(0,1fr) 72px;gap:var(--space-3) var(--space-5);width:92%;align-self:center;padding:var(--space-5) var(--space-6);background:var(--paper-0);border:var(--border-ink) solid var(--line-strong);border-radius:var(--radius-card);box-shadow:4px 4px 0 0 var(--lousa-500)}
+.tt-fluxo__folha h3{font-size:var(--size-lg);line-height:var(--lh-snug)}
+.tt-fluxo__folha h3 small{display:block;margin-top:2px;font:var(--text-caption-font);color:var(--text-caption);letter-spacing:0}
+.tt-fluxo__folha .tt-molde__foto{grid-row:span 2;aspect-ratio:3/4;font-size:9px}
+.tt-fluxo__folha .tt-molde__foto .ico{width:20px;height:20px}
+.tt-fluxo__folha dl{margin:0;display:flex;flex-direction:column;gap:var(--space-3)}
+.tt-fluxo__folha dt{font:var(--text-eyebrow);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--lousa-700)}
+.tt-fluxo__folha dd{margin:2px 0 0;font-size:var(--size-xs);line-height:var(--lh-normal);color:var(--text-muted)}
+.tt-fluxo__folha .tt-fluxo__etiqueta{grid-column:1 / -1;margin:0}
+
+/* Capa da prova: o enunciado de antes e a versão escolhida */
+.tt-enunciado{width:88%;padding:var(--space-4) var(--space-5);background:var(--paper-0);border:var(--border-hairline) solid var(--ink-5);border-radius:var(--radius-md)}
+.tt-enunciado span{display:block;margin-bottom:var(--space-2);font:var(--text-eyebrow);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--lousa-600)}
+.tt-enunciado p{font-size:var(--size-xs);line-height:1.45;color:var(--text-caption)}
+.tt-enunciado--antes{align-self:flex-start;rotate:-1.2deg}
+.tt-enunciado--depois{align-self:flex-end;border:var(--border-ink) solid var(--line-strong);border-radius:var(--radius-card);box-shadow:4px 4px 0 0 var(--lousa-500)}
+.tt-enunciado--depois p{font-size:var(--size-sm);line-height:var(--lh-normal);color:var(--text-body)}
+.tt-enunciado--depois p + p{margin-top:2px}
+.tt-enunciado--depois .tt-fluxo__etiqueta{display:flex;margin-bottom:var(--space-3)}
+
+/* Folha de prova */
+.tt-prova{width:100%;max-width:560px;max-height:100%;overflow:auto;padding:var(--space-6) var(--space-7);background:var(--paper-0);border:var(--border-ink) solid var(--line-strong);border-radius:var(--radius-md);box-shadow:var(--shadow-ink-sm)}
+.tt-prova__cab{display:flex;justify-content:space-between;gap:var(--space-4);padding-bottom:var(--space-3);border-bottom:var(--border-ink) solid var(--line-strong);font:var(--text-eyebrow);text-transform:uppercase;letter-spacing:var(--track-caps);color:var(--lousa-700)}
+.tt-prova__nome{display:flex;gap:var(--space-2);margin:var(--space-3) 0 var(--space-5);font-size:var(--size-xs);color:var(--text-caption)}
+.tt-prova__nome i{flex:1;border-bottom:var(--border-hairline) solid var(--ink-4)}
+.tt-prova ol{display:flex;flex-direction:column;gap:var(--space-5);counter-reset:questao}
+.tt-prova li{counter-increment:questao;display:grid;grid-template-columns:24px minmax(0,1fr);gap:var(--space-3);font-size:var(--size-sm);line-height:var(--lh-normal);color:var(--text-body)}
+.tt-prova li::before{content:counter(questao);display:grid;place-items:center;width:22px;height:22px;border-radius:var(--radius-pill);border:var(--border-ink) solid var(--line-strong);font:700 11px/1 var(--font-mono)}
+.tt-prova li i{grid-column:2;height:34px;border:var(--border-hairline) dashed var(--ink-5);border-radius:var(--radius-sm)}
+
+/* Capa da metamorfose: o caminho escolhido, em quatro etapas */
+.tt-ciclo{width:92%;align-self:center;padding:var(--space-5) var(--space-6);background:var(--paper-0);border:var(--border-ink) solid var(--line-strong);border-radius:var(--radius-card);box-shadow:4px 4px 0 0 var(--lousa-500)}
+.tt-ciclo ol{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-4);counter-reset:etapa}
+.tt-ciclo li{counter-increment:etapa}
+.tt-ciclo li::before{content:counter(etapa);display:grid;place-items:center;width:22px;height:22px;margin-bottom:var(--space-2);border-radius:var(--radius-pill);background:var(--lousa-500);color:var(--paper-0);font:600 11px/1 var(--font-mono)}
+.tt-ciclo b{display:block;font-family:var(--font-display);font-weight:var(--weight-semibold);font-size:var(--size-sm);line-height:var(--lh-snug)}
+.tt-ciclo small{display:block;margin-top:2px;font-size:var(--size-xs);line-height:1.35;color:var(--text-caption)}
+
+/* Contrato: a página dos termos de uso, com letra miúda, endereço, busca e aceite */
+.tt-contrato{display:flex;flex-direction:column;width:100%;max-width:540px;max-height:100%;min-height:0;background:var(--paper-0);border:var(--border-ink) solid var(--line-strong);border-radius:var(--radius-md);box-shadow:var(--shadow-ink-sm);overflow:hidden}
+.tt-contrato__url{display:flex;align-items:center;gap:var(--space-3);padding:var(--space-3) var(--space-5);background:var(--paper-2);border-bottom:var(--border-hairline) solid var(--line-hairline);font:500 var(--size-2xs)/1.3 var(--font-mono);color:var(--text-caption)}
+.tt-contrato__url .ico{color:var(--lousa-500)}
+.tt-contrato__url > span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tt-contrato__busca{flex:none;display:flex;align-items:center;gap:var(--space-2);margin-left:auto;padding:3px 8px;background:var(--paper-0);border:var(--border-ink) solid var(--line-strong);border-radius:var(--radius-sm);color:var(--text-body)}
+.tt-contrato__busca small{color:var(--text-caption)}
+.tt-contrato__corpo{flex:1;min-height:0;overflow:auto;padding:var(--space-5) var(--space-6)}
+.tt-contrato__corpo h3{font-family:var(--font-display);font-weight:var(--weight-semibold);font-size:var(--size-lg);line-height:var(--lh-snug);letter-spacing:var(--track-tight)}
+.tt-contrato__data{margin:2px 0 var(--space-4);font-size:var(--size-2xs);color:var(--text-caption)}
+.tt-contrato__corpo p:not(.tt-contrato__data){font-size:12px;line-height:1.5;color:var(--text-caption);text-align:justify;hyphens:auto}
+.tt-contrato__corpo p + p{margin-top:var(--space-3)}
+.tt-contrato__corpo p b{color:var(--ink-2)}
+.tt-contrato mark{background:var(--ocre-300);color:var(--ink-1);padding:0 2px;border-radius:2px}
+.tt-contrato__mais{margin-top:var(--space-4);padding-top:var(--space-3);border-top:var(--border-hairline) dashed var(--ink-5);font:var(--text-eyebrow);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-caption);text-align:center}
+.tt-contrato__aceite{display:flex;align-items:center;gap:var(--space-3);padding:var(--space-4) var(--space-6);border-top:var(--border-ink) solid var(--line-strong);font-size:var(--size-sm);color:var(--text-body)}
+.tt-contrato__caixa{flex:none;display:grid;place-items:center;width:20px;height:20px;border-radius:var(--radius-sm);background:var(--lousa-500);color:var(--paper-0)}
+.tt-contrato__caixa .ico{width:14px;height:14px;stroke-width:3}
+.tt-contrato__nota{margin-left:auto;font-family:"Caveat",cursive;font-size:22px;line-height:1;color:var(--terracota-600);rotate:-3deg}
+
+/* Cartazes em várias línguas (t3/cartazes-tutorial.html): minicartazes, escolha das
+   línguas, conferência e galeria. A pilha de fontes cobre os alfabetos latino,
+   cirílico, árabe, devanágari e japonês; a página carrega as Noto do Google Fonts. */
+.tt-cartaz,.tt-cartaz-linguas li,.tt-cartaz-aba bdi,.tt-cartaz-folha{font-family:"Instrument Sans","Noto Sans","Noto Sans Arabic","Noto Sans Devanagari","Noto Sans JP",sans-serif}
+.tt-cartazes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-4);width:100%}
+.tt-cartaz{display:flex;flex-direction:column;gap:var(--space-2);padding:var(--space-4);background:var(--paper-0);border:var(--border-hairline) solid var(--ink-5);border-radius:var(--radius-sm)}
+.tt-cartazes .tt-cartaz:nth-child(3n+1){rotate:-1.5deg}
+.tt-cartazes .tt-cartaz:nth-child(3n+2){rotate:1deg}
+.tt-cartazes .tt-cartaz:nth-child(3n){rotate:-.5deg}
+.tt-cartaz__lingua{font-size:11px;font-weight:600;line-height:1.3;text-transform:uppercase;letter-spacing:.06em;color:var(--lousa-600)}
+.tt-cartaz__texto{font-size:var(--size-lg);font-weight:600;line-height:1.3;color:var(--text-body)}
+.tt-cartaz__pron{font-size:var(--size-2xs);font-style:italic;color:var(--text-caption)}
+.tt-cartaz--original{width:92%;align-self:flex-start;border:var(--border-ink) solid var(--line-strong);border-radius:var(--radius-card);box-shadow:4px 4px 0 0 var(--lousa-500);rotate:-1deg}
+.tt-cartaz--original .tt-cartaz__texto{font-family:var(--font-display);font-size:var(--size-md);line-height:1.4}
+
+.tt-cartaz-linguas{display:flex;flex-direction:column;gap:var(--space-5);width:100%;max-width:560px;max-height:100%;overflow:auto;padding:var(--space-6) var(--space-7);background:var(--paper-0);border:var(--border-ink) solid var(--line-strong);border-radius:var(--radius-card);box-shadow:var(--shadow-ink-sm)}
+.tt-cartaz-linguas__grupo > span{display:block;margin-bottom:var(--space-3);font:var(--text-eyebrow);text-transform:uppercase;letter-spacing:var(--track-caps);color:var(--lousa-600)}
+.tt-cartaz-linguas ul{display:flex;flex-wrap:wrap;gap:var(--space-3)}
+.tt-cartaz-linguas li{display:inline-flex;align-items:baseline;gap:6px;padding:5px 14px;font-size:var(--size-md);font-weight:600;color:var(--text-body);background:var(--paper-1);border:var(--border-ink) solid var(--line-strong);border-radius:var(--radius-pill)}
+.tt-cartaz-linguas li small{font-size:var(--size-xs);font-weight:400;color:var(--text-caption)}
+.tt-cartaz-linguas li.tt-cartaz-linguas__vazio{font-weight:400;font-style:italic;color:var(--text-caption);background:transparent;border-style:dashed;border-color:var(--ink-4)}
+.tt-cartaz-linguas__grupo--libras{padding-top:var(--space-4);border-top:var(--border-hairline) dashed var(--ink-5)}
+.tt-cartaz-linguas__grupo--libras li{background:var(--lousa-100);border-color:var(--lousa-300)}
+
+.tt-cartaz-confere{width:100%;max-width:540px;max-height:100%;overflow:auto;padding:var(--space-6) var(--space-7);background:var(--paper-0);border:var(--border-ink) solid var(--line-strong);border-radius:var(--radius-md);box-shadow:var(--shadow-ink-sm)}
+.tt-cartaz-confere__cab{display:flex;justify-content:space-between;gap:var(--space-4);padding-bottom:var(--space-3);border-bottom:var(--border-ink) solid var(--line-strong);font:var(--text-eyebrow);text-transform:uppercase;letter-spacing:var(--track-caps);color:var(--lousa-700)}
+.tt-cartaz-confere li{display:grid;grid-template-columns:96px minmax(0,1fr) 22px;gap:var(--space-4);align-items:center;padding:var(--space-4) 0;border-bottom:var(--border-hairline) solid var(--line-hairline);font-size:var(--size-sm)}
+.tt-cartaz-confere li b{font-family:var(--font-display);font-weight:var(--weight-semibold)}
+.tt-cartaz-confere li span{color:var(--text-muted)}
+.tt-cartaz-confere li:not(.ok) span{font-style:italic;color:var(--text-caption)}
+.tt-cartaz-confere li i{display:grid;place-items:center;width:22px;height:22px;border:var(--border-ink) solid var(--ink-4);border-radius:var(--radius-sm)}
+.tt-cartaz-confere li.ok i{background:var(--lousa-500);border-color:var(--lousa-500);color:var(--paper-0)}
+.tt-cartaz-confere li i .ico{width:14px;height:14px;stroke-width:3}
+.tt-cartaz-confere__nota{margin-top:var(--space-4);font:var(--text-caption-font);color:var(--text-caption)}
+
+.tt-cartaz-folha{display:flex;flex-direction:column;gap:var(--space-4);width:100%;max-width:400px;aspect-ratio:210/297;max-height:100%;overflow:auto;padding:var(--space-8) var(--space-7);background:var(--paper-0);border:var(--border-ink) solid var(--line-strong);border-radius:var(--radius-sm);box-shadow:var(--shadow-ink)}
+.tt-cartaz-folha--conferir{border-style:dashed}
+.tt-cartaz-folha__titulo{font-family:"Bricolage Grotesque","Noto Sans","Noto Sans Arabic","Noto Sans Devanagari","Noto Sans JP",sans-serif;font-size:var(--size-3xl);font-weight:600;line-height:1.15;letter-spacing:-.01em;color:var(--lousa-700)}
+.tt-cartaz-folha__pt{margin-top:calc(-1 * var(--space-3));padding-bottom:var(--space-4);border-bottom:var(--border-ink) solid var(--line-strong);font:var(--text-eyebrow);text-transform:uppercase;letter-spacing:var(--track-caps);color:var(--text-caption)}
+.tt-cartaz-folha__estrofe{flex:1;display:flex;flex-direction:column;justify-content:center;gap:var(--space-2)}
+.tt-cartaz-folha__estrofe p{font-size:var(--size-xl);font-weight:600;line-height:1.3;color:var(--text-body)}
+.tt-cartaz-folha__espera i{display:block;height:10px;border-radius:5px;background:var(--paper-3)}
+.tt-cartaz-folha__espera i:nth-child(2n){width:78%}
+.tt-cartaz-folha__estrofe.tt-cartaz-folha__espera p{margin-top:var(--space-3);font-size:var(--size-sm);font-weight:400;font-style:italic;color:var(--terracota-600)}
+.tt-cartaz-folha__pron{font-size:var(--size-sm);font-style:italic;color:var(--text-muted)}
+.tt-cartaz-folha__curio{padding-top:var(--space-4);border-top:var(--border-hairline) dashed var(--ink-5);font-size:var(--size-xs);line-height:var(--lh-normal);color:var(--text-caption)}
+.tt-cartaz-folha__nota{font-family:"Caveat",cursive;font-size:22px;line-height:1.1;color:var(--terracota-600)}
+.tt-cartaz-rima{text-decoration:underline;text-decoration-color:var(--ocre-500);text-decoration-thickness:3px;text-underline-offset:5px}
+.tt-cartaz-rima--b{text-decoration-color:var(--lousa-300)}
+
+.tt-cartaz-galeria{display:grid;grid-template-columns:160px minmax(0,1fr);grid-template-rows:minmax(0,1fr);gap:var(--space-6);width:100%;height:100%;min-height:0;align-items:center;justify-items:center}
+.tt-cartaz-abas{display:flex;flex-direction:column;gap:var(--space-2);justify-self:stretch;max-height:100%;overflow:auto;padding:2px 6px 6px 2px}
+.tt-cartaz-aba{display:flex;flex-direction:column;align-items:flex-start;padding:var(--space-2) var(--space-4);text-align:left;background:var(--paper-0);border:var(--border-ink) solid transparent;border-radius:var(--radius-md);cursor:pointer;font:inherit;color:inherit;transition:var(--transition-ui)}
+.tt-cartaz-aba bdi{font-size:var(--size-md);font-weight:600;line-height:1.3;color:var(--text-body)}
+.tt-cartaz-aba small{font:var(--text-eyebrow);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-caption)}
+.tt-cartaz-aba:hover{border-color:var(--lousa-300)}
+.tt-cartaz-aba.aberto{border-color:var(--line-strong);box-shadow:4px 4px 0 0 var(--lousa-500)}
+
+/* Bilhete da agenda: foto do bilhete na capa e a fala ditada pelo microfone */
+.tt-fluxo .tt-bilhete-foto{width:46%;max-width:210px;align-self:flex-start;rotate:-2deg;box-shadow:var(--shadow-ink-sm)}
+.tt-fala{width:100%;max-width:560px;padding:var(--space-5) var(--space-6);background:var(--paper-0);border:var(--border-ink) solid var(--line-strong);border-radius:var(--radius-card);box-shadow:var(--shadow-ink)}
+.tt-fala__rotulo{display:flex;align-items:center;gap:var(--space-2);margin-bottom:var(--space-3);font:var(--text-eyebrow);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--lousa-600)}
+.tt-fala p{font-size:var(--size-sm);line-height:1.6;color:var(--text-body)}
 
 /* ---------- Telas médias e estreitas ---------- */
 @media (max-width:1100px){
@@ -492,4 +660,48 @@ img{display:block;max-width:100%;height:auto}
   .tt-visual .pg-prompt{padding:var(--space-5);box-shadow:var(--shadow-ink-sm)}
   .tt-visual .pg-prompt p{font-size:var(--size-sm)}
   .tt-visual .pg-shot{box-shadow:var(--shadow-ink-sm)}
+
+  .tt-visual .pg-prompt--longo{padding:var(--space-4)}
+  .tt-visual .pg-prompt--longo [data-instrucao]{font-size:var(--size-xs)}
+  .tt-fonte{padding:var(--space-4)}
+  .tt-fonte--reportagem,.tt-fonte--anotacao{width:94%}
+  .tt-fonte--anotacao{padding-left:36px}
+  .tt-fonte--anotacao::before{left:24px}
+  .tt-fonte--anotacao li{font-size:17px}
+  .tt-molde{padding:var(--space-5);box-shadow:var(--shadow-ink-sm)}
+  .tt-molde > .tt-molde__foto{width:72px;margin-left:var(--space-4)}
+  .tt-molde__nome{font-size:var(--size-lg)}
+  .tt-molde__partes{gap:var(--space-3)}
+  .tt-molde__partes i{height:5px;margin-top:4px}
+  .tt-fluxo__fontes p{display:none}
+  .tt-fluxo__folha{width:100%;grid-template-columns:minmax(0,1fr) 56px;padding:var(--space-4)}
+  .tt-fluxo__folha dl > div + div{display:none}
+  .tt-enunciado{width:96%;padding:var(--space-3) var(--space-4)}
+  .tt-enunciado--antes p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .tt-enunciado--depois p{font-size:var(--size-xs)}
+  .tt-prova{padding:var(--space-4) var(--space-5)}
+  .tt-prova li{font-size:var(--size-xs)}
+  .tt-prova li i{height:24px}
+  .tt-ciclo{width:100%;padding:var(--space-4)}
+  .tt-ciclo ol{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-3) var(--space-4)}
+  .tt-contrato{box-shadow:none}
+  .tt-contrato__url{padding:var(--space-2) var(--space-4)}
+  .tt-contrato__corpo{padding:var(--space-4)}
+  .tt-contrato__corpo h3{font-size:var(--size-md)}
+  .tt-contrato__corpo p:not(.tt-contrato__data){font-size:11px}
+  .tt-contrato__aceite{padding:var(--space-3) var(--space-4);font-size:var(--size-xs)}
+  .tt-contrato__nota{font-size:18px}
+  .tt-cartazes{gap:var(--space-3)}
+  .tt-cartaz{padding:var(--space-3)}
+  .tt-cartaz__texto,.tt-cartaz--original .tt-cartaz__texto{font-size:var(--size-sm)}
+  .tt-cartaz__lingua{font-size:10px}
+  .tt-cartaz-linguas,.tt-cartaz-confere{padding:var(--space-4) var(--space-5);gap:var(--space-4);box-shadow:none}
+  .tt-cartaz-linguas li{font-size:var(--size-sm);padding:4px 10px}
+  .tt-cartaz-confere li{grid-template-columns:72px minmax(0,1fr) 22px;gap:var(--space-3);padding:var(--space-3) 0;font-size:var(--size-xs)}
+  .tt-cartaz-galeria{grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);gap:var(--space-3)}
+  .tt-cartaz-abas{flex-direction:row;max-width:100%;overflow-x:auto}
+  .tt-cartaz-aba{flex:none;padding:var(--space-2) var(--space-3)}
+  .tt-cartaz-folha{aspect-ratio:auto;padding:var(--space-5);gap:var(--space-3);box-shadow:var(--shadow-ink-sm)}
+  .tt-cartaz-folha__titulo{font-size:var(--size-2xl)}
+  .tt-cartaz-folha__estrofe p{font-size:var(--size-md)}
 }

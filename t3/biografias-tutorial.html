@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Padronizar biografias · Inteligência Artificial para Educadores</title>
+<meta name="description" content="Tutorial guiado: crie um molde de biografia de uma página e deixe o Gemini encaixar nele as fontes que você pesquisou sobre cada personalidade.">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Padronizar biografias">
+<meta property="og:description" content="Tutorial guiado: crie um molde de biografia de uma página e deixe o Gemini encaixar nele as fontes que você pesquisou sobre cada personalidade.">
+<meta property="og:url" content="https://raulfranca.github.io/cursoia/t3/biografias-tutorial.html">
+<meta property="og:image" content="https://raulfranca.github.io/cursoia/assets/ilustracoes/og-curso-ia.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Caveat:wght@400;700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS6YNMGLZ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GS6YNMGLZ9');
+</script>
+
+<link rel="stylesheet" href="../assets/artigos.css">
+
+<body class="pg-tutorial">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+  <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M3 12h.01"/><path d="M3 18h.01"/><path d="M3 6h.01"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M8 6h13"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
+  <symbol id="i-file-check" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></symbol>
+</svg>
+
+<header class="pg-header">
+  <div class="pg-header__in">
+    <a class="pg-wordmark" href="../">Inteligência Artificial para Educadores</a>
+    <div class="tt-topo">
+      <div class="tt-progresso" aria-hidden="true"></div>
+      <span class="tt-contagem" aria-live="polite"></span>
+    </div>
+  </div>
+</header>
+
+<main class="tt-palco">
+
+  <!-- 0. Capa -->
+  <section class="tt-passo tt-capa" data-passo>
+    <div class="tt-texto">
+      <span class="iap-eyebrow">Tópico 3 · IA como assistente de texto</span>
+      <h1 class="tt-titulo">Padronizar biografias</h1>
+      <p class="tt-capa__lead">Crie um molde de uma página e deixe o Gemini encaixar nele o que você pesquisou sobre cada personalidade</p>
+      <ul class="tt-capa__meta">
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-list"/></svg><span><b>10</b> passos</span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-clock"/></svg><span><b>10</b> minutos</span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-shield"/></svg><span>Gemini da <b>conta institucional</b></span></li>
+      </ul>
+      <button class="iap-btn iap-btn--lg iap-btn--ink" type="button" data-ir="1">Começar <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+    </div>
+    <div class="tt-visual">
+      <div class="tt-fluxo" role="img" aria-label="Três fontes de tamanhos diferentes sobre Carolina Maria de Jesus, um verbete, uma reportagem e anotações, passam pelo molde e viram uma biografia de uma página, com foto e partes fixas">
+        <div class="tt-fluxo__fontes">
+          <div><span>Verbete · 204 palavras</span><p>Carolina Maria de Jesus (Sacramento, Minas Gerais, 14 de março de 1914 – São Paulo…</p><i></i><i></i><i></i><i></i></div>
+          <div><span>Reportagem · 107 palavras</span><p>Ela escrevia em cadernos achados no lixo.</p><i></i><i></i></div>
+          <div><span>Anotações · 49 palavras</span><p>nasceu em MG, 1914</p></div>
+        </div>
+        <span class="tt-fluxo__passa"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-down"/></svg>você cola, o Gemini encaixa no molde</span>
+        <div class="tt-fluxo__folha">
+          <span class="tt-fluxo__etiqueta"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-file-check"/></svg>Biografia · 1 de 10</span>
+          <h3>Carolina Maria de Jesus<small>Sacramento, 1914 – São Paulo, 1977</small></h3>
+          <span class="tt-molde__foto"><svg class="ico" aria-hidden="true"><use href="#i-user"/></svg>Foto</span>
+          <dl>
+            <div><dt>Quem foi</dt><dd>Foi uma das primeiras e mais importantes escritoras negras do Brasil.</dd></div>
+            <div><dt>Você sabia?</dt><dd>O nome do seu segundo livro, Casa de Alvenaria, vem do sonho que ela tinha de ter uma casa de tijolos.</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. Fontes -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="tt-fontes__fig">
+        <div class="tt-fontes" data-fontes></div>
+        <figcaption>Fontes recriadas para o exemplo, com informações reais sobre Carolina Maria de Jesus.</figcaption>
+      </figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 1</span>
+      <h2 class="tt-titulo">Reúna as fontes</h2>
+      <ul class="tt-dicas">
+        <li><span>No exemplo, são <strong>dez personalidades negras</strong>, cinco mulheres e cinco homens, para um caderno de biografias da turma.</span></li>
+        <li><span>Cada uma foi pesquisada em lugares diferentes: verbete, reportagem, anotações de um documentário. <strong>Tamanhos e tons diferentes.</strong></span></li>
+        <li><span>Copie os trechos que você leu e anote <strong>de onde veio</strong> cada um. Você vai precisar disso para conferir no final.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 2. Molde -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <div class="tt-molde" role="img" aria-label="Folha em branco do molde: nome e datas no alto, espaço para a foto à direita e oito partes numeradas, de Quem foi a Palavras novas">
+        <span class="tt-molde__foto"><svg class="ico" aria-hidden="true"><use href="#i-user"/></svg>Foto</span>
+        <p class="tt-molde__nome">Nome<small>Nascimento e morte: cidade e ano</small></p>
+        <ol class="tt-molde__partes" data-molde></ol>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 2</span>
+      <h2 class="tt-titulo">Desenhe o molde</h2>
+      <ul class="tt-dicas">
+        <li><span>Antes de abrir a IA, decida <strong>o que toda biografia vai ter</strong>, e em que ordem.</span></li>
+        <li><span>Mesma ordem em todas as folhas: a criança sabe onde procurar e consegue <strong>comparar</strong> uma vida com outra.</span></li>
+        <li><span>Inclua o que serve à sua aula. "Palavras novas", por exemplo, não está em fonte nenhuma: é um pedido seu, para ajudar na leitura.</span></li>
+        <li><span>Você concebe, a IA executa.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3. Abrir o Gemini -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/ditado-0-inicio.webp" width="700" height="180" alt="Tela inicial do Gemini com a caixa Peça ao Gemini e o ícone de escudo à esquerda do texto"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 3</span>
+      <h2 class="tt-titulo">Abra o Gemini</h2>
+      <ul class="tt-dicas">
+        <li><span>No <strong>computador ou Chromebook</strong>, com a conta @educa (institucional).</span></li>
+        <li><span>Comece uma <strong>conversa nova</strong>: o molde vale para tudo o que vier depois dele, na mesma conversa.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 4. Molde no Gemini -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <div class="pg-prompt pg-prompt--longo">
+        <span class="pg-prompt__rotulo">Comando (Prompt)</span>
+<p data-instrucao>Estou preparando um caderno de biografias de personalidades negras importantes da história, para alunos do 4º ano (9 anos). Para cada personalidade, vou colar textos de fontes diferentes que consultei. Com eles, escreva uma biografia de uma página, sempre neste molde:
+
+Nome
+Nascimento e morte: cidade e ano
+Quem foi: uma frase que apresenta a pessoa
+Infância: de onde veio e como começou a vida
+O que fez: as principais realizações, em até dois parágrafos curtos
+Por que é importante até hoje
+Frase: uma frase dita ou escrita pela pessoa, entre aspas (só se aparecer nas fontes)
+Você sabia?: uma curiosidade
+Palavras novas: até três palavras difíceis do texto, explicadas
+
+Regras: no máximo 300 palavras; frases curtas e vocabulário para 9 anos; use somente as informações das fontes, sem acrescentar nada; se uma parte do molde não estiver nas fontes, escreva [não encontrado nas fontes]; se as fontes discordarem, não escolha: avise.
+
+Depois da biografia, separado por uma linha, faça uma lista para eu conferir: cada data, número e nome que você usou, e de qual fonte veio.
+
+Se entendeu, responda apenas "Entendi" e espere as fontes da primeira personalidade.</p>
+        <button class="iap-btn iap-btn--md iap-btn--quieto tt-copiar" type="button" data-copiar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-copy"/></svg><span>Copiar instrução</span></button>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 4</span>
+      <h2 class="tt-titulo">Envie o molde</h2>
+      <ul class="tt-dicas">
+        <li><span>A primeira mensagem leva <strong>só o molde</strong>, sem fonte nenhuma. O Gemini responde "Entendi" e espera.</span></li>
+        <li><span><strong>"Use somente as fontes"</strong>: sem essa regra, a IA completa as lacunas com o que acha que sabe, e pode inventar.</span></li>
+        <li><span>A <strong>lista para conferir</strong> já prepara a verificação do final.</span></li>
+        <li><span>Troque o ano e a idade pelos da sua turma. Para pular linha sem enviar: <strong>Shift + Enter</strong>.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 5. Fontes no Gemini -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/biografia-2-fontes.webp" width="720" height="494" alt="Conversa no Gemini: a resposta Entendi logo abaixo do molde e, na caixa de texto, as fontes coladas, terminando nas anotações do documentário em tópicos"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 5</span>
+      <h2 class="tt-titulo">Cole as fontes</h2>
+      <ul class="tt-dicas">
+        <li><span>Comece pelo <strong>nome da personalidade</strong> e cole as fontes logo abaixo.</span></li>
+        <li><span>Dê um nome a cada uma: <strong>Fonte 1, Fonte 2, Fonte 3</strong>. É assim que o Gemini vai dizer de onde tirou cada informação.</span></li>
+        <li><span>Pode colar do jeito que estiver, até anotação em tópicos. Clique na <strong>seta</strong> para enviar.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6. Resposta -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/biografia-3-resposta.webp" width="740" height="602" alt="Resposta do Gemini: a biografia de Carolina Maria de Jesus dividida nas partes do molde, com o aviso de que as fontes discordam sobre o número de traduções do livro"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 6</span>
+      <h2 class="tt-titulo">Leia a biografia</h2>
+      <ul class="tt-dicas">
+        <li><span>Três textos desencontrados viraram <strong>uma biografia no molde</strong>, com 271 palavras e frases para 9 anos.</span></li>
+        <li><span>Repare no fim de "O que fez": as fontes discordam sobre as traduções do livro, e o Gemini <strong>avisou em vez de escolher</strong>. Foi isso que pedimos.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 7. Próxima personalidade -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/biografia-4-proxima.webp" width="740" height="550" alt="Mensagem com o nome Luiz Gama e as fontes, sem nenhuma instrução, e a resposta do Gemini já no mesmo molde: nome, nascimento e morte, quem foi, infância"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 7</span>
+      <h2 class="tt-titulo">Mande só as fontes da próxima</h2>
+      <ul class="tt-dicas">
+        <li><span>Na <strong>mesma conversa</strong>, cole o nome e as fontes da próxima personalidade. Nada de instrução.</span></li>
+        <li><span>O Gemini lembra do molde e devolve a biografia <strong>no mesmo padrão</strong>.</span></li>
+        <li><span>Repita até completar as dez.</span></li>
+      </ul>
+      <p class="tt-aviso tt-aviso--alerta">Se a conversa ficar longa e o Gemini começar a fugir do molde, abra uma conversa nova e envie o molde de novo. Guarde o molde num documento para ter sempre à mão.</p>
+    </div>
+  </section>
+
+  <!-- 8. Conferir -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/biografia-5-conferencia.webp" width="740" height="277" alt="Lista de conferência do Gemini: cada data, número e nome com a fonte de origem, incluindo 13 idiomas pela Fonte 1 e mais de 14 línguas pela Fonte 2"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 8</span>
+      <h2 class="tt-titulo">Confira cada informação</h2>
+      <ul class="tt-dicas">
+        <li><span>A lista no fim da resposta diz <strong>de qual fonte</strong> veio cada data, nome e número. Abra a fonte e confira.</span></li>
+        <li><span>Onde as fontes discordam, <strong>a decisão é sua</strong>: procure uma terceira fonte confiável.</span></li>
+        <li><span>Atenção ao erro sutil. Na biografia de Luiz Gama, a fonte dizia pai "de origem portuguesa" e a IA escreveu "fidalgo <strong>português</strong>". Parece igual, mas não é.</span></li>
+      </ul>
+      <p class="tt-aviso">A IA ajuda a organizar, mas não garante que a fonte esteja certa nem que ela própria leu tudo direito. Material para criança só vai para a turma depois de conferido.</p>
+    </div>
+  </section>
+
+  <!-- 9. Documentos -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/biografia-6-exportar.webp" width="648" height="280" alt="Menu aberto pelos três pontinhos abaixo da resposta do Gemini, com as opções Ramificar em uma nova conversa, Ouvir, Exportar para o Google Docs e Criar rascunho no Gmail"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 9</span>
+      <h2 class="tt-titulo">Monte a folha no Documentos</h2>
+      <ul class="tt-dicas">
+        <li><span>Nos <strong>três pontinhos</strong> abaixo da resposta, escolha <strong>Exportar para o Google Docs</strong>.</span></li>
+        <li><span>No documento, <strong>apague a lista de conferência</strong>: ela é para você, não para a criança.</span></li>
+        <li><span>Coloque a foto em <strong>Inserir → Imagem</strong>.</span></li>
+      </ul>
+      <p class="tt-aviso">Use uma foto real, de acervo confiável, e escreva o crédito. Não peça para a IA gerar o retrato: ela inventa um rosto que não é o da pessoa.</p>
+    </div>
+  </section>
+
+  <!-- 10. Antes e depois -->
+  <section class="tt-passo" data-passo data-ao-entrar="comparar">
+    <div class="tt-visual tt-visual--comparar">
+      <div class="tt-comparar">
+        <div class="tt-comparar__cab"><span>Nas fontes</span><span>Na biografia</span></div>
+        <div class="tt-pares tt-pares--fontes" data-pares></div>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 10</span>
+      <h2 class="tt-titulo">Veja o padrão</h2>
+      <ul class="tt-dicas">
+        <li><span><strong>Interativo:</strong> toque em uma parte do molde para ver de onde ela veio.</span></li>
+        <li><span>Você escreveu o molde uma vez. Daí em diante, cada biografia custou <strong>só colar as fontes</strong>.</span></li>
+        <li><span>O tempo que sobrou vai para o que a IA não faz por você: escolher boas fontes e <strong>conferir</strong> o resultado.</span></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<nav class="tt-rodape" aria-label="Navegação do tutorial">
+  <div class="tt-rodape__in">
+    <span class="tt-atalho">Use <kbd aria-label="seta para a esquerda">←</kbd><kbd aria-label="seta para a direita">→</kbd> no teclado</span>
+    <button class="iap-btn iap-btn--md iap-btn--quieto" type="button" data-voltar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-left"/></svg>Voltar</button>
+    <p class="tt-seguir" data-seguir aria-hidden="true"></p>
+    <button class="iap-btn iap-btn--md iap-btn--primary" type="button" data-avancar>Próximo <svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+  </div>
+</nav>
+
+<script>
+(function(){
+  // Fontes recriadas sobre Carolina Maria de Jesus, como foram coladas no Gemini
+  var fontes = [
+    {tipo:"Fonte 1 · verbete de enciclopédia", classe:"verbete",
+     texto:"Carolina Maria de Jesus (Sacramento, Minas Gerais, 14 de março de 1914 – São Paulo, 13 de fevereiro de 1977) foi uma escritora brasileira, considerada uma das primeiras e mais importantes escritoras negras do país. Neta de pessoas escravizadas, frequentou a escola por apenas dois anos, no Colégio Allan Kardec, em Sacramento, onde aprendeu a ler e a escrever. Em 1937, após a morte da mãe, mudou-se para a cidade de São Paulo. A partir de 1948, passou a viver na favela do Canindé, às margens do rio Tietê, onde criou sozinha os três filhos, João José, José Carlos e Vera Eunice, trabalhando como catadora de papel. Nos cadernos que recolhia do lixo, registrava o cotidiano da favela em forma de diário. Em 1958, o jornalista Audálio Dantas conheceu a escritora e leu seus cadernos. Em 1960, foi publicado o livro Quarto de Despejo: Diário de uma Favelada, que vendeu 10 mil exemplares na primeira semana e foi traduzido para 13 idiomas. Publicou ainda Casa de Alvenaria (1961) e Pedaços da Fome (1963). Morreu no sítio onde morava, em Parelheiros, no extremo sul de São Paulo. Em 2021, recebeu o título póstumo de Doutora Honoris Causa da Universidade Federal do Rio de Janeiro."},
+    {tipo:"Fonte 2 · reportagem de revista", classe:"reportagem", titulo:"Ela escrevia em cadernos achados no lixo.",
+     texto:"Em 1958, o repórter Audálio Dantas foi à favela do Canindé para escrever sobre um parquinho que tinha sido inaugurado ali. No meio da confusão, ouviu uma mulher ameaçar os adultos que brigavam: \"Vou colocar o nome de vocês no meu livro!\". Era Carolina. Curioso, ele pediu para ver os cadernos, e o que leu virou um dos livros mais importantes da literatura brasileira. Quarto de Despejo foi traduzido para mais de 14 línguas e vendido em mais de 40 países. No diário, Carolina conta a luta diária para conseguir comida para os filhos. \"A fome também é professora\", escreveu."},
+    {tipo:"Fonte 3 · minhas anotações do documentário", classe:"anotacao",
+     itens:["nasceu em MG, 1914","estudou só 2 anos, mas lia tudo o que encontrava","SP: catava papel e ferro-velho para comprar comida","também compunha músicas: gravou um disco em 1961","sonhava com uma casa de tijolos (\"casa de alvenaria\" = nome do 2º livro)"]}
+  ];
+
+  // Partes do molde, na ordem da folha
+  var molde = ["Quem foi","Infância","O que fez","Por que é importante até hoje","Frase","Você sabia?","Palavras novas"];
+
+  // De onde veio cada parte: trecho das fontes e o que o Gemini escreveu (resposta real, 19/10/2026)
+  var partes = [
+    {parte:"Nascimento e morte",
+     antes:"<b>Fontes 1 e 3</b>(Sacramento, Minas Gerais, 14 de março de 1914 – São Paulo, 13 de fevereiro de 1977) · nasceu em MG, 1914",
+     depois:"Nascimento: Sacramento, 1914. Morte: São Paulo, 1977."},
+    {parte:"Quem foi",
+     antes:"<b>Fonte 1</b>foi uma escritora brasileira, considerada uma das primeiras e mais importantes escritoras negras do país.",
+     depois:"Foi uma das primeiras e mais importantes escritoras negras do Brasil."},
+    {parte:"Infância",
+     antes:"<b>Fonte 1</b>Neta de pessoas escravizadas, frequentou a escola por apenas dois anos, no Colégio Allan Kardec, em Sacramento, onde aprendeu a ler e a escrever.",
+     depois:"Neta de pessoas escravizadas, nasceu em Sacramento, Minas Gerais. Estudou apenas dois anos no Colégio Allan Kardec, onde aprendeu a ler e a escrever."},
+    {parte:"O que fez",
+     antes:"<b>Fontes 1 e 3</b>…criou sozinha os três filhos, João José, José Carlos e Vera Eunice, trabalhando como catadora de papel. Nos cadernos que recolhia do lixo… · SP: catava papel e ferro-velho para comprar comida",
+     depois:"Em 1937, mudou-se para São Paulo e depois passou a viver na favela do Canindé. Para criar sozinha os três filhos, trabalhava catando papel e ferro-velho. Nos cadernos achados no lixo, registrava o cotidiano da favela em forma de diário. Em 1958, o jornalista Audálio Dantas conheceu esses cadernos."},
+    {parte:"Por que é importante até hoje",
+     antes:"<b>Fontes 1 e 2</b>…o que leu virou um dos livros mais importantes da literatura brasileira. · Em 2021, recebeu o título póstumo de Doutora Honoris Causa…",
+     depois:"Seu livro virou uma obra muito importante na literatura brasileira por mostrar a luta diária contra a fome. Em 2021, recebeu o título póstumo de Doutora Honoris Causa da Universidade Federal do Rio de Janeiro."},
+    {parte:"Frase",
+     antes:"<b>Fonte 2</b>\"A fome também é professora\", escreveu.",
+     depois:"\"A fome também é professora\""},
+    {parte:"Você sabia?",
+     antes:"<b>Fonte 3</b>sonhava com uma casa de tijolos (\"casa de alvenaria\" = nome do 2º livro)",
+     depois:"O nome do seu segundo livro, Casa de Alvenaria, vem do sonho que ela tinha de ter uma casa de tijolos."},
+    {parte:"Palavras novas",
+     antes:"<b>Nenhuma fonte</b>Não estava nas fontes: é o pedido da professora para a turma.",
+     depois:"Póstumo: homenagem concedida depois que a pessoa já morreu. Alvenaria: construção feita com tijolos. Exemplares: cópias impressas de um livro."}
+  ];
+
+  function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;"); }
+
+  document.querySelector("[data-fontes]").innerHTML = fontes.map(function(f){
+    var corpo = f.itens ? "<ul>"+f.itens.map(function(i){ return "<li>"+esc(i)+"</li>"; }).join("")+"</ul>" : "<p>"+esc(f.texto)+"</p>";
+    var titulo = f.titulo ? '<p class="tt-fonte__titulo">'+esc(f.titulo)+'</p>' : "";
+    return '<div class="tt-fonte tt-fonte--'+f.classe+'"><span class="tt-fonte__tipo">'+esc(f.tipo)+'</span>'+titulo+corpo+'</div>';
+  }).join("");
+  document.querySelector("[data-molde]").innerHTML = molde.map(function(m){
+    return "<li><b>"+esc(m)+"</b><i></i><i></i></li>";
+  }).join("");
+  document.querySelector("[data-pares]").innerHTML = partes.map(function(p){
+    return '<button class="tt-par" type="button"><span class="tt-par__antes">'+p.antes+'</span><span class="tt-par__depois"><b>'+esc(p.parte)+'</b>'+esc(p.depois)+'</span></button>';
+  }).join("");
+
+  var passos = [].slice.call(document.querySelectorAll("[data-passo]"));
+  var barra = document.querySelector(".tt-progresso");
+  barra.innerHTML = passos.map(function(){ return "<i></i>"; }).join("");
+  var pontos = [].slice.call(barra.children);
+  var contagem = document.querySelector(".tt-contagem");
+  var btVoltar = document.querySelector("[data-voltar]");
+  var btAvancar = document.querySelector("[data-avancar]");
+  var seguir = document.querySelector("[data-seguir]");
+  var atual = -1;
+
+  function ir(i){
+    i = Math.max(0, Math.min(passos.length-1, i));
+    if (i === atual) return;
+    passos.forEach(function(p,k){ p.classList.toggle("ativo", k===i); p.hidden = k!==i; });
+    pontos.forEach(function(p,k){ p.className = k<i ? "feito" : (k===i ? "agora" : ""); });
+    contagem.textContent = i===0 ? "" : "Passo "+i+" de "+(passos.length-1);
+    btVoltar.disabled = i===0;
+    btAvancar.disabled = i===passos.length-1;
+    var prox = passos[i+1] && passos[i+1].querySelector(".tt-titulo");
+    seguir.innerHTML = prox ? "<span>A seguir</span><b>"+esc(prox.textContent)+"</b>" : "";
+    atual = i;
+    try { history.replaceState(null, "", "#passo-"+i); } catch(e){}
+    if (passos[i].getAttribute("data-ao-entrar") === "comparar") abrirPar(0);
+  }
+
+  btVoltar.addEventListener("click", function(){ ir(atual-1); });
+  btAvancar.addEventListener("click", function(){ ir(atual+1); });
+  document.querySelectorAll("[data-ir]").forEach(function(b){
+    b.addEventListener("click", function(){ ir(+b.getAttribute("data-ir")); });
+  });
+  document.addEventListener("keydown", function(e){
+    if (e.target.closest && e.target.closest("input,textarea")) return;
+    if (e.key === "ArrowRight") ir(atual+1);
+    if (e.key === "ArrowLeft") ir(atual-1);
+  });
+
+  // Copiar instrução (as quebras de linha do molde vão junto)
+  var btCopiar = document.querySelector("[data-copiar]");
+  btCopiar.addEventListener("click", function(){
+    var texto = document.querySelector("[data-instrucao]").textContent;
+    var rotulo = btCopiar.querySelector("span");
+    function ok(){ rotulo.textContent = "Copiado"; setTimeout(function(){ rotulo.textContent = "Copiar instrução"; }, 2000); }
+    try {
+      navigator.clipboard.writeText(texto).then(ok, function(){ rotulo.textContent = "Selecione e copie"; });
+    } catch(e){ rotulo.textContent = "Selecione e copie"; }
+  });
+
+  // Antes e depois
+  var pares = [].slice.call(document.querySelectorAll(".tt-par"));
+  function abrirPar(i){
+    pares.forEach(function(b,k){ b.classList.toggle("aberto", k===i); b.setAttribute("aria-expanded", k===i); });
+  }
+  pares.forEach(function(b,i){ b.addEventListener("click", function(){ abrirPar(i); }); });
+
+  var inicio = parseInt((location.hash.match(/passo-(\d+)/) || [])[1], 10);
+  ir(isNaN(inicio) ? 0 : inicio);
+})();
+</script>
+
+</body>
+</html>

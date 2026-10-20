@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cartazes em várias línguas · Inteligência Artificial para Educadores</title>
+<meta name="description" content="Tutorial guiado: traduza uma estrofe para várias línguas com o Gemini, confira cada tradução pelo caminho de volta e monte cartazes para a mostra cultural da escola.">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Cartazes em várias línguas">
+<meta property="og:description" content="Tutorial guiado: traduza uma estrofe para várias línguas com o Gemini, confira cada tradução pelo caminho de volta e monte cartazes para a mostra cultural da escola.">
+<meta property="og:url" content="https://raulfranca.github.io/cursoia/t3/cartazes-tutorial.html">
+<meta property="og:image" content="https://raulfranca.github.io/cursoia/assets/ilustracoes/og-curso-ia.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Caveat:wght@400;700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<!-- Fontes para os alfabetos dos cartazes (cirílico, árabe, devanágari e japonês): a Instrument Sans só tem o alfabeto latino -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&family=Noto+Sans+Arabic:wght@400;600&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+JP:wght@400;600&display=swap">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS6YNMGLZ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GS6YNMGLZ9');
+</script>
+
+<link rel="stylesheet" href="../assets/artigos.css">
+
+<body class="pg-tutorial">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+  <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M3 12h.01"/><path d="M3 18h.01"/><path d="M3 6h.01"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M8 6h13"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+</svg>
+
+<header class="pg-header">
+  <div class="pg-header__in">
+    <a class="pg-wordmark" href="../">Inteligência Artificial para Educadores</a>
+    <div class="tt-topo">
+      <div class="tt-progresso" aria-hidden="true"></div>
+      <span class="tt-contagem" aria-live="polite"></span>
+    </div>
+  </div>
+</header>
+
+<main class="tt-palco">
+
+  <!-- 0. Capa -->
+  <section class="tt-passo tt-capa" data-passo>
+    <div class="tt-texto">
+      <span class="iap-eyebrow">Tópico 3 · IA como assistente de texto</span>
+      <h1 class="tt-titulo">Cartazes em várias línguas</h1>
+      <p class="tt-capa__lead">Traduza uma estrofe com o Gemini, confira cada versão pelo caminho de volta e monte os cartazes da mostra cultural</p>
+      <ul class="tt-capa__meta">
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-list"/></svg><span><b>10</b> passos</span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-clock"/></svg><span><b>15</b> minutos</span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-shield"/></svg><span>Gemini da <b>conta institucional</b></span></li>
+      </ul>
+      <button class="iap-btn iap-btn--lg iap-btn--ink" type="button" data-ir="1">Começar <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+    </div>
+    <div class="tt-visual">
+      <div class="tt-fluxo" role="img" aria-label="A estrofe Somos todos diferentes, em português, vira seis cartazes pequenos com o primeiro verso em espanhol, inglês, árabe, japonês, russo e hindi">
+        <div class="tt-cartaz tt-cartaz--original">
+          <span class="tt-cartaz__lingua">Português · a estrofe da professora</span>
+          <p class="tt-cartaz__texto" data-capa-original></p>
+        </div>
+        <span class="tt-fluxo__passa"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-down"/></svg>o Gemini traduz, quem fala a língua confere</span>
+        <div class="tt-cartazes" data-capa-cartazes></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. A estrofe -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <div class="tt-cartaz-folha tt-cartaz-folha--estrofe" role="img" aria-label="A estrofe em português num cartaz, com as rimas marcadas: diferentes rima com gente, jeito rima com respeito">
+        <p class="tt-cartaz-folha__titulo">As diferenças</p>
+        <p class="tt-cartaz-folha__pt">Mostra cultural da escola</p>
+        <div class="tt-cartaz-folha__estrofe">
+          <p>Somos todos <span class="tt-cartaz-rima">diferentes</span></p>
+          <p>Cada um tem o seu <span class="tt-cartaz-rima tt-cartaz-rima--b">jeito</span></p>
+          <p>Ninguém é igual à <span class="tt-cartaz-rima">gente</span></p>
+          <p>E todos merecem <span class="tt-cartaz-rima tt-cartaz-rima--b">respeito</span></p>
+        </div>
+        <p class="tt-cartaz-folha__nota">Rima: diferentes com gente, jeito com respeito</p>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 1</span>
+      <h2 class="tt-titulo">Comece pela estrofe</h2>
+      <ul class="tt-dicas">
+        <li><span>O texto é <strong>seu</strong>: a ideia, as palavras e o tema da mostra. A IA só vai levá-lo para outras línguas.</span></li>
+        <li><span>Em poesia, cada palavra foi escolhida pelo <strong>som e pelo sentido</strong>. Traduzir palavra por palavra costuma perder os dois.</span></li>
+        <li><span>A rima quase sempre se perde em outra língua. Tudo bem: o que não pode se perder é a <strong>mensagem</strong>.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 2. Escolher as línguas -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <div class="tt-cartaz-linguas">
+        <div class="tt-cartaz-linguas__grupo">
+          <span>Das famílias da sua escola</span>
+          <ul><li lang="es">Español</li><li lang="en">English</li><li class="tt-cartaz-linguas__vazio">a que você descobrir</li></ul>
+        </div>
+        <div class="tt-cartaz-linguas__grupo">
+          <span>Indígenas do Brasil</span>
+          <ul><li lang="gn">Avañe'ẽ <small>guarani</small></li><li lang="yrl">Nheengatu</li></ul>
+        </div>
+        <div class="tt-cartaz-linguas__grupo">
+          <span>De quem chegou de longe</span>
+          <ul><li lang="it">Italiano</li><li lang="ja">日本語 <small>japonês</small></li><li lang="ar"><bdi>العربية</bdi> <small>árabe</small></li></ul>
+        </div>
+        <div class="tt-cartaz-linguas__grupo">
+          <span>Com outros alfabetos</span>
+          <ul><li lang="ru">Русский <small>russo</small></li><li lang="hi">हिन्दी <small>hindi</small></li></ul>
+        </div>
+        <div class="tt-cartaz-linguas__grupo tt-cartaz-linguas__grupo--libras">
+          <span>Língua de sinais</span>
+          <ul><li>Libras <small>não se escreve: veja o aviso</small></li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 2</span>
+      <h2 class="tt-titulo">Escolha as línguas</h2>
+      <ul class="tt-dicas">
+        <li><span>Comece pelas línguas <strong>das famílias da sua escola</strong>. A criança que se vê no cartaz entende o tema da mostra na hora.</span></li>
+        <li><span>Inclua uma <strong>língua indígena</strong>: o Brasil tem mais de 270, e quase ninguém sabe disso.</span></li>
+        <li><span>Uma língua de <strong>outro alfabeto</strong> mostra, só de olhar, que existem muitos jeitos de escrever.</span></li>
+      </ul>
+      <p class="tt-aviso">Libras é uma língua de sinais, com gramática própria, e não tem versão escrita para colar na parede. Para incluí-la, peça a quem sinaliza que grave a estrofe em vídeo e coloque um QR code no cartaz.</p>
+    </div>
+  </section>
+
+  <!-- 3. Abrir o Gemini -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/ditado-0-inicio.webp" width="700" height="180" alt="Tela inicial do Gemini com a caixa Peça ao Gemini e o ícone de escudo à esquerda do texto"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 3</span>
+      <h2 class="tt-titulo">Abra o Gemini</h2>
+      <ul class="tt-dicas">
+        <li><span>No <strong>computador ou Chromebook</strong>, com a conta @educa (institucional).</span></li>
+        <li><span>Comece uma <strong>conversa nova</strong>. Vamos usar duas conversas neste tutorial, e o passo 6 explica por quê.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 4. Pedido de tradução -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <div class="pg-prompt pg-prompt--longo">
+        <span class="pg-prompt__rotulo">Comando (Prompt)</span>
+<p data-instrucao>Estou preparando uma mostra cultural na escola com o tema "as diferenças". Quero traduzir a estrofe abaixo para fazer cartazes que serão colados pela escola e lidos por crianças de 6 a 11 anos e pelas famílias.
+
+Somos todos diferentes
+Cada um tem o seu jeito
+Ninguém é igual à gente
+E todos merecem respeito
+
+Traduza para: espanhol, inglês, guarani, árabe, japonês, russo e hindi.
+
+Regras:
+1. Traduza o sentido, não palavra por palavra. O texto precisa soar natural para quem fala a língua.
+2. Se a rima se perder, avise e dê prioridade ao sentido. Não acrescente ideias que não estão na estrofe só para rimar.
+3. Se algum verso puder ser entendido de dois jeitos, diga qual sentido você escolheu.
+4. Para cada língua, escreva o nome da língua nela mesma e em português, depois a estrofe. Nas línguas que não usam o nosso alfabeto, mostre também como se pronuncia, para as crianças lerem em voz alta.
+5. No fim, diga em quais línguas a sua tradução é menos confiável e por quê.</p>
+        <button class="iap-btn iap-btn--md iap-btn--quieto tt-copiar" type="button" data-copiar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-copy"/></svg><span>Copiar instrução</span></button>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 4</span>
+      <h2 class="tt-titulo">Peça a tradução</h2>
+      <ul class="tt-dicas">
+        <li><span>Conte <strong>para que e para quem</strong> é o texto: cartaz, crianças, famílias. Isso muda a escolha das palavras.</span></li>
+        <li><span><strong>"Traduza o sentido"</strong>: sem esse pedido, a IA pode entregar uma tradução certinha que ninguém falaria daquele jeito.</span></li>
+        <li><span>A última regra faz a IA dizer <strong>onde ela é mais fraca</strong>, em vez de entregar tudo com a mesma segurança.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 5. Resposta -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/cartaz-1-traducao.webp" width="740" height="358" alt="Bloco do árabe na resposta do Gemini: o nome da língua em árabe e em português, a estrofe em árabe com os pontos finais caídos do lado esquerdo, a pronúncia em letras do nosso alfabeto e a nota de que a rima foi deixada de lado"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 5</span>
+      <h2 class="tt-titulo">Leia as traduções</h2>
+      <ul class="tt-dicas">
+        <li><span>Antes de traduzir, o Gemini explicou o verso 3: "ninguém é igual à gente" virou <strong>"ninguém é igual a nós"</strong>. Era isso mesmo.</span></li>
+        <li><span>No fim, ele marcou o <strong>guarani e o árabe</strong> como menos confiáveis. São os primeiros a conferir.</span></li>
+        <li><span>Repare no árabe: na tela, os pontos finais caíram do <strong>lado esquerdo</strong>. Copiar e colar escrita da direita para a esquerda pode desarrumar o texto.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6. Pedido da volta -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <div class="pg-prompt pg-prompt--longo">
+        <span class="pg-prompt__rotulo">Comando (Prompt) · numa conversa nova</span>
+<p data-instrucao>Traduza para o português cada um dos textos abaixo, o mais literalmente possível, verso por verso. Não melhore, não corrija e não tente adivinhar o que o autor quis dizer. Se algum trecho estiver estranho, errado ou artificial na língua original, avise.
+
+…</p>
+        <button class="iap-btn iap-btn--md iap-btn--quieto tt-copiar" type="button" data-copiar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-copy"/></svg><span>Copiar instrução</span></button>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 6</span>
+      <h2 class="tt-titulo">Peça a volta</h2>
+      <ul class="tt-dicas">
+        <li><span>A volta é o <strong>caminho contrário</strong>: cada tradução traduzida de novo para o português. Se a ideia voltar inteira, é bom sinal.</span></li>
+        <li><span>Abra uma <strong>conversa nova</strong>. Na primeira, o Gemini já leu a estrofe e tende a "acertar" a volta de memória.</span></li>
+        <li><span>Troque as reticências pelas traduções, <strong>sem a estrofe em português</strong>.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 7. Comparar a volta -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/cartaz-2-volta.webp" width="740" height="462" alt="Volta do japonês para o português, feita numa conversa nova: o verso 2 voltou como em cada pessoa há o seu próprio lado bom e o verso 4 como de mãos dadas, vamos nos respeitar mutuamente; o Gemini aponta que a tradução trocou jeito por lado bom e acrescentou a imagem das mãos dadas"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 7</span>
+      <h2 class="tt-titulo">Compare com o original</h2>
+      <ul class="tt-dicas">
+        <li><span>Palavra diferente é normal: "jeito" voltou como "maneira" no espanhol. <strong>Ideia diferente</strong> é sinal de problema.</span></li>
+        <li><span>O japonês voltou com <strong>"de mãos dadas"</strong>, que não está na estrofe. A volta também achou um erro de grafia no árabe e um "precisam de respeito" no guarani.</span></li>
+        <li><span>Achou um verso torto? Volte à primeira conversa, diga o que mudou e <strong>peça outra versão</strong> daquele verso.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 8. Conferir com quem fala -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <div class="tt-cartaz-confere" role="img" aria-label="Lista de conferência das traduções: espanhol e inglês já conferidos por uma mãe da escola e pela professora de inglês; guarani, japonês e árabe aguardando alguém que fala a língua">
+        <p class="tt-cartaz-confere__cab"><span>Antes de imprimir</span><span>Quem confere</span></p>
+        <ul data-confere></ul>
+        <p class="tt-cartaz-confere__nota">Exemplo fictício</p>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 8</span>
+      <h2 class="tt-titulo">Confira com quem fala a língua</h2>
+      <ul class="tt-dicas">
+        <li><span>A IA aprende com o que está escrito na internet. Língua com <strong>pouco texto publicado</strong>, como o guarani e o nheengatu, sai com mais erro.</span></li>
+        <li><span>Procure uma <strong>família da escola</strong>, a professora de inglês ou de espanhol da rede, uma comunidade ou associação da língua.</span></li>
+        <li><span>Convidar alguém para conferir também é <strong>parte da mostra</strong>: a família vira coautora do cartaz.</span></li>
+      </ul>
+      <p class="tt-aviso tt-aviso--alerta">A volta não prova que a tradução está certa: ela só mostra se a ideia se perdeu. Em língua indígena, a IA pode errar nas duas direções. Nenhum cartaz vai para a parede sem alguém que fala a língua ter lido.</p>
+    </div>
+  </section>
+
+  <!-- 9. Pedido do cartaz -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <div class="pg-prompt pg-prompt--longo">
+        <span class="pg-prompt__rotulo">Comando (Prompt) · na primeira conversa</span>
+<p data-instrucao>Agora me ajude a montar os cartazes, um para cada língua, incluindo o português, em folha A4 na vertical. Para cada cartaz, organize:
+- Título: o nome da língua escrito nela mesma, em letra grande, e embaixo o nome em português.
+- A estrofe na língua.
+- A pronúncia, quando a língua não usa o nosso alfabeto.
+- Uma curiosidade sobre a língua ou sobre quem a fala, em uma frase curta que uma criança de 8 anos entenda.
+- Cuidados na hora de montar: direção da escrita, que tipo de fonte mostra as letras corretamente e o que não pode ser cortado ou separado.
+
+Não use bandeiras de países para representar as línguas.</p>
+        <button class="iap-btn iap-btn--md iap-btn--quieto tt-copiar" type="button" data-copiar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-copy"/></svg><span>Copiar instrução</span></button>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 9</span>
+      <h2 class="tt-titulo">Peça o cartaz</h2>
+      <ul class="tt-dicas">
+        <li><span>O <strong>nome da língua escrito nela mesma</strong> é o primeiro presente para quem fala: ver a própria língua do jeito certo.</span></li>
+        <li><span>Árabe e hebraico se escrevem <strong>da direita para a esquerda</strong>. Japonês, russo e hindi precisam de uma fonte que tenha aquelas letras, senão aparecem quadradinhos.</span></li>
+        <li><span><strong>Sem bandeiras</strong>: uma língua não é um país. O espanhol e o árabe são falados em cerca de 20 países cada, e o guarani no Brasil, no Paraguai, na Argentina e na Bolívia.</span></li>
+      </ul>
+      <p class="tt-aviso tt-aviso--alerta">Se a volta achou erros, liste-os antes deste comando e peça a correção. Depois, confira de novo: ao corrigir o japonês, o Gemini enfiou no último verso uma palavra em tailandês ("และ"). E desconfie das curiosidades: "pipoca" e "jacaré", que ele disse virem do guarani, vêm do tupi.</p>
+    </div>
+  </section>
+
+  <!-- 10. Os cartazes -->
+  <section class="tt-passo" data-passo data-ao-entrar="cartazes">
+    <div class="tt-visual tt-visual--comparar">
+      <div class="tt-cartaz-galeria">
+        <div class="tt-cartaz-abas" role="tablist" aria-label="Línguas dos cartazes" data-abas></div>
+        <div class="tt-cartaz-folha" role="tabpanel" aria-live="polite" data-folha></div>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 10</span>
+      <h2 class="tt-titulo">Veja os cartazes</h2>
+      <ul class="tt-dicas">
+        <li><span><strong>Interativo:</strong> toque em uma língua para ver o cartaz.</span></li>
+        <li><span>No árabe, o texto <strong>começa pela direita</strong>. A pronúncia, embaixo, deixa qualquer criança ler em voz alta.</span></li>
+        <li><span>Em vez de sete dicionários e uma tarde inteira, você teve um <strong>rascunho em minutos</strong> e uma lista de quem chamar para conferir.</span></li>
+      </ul>
+      <p class="tt-aviso">O cartaz do guarani ainda não está pronto: falta alguém que fala a língua ler. A IA adiantou o trabalho, mas quem garante a tradução é gente.</p>
+    </div>
+  </section>
+
+</main>
+
+<nav class="tt-rodape" aria-label="Navegação do tutorial">
+  <div class="tt-rodape__in">
+    <span class="tt-atalho">Use <kbd aria-label="seta para a esquerda">←</kbd><kbd aria-label="seta para a direita">→</kbd> no teclado</span>
+    <button class="iap-btn iap-btn--md iap-btn--quieto" type="button" data-voltar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-left"/></svg>Voltar</button>
+    <p class="tt-seguir" data-seguir aria-hidden="true"></p>
+    <button class="iap-btn iap-btn--md iap-btn--primary" type="button" data-avancar>Próximo <svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+  </div>
+</nav>
+
+<script>
+(function(){
+  // Estrofe da professora, como foi enviada ao Gemini
+  var estrofe = ["Somos todos diferentes", "Cada um tem o seu jeito", "Ninguém é igual à gente", "E todos merecem respeito"];
+
+  // Cartazes: estrofe, pronúncia e curiosidade da resposta real do Gemini (conta @educa, 19/10/2026),
+  // já com as correções pedidas depois da volta. Japonês: o Gemini escreveu a palavra tailandesa
+  // "และ" no início do verso 4; a pronúncia dele ("soshite") mostra que era そして, e assim ficou aqui.
+  // Guarani fica sem texto até alguém que fala a língua conferir. "capa": aparece na capa.
+  var linguas = [
+    {cod:"pt", nome:"Português", pt:"a língua da nossa escola", dir:"ltr", estrofe:estrofe,
+     curio:"O português é falado em nove países, em quatro continentes."},
+    {cod:"es", nome:"Español", pt:"Espanhol", dir:"ltr", capa:true,
+     estrofe:["Todos somos diferentes,", "cada uno tiene su manera.", "Nadie es igual a nosotros,", "y todos merecen respeto."],
+     curio:"O espanhol é a língua oficial de mais de 20 países, por isso você pode ouvi-lo em quase toda a América!"},
+    {cod:"en", nome:"English", pt:"Inglês", dir:"ltr", capa:true,
+     estrofe:["We are all different,", "each with our own way.", "No one is just like us,", "and everyone deserves respect."],
+     curio:"O inglês é usado por pessoas do mundo inteiro para conversar, mesmo quando vêm de países totalmente diferentes."},
+    {cod:"ar", nome:"العربية", pt:"Árabe", dir:"rtl", capa:true,
+     estrofe:["كُلُّنَا مُخْتَلِفُون،", "وَلِكُلِّ فَرْدٍ طَرِيقَتُه.", "لا أَحَدَ يُشْبِهُنَا،", "وَالْجَمِيعُ يَسْتَحِقُّ الاحْتِرَام."],
+     pron:"Cul-lu-na mukh-ta-li-fun, / wa li-cul-li far-din ta-ri-qa-tuh. / La a-ha-da yush-bi-hu-na, / wal-ja-mi-u yas-ta-hiq-qu al-ih-ti-ram.",
+     curio:"A escrita em árabe parece uma pintura contínua, em que as letras dão as mãos para formar as palavras!"},
+    {cod:"ja", nome:"日本語", pt:"Japonês", dir:"ltr", capa:true,
+     estrofe:["みんな それぞれ 違っていて、", "一人ひとり 自分のやり方がある。", "誰一人 私たちと 同じじゃない、", "そして 誰もが 尊重されるべきだ。"],
+     pron:"Min-na so-re-zo-re chi-gat-te i-te, / Hi-to-ri hi-to-ri ji-bun no ya-ri-ka-ta ga a-ru. / Da-re hi-to-ri wa-ta-shi-ta-chi to o-na-ji ja-nai, / So-shi-te da-re-mo ga son-chou sa-re-ru be-ki da.",
+     curio:"Para escrever em japonês, as pessoas misturam três tipos de escrita diferentes na mesma frase!"},
+    {cod:"ru", nome:"Русский", pt:"Russo", dir:"ltr", capa:true,
+     estrofe:["Мы все разные,", "у каждого свой характер.", "Никто не похож на нас,", "и каждый заслуживает уважения."],
+     pron:"Mí vsê ráz-ny-e, / u káj-da-va svôi kha-rák-ter. / Nik-tô ni pa-khôj na nas, / i káj-dyi za-slu-jí-va-et u-va-jé-ni-ya.",
+     curio:"O russo usa um alfabeto chamado cirílico, e a letra Я tem o som de \"iá\" e parece o nosso R virado ao contrário!"},
+    {cod:"hi", nome:"हिन्दी", pt:"Hindi", dir:"ltr", capa:true,
+     estrofe:["हम सब अलग हैं,", "हर किसी का अपना अंदाज है।", "कोई भी हमारी तरह नहीं है,", "और सभी सम्मान के हकदार हैं।"],
+     pron:"Hum sab a-lag hain, / har ki-si ka ap-na an-daaz hai, / ko-i bhi ha-ma-ri ta-rah na-hin hai, / aur sa-bhi sam-maan ke hak-daar hain.",
+     curio:"As letras do hindi têm uma linha reta no alto, e as palavras parecem penduradas num varal!"},
+    {cod:"gn", nome:"Avañe'ẽ", pt:"Guarani", dir:"ltr", conferir:true, estrofe:[],
+     curio:"O guarani é falado por povos indígenas do Brasil, inclusive em aldeias do litoral de São Paulo."}
+  ];
+
+  // Lista de conferência do passo 8 (exemplo fictício)
+  var confere = [
+    {lingua:"Espanhol", quem:"Mãe do Pedro, que é boliviana", ok:true},
+    {lingua:"Inglês", quem:"Professora de inglês da rede", ok:true},
+    {lingua:"Guarani", quem:"Contato com uma comunidade guarani", ok:false},
+    {lingua:"Japonês", quem:"Avó da Yumi", ok:false},
+    {lingua:"Árabe", quem:"Associação cultural da cidade", ok:false}
+  ];
+
+  function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;"); }
+  function linhas(l){ return l.estrofe.map(function(v){ return "<p>"+esc(v)+"</p>"; }).join(""); }
+
+  document.querySelector("[data-capa-original]").innerHTML = estrofe.map(esc).join("<br>");
+  document.querySelector("[data-capa-cartazes]").innerHTML = linguas.filter(function(l){ return l.capa; }).map(function(l){
+    return '<div class="tt-cartaz"><span class="tt-cartaz__lingua"><bdi lang="'+l.cod+'">'+esc(l.nome)+'</bdi> · '+esc(l.pt)+'</span>'+
+      '<p class="tt-cartaz__texto" lang="'+l.cod+'" dir="'+l.dir+'">'+esc(l.estrofe[0].replace(/[,،、]$/,""))+'</p>'+
+      (l.pron ? '<span class="tt-cartaz__pron">'+esc(l.pron.split(" / ")[0].replace(/,$/,""))+'</span>' : '')+'</div>';
+  }).join("");
+
+  document.querySelector("[data-confere]").innerHTML = confere.map(function(c){
+    return '<li class="'+(c.ok ? "ok" : "")+'"><b>'+esc(c.lingua)+'</b><span>'+esc(c.quem)+'</span>'+
+      '<i aria-label="'+(c.ok ? "conferido" : "aguardando")+'">'+(c.ok ? '<svg class="ico ico--sm" aria-hidden="true"><use href="#i-check"/></svg>' : '')+'</i></li>';
+  }).join("");
+
+  var abas = document.querySelector("[data-abas]");
+  var folha = document.querySelector("[data-folha]");
+  abas.innerHTML = linguas.map(function(l,i){
+    return '<button class="tt-cartaz-aba" type="button" role="tab" data-cartaz="'+i+'"><bdi lang="'+l.cod+'">'+esc(l.nome)+'</bdi><small>'+esc(l.cod==="pt" ? "Original" : l.pt)+'</small></button>';
+  }).join("");
+  var botoesAba = [].slice.call(abas.children);
+
+  function mostrarCartaz(i){
+    var l = linguas[i];
+    botoesAba.forEach(function(b,k){ b.classList.toggle("aberto", k===i); b.setAttribute("aria-selected", k===i); });
+    // No celular as abas viram uma fileira com rolagem lateral: traz a escolhida para a vista
+    if (abas.scrollWidth > abas.clientWidth) abas.scrollLeft = Math.max(0, botoesAba[i].offsetLeft - abas.offsetLeft - 16);
+    folha.classList.toggle("tt-cartaz-folha--conferir", !!l.conferir);
+    folha.innerHTML =
+      '<p class="tt-cartaz-folha__titulo" lang="'+l.cod+'" dir="'+l.dir+'">'+esc(l.nome)+'</p>'+
+      '<p class="tt-cartaz-folha__pt">'+esc(l.pt)+'</p>'+
+      (l.conferir
+        ? '<div class="tt-cartaz-folha__estrofe tt-cartaz-folha__espera"><i></i><i></i><i></i><i></i><p>Tradução aguardando conferência de alguém que fala a língua</p></div>'
+        : '<div class="tt-cartaz-folha__estrofe" lang="'+l.cod+'" dir="'+l.dir+'">'+linhas(l)+'</div>')+
+      (l.pron ? '<p class="tt-cartaz-folha__pron">'+esc(l.pron)+'</p>' : '')+
+      '<p class="tt-cartaz-folha__curio">'+esc(l.curio)+'</p>';
+  }
+  botoesAba.forEach(function(b,i){ b.addEventListener("click", function(){ mostrarCartaz(i); }); });
+
+  var passos = [].slice.call(document.querySelectorAll("[data-passo]"));
+  var barra = document.querySelector(".tt-progresso");
+  barra.innerHTML = passos.map(function(){ return "<i></i>"; }).join("");
+  var pontos = [].slice.call(barra.children);
+  var contagem = document.querySelector(".tt-contagem");
+  var btVoltar = document.querySelector("[data-voltar]");
+  var btAvancar = document.querySelector("[data-avancar]");
+  var seguir = document.querySelector("[data-seguir]");
+  var atual = -1;
+
+  function ir(i){
+    i = Math.max(0, Math.min(passos.length-1, i));
+    if (i === atual) return;
+    passos.forEach(function(p,k){ p.classList.toggle("ativo", k===i); p.hidden = k!==i; });
+    pontos.forEach(function(p,k){ p.className = k<i ? "feito" : (k===i ? "agora" : ""); });
+    contagem.textContent = i===0 ? "" : "Passo "+i+" de "+(passos.length-1);
+    btVoltar.disabled = i===0;
+    btAvancar.disabled = i===passos.length-1;
+    var prox = passos[i+1] && passos[i+1].querySelector(".tt-titulo");
+    seguir.innerHTML = prox ? "<span>A seguir</span><b>"+esc(prox.textContent)+"</b>" : "";
+    atual = i;
+    try { history.replaceState(null, "", "#passo-"+i); } catch(e){}
+    if (passos[i].getAttribute("data-ao-entrar") === "cartazes") mostrarCartaz(3);
+  }
+
+  btVoltar.addEventListener("click", function(){ ir(atual-1); });
+  btAvancar.addEventListener("click", function(){ ir(atual+1); });
+  document.querySelectorAll("[data-ir]").forEach(function(b){
+    b.addEventListener("click", function(){ ir(+b.getAttribute("data-ir")); });
+  });
+  document.addEventListener("keydown", function(e){
+    if (e.target.closest && e.target.closest("input,textarea")) return;
+    if (e.key === "ArrowRight") ir(atual+1);
+    if (e.key === "ArrowLeft") ir(atual-1);
+  });
+
+  // Copiar instrução: cada botão copia o comando do seu próprio quadro, com as quebras de linha
+  document.querySelectorAll("[data-copiar]").forEach(function(bt){
+    bt.addEventListener("click", function(){
+      var texto = bt.closest(".pg-prompt").querySelector("[data-instrucao]").textContent;
+      var rotulo = bt.querySelector("span");
+      function ok(){ rotulo.textContent = "Copiado"; setTimeout(function(){ rotulo.textContent = "Copiar instrução"; }, 2000); }
+      try {
+        navigator.clipboard.writeText(texto).then(ok, function(){ rotulo.textContent = "Selecione e copie"; });
+      } catch(e){ rotulo.textContent = "Selecione e copie"; }
+    });
+  });
+
+  var inicio = parseInt((location.hash.match(/passo-(\d+)/) || [])[1], 10);
+  ir(isNaN(inicio) ? 0 : inicio);
+})();
+</script>
+
+</body>
+</html>

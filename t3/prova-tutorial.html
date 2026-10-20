@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enunciados mais claros · Inteligência Artificial para Educadores</title>
+<meta name="description" content="Tutorial guiado: peça ao Gemini para revisar os problemas da sua prova, gerar versões diferentes do mesmo enunciado e escolha a mais clara para os alunos.">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Enunciados mais claros">
+<meta property="og:description" content="Tutorial guiado: peça ao Gemini para revisar os problemas da sua prova, gerar versões diferentes do mesmo enunciado e escolha a mais clara para os alunos.">
+<meta property="og:url" content="https://raulfranca.github.io/cursoia/t3/prova-tutorial.html">
+<meta property="og:image" content="https://raulfranca.github.io/cursoia/assets/ilustracoes/og-curso-ia.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Caveat:wght@400;700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS6YNMGLZ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GS6YNMGLZ9');
+</script>
+
+<link rel="stylesheet" href="../assets/artigos.css">
+
+<body class="pg-tutorial">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+  <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M3 12h.01"/><path d="M3 18h.01"/><path d="M3 6h.01"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M8 6h13"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
+  <symbol id="i-file-check" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></symbol>
+</svg>
+
+<header class="pg-header">
+  <div class="pg-header__in">
+    <a class="pg-wordmark" href="../">Inteligência Artificial para Educadores</a>
+    <div class="tt-topo">
+      <div class="tt-progresso" aria-hidden="true"></div>
+      <span class="tt-contagem" aria-live="polite"></span>
+    </div>
+  </div>
+</header>
+
+<main class="tt-palco">
+
+  <!-- 0. Capa -->
+  <section class="tt-passo tt-capa" data-passo>
+    <div class="tt-texto">
+      <span class="iap-eyebrow">Tópico 3 · IA como assistente de texto</span>
+      <h1 class="tt-titulo">Enunciados mais claros</h1>
+      <p class="tt-capa__lead">Peça ao Gemini para revisar os problemas da sua prova, compare versões diferentes e escolha a que o aluno entende melhor</p>
+      <ul class="tt-capa__meta">
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-list"/></svg><span><b>9</b> passos</span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-clock"/></svg><span><b>10</b> minutos</span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-shield"/></svg><span>Gemini da <b>conta institucional</b></span></li>
+      </ul>
+      <button class="iap-btn iap-btn--lg iap-btn--ink" type="button" data-ir="1">Começar <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+    </div>
+    <div class="tt-visual">
+      <div class="tt-fluxo" role="img" aria-label="Um enunciado de prova escrito numa frase só, de 48 palavras, vira uma versão com as mesmas informações em seis frases curtas">
+        <div class="tt-enunciado tt-enunciado--antes">
+          <span>Enunciado original · 48 palavras, 1 frase</span>
+          <p>Sabendo-se que uma escola possui 4 turmas de 5º ano, cada uma delas composta por 28 alunos, e que, para a realização de uma excursão, serão utilizados ônibus com capacidade para 45 passageiros, determine a quantidade mínima de ônibus necessária para transportar todos os alunos, desconsiderando-se os professores.</p>
+        </div>
+        <span class="tt-fluxo__passa"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-down"/></svg>o Gemini propõe, você escolhe</span>
+        <div class="tt-enunciado tt-enunciado--depois">
+          <span class="tt-fluxo__etiqueta"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-file-check"/></svg>Versão escolhida · 45 palavras, 6 frases</span>
+          <p>Uma escola tem 4 turmas de 5º ano.</p>
+          <p>Cada turma tem 28 alunos.</p>
+          <p>Os alunos vão fazer um passeio de ônibus.</p>
+          <p>Cada ônibus tem capacidade para 45 passageiros.</p>
+          <p>Os professores não entram nessa conta.</p>
+          <p>Quantos ônibus, no mínimo, serão necessários para levar todos os alunos?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. A prova -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <div class="tt-prova" role="img" aria-label="Rascunho de prova de matemática do 5º ano com três problemas: os ônibus da excursão, as páginas do livro de Ana e os lápis da caixa">
+        <p class="tt-prova__cab"><span>Avaliação de Matemática</span><span>5º ano</span></p>
+        <p class="tt-prova__nome">Nome<i></i></p>
+        <ol data-prova></ol>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 1</span>
+      <h2 class="tt-titulo">Comece pela sua prova</h2>
+      <ul class="tt-dicas">
+        <li><span>Os problemas são <strong>seus</strong>: você escolheu o conteúdo, os números e o que quer avaliar.</span></li>
+        <li><span>O que a IA vai cuidar é da <strong>escrita</strong>: frase longa, palavra difícil, informação que dá para entender de dois jeitos.</span></li>
+        <li><span>Na hora da prova, a criança lê <strong>sozinha</strong>. Se ela erra porque não entendeu o texto, a prova não mediu a matemática.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 2. Abrir o Gemini -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/ditado-0-inicio.webp" width="700" height="180" alt="Tela inicial do Gemini com a caixa Peça ao Gemini e o ícone de escudo à esquerda do texto"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 2</span>
+      <h2 class="tt-titulo">Abra o Gemini</h2>
+      <ul class="tt-dicas">
+        <li><span>No <strong>computador ou Chromebook</strong>, com a conta @educa (institucional).</span></li>
+        <li><span>Comece uma <strong>conversa nova</strong>: tudo o que você pedir depois vai se apoiar nesta primeira mensagem.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3. Pedido de revisão -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <div class="pg-prompt pg-prompt--longo">
+        <span class="pg-prompt__rotulo">Comando (Prompt)</span>
+<p data-instrucao>Sou professor do 5º ano (10 anos) e preparei uma prova de matemática. Revise os enunciados abaixo pensando em quem vai ler: uma criança de 10 anos, sozinha, na hora da prova.
+
+Para cada problema:
+1. Diga onde o aluno pode se confundir (palavra difícil, frase longa, informação que dá para entender de dois jeitos).
+2. Escreva uma versão mais simples.
+
+Regras: não mude os números, a pergunta nem a matemática que está sendo avaliada. No fim, mostre a resposta da versão original e da versão nova de cada problema, para eu conferir que não mudou.
+
+Problema 1: …
+Problema 2: …
+Problema 3: …</p>
+        <button class="iap-btn iap-btn--md iap-btn--quieto tt-copiar" type="button" data-copiar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-copy"/></svg><span>Copiar instrução</span></button>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 3</span>
+      <h2 class="tt-titulo">Peça a revisão</h2>
+      <ul class="tt-dicas">
+        <li><span>Diga <strong>quem vai ler</strong>: idade, ano e a situação de prova. É isso que orienta o que é "simples".</span></li>
+        <li><span><strong>"Não mude os números nem a matemática"</strong>: sem essa regra, a IA pode facilitar a conta junto com o texto, e a questão deixa de avaliar o que você queria.</span></li>
+        <li><span>Troque as reticências pelos seus problemas. Para pular linha sem enviar: <strong>Shift + Enter</strong>.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 4. Diagnóstico -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/prova-1-diagnostico.webp" width="740" height="344" alt="Resposta do Gemini para o Problema 2: a expressão metade do resto pode levar o aluno a calcular a metade do total, e a versão mais simples separa a leitura de cada dia em frases"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 4</span>
+      <h2 class="tt-titulo">Leia onde o aluno tropeça</h2>
+      <ul class="tt-dicas">
+        <li><span>Para cada problema, o Gemini aponta <strong>onde a leitura pode falhar</strong> e explica por quê.</span></li>
+        <li><span>No Problema 2, "metade do resto": muita criança calcula a metade das 120 páginas, e não das 80 que sobraram.</span></li>
+        <li><span>Você conhece a sua turma. Concorde, discorde e <strong>decida</strong> o que vale mudar.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 5. Pedido de variações -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <div class="pg-prompt pg-prompt--longo">
+        <span class="pg-prompt__rotulo">Comando (Prompt)</span>
+<p data-instrucao>Agora só o Problema 1. Escreva três versões diferentes, com os mesmos números e a mesma pergunta:
+A) a mais curta possível;
+B) uma informação por frase;
+C) em etapas, com perguntas menores antes da pergunta final.
+
+Para cada versão, diga em uma linha o que ela facilita e o que pode atrapalhar. Não escolha por mim.</p>
+        <button class="iap-btn iap-btn--md iap-btn--quieto tt-copiar" type="button" data-copiar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-copy"/></svg><span>Copiar instrução</span></button>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 5</span>
+      <h2 class="tt-titulo">Peça variações</h2>
+      <ul class="tt-dicas">
+        <li><span>Uma versão só é uma opinião. Com <strong>três jeitos diferentes</strong> de escrever, você tem com o que comparar.</span></li>
+        <li><span>Diga <strong>como</strong> cada versão deve ser diferente. Assim elas não saem parecidas.</span></li>
+        <li><span><strong>"Não escolha por mim"</strong>: a escolha é sua. Da IA, você quer os prós e contras.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6. Comparar -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/prova-2-variacoes.webp" width="740" height="524" alt="Versões B e C do Problema 1 no Gemini: B com uma informação por frase e C em etapas, cada uma com o que facilita e o que pode atrapalhar"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 6</span>
+      <h2 class="tt-titulo">Compare as versões</h2>
+      <ul class="tt-dicas">
+        <li><span>Leia cada versão <strong>como se fosse o aluno</strong>, de preferência em voz alta.</span></li>
+        <li><span>A versão C é a mais fácil, mas o próprio Gemini avisa: ela <strong>entrega a estratégia</strong>. Muda o que a prova avalia.</span></li>
+        <li><span>Repare no que sumiu. A versão B não diz <strong>para que</strong> são os ônibus e esqueceu os professores.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 7. Escolher e ajustar -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/prova-3-ajuste.webp" width="740" height="418" alt="Pedido para ficar com a versão B e acrescentar o passeio e os professores, e a resposta do Gemini com o enunciado em seis frases curtas, uma por linha"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 7</span>
+      <h2 class="tt-titulo">Escolha e ajuste</h2>
+      <ul class="tt-dicas">
+        <li><span>Escolha a que ficou <strong>mais clara</strong> para a sua turma, não a mais bonita.</span></li>
+        <li><span>Se faltar algo, peça o <strong>ajuste exato</strong>: o que acrescentar e o que manter.</span></li>
+        <li><span>Pode também juntar duas versões, ou editar você mesmo.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 8. Conferir -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/prova-4-conferencia.webp" width="740" height="406" alt="Verificação dos resultados no Gemini: 3 ônibus, 40 páginas e 5 lápis, iguais na versão original e na nova, com a conta 112 dividido por 45 igual a 2,48"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 8</span>
+      <h2 class="tt-titulo">Resolva você mesmo</h2>
+      <ul class="tt-dicas">
+        <li><span>O Gemini mostrou que as respostas não mudaram: <strong>3 ônibus, 40 páginas, 5 lápis</strong>. Mesmo assim, resolva a versão final.</span></li>
+        <li><span>Olhe a conta do Problema 1: 112 ÷ 45 dá 2,488…, que arredonda para <strong>2,49</strong>, e não 2,48. A resposta é a mesma, mas mostra que a conta da IA também se confere.</span></li>
+      </ul>
+      <p class="tt-aviso">A IA ajuda a escrever, mas não é garantia de conta certa nem de enunciado sem brecha. Prova só vai para a turma depois de você resolver a versão final.</p>
+    </div>
+  </section>
+
+  <!-- 9. Antes e depois -->
+  <section class="tt-passo" data-passo data-ao-entrar="comparar">
+    <div class="tt-visual tt-visual--comparar">
+      <div class="tt-comparar">
+        <div class="tt-comparar__cab"><span>Antes</span><span>Depois</span></div>
+        <div class="tt-pares tt-pares--fontes" data-pares></div>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 9</span>
+      <h2 class="tt-titulo">Veja a prova revisada</h2>
+      <ul class="tt-dicas">
+        <li><span><strong>Interativo:</strong> toque em um problema para ver como ficou.</span></li>
+        <li><span>Os números, as perguntas e as respostas são os mesmos. Mudou só o <strong>caminho até entender</strong>.</span></li>
+        <li><span>Mais claro não é sempre mais curto: o Problema 1 perdeu só 3 palavras, mas virou <strong>seis frases</strong> em vez de uma.</span></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<nav class="tt-rodape" aria-label="Navegação do tutorial">
+  <div class="tt-rodape__in">
+    <span class="tt-atalho">Use <kbd aria-label="seta para a esquerda">←</kbd><kbd aria-label="seta para a direita">→</kbd> no teclado</span>
+    <button class="iap-btn iap-btn--md iap-btn--quieto" type="button" data-voltar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-left"/></svg>Voltar</button>
+    <p class="tt-seguir" data-seguir aria-hidden="true"></p>
+    <button class="iap-btn iap-btn--md iap-btn--primary" type="button" data-avancar>Próximo <svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+  </div>
+</nav>
+
+<script>
+(function(){
+  // Problemas da prova, como foram enviados ao Gemini
+  var prova = [
+    "Sabendo-se que uma escola possui 4 turmas de 5º ano, cada uma delas composta por 28 alunos, e que, para a realização de uma excursão, serão utilizados ônibus com capacidade para 45 passageiros, determine a quantidade mínima de ônibus necessária para transportar todos os alunos, desconsiderando-se os professores.",
+    "Ana leu 1/3 de um livro de 120 páginas na segunda-feira e metade do resto na terça. Quantas páginas faltam?",
+    "Em uma caixa há 5 dúzias de lápis. A professora distribuiu-os igualmente entre 12 alunos, não sobrando nenhum. Quantos lápis cada aluno recebeu?"
+  ];
+
+  // Versões finais (resposta real do Gemini, 19/10/2026; a do Problema 1 depois do ajuste pedido)
+  var partes = [
+    {antes:"Problema 1", depois:"Versão B, ajustada",
+     novo:"Uma escola tem 4 turmas de 5º ano. Cada turma tem 28 alunos. Os alunos vão fazer um passeio de ônibus. Cada ônibus tem capacidade para 45 passageiros. Os professores não entram nessa conta. Quantos ônibus, no mínimo, serão necessários para levar todos os alunos?"},
+    {antes:"Problema 2", depois:"Versão mais simples",
+     novo:"Um livro tem 120 páginas. Na segunda-feira, Ana leu 1/3 do livro. Na terça-feira, ela leu a metade das páginas que ainda sobravam. Quantas páginas faltam para ela terminar de ler o livro?"},
+    {antes:"Problema 3", depois:"Versão mais simples",
+     novo:"Em uma caixa há 5 dúzias de lápis. A professora dividiu todos esses lápis igualmente entre 12 alunos. Quantos lápis cada aluno recebeu?"}
+  ];
+
+  function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;"); }
+
+  document.querySelector("[data-prova]").innerHTML = prova.map(function(p){
+    return "<li><span>"+esc(p)+"</span><i></i></li>";
+  }).join("");
+  document.querySelector("[data-pares]").innerHTML = partes.map(function(p,i){
+    return '<button class="tt-par" type="button"><span class="tt-par__antes"><b>'+esc(p.antes)+'</b>'+esc(prova[i])+'</span><span class="tt-par__depois"><b>'+esc(p.depois)+'</b>'+esc(p.novo)+'</span></button>';
+  }).join("");
+
+  var passos = [].slice.call(document.querySelectorAll("[data-passo]"));
+  var barra = document.querySelector(".tt-progresso");
+  barra.innerHTML = passos.map(function(){ return "<i></i>"; }).join("");
+  var pontos = [].slice.call(barra.children);
+  var contagem = document.querySelector(".tt-contagem");
+  var btVoltar = document.querySelector("[data-voltar]");
+  var btAvancar = document.querySelector("[data-avancar]");
+  var seguir = document.querySelector("[data-seguir]");
+  var atual = -1;
+
+  function ir(i){
+    i = Math.max(0, Math.min(passos.length-1, i));
+    if (i === atual) return;
+    passos.forEach(function(p,k){ p.classList.toggle("ativo", k===i); p.hidden = k!==i; });
+    pontos.forEach(function(p,k){ p.className = k<i ? "feito" : (k===i ? "agora" : ""); });
+    contagem.textContent = i===0 ? "" : "Passo "+i+" de "+(passos.length-1);
+    btVoltar.disabled = i===0;
+    btAvancar.disabled = i===passos.length-1;
+    var prox = passos[i+1] && passos[i+1].querySelector(".tt-titulo");
+    seguir.innerHTML = prox ? "<span>A seguir</span><b>"+esc(prox.textContent)+"</b>" : "";
+    atual = i;
+    try { history.replaceState(null, "", "#passo-"+i); } catch(e){}
+    if (passos[i].getAttribute("data-ao-entrar") === "comparar") abrirPar(0);
+  }
+
+  btVoltar.addEventListener("click", function(){ ir(atual-1); });
+  btAvancar.addEventListener("click", function(){ ir(atual+1); });
+  document.querySelectorAll("[data-ir]").forEach(function(b){
+    b.addEventListener("click", function(){ ir(+b.getAttribute("data-ir")); });
+  });
+  document.addEventListener("keydown", function(e){
+    if (e.target.closest && e.target.closest("input,textarea")) return;
+    if (e.key === "ArrowRight") ir(atual+1);
+    if (e.key === "ArrowLeft") ir(atual-1);
+  });
+
+  // Copiar instrução: cada botão copia o comando do seu próprio quadro, com as quebras de linha
+  document.querySelectorAll("[data-copiar]").forEach(function(bt){
+    bt.addEventListener("click", function(){
+      var texto = bt.closest(".pg-prompt").querySelector("[data-instrucao]").textContent;
+      var rotulo = bt.querySelector("span");
+      function ok(){ rotulo.textContent = "Copiado"; setTimeout(function(){ rotulo.textContent = "Copiar instrução"; }, 2000); }
+      try {
+        navigator.clipboard.writeText(texto).then(ok, function(){ rotulo.textContent = "Selecione e copie"; });
+      } catch(e){ rotulo.textContent = "Selecione e copie"; }
+    });
+  });
+
+  // Antes e depois
+  var pares = [].slice.call(document.querySelectorAll(".tt-par"));
+  function abrirPar(i){
+    pares.forEach(function(b,k){ b.classList.toggle("aberto", k===i); b.setAttribute("aria-expanded", k===i); });
+  }
+  pares.forEach(function(b,i){ b.addEventListener("click", function(){ abrirPar(i); }); });
+
+  var inicio = parseInt((location.hash.match(/passo-(\d+)/) || [])[1], 10);
+  ir(isNaN(inicio) ? 0 : inicio);
+})();
+</script>
+
+</body>
+</html>
