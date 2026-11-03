@@ -190,6 +190,34 @@ img{display:block;max-width:100%;height:auto}
 .pg-prose .pg-next__cta{align-self:center;margin-top:var(--space-4)}
 .pg-prose .pg-next__title{font-family:var(--font-display);font-weight:var(--weight-semibold);font-size:clamp(23px,3.4vw,var(--size-2xl));line-height:var(--lh-snug);letter-spacing:var(--track-tight);color:var(--text-body)}
 
+/* Pasta para baixar: callout com o link e o botão que abre a pasta */
+.pg-prose .pg-pasta__cta{align-self:flex-start;margin-top:var(--space-4)}
+
+/* Lista de arquivos: nome em mono e para que serve */
+.pg-prose code{font-family:var(--font-mono);font-size:.88em}
+.pg-arquivos{display:flex;flex-direction:column;border-top:var(--border-hairline) solid var(--line-hairline)}
+.pg-arquivos li{display:flex;flex-direction:column;gap:2px;padding:var(--space-4) 0;border-bottom:var(--border-hairline) solid var(--line-hairline)}
+.pg-arquivos code{font-family:var(--font-mono);font-size:var(--size-xs);color:var(--lousa-700);overflow-wrap:anywhere}
+.pg-arquivos span{font-size:var(--size-sm);line-height:var(--lh-relaxed);color:var(--text-muted)}
+
+/* Escolha da versão do passo a passo: dois cartões-botão (abas), um painel por vez */
+.pg-escolha{display:flex;flex-direction:column;gap:var(--space-4);margin:var(--space-3) 0}
+.pg-escolha__pergunta{font-family:var(--font-display);font-weight:var(--weight-semibold);font-size:var(--size-lg);letter-spacing:var(--track-snug);color:var(--text-body)}
+.pg-escolha__opcoes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-4)}
+.pg-escolha__opcao{display:flex;flex-direction:column;align-items:flex-start;gap:var(--space-2);padding:var(--space-5);text-align:left;background:var(--paper-0);border:var(--border-ink) solid var(--line-hairline);border-radius:var(--radius-card);font:var(--text-small);color:var(--text-muted);cursor:pointer;transition:var(--transition-ui)}
+.pg-escolha__opcao:hover{border-color:var(--line-strong)}
+.pg-escolha__opcao b{display:flex;align-items:center;gap:var(--space-3);font-family:var(--font-display);font-weight:var(--weight-semibold);font-size:var(--size-md);color:var(--text-body)}
+.pg-escolha__opcao .ico{color:var(--lousa-500)}
+.pg-escolha__opcao[aria-selected="true"]{background:var(--bg-brand-soft);border-color:var(--line-strong);box-shadow:var(--shadow-ink-sm)}
+.pg-escolha__painel{display:flex;flex-direction:column;gap:var(--space-6)}
+.pg-escolha__painel[hidden]{display:none}
+
+/* Passo a passo só com texto: título curto e explicação, sem captura */
+.pg-step__corpo{grid-column:2;grid-row:1;display:flex;flex-direction:column;gap:var(--space-3);padding-top:3px}
+.pg-prose .pg-step__corpo h4{margin:0}
+.pg-prose .pg-step__corpo p{color:var(--text-muted)}
+.pg-step__corpo .iap-btn{align-self:flex-start}
+
 /* ============================================================
    Devolutivas
    ============================================================ */
@@ -299,7 +327,7 @@ img{display:block;max-width:100%;height:auto}
   .pg-header__in{padding:12px 16px}
   .pg-post{padding:var(--space-9) 16px var(--space-11)}
   .pg-post__figure{margin:var(--space-8) 0}
-  .pg-tools,.pg-duas{grid-template-columns:1fr}
+  .pg-tools,.pg-duas,.pg-escolha__opcoes{grid-template-columns:1fr}
   .pg-step{column-gap:var(--space-3)}
   .pg-caderno__folha{padding:var(--space-5) var(--space-4) var(--space-5) 44px}
   .pg-caderno__folha::before{left:30px}
