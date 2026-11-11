@@ -41,6 +41,7 @@
   <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
   <symbol id="i-list" viewBox="0 0 24 24"><path d="M3 12h.01"/><path d="M3 18h.01"/><path d="M3 6h.01"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M8 6h13"/></symbol>
   <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
+  <symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
 </svg>
 
 <header class="pg-header">
@@ -67,7 +68,7 @@
       <ul class="tt-capa__meta">
         <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-list"/></svg><span><b>8</b> passos</span></li>
         <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-clock"/></svg><span><b>4</b> minutos</span></li>
-        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-shield"/></svg><span>Gemini da <b>conta institucional</b></span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-shield-check"/></svg><span><b>Sem dados sensíveis</b>: ChatGPT ou Gemini</span></li>
       </ul>
       <button class="iap-btn iap-btn--lg iap-btn--ink" type="button" data-ir="1">Começar <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
     </div>
@@ -102,11 +103,11 @@
     </div>
     <div class="tt-texto">
       <span class="tt-num">Passo 1</span>
-      <h2 class="tt-titulo">Entenda o desafio</h2>
+      <h2 class="tt-titulo">Buscando um padrão</h2>
       <ul class="tt-dicas">
         <li><span>Num jogo da memória, as cartas precisam parecer do <strong>mesmo baralho</strong>.</span></li>
         <li><span>Pedidas uma a uma, as imagens saem cada uma de um jeito, como as dos tutoriais anteriores.</span></li>
-        <li><span>A solução: escrever o padrão uma vez e repetir em todos os pedidos. Vamos chamar isso de <strong>kit de padrão</strong>.</span></li>
+        <li><span>A solução: escrever o padrão uma vez e repetir em todos os pedidos. Vamos chamar isso de <strong>kit de instruções</strong>.</span></li>
       </ul>
     </div>
   </section>
@@ -133,7 +134,7 @@
         <li><span>O kit tem três partes: o <strong>estilo</strong> (o prompt do tutorial anterior), as regras da <strong>carta</strong> e o <strong>animal</strong>.</span></li>
         <li><span>As regras dizem o que precisa se repetir: formato, pose, posição, tamanho e fundo.</span></li>
         <li><span>Um detalhe aparece em todas as cartas: o chapéu vermelho. Ele dá unidade ao baralho.</span></li>
-        <li><span>Guarde o kit num documento do Drive. Para cada carta nova, só a última linha muda.</span></li>
+        <li><span>Guarde o kit num documento do Drive. Para cada carta nova, só a última linha muda (qual animal será retratado).</span></li>
       </ul>
     </div>
   </section>
@@ -166,10 +167,9 @@
       <span class="tt-num">Passo 4</span>
       <h2 class="tt-titulo">Confira antes de aprovar</h2>
       <ul class="tt-dicas">
-        <li><span>A primeira carta veio desenhada <strong>como um objeto</strong>, com borda bege e sombra. Não serve para imprimir.</span></li>
-        <li><span>Pedimos o ajuste na conversa, e não funcionou.</span></li>
-        <li><span>A solução foi <strong>levar a correção para o kit</strong> e começar uma conversa nova. Por isso o kit do passo 2 diz "de borda a borda".</span></li>
-        <li><span>A carta aprovada vira a <strong>carta-modelo</strong> do baralho. Baixe e guarde.</span></li>
+        <li><span>Perceba que, da primeira vez, veio a imagem de uma carta <strong>como um objeto</strong>, incluindo a borda bege e sombra. Não serve para imprimir.</span></li>
+        <li><span>Foi necessário fazer um ajuste no pedido, incluindo a instrução "de borda a borda".</span></li>
+        <li><span>Quando o Gemini entregar um resultado aprovado, esta carta se tornará a <strong>carta-modelo</strong> do baralho. Baixe e guarde.</span></li>
       </ul>
     </div>
   </section>
@@ -183,10 +183,10 @@
       <span class="tt-num">Passo 5</span>
       <h2 class="tt-titulo">Peça a próxima carta</h2>
       <ul class="tt-dicas">
-        <li><span>Abra uma <strong>conversa nova</strong>, de novo com Criar imagem e 1:1.</span></li>
-        <li><span>Anexe a <strong>carta-modelo</strong> pelo +, cole o kit e troque só o animal.</span></li>
-        <li><span>Na primeira linha do kit, acrescente: <strong>"Use a carta anexada como modelo: mesmo traço, mesmas cores, mesmo fundo, mesmo enquadramento e o animal no mesmo tamanho."</strong></span></li>
-        <li><span>Por que conversa nova? Para mostrar que quem guarda o padrão é o kit, e não a memória da conversa.</span></li>
+        <li><span>Abra uma <strong>conversa nova</strong>, selecione a opção "Criar imagem" e o formato 1:1.</span></li>
+        <li><span>Anexe a <strong>carta-modelo</strong>, cole o kit de instruções e mude apenas o nome do animal.</span></li>
+        <li><span>Na primeira linha do kit, acrescente: <i>"Use a carta anexada como modelo: mesmo traço, mesmas cores, mesmo fundo, mesmo enquadramento e o animal no mesmo tamanho."</i></span></li>
+        <li><span>Por que conversa nova? Para mostrar que o <b>kit de instruções</b> é suficiente para colocar o padrão, e não a memória anterior da conversa.</span></li>
       </ul>
     </div>
   </section>
@@ -227,7 +227,6 @@
       <ul class="tt-dicas">
         <li><span>Repetimos o pedido para arara-azul, capivara, lobo-guará e bicho-preguiça.</span></li>
         <li><span>Cada carta levou menos de um minuto.</span></li>
-        <li><span>Repare na <strong>arara</strong>: o azul vivo fugiu da paleta terrosa. Aceitar ou corrigir é decisão sua. No próximo tutorial, vamos ajustá-la.</span></li>
       </ul>
     </div>
   </section>
@@ -244,10 +243,8 @@
       <span class="tt-num">Passo 8</span>
       <h2 class="tt-titulo">Jogue</h2>
       <ul class="tt-dicas">
-        <li><span><strong>Interativo:</strong> vire duas cartas por vez e encontre os pares.</span></li>
-        <li><span>Para imprimir, baixe as cartas, coloque duas cópias de cada numa página do Docs e imprima em papel mais grosso.</span></li>
-        <li><span>Você criou um material com identidade visual própria, e o kit serve para muitos outros.</span></li>
-        <li><span>Confira cada carta antes de imprimir: patas, olhos e detalhes do animal.</span></li>
+        <li><span><strong>Vamos jogar?</strong> Vire duas cartas por vez e encontre os pares.</span></li>
+        <li><span>Usando este processo, você pode criar um material com identidade visual própria.</span></li>
       </ul>
     </div>
   </section>

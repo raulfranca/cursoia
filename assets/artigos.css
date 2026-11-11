@@ -408,7 +408,7 @@ a.iap-module:hover .pg-trilha__ir{color:var(--lousa-600);transform:translateX(3p
 .tt-contagem{min-width:88px;text-align:right;white-space:nowrap;font:var(--text-eyebrow);letter-spacing:.06em;color:var(--text-caption)}
 
 .tt-palco{flex:1;min-height:0;position:relative}
-.tt-passo{position:absolute;inset:0;display:none;grid-template-columns:minmax(0,1.3fr) minmax(320px,.7fr);gap:var(--space-10);max-width:1280px;margin:0 auto;padding:var(--space-8)}
+.tt-passo{position:absolute;inset:0;display:none;grid-template-columns:minmax(0,1.3fr) minmax(320px,.7fr);grid-template-rows:minmax(0,1fr);gap:var(--space-10);max-width:1280px;margin:0 auto;padding:var(--space-8)}
 .tt-passo.ativo{display:grid;animation:tt-entra .32s var(--ease-out)}
 @keyframes tt-entra{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.tt-passo.ativo{animation:none}}
@@ -416,13 +416,15 @@ a.iap-module:hover .pg-trilha__ir{color:var(--lousa-600);transform:translateX(3p
 /* A "mesa": a parte visual de cada passo fica numa área rebaixada. O padding dá
    folga às sombras desenhadas, que o overflow cortaria rente à borda. */
 .tt-visual{min-height:0;display:flex;align-items:center;justify-content:center;overflow:auto;background:var(--paper-2);border-radius:22px;padding:var(--space-9)}
-.tt-texto{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:var(--space-5);min-height:0;max-width:440px}
+.tt-texto{display:flex;flex-direction:column;justify-content:safe center;align-items:flex-start;gap:var(--space-5);min-height:0;max-width:440px;overflow-y:auto;padding-right:var(--space-3)}
 .tt-num{font:var(--text-eyebrow);text-transform:uppercase;letter-spacing:var(--track-caps);color:var(--accent-secondary)}
 .tt-titulo{font-family:var(--font-display);font-weight:var(--weight-semibold);font-size:clamp(30px,3.2vw,var(--size-3xl));line-height:var(--lh-tight);letter-spacing:-.03em}
 .tt-dicas{display:flex;flex-direction:column;gap:var(--space-4);padding-top:var(--space-5);border-top:var(--border-hairline) solid var(--line-hairline);width:100%}
 .tt-dicas li{display:flex;gap:var(--space-4);font-size:var(--size-md);line-height:var(--lh-normal);color:var(--text-muted)}
 .tt-dicas li::before{content:"";flex:none;width:7px;height:7px;margin-top:8px;border-radius:var(--radius-pill);background:var(--ocre-500)}
 .tt-dicas li.tt-dicas__intro::before{display:none}
+.tt-dicas li ul{display:flex;flex-direction:column;gap:var(--space-2);margin-top:var(--space-3)}
+.tt-dicas li li::before{width:6px;height:6px;background:none;border:1.5px solid var(--ocre-500)}
 .tt-dicas[hidden]{display:none}
 .tt-dicas strong{color:var(--text-body);font-weight:var(--weight-semibold)}
 .tt-aviso{font:var(--text-small);color:var(--lousa-700);background:var(--lousa-100);border:var(--border-hairline) solid var(--lousa-300);border-radius:var(--radius-md);padding:var(--space-4) var(--space-5)}

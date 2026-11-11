@@ -41,6 +41,7 @@
   <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
   <symbol id="i-list" viewBox="0 0 24 24"><path d="M3 12h.01"/><path d="M3 18h.01"/><path d="M3 6h.01"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M8 6h13"/></symbol>
   <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
+  <symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
 </svg>
 
 <header class="pg-header">
@@ -63,11 +64,11 @@
     <div class="tt-texto">
       <span class="iap-eyebrow">Tópico 5 · Criar e editar imagens</span>
       <h1 class="tt-titulo">Gerar uma imagem</h1>
-      <p class="tt-capa__lead">Peça ao Gemini uma ilustração, descreva o que você quer ver e baixe a imagem. No exemplo, uma onça-pintada para o mural da turma</p>
+      <p class="tt-capa__lead">Peça ao Gemini uma ilustração, descreva o que você quer ver e baixe a imagem. No exemplo, uma onça-pintada para usar no mural da turma.</p>
       <ul class="tt-capa__meta">
         <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-list"/></svg><span><b>10</b> passos</span></li>
         <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-clock"/></svg><span><b>5</b> minutos</span></li>
-        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-shield"/></svg><span>Gemini da <b>conta institucional</b></span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-shield-check"/></svg><span><b>Sem dados sensíveis</b>: ChatGPT ou Gemini</span></li>
       </ul>
       <button class="iap-btn iap-btn--lg iap-btn--ink" type="button" data-ir="1">Começar <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
     </div>
@@ -121,7 +122,7 @@
       <span class="tt-num">Passo 3</span>
       <h2 class="tt-titulo">Faça um pedido simples</h2>
       <ul class="tt-dicas">
-        <li><span>Escreva o que você quer ver, como falaria com uma pessoa.</span></li>
+        <li><span>Na caixa de texto, escreva o que você quer ver, como falaria com uma pessoa.</span></li>
         <li><span>No exemplo: <strong>"Uma onça-pintada para o mural da sala de aula"</strong>.</span></li>
         <li><span>A galeria de estilos que aparece em cima é opcional. Pode ignorar.</span></li>
         <li><span>Clique na <strong>seta</strong> para enviar.</span></li>
@@ -141,7 +142,7 @@
         <li><span>A imagem é bonita, mas não é o que queríamos.</span></li>
         <li><span>O Gemini desenhou <strong>uma sala com um mural</strong>, e não a onça para colocar no mural.</span></li>
         <li><span>Ele leu o pedido ao pé da letra. Testamos duas vezes, e as duas deram o mesmo resultado.</span></li>
-        <li><span>Quando o pedido não diz o que você quer, a IA decide por você.</span></li>
+        <li><span>Quando o pedido não diz claramente o que você quer, a IA decide por você.</span></li>
       </ul>
     </div>
   </section>
@@ -159,7 +160,16 @@
       <span class="tt-num">Passo 5</span>
       <h2 class="tt-titulo">Descreva com detalhes</h2>
       <ul class="tt-dicas">
-        <li><span>Uma boa descrição responde a seis perguntas: <strong>o quê</strong>, enquadramento, <strong>estilo</strong>, cores, fundo e formato.</span></li>
+        <li><span>Uma boa descrição responde a seis perguntas:
+          <ul>
+            <li><span>o quê;</span></li>
+            <li><span>enquadramento;</span></li>
+            <li><span>estilo;</span></li>
+            <li><span>cores;</span></li>
+            <li><span>fundo;</span></li>
+            <li><span>formato.</span></li>
+          </ul>
+        </span></li>
         <li><span>Cada trecho grifado no comando responde a uma delas.</span></li>
         <li><span>Diga também o que você <strong>não</strong> quer: "sem cenário e sem texto".</span></li>
         <li><span>Pode escrever na mesma conversa. O Gemini continua de onde parou.</span></li>
@@ -176,8 +186,13 @@
       <span class="tt-num">Passo 6</span>
       <h2 class="tt-titulo">Escolha o formato</h2>
       <ul class="tt-dicas">
-        <li><span>No botão <strong>Proporção</strong>, embaixo da caixa, escolha o formato antes de enviar.</span></li>
-        <li><span>1:1 é quadrado. 3:4 e 9:16 são em pé. 4:3 e 16:9 são deitados.</span></li>
+        <li><span>No botão <strong>Proporção</strong>, embaixo da caixa, escolha o formato antes de enviar:
+          <ul>
+            <li><span><strong>1:1</strong> é quadrado;</span></li>
+            <li><span><strong>3:4</strong> e <strong>9:16</strong> são em pé;</span></li>
+            <li><span><strong>4:3</strong> e <strong>16:9</strong> são deitados.</span></li>
+          </ul>
+        </span></li>
         <li><span>Para uma folha A4 em pé, escolha <strong>3:4</strong>, o mais parecido.</span></li>
         <li><span>O botão só aparece com a criação de imagem ativada.</span></li>
       </ul>
@@ -194,7 +209,7 @@
       <h2 class="tt-titulo">Veja o resultado</h2>
       <ul class="tt-dicas">
         <li><span>Agora sim: a onça sozinha, de corpo inteiro, no fundo branco, em pé na folha.</span></li>
-        <li><span>Cada pedido sai diferente, mesmo com as mesmas palavras. Não gostou? Clique na <strong>seta em círculo</strong>, embaixo da imagem, para ver outra versão.</span></li>
+        <li><span>Cada pedido sai diferente, mesmo com as mesmas palavras. Não gostou? Clique na <strong>seta em círculo</strong>, embaixo da imagem, para gerar outra versão.</span></li>
         <li><span>Repare no estilo: sem referência, a IA escolheu um desenho "fofo" comum. No próximo tutorial, você vai dar personalidade a ele.</span></li>
       </ul>
     </div>
@@ -224,10 +239,10 @@
     </div>
     <div class="tt-texto">
       <span class="tt-num">Passo 9</span>
-      <h2 class="tt-titulo">Peça sem a ferramenta</h2>
+      <h2 class="tt-titulo">Outra forma de pedir</h2>
       <ul class="tt-dicas">
-        <li><span>Numa conversa nova, sem ativar nada, comece com <strong>"Crie uma imagem de…"</strong>.</span></li>
-        <li><span>O Gemini entende e desenha do mesmo jeito. A ferramenta só deixa a intenção explícita e mostra o botão de proporção.</span></li>
+        <li><span>Em uma conversa nova, mesmo sem ativar a opção "Criar imagem", comece seu pedido escrevendo <strong>"Crie uma imagem de…"</strong>.</span></li>
+        <li><span>O Gemini entende e desenha do mesmo jeito. A opção "Criar imagem" apenas deixa a intenção explícita e mostra o botão para escolher o formato.</span></li>
         <li><span>Repare: sem dizer o estilo, ele escolheu uma <strong>foto realista</strong>. De novo, o que você não diz, ele decide.</span></li>
       </ul>
     </div>

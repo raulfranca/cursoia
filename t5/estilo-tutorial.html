@@ -41,6 +41,7 @@
   <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
   <symbol id="i-list" viewBox="0 0 24 24"><path d="M3 12h.01"/><path d="M3 18h.01"/><path d="M3 6h.01"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M8 6h13"/></symbol>
   <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
+  <symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
 </svg>
 
 <header class="pg-header">
@@ -63,11 +64,11 @@
     <div class="tt-texto">
       <span class="iap-eyebrow">Tópico 5 · Criar e editar imagens</span>
       <h1 class="tt-titulo">Dar estilo às imagens</h1>
-      <p class="tt-capa__lead">Mostre ao Gemini uma ilustração de que você gosta e peça imagens no mesmo estilo. No exemplo, a onça ganha o traço de um livro infantil</p>
+      <p class="tt-capa__lead">Mostre ao Gemini uma ilustração de que você gosta e peça imagens no mesmo estilo. No exemplo, a onça ganha o traço de um livro infantil.</p>
       <ul class="tt-capa__meta">
         <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-list"/></svg><span><b>9</b> passos</span></li>
         <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-clock"/></svg><span><b>5</b> minutos</span></li>
-        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-shield"/></svg><span>Gemini da <b>conta institucional</b></span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-shield-check"/></svg><span><b>Sem dados sensíveis</b>: ChatGPT ou Gemini</span></li>
       </ul>
       <button class="iap-btn iap-btn--lg iap-btn--ink" type="button" data-ir="1">Começar <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
     </div>
@@ -91,7 +92,7 @@
       <span class="tt-num">Passo 1</span>
       <h2 class="tt-titulo">Pedido genérico, imagem genérica</h2>
       <ul class="tt-dicas">
-        <li><span>Sem referência, a IA desenha uma espécie de média de tudo o que já viu.</span></li>
+        <li><span>Sem referência, a IA irá gerar uma "média" de tudo o que já viu.</span></li>
         <li><span>Por isso tantas imagens de IA se parecem: olhos grandes, contorno grosso, cores chapadas.</span></li>
         <li><span>Descrever um estilo em palavras é difícil. É mais fácil <strong>mostrar um exemplo</strong>.</span></li>
       </ul>
@@ -124,8 +125,8 @@
       <h2 class="tt-titulo">Anexe a referência</h2>
       <ul class="tt-dicas">
         <li><span>Abra uma conversa nova no Gemini.</span></li>
-        <li><span>Clique no <strong>+</strong> e escolha <strong>Enviar arquivos</strong>, como no tutorial do recado na agenda, no tópico 3.</span></li>
-        <li><span>Escolha a imagem salva. Ela aparece em miniatura dentro da caixa.</span></li>
+        <li><span>Clique no <strong>+</strong> e escolha <strong>Enviar arquivos</strong>.</span></li>
+        <li><span>Escolha a imagem salva.</span></li>
       </ul>
     </div>
   </section>
@@ -177,34 +178,18 @@
       <ul class="tt-dicas">
         <li><span>O Gemini observa a imagem como um professor de artes.</span></li>
         <li><span>Ele percebe detalhes difíceis de pôr em palavras, como o <strong>espaço vazio</strong> em volta do urso e o único ponto de cor forte, o chapéu.</span></li>
-        <li><span>Neste exemplo, ele até reconheceu o ilustrador.</span></li>
+        <li><span>Copie o prompt do fim da resposta e <strong>guarde num documento</strong>. Ele é a base do próximo tutorial.</span></li>
       </ul>
     </div>
   </section>
 
-  <!-- 7. Prompt em português -->
-  <section class="tt-passo" data-passo>
-    <div class="tt-visual">
-      <figure class="pg-shot"><img src="../assets/capturas/estilo-5-portugues.webp" width="750" height="600" alt="Pedido Reescreva esse prompt em português, para eu usar aqui mesmo no Gemini, e a resposta com o prompt traduzido, que começa com Ilustração de livro infantil minimalista de [SUBSTITUIR PELO ANIMAL DESEJADO]"></figure>
-    </div>
-    <div class="tt-texto">
-      <span class="tt-num">Passo 7</span>
-      <h2 class="tt-titulo">Peça o prompt em português</h2>
-      <ul class="tt-dicas">
-        <li><span>O primeiro prompt veio em inglês, pensado para outras ferramentas.</span></li>
-        <li><span>Basta pedir: <strong>"Reescreva esse prompt em português, para eu usar aqui mesmo no Gemini."</strong></span></li>
-        <li><span>Copie o texto e <strong>guarde num documento</strong>. Ele é a base do próximo tutorial.</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- 8. Gerar -->
+  <!-- 7. Gerar -->
   <section class="tt-passo" data-passo>
     <div class="tt-visual">
       <figure class="pg-shot"><img src="../assets/capturas/estilo-6-resultado.webp" width="750" height="615" alt="Resposta do Gemini com a ilustração de uma onça-pintada em aquarela, sentada, olhando para o lado, com um chapéu vermelho pontudo, sobre fundo creme"></figure>
     </div>
     <div class="tt-texto">
-      <span class="tt-num">Passo 8</span>
+      <span class="tt-num">Passo 7</span>
       <h2 class="tt-titulo">Gere a imagem no estilo</h2>
       <ul class="tt-dicas">
         <li><span>Na mesma conversa, escreva: <strong>"Agora crie a imagem com esse prompt. O animal é uma onça-pintada."</strong></span></li>
@@ -214,7 +199,7 @@
     </div>
   </section>
 
-  <!-- 9. Comparar -->
+  <!-- 8. Comparar -->
   <section class="tt-passo" data-passo data-ao-entrar="comparar">
     <div class="tt-visual tt-visual--comparar">
       <div class="tt-troca">
@@ -238,7 +223,7 @@
       </div>
     </div>
     <div class="tt-texto">
-      <span class="tt-num">Passo 9</span>
+      <span class="tt-num">Passo 8</span>
       <h2 class="tt-titulo">Compare as onças</h2>
       <ul class="tt-dicas">
         <li><span><strong>Interativo:</strong> toque nos botões para ver cada versão.</span></li>
