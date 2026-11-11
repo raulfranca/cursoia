@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Criar uma habilidade de ata · Inteligência Artificial para Educadores</title>
+<meta name="description" content="Tutorial guiado: guarde no Gemini o modelo de ata da escola e transforme as anotações do HTPC em ata com uma mensagem.">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Criar uma habilidade de ata">
+<meta property="og:description" content="Tutorial guiado: guarde no Gemini o modelo de ata da escola e transforme as anotações do HTPC em ata com uma mensagem.">
+<meta property="og:url" content="https://raulfranca.github.io/cursoia/t7/ata-tutorial.html">
+<meta property="og:image" content="https://raulfranca.github.io/cursoia/assets/ilustracoes/og-curso-ia.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Caveat:wght@400;700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS6YNMGLZ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GS6YNMGLZ9');
+</script>
+
+<link rel="stylesheet" href="../assets/artigos.css">
+<script src="../assets/tutoriais.js" defer></script>
+
+<body class="pg-tutorial">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+  <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M3 12h.01"/><path d="M3 18h.01"/><path d="M3 6h.01"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M8 6h13"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
+  <symbol id="i-paperclip" viewBox="0 0 24 24"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+</svg>
+
+<header class="pg-header">
+  <div class="pg-header__in">
+    <div class="tt-marca">
+      <a class="iap-btn iap-btn--quieto tt-lista" href="./"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-left"/></svg>Tutoriais</a>
+      <a class="pg-wordmark" href="../">Inteligência Artificial para Educadores</a>
+    </div>
+    <div class="tt-topo">
+      <div class="tt-progresso" aria-hidden="true"></div>
+      <span class="tt-contagem" aria-live="polite"></span>
+    </div>
+  </div>
+</header>
+
+<main class="tt-palco">
+  <!-- 0. Capa -->
+  <section class="tt-passo tt-capa" data-passo>
+    <div class="tt-texto">
+      <span class="iap-eyebrow">Tópico 7 · Crie uma habilidade para tarefas que se repetem</span>
+      <h1 class="tt-titulo">Criar uma habilidade de ata</h1>
+      <p class="tt-capa__lead">A habilidade também guarda o modelo de ata da escola. Você cola as anotações da reunião e recebe a ata pronta para conferir</p>
+      <ul class="tt-capa__meta">
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-list"/></svg><span><b>6</b> passos</span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-clock"/></svg><span><b>5</b> minutos</span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-shield"/></svg><span>Gemini da <b>conta institucional</b></span></li>
+      </ul>
+      <button class="iap-btn iap-btn--lg iap-btn--ink" type="button" data-ir="1">Começar <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+    </div>
+    <div class="tt-visual">
+      <div class="tt-fluxo" role="img" aria-label="As anotações soltas do HTPC, enviadas com a habilidade ata-htpc, viram uma ata nas seções do modelo da escola, com conferir onde faltou informação">
+        <p class="tt-fluxo__pedido"><b>@ata-htpc</b>htpc 11/11 · presentes: coord. Sandra, profs Márcia, Helena… · 1) mostra cultural sábado 5/12…</p>
+        <span class="tt-fluxo__passa"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-down"/></svg>a habilidade segue o modelo da escola</span>
+        <div class="tt-fluxo__registro">
+          <p><b>1. IDENTIFICAÇÃO</b>Data: 11/11/2026 · Horário: [conferir]</p>
+          <p><b>5. ENCAMINHAMENTOS</b>Elaborar o convite da Mostra Cultural · Márcia · 25/11</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. Modelo -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot pg-shot--media"><img src="../assets/capturas/hab-ata-0-modelo.webp" width="560" height="522" alt="Modelo de ata de HTPC da EMEF Jardim das Flores, com as seções Identificação, Presentes, Pauta, Discussão, Encaminhamentos em tabela e Encerramento"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 1</span>
+      <h2 class="tt-titulo">Tenha o modelo em PDF</h2>
+      <ul class="tt-dicas">
+        <li><span>No <a href="bilhete-tutorial.html">tutorial do bilhete</a>, a habilidade guardou um pedido. Aqui, ela guarda também <strong>um arquivo</strong>: o modelo de ata da escola.</span></li>
+        <li><span>Use o modelo da sua escola, salvo em <strong>PDF</strong>. Para praticar, baixe o nosso.</span></li>
+      </ul>
+      <p class="tt-aviso">A EMEF Jardim das Flores e as pessoas da reunião são inventadas para este exemplo.</p>
+      <a class="iap-btn iap-btn--md iap-btn--primary tt-baixar" href="../assets/materiais/modelo-ata-htpc.pdf" download>Baixar o modelo de ata (PDF) <svg class="ico ico--sm" aria-hidden="true"><use href="#i-download"/></svg></a>
+    </div>
+  </section>
+
+  <!-- 2. Instrução -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <div class="pg-prompt pg-prompt--longo">
+        <span class="pg-prompt__rotulo">Instruções</span>
+<p data-instrucao>Transforme as anotações de reunião que eu passar em uma ata, seguindo o arquivo modelo-ata-htpc.pdf.
+Use as mesmas seções do modelo, na mesma ordem.
+<mark>Escreva só o que está nas anotações. Se faltar alguma informação, como horário ou local, escreva [conferir].</mark>
+Não use o nome de alunos.</p>
+        <button class="iap-btn iap-btn--md iap-btn--quieto tt-copiar" type="button" data-copiar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-copy"/></svg><span>Copiar instrução</span></button>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 2</span>
+      <h2 class="tt-titulo">Escreva a instrução</h2>
+      <ul class="tt-dicas">
+        <li><span>Em <strong>Personalizar › Habilidades</strong>, clique em <strong>Criar › Criar manualmente</strong>, como no bilhete.</span></li>
+        <li><span>Nome: <strong>Ata HTPC</strong>. Descrição: <strong>Use quando eu passar as anotações de uma reunião ou HTPC. Escreve a ata no modelo da escola.</strong></span></li>
+        <li><span>Em <strong>Instruções</strong>, cole o texto ao lado. A <mark>regra do [conferir]</mark> impede o Gemini de inventar o que você não anotou.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3. Anexar -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot pg-shot--media"><img src="../assets/capturas/hab-ata-2-enviar.webp" width="512" height="541" alt="Janela Enviar arquivos do formulário da habilidade, com a área para arrastar arquivos PDF, CSV, PY, TXT e MD, os botões Google Drive e Notebooks e, em Anexos, modelo-ata-htpc.pdf"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 3</span>
+      <h2 class="tt-titulo">Anexe o modelo e crie</h2>
+      <ul class="tt-dicas">
+        <li><span>No alto do formulário, clique em <strong>Adicionar arquivos</strong>. Arraste o PDF para a janela ou clique em <strong>arquivos</strong> para escolher no computador.</span></li>
+        <li><span>O modelo aparece em <strong>Anexos</strong>. Clique em <strong>Enviar</strong> e depois em <strong>Criar</strong>.</span></li>
+        <li><span>A habilidade guarda <strong>uma cópia</strong> do arquivo. Mudou o modelo da escola? Edite a habilidade e envie o novo.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 4. Anotações -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <div class="tt-envio" role="img" aria-label="Mensagem com a habilidade ata-htpc chamada com arroba e as anotações soltas do HTPC coladas logo depois">
+        <div class="tt-envio__item">
+          <p class="tt-envio__nome">@ata-htpc</p>
+          <span class="tt-envio__como">chamar a habilidade</span>
+        </div>
+        <div class="tt-envio__item">
+          <p class="tt-envio__texto">htpc 11/11<br>presentes: coord. Sandra, profs Márcia, Helena, Paulo, Cida e Rosana<br>1) mostra cultural - sábado 5/12 de manhã, cada turma expõe os trabalhos do projeto do semestre. Helena vê com a direção as mesas. convite pras famílias sai até 25/11, Márcia faz<br>2) conselho de classe dia 2/12, cada prof traz a ficha de acompanhamento preenchida. Sandra manda o modelo da ficha por email até sexta<br>3) informe: lab presencial do curso de IA quinta</p>
+          <span class="tt-envio__como">suas anotações</span>
+        </div>
+        <div class="tt-envio__barra">
+          <svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg>
+          <span class="tt-envio__enviar"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-up"/></svg></span>
+        </div>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 4</span>
+      <h2 class="tt-titulo">Cole as anotações</h2>
+      <ul class="tt-dicas">
+        <li><span>Numa conversa nova, digite <strong>@ata</strong> e clique em <strong>ata-htpc</strong>.</span></li>
+        <li><span>Cole as anotações da reunião <strong>do jeito que estão</strong>: abreviadas, sem pontuação, em tópicos. Também dá para ditar pelo microfone.</span></li>
+        <li><span>Repare que as anotações não dizem o horário nem o local.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 5. Ata -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/hab-ata-3-resposta.webp" width="720" height="470" alt="Ata gerada pelo Gemini: EMEF Jardim das Flores, ata de HTPC número conferir barra 2026, Identificação com data 11/11/2026, horário e local como conferir, coordenação Sandra, e a lista de presentes"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 5</span>
+      <h2 class="tt-titulo">Leia a ata</h2>
+      <ul class="tt-dicas">
+        <li><span>A ata vem com o cabeçalho e as <strong>seis seções do modelo</strong>, na mesma ordem.</span></li>
+        <li><span>Onde as anotações não diziam nada, como horário e local, aparece <strong>[conferir]</strong>. O Gemini não inventou.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6. Conferir -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/hab-ata-4-encaminhamentos.webp" width="720" height="415" alt="Tabela de encaminhamentos da ata: verificar as mesas com a direção, Helena, conferir; convite da Mostra Cultural, Márcia, 25/11; fichas de acompanhamento, professores, 02/12; modelo da ficha por e-mail, Sandra, sexta-feira"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 6</span>
+      <h2 class="tt-titulo">Complete o que falta</h2>
+      <ul class="tt-dicas">
+        <li><span>Os encaminhamentos viraram uma tabela: <strong>o quê, quem e até quando</strong>. A tarefa da Helena ficou sem prazo porque as anotações não diziam.</span></li>
+        <li><span>Copie a ata para o Google Docs e troque cada <strong>[conferir]</strong> pela informação certa.</span></li>
+        <li><span>Na próxima reunião, é só <strong>@ata-htpc</strong> e as anotações. Leia a ata inteira antes de levar para assinatura: quem assina responde por ela.</span></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<nav class="tt-rodape" aria-label="Navegação do tutorial">
+  <div class="tt-rodape__in">
+    <span class="tt-atalho">Use <kbd aria-label="seta para a esquerda">←</kbd><kbd aria-label="seta para a direita">→</kbd> no teclado</span>
+    <button class="iap-btn iap-btn--md iap-btn--quieto" type="button" data-voltar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-left"/></svg>Voltar</button>
+    <p class="tt-seguir" data-seguir aria-hidden="true"></p>
+    <button class="iap-btn iap-btn--md iap-btn--primary" type="button" data-avancar>Próximo <svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+    <a class="iap-btn iap-btn--md iap-btn--ink" href="./" data-concluir hidden>Concluir <svg class="ico ico--sm" aria-hidden="true"><use href="#i-check"/></svg></a>
+  </div>
+</nav>
+
+<script>
+(function(){
+  // Capturas e respostas: execução real no Gemini da conta @educa (modo Raciocínio), em 10/11/2026.
+  // Escola, pessoas e anotações são fictícias; o modelo de ata está em assets/materiais/modelo-ata-htpc.pdf.
+
+  function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;"); }
+
+  var passos = [].slice.call(document.querySelectorAll("[data-passo]"));
+  var barra = document.querySelector(".tt-progresso");
+  barra.innerHTML = passos.map(function(){ return "<i></i>"; }).join("");
+  var pontos = [].slice.call(barra.children);
+  var contagem = document.querySelector(".tt-contagem");
+  var btVoltar = document.querySelector("[data-voltar]");
+  var btAvancar = document.querySelector("[data-avancar]");
+  var btConcluir = document.querySelector("[data-concluir]");
+  var seguir = document.querySelector("[data-seguir]");
+  var atual = -1;
+
+  function ir(i){
+    i = Math.max(0, Math.min(passos.length-1, i));
+    if (i === atual) return;
+    passos.forEach(function(p,k){ p.classList.toggle("ativo", k===i); p.hidden = k!==i; });
+    pontos.forEach(function(p,k){ p.className = k<i ? "feito" : (k===i ? "agora" : ""); });
+    contagem.textContent = i===0 ? "" : "Passo "+i+" de "+(passos.length-1);
+    btVoltar.disabled = i===0;
+    btAvancar.hidden = i===passos.length-1;
+    btConcluir.hidden = !btAvancar.hidden;
+    var prox = passos[i+1] && passos[i+1].querySelector(".tt-titulo");
+    seguir.innerHTML = prox ? "<span>A seguir</span><b>"+esc(prox.textContent)+"</b>" : "";
+    atual = i;
+    try { history.replaceState(null, "", "#passo-"+i); } catch(e){}
+    var acao = passos[i].getAttribute("data-ao-entrar");
+    if (acao === "comparar") passos[i].querySelectorAll(".tt-troca").forEach(function(t){ t.abrir(0); });
+  }
+
+  btVoltar.addEventListener("click", function(){ ir(atual-1); });
+  btAvancar.addEventListener("click", function(){ ir(atual+1); });
+  document.querySelectorAll("[data-ir]").forEach(function(b){
+    b.addEventListener("click", function(){ ir(+b.getAttribute("data-ir")); });
+  });
+  document.addEventListener("keydown", function(e){
+    if (e.target.closest && e.target.closest("input,textarea")) return;
+    if (e.key === "ArrowRight") ir(atual+1);
+    if (e.key === "ArrowLeft") ir(atual-1);
+  });
+
+  // Copiar instrução: cada botão copia o texto do seu próprio quadro
+  document.querySelectorAll("[data-copiar]").forEach(function(bt){
+    bt.addEventListener("click", function(){
+      var texto = bt.closest(".pg-prompt").querySelector("[data-instrucao]").textContent;
+      var rotulo = bt.querySelector("span");
+      function ok(){ rotulo.textContent = "Copiado"; setTimeout(function(){ rotulo.textContent = "Copiar instrução"; }, 2000); }
+      try {
+        navigator.clipboard.writeText(texto).then(ok, function(){ rotulo.textContent = "Selecione e copie"; });
+      } catch(e){ rotulo.textContent = "Selecione e copie"; }
+    });
+  });
+
+  // Abas de comparação: um botão por versão, um painel visível por vez
+  document.querySelectorAll(".tt-troca").forEach(function(t){
+    var abas = [].slice.call(t.querySelectorAll(".tt-troca__aba"));
+    var paineis = [].slice.call(t.querySelectorAll(".tt-troca__painel"));
+    t.abrir = function(n){
+      abas.forEach(function(a,k){ a.setAttribute("aria-selected", k===n); });
+      paineis.forEach(function(p,k){ p.hidden = k!==n; });
+    };
+    abas.forEach(function(a,k){ a.addEventListener("click", function(){ t.abrir(k); }); });
+    t.abrir(0);
+  });
+
+  var inicio = parseInt((location.hash.match(/passo-(\d+)/) || [])[1], 10);
+  ir(isNaN(inicio) ? 0 : inicio);
+})();
+</script>
+
+</body>
+</html>

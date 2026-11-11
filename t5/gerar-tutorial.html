@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gerar uma imagem · Inteligência Artificial para Educadores</title>
+<meta name="description" content="Tutorial guiado: peça ao Gemini uma ilustração, descreva o que você quer ver e baixe a imagem.">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Gerar uma imagem">
+<meta property="og:description" content="Tutorial guiado: peça ao Gemini uma ilustração, descreva o que você quer ver e baixe a imagem.">
+<meta property="og:url" content="https://raulfranca.github.io/cursoia/t5/gerar-tutorial.html">
+<meta property="og:image" content="https://raulfranca.github.io/cursoia/assets/ilustracoes/og-curso-ia.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Caveat:wght@400;700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS6YNMGLZ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GS6YNMGLZ9');
+</script>
+
+<link rel="stylesheet" href="../assets/artigos.css">
+<script src="../assets/tutoriais.js" defer></script>
+
+<body class="pg-tutorial">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+  <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M3 12h.01"/><path d="M3 18h.01"/><path d="M3 6h.01"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M8 6h13"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
+</svg>
+
+<header class="pg-header">
+  <div class="pg-header__in">
+    <div class="tt-marca">
+      <a class="iap-btn iap-btn--quieto tt-lista" href="./"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-left"/></svg>Tutoriais</a>
+      <a class="pg-wordmark" href="../">Inteligência Artificial para Educadores</a>
+    </div>
+    <div class="tt-topo">
+      <div class="tt-progresso" aria-hidden="true"></div>
+      <span class="tt-contagem" aria-live="polite"></span>
+    </div>
+  </div>
+</header>
+
+<main class="tt-palco">
+
+  <!-- 0. Capa -->
+  <section class="tt-passo tt-capa" data-passo>
+    <div class="tt-texto">
+      <span class="iap-eyebrow">Tópico 5 · Criar e editar imagens</span>
+      <h1 class="tt-titulo">Gerar uma imagem</h1>
+      <p class="tt-capa__lead">Peça ao Gemini uma ilustração, descreva o que você quer ver e baixe a imagem. No exemplo, uma onça-pintada para o mural da turma</p>
+      <ul class="tt-capa__meta">
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-list"/></svg><span><b>10</b> passos</span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-clock"/></svg><span><b>5</b> minutos</span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-shield"/></svg><span>Gemini da <b>conta institucional</b></span></li>
+      </ul>
+      <button class="iap-btn iap-btn--lg iap-btn--ink" type="button" data-ir="1">Começar <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+    </div>
+    <div class="tt-visual">
+      <div class="tt-fluxo tt-fluxo--img" role="img" aria-label="Um pedido escrito com detalhes volta do Gemini como a ilustração de uma onça-pintada sentada sobre fundo branco">
+        <p class="tt-fluxo__pedido"><b>Você descreve</b>Ilustração de uma onça-pintada sozinha, de corpo inteiro. Estilo de livro infantil. Fundo branco liso, sem cenário e sem texto.</p>
+        <span class="tt-fluxo__passa"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-down"/></svg>o Gemini desenha</span>
+        <img class="tt-fluxo__arte" src="../assets/capturas/imagem-7-onca.webp" width="478" height="640" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. Abrir o Gemini -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/imagem-0-inicio.webp" width="670" height="180" alt="Tela inicial do Gemini com a pergunta Por onde começamos? e a caixa Peça ao Gemini, com o escudo à esquerda do texto"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 1</span>
+      <h2 class="tt-titulo">Abra o Gemini</h2>
+      <ul class="tt-dicas">
+        <li><span>No <strong>computador ou Chromebook</strong>, com a conta @educa (institucional), como no tópico 3.</span></li>
+        <li><span>Confira o <strong>escudo</strong> na caixa de texto: é o símbolo da proteção de dados da conta.</span></li>
+        <li><span>É o mesmo Gemini que você já usa para escrever. Ele também desenha.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 2. Criar imagem -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/imagem-1-menu.webp" width="680" height="400" alt="Menu aberto pelo botão mais, com as opções Enviar arquivos, Adicionar do Drive, Notebooks, Aprendizado Guiado, Criar imagem, Criar música, Canvas e Mais ferramentas"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 2</span>
+      <h2 class="tt-titulo">Ative a criação de imagem</h2>
+      <ul class="tt-dicas">
+        <li><span>Clique no <strong>+</strong>, à esquerda da caixa de texto.</span></li>
+        <li><span>Escolha <strong>Criar imagem</strong>.</span></li>
+        <li><span>A caixa ganha a etiqueta "Imagens": a partir daí, o que você pedir vira imagem.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3. Pedido simples -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/imagem-2-pedido.webp" width="690" height="375" alt="Galeria de estilos do Gemini acima da caixa de texto, que traz o pedido Uma onça-pintada para o mural da sala de aula, a etiqueta Imagens e o botão Proporção"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 3</span>
+      <h2 class="tt-titulo">Faça um pedido simples</h2>
+      <ul class="tt-dicas">
+        <li><span>Escreva o que você quer ver, como falaria com uma pessoa.</span></li>
+        <li><span>No exemplo: <strong>"Uma onça-pintada para o mural da sala de aula"</strong>.</span></li>
+        <li><span>A galeria de estilos que aparece em cima é opcional. Pode ignorar.</span></li>
+        <li><span>Clique na <strong>seta</strong> para enviar.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 4. Resultado literal -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/imagem-3-mural.webp" width="730" height="555" alt="Resposta do Gemini: uma sala de aula com um grande mural pintado de uma onça-pintada na floresta, com o título Mural da sala de aula: a onça-pintada"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 4</span>
+      <h2 class="tt-titulo">Veja o que ele entendeu</h2>
+      <ul class="tt-dicas">
+        <li><span>A imagem é bonita, mas não é o que queríamos.</span></li>
+        <li><span>O Gemini desenhou <strong>uma sala com um mural</strong>, e não a onça para colocar no mural.</span></li>
+        <li><span>Ele leu o pedido ao pé da letra. Testamos duas vezes, e as duas deram o mesmo resultado.</span></li>
+        <li><span>Quando o pedido não diz o que você quer, a IA decide por você.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 5. Descrição completa -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <div class="pg-prompt">
+        <span class="pg-prompt__rotulo">Comando (Prompt)</span>
+        <p data-instrucao><mark>Ilustração de uma onça-pintada sozinha</mark>, <mark>de corpo inteiro, sentada e olhando para a frente</mark>. <mark>Estilo de livro infantil, com traço simples</mark> e <mark>cores alegres</mark>. <mark>Fundo branco liso, sem cenário e sem texto</mark>. <mark>Formato vertical</mark>, para imprimir e recortar.</p>
+        <button class="iap-btn iap-btn--md iap-btn--quieto tt-copiar" type="button" data-copiar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-copy"/></svg><span>Copiar instrução</span></button>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 5</span>
+      <h2 class="tt-titulo">Descreva com detalhes</h2>
+      <ul class="tt-dicas">
+        <li><span>Uma boa descrição responde a seis perguntas: <strong>o quê</strong>, enquadramento, <strong>estilo</strong>, cores, fundo e formato.</span></li>
+        <li><span>Cada trecho grifado no comando responde a uma delas.</span></li>
+        <li><span>Diga também o que você <strong>não</strong> quer: "sem cenário e sem texto".</span></li>
+        <li><span>Pode escrever na mesma conversa. O Gemini continua de onde parou.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6. Proporção -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot pg-shot--estreita"><img src="../assets/capturas/imagem-4-proporcao.webp" width="324" height="280" alt="Lista aberta do botão Proporção com as opções 1:1, 9:16, 3:4, 4:3 e 16:9"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 6</span>
+      <h2 class="tt-titulo">Escolha o formato</h2>
+      <ul class="tt-dicas">
+        <li><span>No botão <strong>Proporção</strong>, embaixo da caixa, escolha o formato antes de enviar.</span></li>
+        <li><span>1:1 é quadrado. 3:4 e 9:16 são em pé. 4:3 e 16:9 são deitados.</span></li>
+        <li><span>Para uma folha A4 em pé, escolha <strong>3:4</strong>, o mais parecido.</span></li>
+        <li><span>O botão só aparece com a criação de imagem ativada.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 7. Resultado -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="tt-arte"><img src="../assets/capturas/imagem-7-onca.webp" width="478" height="640" alt="Ilustração de uma onça-pintada sentada, de frente, sorrindo, com contorno preto e cores alegres sobre fundo branco"><figcaption>Imagem gerada pelo Gemini em 10/11/2026</figcaption></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 7</span>
+      <h2 class="tt-titulo">Veja o resultado</h2>
+      <ul class="tt-dicas">
+        <li><span>Agora sim: a onça sozinha, de corpo inteiro, no fundo branco, em pé na folha.</span></li>
+        <li><span>Cada pedido sai diferente, mesmo com as mesmas palavras. Não gostou? Clique na <strong>seta em círculo</strong>, embaixo da imagem, para ver outra versão.</span></li>
+        <li><span>Repare no estilo: sem referência, a IA escolheu um desenho "fofo" comum. No próximo tutorial, você vai dar personalidade a ele.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 8. Baixar -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/imagem-5-baixar.webp" width="800" height="300" alt="Canto superior direito da imagem gerada, com os botões compartilhar, copiar e baixar, e a dica Baixar no tamanho original"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 8</span>
+      <h2 class="tt-titulo">Baixe a imagem</h2>
+      <ul class="tt-dicas">
+        <li><span>Passe o mouse sobre a imagem: aparecem três botões no canto.</span></li>
+        <li><span>Clique em <strong>Baixar no tamanho original</strong>. O arquivo vai para a pasta Downloads, em JPG.</span></li>
+        <li><span>A imagem tem cerca de 900 × 1200 pixels: boa para cartões e meia folha, mas pode perder nitidez num A4 inteiro.</span></li>
+        <li><span>Guarde no <strong>Drive</strong>, para achar depois em qualquer computador.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 9. Sem a ferramenta -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/imagem-6-sem-ferramenta.webp" width="730" height="600" alt="Conversa no Gemini sem a ferramenta de imagem ativada: o pedido Crie uma imagem de um tamanduá-bandeira caminhando, para ilustrar uma atividade de Ciências sobre animais do Cerrado, e a resposta, uma foto realista de um tamanduá no Cerrado"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 9</span>
+      <h2 class="tt-titulo">Peça sem a ferramenta</h2>
+      <ul class="tt-dicas">
+        <li><span>Numa conversa nova, sem ativar nada, comece com <strong>"Crie uma imagem de…"</strong>.</span></li>
+        <li><span>O Gemini entende e desenha do mesmo jeito. A ferramenta só deixa a intenção explícita e mostra o botão de proporção.</span></li>
+        <li><span>Repare: sem dizer o estilo, ele escolheu uma <strong>foto realista</strong>. De novo, o que você não diz, ele decide.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 10. Comparar -->
+  <section class="tt-passo" data-passo data-ao-entrar="comparar">
+    <div class="tt-visual tt-visual--comparar">
+      <div class="tt-troca">
+        <div class="tt-troca__abas" role="tablist">
+          <button class="tt-troca__aba" type="button" role="tab">Pedido curto</button>
+          <button class="tt-troca__aba" type="button" role="tab">Pedido completo</button>
+          <button class="tt-troca__aba" type="button" role="tab">Sem dizer o estilo</button>
+        </div>
+        <div class="tt-troca__painel" role="tabpanel">
+          <figure class="tt-arte"><img src="../assets/capturas/imagem-8-mural-arte.webp" width="640" height="347" alt="Sala de aula com um mural pintado de uma onça-pintada na floresta"></figure>
+          <p class="tt-troca__pedido"><b>Pedido</b>Uma onça-pintada para o mural da sala de aula</p>
+        </div>
+        <div class="tt-troca__painel" role="tabpanel">
+          <figure class="tt-arte"><img src="../assets/capturas/imagem-7-onca.webp" width="478" height="640" alt="Onça-pintada sentada, de frente, sobre fundo branco"></figure>
+          <p class="tt-troca__pedido"><b>Pedido</b>Ilustração de uma onça-pintada sozinha, de corpo inteiro, sentada e olhando para a frente. Estilo de livro infantil, com traço simples e cores alegres. Fundo branco liso, sem cenário e sem texto. Formato vertical.</p>
+        </div>
+        <div class="tt-troca__painel" role="tabpanel">
+          <figure class="tt-arte"><img src="../assets/capturas/padrao-0-tamandua-foto.webp" width="640" height="347" alt="Foto realista de um tamanduá-bandeira caminhando no Cerrado"></figure>
+          <p class="tt-troca__pedido"><b>Pedido</b>Crie uma imagem de um tamanduá-bandeira caminhando, para ilustrar uma atividade de Ciências sobre animais do Cerrado.</p>
+        </div>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 10</span>
+      <h2 class="tt-titulo">Compare os pedidos</h2>
+      <ul class="tt-dicas">
+        <li><span><strong>Interativo:</strong> toque nos botões para ver cada pedido e a imagem que ele gerou.</span></li>
+        <li><span>Você criou uma ilustração do zero em menos de um minuto, sem saber desenhar.</span></li>
+        <li><span>A diferença entre as imagens está no pedido: quanto mais claro, menos a IA decide por você.</span></li>
+        <li><span>Olhe com atenção antes de imprimir. A IA costuma errar <strong>texto dentro da imagem</strong>, a <strong>contagem</strong> de objetos e <strong>patas e mãos</strong>.</span></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<nav class="tt-rodape" aria-label="Navegação do tutorial">
+  <div class="tt-rodape__in">
+    <span class="tt-atalho">Use <kbd aria-label="seta para a esquerda">←</kbd><kbd aria-label="seta para a direita">→</kbd> no teclado</span>
+    <button class="iap-btn iap-btn--md iap-btn--quieto" type="button" data-voltar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-left"/></svg>Voltar</button>
+    <p class="tt-seguir" data-seguir aria-hidden="true"></p>
+    <button class="iap-btn iap-btn--md iap-btn--primary" type="button" data-avancar>Próximo <svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+    <a class="iap-btn iap-btn--md iap-btn--ink" href="./" data-concluir hidden>Concluir <svg class="ico ico--sm" aria-hidden="true"><use href="#i-check"/></svg></a>
+  </div>
+</nav>
+
+<script>
+(function(){
+  // Imagens e capturas: execução real no Gemini da conta @educa, em 10/11/2026
+
+  function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;"); }
+
+  var passos = [].slice.call(document.querySelectorAll("[data-passo]"));
+  var barra = document.querySelector(".tt-progresso");
+  barra.innerHTML = passos.map(function(){ return "<i></i>"; }).join("");
+  var pontos = [].slice.call(barra.children);
+  var contagem = document.querySelector(".tt-contagem");
+  var btVoltar = document.querySelector("[data-voltar]");
+  var btAvancar = document.querySelector("[data-avancar]");
+  var btConcluir = document.querySelector("[data-concluir]");
+  var seguir = document.querySelector("[data-seguir]");
+  var atual = -1;
+
+  function ir(i){
+    i = Math.max(0, Math.min(passos.length-1, i));
+    if (i === atual) return;
+    passos.forEach(function(p,k){ p.classList.toggle("ativo", k===i); p.hidden = k!==i; });
+    pontos.forEach(function(p,k){ p.className = k<i ? "feito" : (k===i ? "agora" : ""); });
+    contagem.textContent = i===0 ? "" : "Passo "+i+" de "+(passos.length-1);
+    btVoltar.disabled = i===0;
+    btAvancar.hidden = i===passos.length-1;
+    btConcluir.hidden = !btAvancar.hidden;
+    var prox = passos[i+1] && passos[i+1].querySelector(".tt-titulo");
+    seguir.innerHTML = prox ? "<span>A seguir</span><b>"+esc(prox.textContent)+"</b>" : "";
+    atual = i;
+    try { history.replaceState(null, "", "#passo-"+i); } catch(e){}
+    var acao = passos[i].getAttribute("data-ao-entrar");
+    if (acao === "comparar") passos[i].querySelectorAll(".tt-troca").forEach(function(t){ t.abrir(0); });
+    if (acao === "memoria" && window.novoJogo) window.novoJogo();
+  }
+
+  btVoltar.addEventListener("click", function(){ ir(atual-1); });
+  btAvancar.addEventListener("click", function(){ ir(atual+1); });
+  document.querySelectorAll("[data-ir]").forEach(function(b){
+    b.addEventListener("click", function(){ ir(+b.getAttribute("data-ir")); });
+  });
+  document.addEventListener("keydown", function(e){
+    if (e.target.closest && e.target.closest("input,textarea")) return;
+    if (e.key === "ArrowRight") ir(atual+1);
+    if (e.key === "ArrowLeft") ir(atual-1);
+  });
+
+  // Copiar instrução: cada botão copia o comando do seu próprio quadro
+  document.querySelectorAll("[data-copiar]").forEach(function(bt){
+    bt.addEventListener("click", function(){
+      var texto = bt.closest(".pg-prompt").querySelector("[data-instrucao]").textContent;
+      var rotulo = bt.querySelector("span");
+      function ok(){ rotulo.textContent = "Copiado"; setTimeout(function(){ rotulo.textContent = "Copiar instrução"; }, 2000); }
+      try {
+        navigator.clipboard.writeText(texto).then(ok, function(){ rotulo.textContent = "Selecione e copie"; });
+      } catch(e){ rotulo.textContent = "Selecione e copie"; }
+    });
+  });
+
+  // Abas de comparação: um botão por versão, um painel visível por vez
+  document.querySelectorAll(".tt-troca").forEach(function(t){
+    var abas = [].slice.call(t.querySelectorAll(".tt-troca__aba"));
+    var paineis = [].slice.call(t.querySelectorAll(".tt-troca__painel"));
+    t.abrir = function(n){
+      abas.forEach(function(a,k){ a.setAttribute("aria-selected", k===n); });
+      paineis.forEach(function(p,k){ p.hidden = k!==n; });
+    };
+    abas.forEach(function(a,k){ a.addEventListener("click", function(){ t.abrir(k); }); });
+    t.abrir(0);
+  });
+
+  var inicio = parseInt((location.hash.match(/passo-(\d+)/) || [])[1], 10);
+  ir(isNaN(inicio) ? 0 : inicio);
+})();
+</script>
+
+</body>
+</html>

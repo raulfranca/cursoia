@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Criar um assistente de planos de aula · Inteligência Artificial para Educadores</title>
+<meta name="description" content="Tutorial guiado: crie no Gemini um assistente que já tem os arquivos da BNCC e o formato do plano, e peça o plano da semana em uma mensagem.">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Criar um assistente de planos de aula">
+<meta property="og:description" content="Tutorial guiado: crie no Gemini um assistente que já tem os arquivos da BNCC e o formato do plano, e peça o plano da semana em uma mensagem.">
+<meta property="og:url" content="https://raulfranca.github.io/cursoia/t7/plano-tutorial.html">
+<meta property="og:image" content="https://raulfranca.github.io/cursoia/assets/ilustracoes/og-curso-ia.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Caveat:wght@400;700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS6YNMGLZ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GS6YNMGLZ9');
+</script>
+
+<link rel="stylesheet" href="../assets/artigos.css">
+<script src="../assets/tutoriais.js" defer></script>
+
+<body class="pg-tutorial">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+  <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M3 12h.01"/><path d="M3 18h.01"/><path d="M3 6h.01"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M8 6h13"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
+  <symbol id="i-paperclip" viewBox="0 0 24 24"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+</svg>
+
+<header class="pg-header">
+  <div class="pg-header__in">
+    <div class="tt-marca">
+      <a class="iap-btn iap-btn--quieto tt-lista" href="./"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-left"/></svg>Tutoriais</a>
+      <a class="pg-wordmark" href="../">Inteligência Artificial para Educadores</a>
+    </div>
+    <div class="tt-topo">
+      <div class="tt-progresso" aria-hidden="true"></div>
+      <span class="tt-contagem" aria-live="polite"></span>
+    </div>
+  </div>
+</header>
+
+<main class="tt-palco">
+
+  <!-- 0. Capa -->
+  <section class="tt-passo tt-capa" data-passo>
+    <div class="tt-texto">
+      <span class="iap-eyebrow">Tópico 7 · Crie um assistente para tarefas que se repetem</span>
+      <h1 class="tt-titulo">Criar um assistente de planos de aula</h1>
+      <p class="tt-capa__lead">Guarde no Gemini os arquivos da BNCC e o jeito de montar o plano. Depois, peça o plano da semana em uma mensagem só</p>
+      <ul class="tt-capa__meta">
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-list"/></svg><span><b>10</b> passos</span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-clock"/></svg><span><b>8</b> minutos</span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-shield"/></svg><span>Gemini da <b>conta institucional</b></span></li>
+      </ul>
+      <button class="iap-btn iap-btn--lg iap-btn--ink" type="button" data-ir="1">Começar <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+    </div>
+    <div class="tt-visual">
+      <div class="tt-fluxo" role="img" aria-label="As ideias da professora para a semana do Pré I, enviadas ao assistente, viram um plano com as habilidades da BNCC copiadas do arquivo oficial">
+        <p class="tt-fluxo__pedido"><b>@plano-de-aula-bncc</b>Ideias pra semana do Pré I. Na segunda, a história do João e o Pé de Feijão e o feijão no algodão…</p>
+        <span class="tt-fluxo__passa"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-down"/></svg>o assistente abre o arquivo da BNCC</span>
+        <div class="tt-fluxo__registro">
+          <p><b>EI03ET02</b>Observar e descrever mudanças em diferentes materiais, resultantes de ações sobre eles…</p>
+          <p><b>EI03EF09</b>Levantar hipóteses em relação à linguagem escrita, realizando registros de palavras e textos…</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. O que muda -->
+  <section class="tt-passo" data-passo data-ao-entrar="comparar">
+    <div class="tt-visual tt-visual--comparar">
+      <div class="tt-troca">
+        <div class="tt-troca__abas" role="tablist">
+          <button class="tt-troca__aba" type="button" role="tab">No tópico 4</button>
+          <button class="tt-troca__aba" type="button" role="tab">Com o assistente</button>
+        </div>
+        <div class="tt-troca__painel" role="tabpanel">
+          <div class="tt-envio" role="img" aria-label="Mensagem do tópico 4: o arquivo da BNCC anexado, as ideias da semana e a instrução de formato e de uso do arquivo">
+            <div class="tt-envio__item tt-envio__item--anexo">
+              <span class="tt-envio__arquivo"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-paperclip"/></svg><span>01_EI_educacao_infantil.md<small>Markdown</small></span></span>
+              <span class="tt-envio__como">anexar toda vez</span>
+            </div>
+            <div class="tt-envio__item">
+              <p class="tt-envio__texto">Ideias pra semana do Pré I lá na escola…</p>
+              <span class="tt-envio__como">suas ideias</span>
+            </div>
+            <div class="tt-envio__item">
+              <p class="tt-envio__texto">Transforme essas ideias em um plano de aula semanal estruturado em Dia, Conteúdo, Habilidades BNCC e Estratégias. Pesquise as habilidades da BNCC no arquivo anexo…</p>
+              <span class="tt-envio__como">repetir toda vez</span>
+            </div>
+            <div class="tt-envio__barra">
+              <svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg>
+              <span class="tt-envio__enviar"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-up"/></svg></span>
+            </div>
+          </div>
+        </div>
+        <div class="tt-troca__painel" role="tabpanel">
+          <div class="tt-envio" role="img" aria-label="Mensagem com o assistente: o nome do assistente chamado com arroba e as ideias da semana">
+            <div class="tt-envio__item">
+              <p class="tt-envio__nome">@plano-de-aula-bncc</p>
+              <span class="tt-envio__como">chamar o assistente</span>
+            </div>
+            <div class="tt-envio__item">
+              <p class="tt-envio__texto">Ideias pra semana do Pré I lá na escola…</p>
+              <span class="tt-envio__como">suas ideias</span>
+            </div>
+            <div class="tt-envio__barra">
+              <svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg>
+              <span class="tt-envio__enviar"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-up"/></svg></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 1</span>
+      <h2 class="tt-titulo">Veja o que vai mudar</h2>
+      <ul class="tt-dicas">
+        <li><span><strong>Interativo:</strong> toque nos botões para comparar as duas mensagens.</span></li>
+        <li><span>No tópico 4, cada plano pedia três coisas: <strong>anexar o arquivo</strong> da BNCC, contar suas ideias e repetir a instrução.</span></li>
+        <li><span>O assistente <strong>guarda o arquivo e a instrução</strong>. Sobra só o que muda de uma semana para outra: suas ideias.</span></li>
+        <li><span>No Gemini, esse recurso se chama <strong>Habilidades</strong>. Não confunda com as habilidades da BNCC: é uma tarefa que o Gemini aprende a fazer do seu jeito.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 2. Habilidades -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/plano-1-habilidades.webp" width="720" height="330" alt="Página Personalizar do Gemini na aba Habilidades, com o botão Criar à direita e cinco habilidades prontas do Google"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 2</span>
+      <h2 class="tt-titulo">Abra as Habilidades</h2>
+      <ul class="tt-dicas">
+        <li><span>Abra o Gemini com a <strong>conta @educa</strong>, a mesma em que você criou o atalho da BNCC no tópico 4.</span></li>
+        <li><span>No menu à esquerda, clique em <strong>Personalizar</strong>. No alto da página, escolha a aba <strong>Habilidades</strong>.</span></li>
+        <li><span>A lista traz habilidades prontas do Google. A sua vai aparecer aqui também.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3. Criar manualmente -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/plano-2-criar.webp" width="720" height="200" alt="Menu do botão Criar aberto, com as opções Criar com o Gemini, Criar manualmente e Enviar"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 3</span>
+      <h2 class="tt-titulo">Escolha Criar manualmente</h2>
+      <ul class="tt-dicas">
+        <li><span>Clique em <strong>Criar</strong> e depois em <strong>Criar manualmente</strong>.</span></li>
+        <li><span>Abre um formulário com três campos: nome, descrição e instruções. Você vê e controla tudo o que o assistente vai seguir.</span></li>
+        <li><span><strong>Criar com o Gemini</strong> monta o assistente numa conversa, mas cada vez de um jeito. Fique no formulário para seguir este tutorial.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 4. Nome e descrição -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <div class="pg-prompt">
+        <span class="pg-prompt__rotulo">Descrição</span>
+        <p data-instrucao>Use quando o professor pedir um plano de aula ou um planejamento da semana para a Educação Infantil ou para o 1º ao 5º ano. Transforma as ideias do professor em um plano organizado por dia, com conteúdo, habilidades da BNCC conferidas nos arquivos anexos e estratégias.</p>
+        <button class="iap-btn iap-btn--md iap-btn--quieto tt-copiar" type="button" data-copiar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-copy"/></svg><span>Copiar instrução</span></button>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 4</span>
+      <h2 class="tt-titulo">Dê nome e descrição</h2>
+      <ul class="tt-dicas">
+        <li><span>Em <strong>Nome</strong>, digite <strong>Plano de aula BNCC</strong>. O Gemini troca por <strong>plano-de-aula-bncc</strong>, sem espaço nem maiúscula. É por esse nome que você vai chamar o assistente.</span></li>
+        <li><span>Em <strong>Descrição</strong>, cole o texto ao lado.</span></li>
+        <li><span>A descrição é a etiqueta do assistente: é por ela que o Gemini sabe <strong>quando usá-lo</strong>. Diga para que serve e em que situação.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 5. Instruções -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <div class="pg-prompt pg-prompt--longo">
+        <span class="pg-prompt__rotulo">Instruções</span>
+<p data-instrucao>Você ajuda professores da Rede Municipal de Pindamonhangaba a transformar as ideias que eles têm para a semana em um plano de aula organizado.
+
+ETAPA 1 — ESCOLHA O ARQUIVO DA BNCC
+Descubra pela turma qual arquivo anexo usar:
+- Berçário, Maternal, Pré I e Pré II são Educação Infantil: use o arquivo 01-ei-educacao-infantil.md. Berçário usa as habilidades EI01 (bebês), Maternal usa EI02 (crianças bem pequenas), Pré I e Pré II usam EI03 (crianças pequenas).
+- Do 1º ao 5º ano, use o arquivo de cada componente trabalhado: 02-ef-ai-1a5-lingua-portuguesa.md, 03-ef-ai-1a5-arte.md, 04-ef-ai-1a5-educacao-fisica.md, 05-ef-ai-1a5-matematica.md, 06-ef-ai-1a5-ciencias.md, 07-ef-ai-1a5-geografia.md, 08-ef-ai-1a5-historia.md ou 09-ef-ai-1a5-ensino-religioso.md. Se o plano junta componentes, use os arquivos de todos eles. Escolha só habilidades do ano da turma ou de um bloco que inclua esse ano (por exemplo, EF15 vale do 1º ao 5º ano; EF35, do 3º ao 5º).
+- Se não estiver claro qual é a turma, pergunte antes de escrever o plano.
+
+ETAPA 2 — LEIA O ARQUIVO E COPIE AS HABILIDADES
+Antes de escrever o plano, leia o arquivo escolhido. <mark>Não confie na memória</mark>: a BNCC tem habilidades parecidas e é fácil trocar uma pela outra. No arquivo, procure as habilidades que combinam com cada atividade. Copie o código e a descrição exatamente como estão no arquivo, palavra por palavra. Não invente códigos, não resuma e não reescreva a descrição. Se não encontrar uma habilidade adequada no arquivo, diga isso.
+
+ETAPA 3 — MONTE O PLANO
+Organize o plano em uma tabela com quatro colunas: <mark>Dia, Conteúdo, Habilidades BNCC e Estratégias</mark>.
+- Na coluna Habilidades BNCC, escreva cada habilidade com o código entre parênteses seguido da descrição completa, copiada do arquivo. <mark>Nunca só o código.</mark>
+- Siga as ideias do professor, na ordem em que ele contou. Não acrescente atividades que ele não mencionou.
+- Em Estratégias, descreva de forma concreta como cada atividade vai acontecer.
+- Dia sem aula aparece na tabela com o motivo.
+- Atividades que se repetem todos os dias (rotina) ficam num quadro separado, antes da tabela.
+- Se tiver sugestões para melhorar o plano, coloque no máximo três, separadas, no fim.
+- Entregue um único plano. Não repita o plano em outro formato.
+
+ETAPA 4 — FECHE COM A LISTA PARA CONFERIR
+No fim, liste todos os códigos usados, um por linha, para o professor conferir no arquivo.
+
+Escreva em português do Brasil, com a linguagem do dia a dia da escola.</p>
+        <button class="iap-btn iap-btn--md iap-btn--quieto tt-copiar" type="button" data-copiar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-copy"/></svg><span>Copiar instrução</span></button>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 5</span>
+      <h2 class="tt-titulo">Cole as instruções</h2>
+      <ul class="tt-dicas">
+        <li><span>Copie o texto ao lado e cole em <strong>Instruções</strong>. É o jeito de fazer que você repetia a cada plano, agora escrito uma vez só.</span></li>
+        <li><span>A <strong>etapa 1</strong> ensina o assistente a escolher o arquivo certo pela turma: Pré I usa o arquivo 01; um plano de Matemática do 3º ano usa o 05.</span></li>
+        <li><span><mark>"Não confie na memória"</mark> está ali por causa do nosso teste: sem essa frase, o Gemini escreveu as habilidades de cabeça e errou.</span></li>
+        <li><span>Sua escola usa outras colunas? Troque a <mark>lista da etapa 3</mark> pelas do seu modelo.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6. Arquivos -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/plano-4-arquivos.webp" width="630" height="484" alt="Seletor do Google Drive com os arquivos da BNCC até o 09 marcados em azul e, no rodapé, 9 selected e o botão Insert"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 6</span>
+      <h2 class="tt-titulo">Anexe a BNCC e crie</h2>
+      <ul class="tt-dicas">
+        <li><span>No alto do formulário, clique em <strong>Adicionar arquivos</strong> e depois em <strong>Google Drive</strong>.</span></li>
+        <li><span>Na aba <strong>Meu Drive</strong>, abra o atalho <strong>BNCC_por_componente</strong>. Clique no arquivo 01, segure <strong>Shift</strong> e clique no 09: os nove ficam marcados.</span></li>
+        <li><span>Clique em <strong>Insert</strong>, depois em <strong>Enviar</strong> e, por fim, em <strong>Criar</strong>. O assistente aparece em <strong>Instalado</strong>.</span></li>
+        <li><span>O Gemini guarda <strong>uma cópia</strong> dos arquivos dentro do assistente. Você não precisa anexá-los de novo.</span></li>
+      </ul>
+      <p class="tt-aviso tt-aviso--alerta">Não tem o atalho no Meu Drive? Crie seguindo o passo a passo de <a href="../t4/bncc-como-fonte.html">Usando a BNCC como fonte</a>, do tópico 4.</p>
+    </div>
+  </section>
+
+  <!-- 7. Chamar -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/plano-6-arroba.webp" width="660" height="220" alt="Caixa de pedido do Gemini com uma arroba digitada e o menu aberto: na seção Habilidades aparece plano-de-aula-bncc"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 7</span>
+      <h2 class="tt-titulo">Chame o assistente</h2>
+      <ul class="tt-dicas">
+        <li><span>Abra uma <strong>conversa nova</strong>. Na caixa de pedido, digite <strong>@</strong>.</span></li>
+        <li><span>Em <strong>Habilidades</strong>, clique em <strong>plano-de-aula-bncc</strong>. O nome entra na caixa.</span></li>
+        <li><span>Logo depois, escreva ou dite as ideias da semana, do jeito que contaria a uma colega. Sem anexo e sem instrução de formato.</span></li>
+        <li><span>No exemplo, as mesmas ideias do Pré I do tópico 4: feijão no algodão, letra F e 7 de Setembro.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 8. Plano -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/plano-7-resposta.webp" width="725" height="432" alt="Resposta do Gemini: tabela do plano com as colunas Conteúdo, Habilidades BNCC e Estratégias; na segunda-feira, habilidades com código e descrição completa, como EI03EF01 e EI03ET03"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 8</span>
+      <h2 class="tt-titulo">Leia o plano</h2>
+      <ul class="tt-dicas">
+        <li><span>O plano vem na tabela <strong>Dia, Conteúdo, Habilidades BNCC e Estratégias</strong>, como no tópico 4.</span></li>
+        <li><span>Cada habilidade traz o <strong>código e a descrição completa</strong>, copiados do arquivo.</span></li>
+        <li><span>A rotina fica num quadro à parte, a sexta aparece como dia sem aula e, no fim, vem a <strong>lista dos códigos</strong> para conferir.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 9. Conferir -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <div class="tt-conferir">
+        <div class="tt-conferir__caso">
+          <span class="tt-conferir__rotulo">Primeiro teste · EI03EO04</span>
+          <p><b>Na resposta</b>Comunicar <mark>suas necessidades, desejos, sentimentos e preferências, adotando hábitos de autocuidado</mark>…</p>
+          <p><b>No arquivo</b>Comunicar <mark>suas ideias e sentimentos a pessoas e grupos diversos</mark>.</p>
+        </div>
+        <div class="tt-conferir__caso">
+          <span class="tt-conferir__rotulo">Instrução final · EI03ET02</span>
+          <p><b>Na resposta</b>Observar e descrever mudanças em diferentes materiais, resultantes de ações sobre eles, em experimentos envolvendo fenômenos naturais e artificiais.</p>
+          <p><b>No arquivo</b>Igual, palavra por palavra.</p>
+        </div>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 9</span>
+      <h2 class="tt-titulo">Confira as habilidades</h2>
+      <ul class="tt-dicas">
+        <li><span>Escolha duas ou três habilidades da lista final. Abra o arquivo no atalho do Drive e procure o código com <strong>Ctrl + F</strong>.</span></li>
+        <li><span>O texto tem de ser <strong>o mesmo</strong>. No primeiro teste, antes da regra "leia o arquivo", o Gemini inventou a descrição da EI03EO04.</span></li>
+        <li><span>Com a instrução final, conferimos todas as habilidades de dois planos completos: todas iguais ao arquivo.</span></li>
+      </ul>
+      <p class="tt-aviso">O assistente reduz muito o erro, mas não o elimina. Quem assina o plano é você: confira antes de lançar.</p>
+    </div>
+  </section>
+
+  <!-- 10. Ajustar -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot pg-shot--media"><img src="../assets/capturas/plano-8-editar.webp" width="345" height="330" alt="Menu de três pontos do assistente plano-de-aula-bncc, com as opções Use agora mesmo, Editar com o Gemini, Editar manualmente, Baixar, Substituir habilidade, Uninstall e Excluir"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 10</span>
+      <h2 class="tt-titulo">Ajuste quando sair torto</h2>
+      <ul class="tt-dicas">
+        <li><span>Algo saiu diferente do que você queria? Volte a <strong>Personalizar › Habilidades</strong>, clique nos <strong>três pontos</strong> do assistente e em <strong>Editar manualmente</strong>.</span></li>
+        <li><span>Acrescente <strong>uma regra</strong> às instruções e salve. Foi assim que chegamos ao texto deste tutorial: "Nunca só o código" e "Não confie na memória" vieram de testes que deram errado.</span></li>
+        <li><span>Pronto: o plano que no tópico 4 pedia anexo e instrução agora sai com <strong>uma mensagem</strong>, toda semana. A conferência das habilidades continua sendo sua, a cada plano.</span></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<nav class="tt-rodape" aria-label="Navegação do tutorial">
+  <div class="tt-rodape__in">
+    <span class="tt-atalho">Use <kbd aria-label="seta para a esquerda">←</kbd><kbd aria-label="seta para a direita">→</kbd> no teclado</span>
+    <button class="iap-btn iap-btn--md iap-btn--quieto" type="button" data-voltar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-left"/></svg>Voltar</button>
+    <p class="tt-seguir" data-seguir aria-hidden="true"></p>
+    <button class="iap-btn iap-btn--md iap-btn--primary" type="button" data-avancar>Próximo <svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+    <a class="iap-btn iap-btn--md iap-btn--ink" href="./" data-concluir hidden>Concluir <svg class="ico ico--sm" aria-hidden="true"><use href="#i-check"/></svg></a>
+  </div>
+</nav>
+
+<script>
+(function(){
+  // Capturas e respostas: execução real no Gemini da conta @educa (modo Raciocínio), em 10/11/2026.
+  // O pedido é o mesmo do vídeo T4.2. A descrição errada da EI03EO04 veio do primeiro teste, antes da regra "leia o arquivo".
+
+  function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;"); }
+
+  var passos = [].slice.call(document.querySelectorAll("[data-passo]"));
+  var barra = document.querySelector(".tt-progresso");
+  barra.innerHTML = passos.map(function(){ return "<i></i>"; }).join("");
+  var pontos = [].slice.call(barra.children);
+  var contagem = document.querySelector(".tt-contagem");
+  var btVoltar = document.querySelector("[data-voltar]");
+  var btAvancar = document.querySelector("[data-avancar]");
+  var btConcluir = document.querySelector("[data-concluir]");
+  var seguir = document.querySelector("[data-seguir]");
+  var atual = -1;
+
+  function ir(i){
+    i = Math.max(0, Math.min(passos.length-1, i));
+    if (i === atual) return;
+    passos.forEach(function(p,k){ p.classList.toggle("ativo", k===i); p.hidden = k!==i; });
+    pontos.forEach(function(p,k){ p.className = k<i ? "feito" : (k===i ? "agora" : ""); });
+    contagem.textContent = i===0 ? "" : "Passo "+i+" de "+(passos.length-1);
+    btVoltar.disabled = i===0;
+    btAvancar.hidden = i===passos.length-1;
+    btConcluir.hidden = !btAvancar.hidden;
+    var prox = passos[i+1] && passos[i+1].querySelector(".tt-titulo");
+    seguir.innerHTML = prox ? "<span>A seguir</span><b>"+esc(prox.textContent)+"</b>" : "";
+    atual = i;
+    try { history.replaceState(null, "", "#passo-"+i); } catch(e){}
+    var acao = passos[i].getAttribute("data-ao-entrar");
+    if (acao === "comparar") passos[i].querySelectorAll(".tt-troca").forEach(function(t){ t.abrir(0); });
+  }
+
+  btVoltar.addEventListener("click", function(){ ir(atual-1); });
+  btAvancar.addEventListener("click", function(){ ir(atual+1); });
+  document.querySelectorAll("[data-ir]").forEach(function(b){
+    b.addEventListener("click", function(){ ir(+b.getAttribute("data-ir")); });
+  });
+  document.addEventListener("keydown", function(e){
+    if (e.target.closest && e.target.closest("input,textarea")) return;
+    if (e.key === "ArrowRight") ir(atual+1);
+    if (e.key === "ArrowLeft") ir(atual-1);
+  });
+
+  // Copiar instrução: cada botão copia o texto do seu próprio quadro
+  document.querySelectorAll("[data-copiar]").forEach(function(bt){
+    bt.addEventListener("click", function(){
+      var texto = bt.closest(".pg-prompt").querySelector("[data-instrucao]").textContent;
+      var rotulo = bt.querySelector("span");
+      function ok(){ rotulo.textContent = "Copiado"; setTimeout(function(){ rotulo.textContent = "Copiar instrução"; }, 2000); }
+      try {
+        navigator.clipboard.writeText(texto).then(ok, function(){ rotulo.textContent = "Selecione e copie"; });
+      } catch(e){ rotulo.textContent = "Selecione e copie"; }
+    });
+  });
+
+  // Abas de comparação: um botão por versão, um painel visível por vez
+  document.querySelectorAll(".tt-troca").forEach(function(t){
+    var abas = [].slice.call(t.querySelectorAll(".tt-troca__aba"));
+    var paineis = [].slice.call(t.querySelectorAll(".tt-troca__painel"));
+    t.abrir = function(n){
+      abas.forEach(function(a,k){ a.setAttribute("aria-selected", k===n); });
+      paineis.forEach(function(p,k){ p.hidden = k!==n; });
+    };
+    abas.forEach(function(a,k){ a.addEventListener("click", function(){ t.abrir(k); }); });
+    t.abrir(0);
+  });
+
+  var inicio = parseInt((location.hash.match(/passo-(\d+)/) || [])[1], 10);
+  ir(isNaN(inicio) ? 0 : inicio);
+})();
+</script>
+
+</body>
+</html>

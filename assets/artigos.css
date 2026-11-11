@@ -947,3 +947,90 @@ a.iap-module:hover .pg-trilha__ir{color:var(--lousa-600);transform:translateX(3p
 @media (max-width:760px){.tt-gemini{padding:var(--space-4) var(--space-4);box-shadow:var(--shadow-ink-sm)}.tt-gemini__md{font-size:14px}.tt-gemini__resp{grid-template-columns:22px minmax(0,1fr);gap:var(--space-3)}.tt-gemini__estrela{width:20px;height:20px}.tt-carrossel{box-shadow:var(--shadow-ink-sm)}.tt-carrossel__card{padding:var(--space-5) var(--space-5) var(--space-4)}.tt-carrossel__seta{display:none}}
 /* Celular: no cabeçalho do tutorial fica só o botão da lista, o nome do curso sai */
 @media (max-width:560px){.tt-marca .pg-wordmark{display:none}}
+
+/* ---------- Imagens geradas (tópico 5) ---------- */
+/* Capturas pequenas no palco: as variantes de largura valem também dentro da mesa */
+.tt-visual .pg-shot--estreita{max-width:340px}
+.tt-visual .pg-shot--media{max-width:480px}
+/* Arte: a imagem que o Gemini devolveu, como uma folha impressa sobre a mesa */
+.tt-arte{margin:0;display:flex;flex-direction:column;align-items:center;gap:var(--space-3);max-width:100%;max-height:100%;min-height:0}
+.tt-arte img{display:block;width:auto;max-width:100%;max-height:calc(100dvh - 300px);background:var(--paper-0);border:var(--border-ink) solid var(--line-strong);box-shadow:var(--shadow-ink)}
+.tt-arte figcaption,.tt-lado figcaption,.tt-solto figcaption{font:var(--text-caption-font);color:var(--text-caption);text-align:center}
+.tt-arte figcaption i,.tt-lado figcaption i{font-style:italic}
+/* Lado a lado: antes e depois, ou duas versões, com rótulo em cima de cada uma */
+.tt-lado{display:grid;grid-template-columns:repeat(var(--n,2),minmax(0,1fr));gap:var(--space-6);width:100%;max-width:820px;align-items:start}
+.tt-lado figure{margin:0;display:flex;flex-direction:column;gap:var(--space-3);min-width:0}
+.tt-lado img{display:block;width:100%;max-height:calc(100dvh - 330px);object-fit:contain;background:var(--paper-0);border:var(--border-ink) solid var(--line-strong);box-shadow:var(--shadow-ink-sm)}
+.tt-lado__rotulo{font:var(--text-eyebrow);text-transform:uppercase;letter-spacing:var(--track-caps);color:var(--lousa-600)}
+.tt-lado figure:last-child .tt-lado__rotulo{color:var(--terracota-600)}
+/* Abas de comparação: um botão por versão, o painel mostra a imagem e o pedido que a gerou */
+.tt-troca{display:flex;flex-direction:column;gap:var(--space-5);width:100%;max-width:820px;max-height:100%;min-height:0}
+.tt-troca__abas{display:flex;flex-wrap:wrap;gap:var(--space-2)}
+.tt-troca__aba{padding:6px 14px;font:var(--text-small);color:var(--text-muted);background:var(--paper-0);border:var(--border-ink) solid var(--line-hairline);border-radius:var(--radius-pill);cursor:pointer;transition:var(--transition-ui)}
+.tt-troca__aba:hover{border-color:var(--lousa-300)}
+.tt-troca__aba[aria-selected="true"]{color:var(--paper-0);background:var(--ink-1);border-color:var(--ink-1)}
+.tt-troca__painel{min-height:0}
+.tt-troca__painel[hidden]{display:none}
+.tt-troca .tt-lado img{max-height:calc(100dvh - 400px)}
+.tt-troca .tt-arte img{max-height:calc(100dvh - 430px)}
+.tt-troca__pedido{margin-top:var(--space-4);font-size:var(--size-sm);line-height:var(--lh-normal);color:var(--text-muted)}
+.tt-troca__pedido b{font-family:var(--font-mono);font-size:var(--size-2xs);font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--lousa-700);margin-right:6px}
+/* Imagens soltas: pedidas uma a uma, cada uma de um jeito */
+.tt-solto{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-5);width:100%;max-width:780px;align-items:center}
+.tt-solto figure{margin:0;display:flex;flex-direction:column;gap:var(--space-3)}
+.tt-solto img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;background:var(--paper-0);border:var(--border-ink) solid var(--line-strong);box-shadow:var(--shadow-ink-sm)}
+.tt-solto figure:nth-child(1){rotate:-3deg}
+.tt-solto figure:nth-child(2){rotate:2deg;translate:0 12px}
+.tt-solto figure:nth-child(3){rotate:-1deg}
+/* Baralho: as cartas prontas em grade */
+.tt-baralho{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-4);width:100%;max-width:min(560px,calc((100dvh - 300px) * 1.5))}
+.tt-baralho img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border:var(--border-ink) solid var(--line-strong);border-radius:var(--radius-md);box-shadow:var(--shadow-ink-sm)}
+.tt-baralho .tt-baralho__destaque{outline:3px solid var(--terracota-500);outline-offset:3px}
+/* Jogo da memória: 12 cartas viradas; achou o par, ele fica aberto */
+.tt-memoria{display:flex;flex-direction:column;align-items:center;gap:var(--space-4);width:100%;max-width:min(560px,calc((100dvh - 330px) * 1.33))}
+.tt-memoria__grade{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-3);width:100%}
+.tt-memoria__carta{position:relative;aspect-ratio:1;padding:0;border:0;background:none;cursor:pointer;perspective:600px}
+.tt-memoria__carta span{position:absolute;inset:0;border:var(--border-ink) solid var(--line-strong);border-radius:var(--radius-md);backface-visibility:hidden;transition:transform .4s var(--ease-out)}
+.tt-memoria__verso{display:grid;place-items:center;background:var(--lousa-500) repeating-linear-gradient(45deg,transparent 0 8px,rgba(255,255,255,.08) 8px 16px);box-shadow:var(--shadow-ink-sm)}
+.tt-memoria__verso::after{content:"?";font-family:var(--font-display);font-size:28px;font-weight:var(--weight-semibold);color:var(--paper-0)}
+.tt-memoria__frente{transform:rotateY(180deg);background-size:cover;background-position:center}
+.tt-memoria__carta.virada .tt-memoria__verso,.tt-memoria__carta.par .tt-memoria__verso{transform:rotateY(180deg)}
+.tt-memoria__carta.virada .tt-memoria__frente,.tt-memoria__carta.par .tt-memoria__frente{transform:none}
+.tt-memoria__carta.par{cursor:default}
+.tt-memoria__carta.par .tt-memoria__frente{box-shadow:0 0 0 3px var(--ocre-500)}
+.tt-memoria__status{font:var(--text-small);color:var(--text-muted);min-height:1.5em;text-align:center}
+@media (prefers-reduced-motion:reduce){.tt-memoria__carta span{transition:none}}
+/* Capa: pedido e imagem. Usa .tt-fluxo e .tt-fluxo__passa do esquema do ditado */
+.tt-fluxo--img{max-width:460px}
+.tt-fluxo__pedido{width:88%;align-self:flex-end;padding:var(--space-4) var(--space-5);font-size:var(--size-sm);line-height:var(--lh-normal);color:var(--text-body);background:var(--paper-0);border:var(--border-hairline) solid var(--ink-5);border-radius:22px 22px 6px 22px}
+.tt-fluxo__pedido b{display:block;margin-bottom:4px;font:var(--text-eyebrow);text-transform:uppercase;letter-spacing:var(--track-caps);color:var(--lousa-600)}
+.tt-fluxo__arte{align-self:flex-start;display:block;width:auto;max-width:72%;max-height:220px;object-fit:contain;background:var(--paper-0);border:var(--border-ink) solid var(--line-strong);box-shadow:4px 4px 0 0 var(--lousa-500);rotate:-1.5deg}
+.tt-fluxo__arte--centro{align-self:center}
+.tt-fluxo__arte--baixa{max-height:150px}
+.tt-fluxo__arte + .tt-fluxo__pedido{margin-top:var(--space-5)}
+.tt-fluxo__trio{display:flex;gap:var(--space-3);align-self:center;width:92%}
+.tt-fluxo__trio img{width:31%;flex:1;aspect-ratio:1;object-fit:cover;border:var(--border-ink) solid var(--line-strong);border-radius:var(--radius-md);box-shadow:var(--shadow-ink-sm)}
+.tt-fluxo__trio img:nth-child(1){rotate:-3deg}
+.tt-fluxo__trio img:nth-child(3){rotate:3deg}
+.tt-fluxo__kit{display:grid;grid-template-columns:minmax(0,1fr) 96px;gap:var(--space-4);align-items:center;width:94%;align-self:flex-start;padding:var(--space-4) var(--space-5);background:var(--paper-0);border:var(--border-hairline) solid var(--ink-5);border-radius:var(--radius-md);rotate:-1deg}
+.tt-fluxo__kit ul{display:flex;flex-direction:column;gap:6px;font-size:var(--size-xs);line-height:1.35;color:var(--text-muted)}
+.tt-fluxo__kit li b{font-family:var(--font-mono);font-size:var(--size-2xs);color:var(--lousa-700);margin-right:6px}
+.tt-fluxo__kit img{width:96px;aspect-ratio:1;object-fit:cover;border:var(--border-ink) solid var(--line-strong);border-radius:var(--radius-sm)}
+@media (max-width:860px){
+  .tt-arte img{max-height:calc(58dvh - 60px);box-shadow:var(--shadow-ink-sm)}
+  .tt-lado{gap:var(--space-3)}
+  .tt-lado img,.tt-troca .tt-lado img{max-height:calc(52dvh - 90px)}
+  .tt-troca{gap:var(--space-3)}
+  .tt-troca__aba{padding:4px 10px;font-size:var(--size-xs)}
+  .tt-troca__pedido{font-size:var(--size-xs);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .tt-solto{gap:var(--space-3)}
+  .tt-baralho,.tt-memoria{max-width:min(420px,calc((58dvh - 60px) * 1.4))}
+  .tt-baralho{gap:var(--space-2)}
+  .tt-memoria__grade{gap:var(--space-2)}
+  .tt-fluxo__arte{max-height:150px}
+  .tt-fluxo__arte--baixa{max-height:110px}
+  .tt-troca .tt-arte img{max-height:calc(52dvh - 90px)}
+  .tt-fluxo__pedido{width:96%}
+  .tt-fluxo__kit{grid-template-columns:minmax(0,1fr) 64px}
+  .tt-fluxo__kit img{width:64px}
+}

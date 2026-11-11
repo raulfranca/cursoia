@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Criar uma habilidade de bilhete · Inteligência Artificial para Educadores</title>
+<meta name="description" content="Tutorial guiado: guarde no Gemini o jeito de escrever o bilhete da agenda e chame a habilidade com @ sempre que tiver um recado.">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Criar uma habilidade de bilhete">
+<meta property="og:description" content="Tutorial guiado: guarde no Gemini o jeito de escrever o bilhete da agenda e chame a habilidade com @ sempre que tiver um recado.">
+<meta property="og:url" content="https://raulfranca.github.io/cursoia/t7/bilhete-tutorial.html">
+<meta property="og:image" content="https://raulfranca.github.io/cursoia/assets/ilustracoes/og-curso-ia.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Caveat:wght@400;700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS6YNMGLZ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GS6YNMGLZ9');
+</script>
+
+<link rel="stylesheet" href="../assets/artigos.css">
+<script src="../assets/tutoriais.js" defer></script>
+
+<body class="pg-tutorial">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+  <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M3 12h.01"/><path d="M3 18h.01"/><path d="M3 6h.01"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M8 6h13"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
+  <symbol id="i-paperclip" viewBox="0 0 24 24"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+</svg>
+
+<header class="pg-header">
+  <div class="pg-header__in">
+    <div class="tt-marca">
+      <a class="iap-btn iap-btn--quieto tt-lista" href="./"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-left"/></svg>Tutoriais</a>
+      <a class="pg-wordmark" href="../">Inteligência Artificial para Educadores</a>
+    </div>
+    <div class="tt-topo">
+      <div class="tt-progresso" aria-hidden="true"></div>
+      <span class="tt-contagem" aria-live="polite"></span>
+    </div>
+  </div>
+</header>
+
+<main class="tt-palco">
+  <!-- 0. Capa -->
+  <section class="tt-passo tt-capa" data-passo>
+    <div class="tt-texto">
+      <span class="iap-eyebrow">Tópico 7 · Crie uma habilidade para tarefas que se repetem</span>
+      <h1 class="tt-titulo">Criar uma habilidade de bilhete</h1>
+      <p class="tt-capa__lead">Quando você pede a mesma coisa toda semana, guarde o pedido numa habilidade do Gemini. Depois, é só chamar com @ e dizer o que muda</p>
+      <ul class="tt-capa__meta">
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-list"/></svg><span><b>8</b> passos</span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-clock"/></svg><span><b>6</b> minutos</span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-shield"/></svg><span>Gemini da <b>conta institucional</b></span></li>
+      </ul>
+      <button class="iap-btn iap-btn--lg iap-btn--ink" type="button" data-ir="1">Começar <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+    </div>
+    <div class="tt-visual">
+      <div class="tt-fluxo" role="img" aria-label="O recado falado pela professora, enviado com a habilidade bilhete, vira um bilhete curto para a agenda">
+        <p class="tt-fluxo__pedido"><b>@bilhete</b>é… lembrar que sexta-feira tem o passeio no horto, as crianças têm que vir de tênis e boné…</p>
+        <span class="tt-fluxo__passa"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-down"/></svg>a habilidade já sabe como escrever</span>
+        <div class="tt-fluxo__registro">
+          <p>Senhores pais ou responsáveis,</p>
+          <p>Lembramos que nesta sexta-feira teremos nosso passeio no Horto. As crianças devem vir de tênis e boné…</p>
+          <p>Atenciosamente, Prof.ª Márcia</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. Conceito -->
+  <section class="tt-passo" data-passo data-ao-entrar="comparar">
+    <div class="tt-visual tt-visual--comparar">
+      <div class="tt-troca">
+        <div class="tt-troca__abas" role="tablist">
+          <button class="tt-troca__aba" type="button" role="tab">Sem habilidade</button>
+          <button class="tt-troca__aba" type="button" role="tab">Com habilidade</button>
+        </div>
+        <div class="tt-troca__painel" role="tabpanel">
+          <div class="tt-envio" role="img" aria-label="Mensagem sem habilidade: o pedido inteiro de como escrever o bilhete e o recado do dia">
+            <div class="tt-envio__item">
+              <p class="tt-envio__texto">Escreva um bilhete para a agenda das famílias. Comece com "Senhores pais ou responsáveis", no máximo 5 linhas, linguagem simples, sem nome de criança, assinado Prof.ª Márcia…</p>
+              <span class="tt-envio__como">repetir toda vez</span>
+            </div>
+            <div class="tt-envio__item">
+              <p class="tt-envio__texto">é… lembrar que sexta-feira tem o passeio no horto…</p>
+              <span class="tt-envio__como">o recado</span>
+            </div>
+            <div class="tt-envio__barra">
+              <svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg>
+              <span class="tt-envio__enviar"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-up"/></svg></span>
+            </div>
+          </div>
+        </div>
+        <div class="tt-troca__painel" role="tabpanel">
+          <div class="tt-envio" role="img" aria-label="Mensagem com habilidade: o nome da habilidade chamado com arroba e o recado do dia">
+            <div class="tt-envio__item">
+              <p class="tt-envio__nome">@bilhete</p>
+              <span class="tt-envio__como">chamar a habilidade</span>
+            </div>
+            <div class="tt-envio__item">
+              <p class="tt-envio__texto">é… lembrar que sexta-feira tem o passeio no horto…</p>
+              <span class="tt-envio__como">o recado</span>
+            </div>
+            <div class="tt-envio__barra">
+              <svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg>
+              <span class="tt-envio__enviar"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-up"/></svg></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 1</span>
+      <h2 class="tt-titulo">Pare de repetir o pedido</h2>
+      <ul class="tt-dicas">
+        <li><span><strong>Interativo:</strong> toque nos botões para comparar as duas mensagens.</span></li>
+        <li><span>Todo bilhete pede o mesmo cuidado: o jeito de começar, o tamanho, o tom, a assinatura. Sem habilidade, você <strong>escreve isso toda vez</strong>.</span></li>
+        <li><span>Uma <strong>habilidade</strong> guarda esse pedido no Gemini. Você chama com <strong>@</strong> e escreve só o recado do dia.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 2. Começar -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/plano-2-criar.webp" width="720" height="200" alt="Página Habilidades do Gemini com o menu do botão Criar aberto: Criar com o Gemini, Criar manualmente e Enviar"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 2</span>
+      <h2 class="tt-titulo">Comece uma habilidade</h2>
+      <ul class="tt-dicas">
+        <li><span>No Gemini da <strong>conta @educa</strong>, clique em <strong>Personalizar</strong>, no menu à esquerda, e depois na aba <strong>Habilidades</strong>.</span></li>
+        <li><span>Clique em <strong>Criar</strong> e escolha <strong>Criar manualmente</strong>. Abre um formulário com três campos.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3. Nome e descrição -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <div class="pg-prompt">
+        <span class="pg-prompt__rotulo">Descrição</span>
+        <p data-instrucao>Use quando eu passar um recado para a agenda das famílias. Escreve um bilhete curto, simples e cordial.</p>
+        <button class="iap-btn iap-btn--md iap-btn--quieto tt-copiar" type="button" data-copiar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-copy"/></svg><span>Copiar instrução</span></button>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 3</span>
+      <h2 class="tt-titulo">Dê nome e descrição</h2>
+      <ul class="tt-dicas">
+        <li><span>Em <strong>Nome</strong>, digite <strong>Bilhete</strong>. O Gemini troca para <strong>bilhete</strong>, com letra minúscula. É esse o nome que você vai chamar com @.</span></li>
+        <li><span>Em <strong>Descrição</strong>, cole o texto ao lado. Ela diz ao Gemini <strong>para que serve</strong> a habilidade.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 4. Instrução -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <div class="pg-prompt pg-prompt--longo">
+        <span class="pg-prompt__rotulo">Instruções</span>
+<p data-instrucao>Escreva um bilhete para a agenda das famílias a partir do recado que eu passar.
+Comece com "Senhores pais ou responsáveis,".
+Use no máximo 5 linhas, em linguagem simples e cordial.
+Não use o nome de nenhuma criança e não acrescente nada que eu não disse.
+Termine com "Atenciosamente, <mark>Prof.ª Márcia</mark>".</p>
+        <button class="iap-btn iap-btn--md iap-btn--quieto tt-copiar" type="button" data-copiar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-copy"/></svg><span>Copiar instrução</span></button>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 4</span>
+      <h2 class="tt-titulo">Escreva a instrução</h2>
+      <ul class="tt-dicas">
+        <li><span>Copie o texto ao lado e cole em <strong>Instruções</strong>. É o pedido que você repetiria a cada bilhete, escrito uma vez só.</span></li>
+        <li><span>Troque <mark>Prof.ª Márcia</mark> pelo seu nome.</span></li>
+        <li><span>Quer outro jeito de começar ou de assinar? Mude a linha. A habilidade faz do seu jeito.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 5. Criar -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/hab-bilhete-1-form.webp" width="716" height="450" alt="Formulário da habilidade preenchido: nome bilhete, a descrição e as cinco linhas da instrução, com o botão Criar no alto"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 5</span>
+      <h2 class="tt-titulo">Crie a habilidade</h2>
+      <ul class="tt-dicas">
+        <li><span>Confira os três campos e clique em <strong>Criar</strong>, no alto.</span></li>
+        <li><span>A habilidade aparece em <strong>Instalado</strong>, na página Habilidades. Ela fica guardada na sua conta, pronta para qualquer conversa.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6. Chamar -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/hab-bilhete-2-arroba.webp" width="664" height="192" alt="Caixa de pedido do Gemini com @bi digitado e o menu Habilidades mostrando bilhete"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 6</span>
+      <h2 class="tt-titulo">Chame com @</h2>
+      <ul class="tt-dicas">
+        <li><span>Abra uma <strong>conversa nova</strong> e digite <strong>@</strong> na caixa de pedido. Se digitar <strong>@bi</strong>, a lista mostra só a sua habilidade.</span></li>
+        <li><span>Clique em <strong>bilhete</strong>. Depois, fale o recado pelo <strong>microfone</strong>, do jeito que contaria a uma colega, e envie.</span></li>
+      </ul>
+      <p class="tt-aviso tt-aviso--alerta">A resposta ignorou a sua instrução? Logo depois de criada, a habilidade pode levar um minuto para funcionar. Espere um pouco e tente de novo numa conversa nova.</p>
+    </div>
+  </section>
+
+  <!-- 7. Bilhete -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/hab-bilhete-3-resposta.webp" width="720" height="390" alt="Recado falado sobre o passeio ao horto e, abaixo, o bilhete do Gemini: Senhores pais ou responsáveis, três linhas sobre tênis, boné, água e autorização, e Atenciosamente, Prof.ª Márcia"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 7</span>
+      <h2 class="tt-titulo">Leia o bilhete</h2>
+      <ul class="tt-dicas">
+        <li><span>O recado falado virou um bilhete com o <strong>começo, o tamanho e a assinatura</strong> da instrução.</span></li>
+        <li><span>Confira se está tudo lá: dia, o que levar, prazo da autorização. Leia antes de copiar para a agenda.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 8. De novo -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/hab-bilhete-4-outro.webp" width="720" height="372" alt="Outro recado, sobre a reunião de pais de quinta às sete da noite, e o bilhete no mesmo formato, assinado pela Prof.ª Márcia"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 8</span>
+      <h2 class="tt-titulo">Use de novo amanhã</h2>
+      <ul class="tt-dicas">
+        <li><span>Outro dia, outro recado: <strong>@bilhete</strong> e a reunião de pais. O bilhete sai no mesmo formato, sem você explicar nada.</span></li>
+        <li><span>Saiu algo diferente do que queria? Em <strong>Personalizar › Habilidades</strong>, clique nos <strong>três pontos</strong> da habilidade, em <strong>Editar manualmente</strong>, e ajuste uma linha da instrução.</span></li>
+        <li><span>Pense no que você pede ao Gemini toda semana. Cada pedido repetido pode virar uma habilidade.</span></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<nav class="tt-rodape" aria-label="Navegação do tutorial">
+  <div class="tt-rodape__in">
+    <span class="tt-atalho">Use <kbd aria-label="seta para a esquerda">←</kbd><kbd aria-label="seta para a direita">→</kbd> no teclado</span>
+    <button class="iap-btn iap-btn--md iap-btn--quieto" type="button" data-voltar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-left"/></svg>Voltar</button>
+    <p class="tt-seguir" data-seguir aria-hidden="true"></p>
+    <button class="iap-btn iap-btn--md iap-btn--primary" type="button" data-avancar>Próximo <svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+    <a class="iap-btn iap-btn--md iap-btn--ink" href="./" data-concluir hidden>Concluir <svg class="ico ico--sm" aria-hidden="true"><use href="#i-check"/></svg></a>
+  </div>
+</nav>
+
+<script>
+(function(){
+  // Capturas e respostas: execução real no Gemini da conta @educa (modo Raciocínio), em 10/11/2026.
+  // Nas duas primeiras tentativas, logo depois de criar, a habilidade foi ignorada; daí o aviso do passo 6.
+
+  function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;"); }
+
+  var passos = [].slice.call(document.querySelectorAll("[data-passo]"));
+  var barra = document.querySelector(".tt-progresso");
+  barra.innerHTML = passos.map(function(){ return "<i></i>"; }).join("");
+  var pontos = [].slice.call(barra.children);
+  var contagem = document.querySelector(".tt-contagem");
+  var btVoltar = document.querySelector("[data-voltar]");
+  var btAvancar = document.querySelector("[data-avancar]");
+  var btConcluir = document.querySelector("[data-concluir]");
+  var seguir = document.querySelector("[data-seguir]");
+  var atual = -1;
+
+  function ir(i){
+    i = Math.max(0, Math.min(passos.length-1, i));
+    if (i === atual) return;
+    passos.forEach(function(p,k){ p.classList.toggle("ativo", k===i); p.hidden = k!==i; });
+    pontos.forEach(function(p,k){ p.className = k<i ? "feito" : (k===i ? "agora" : ""); });
+    contagem.textContent = i===0 ? "" : "Passo "+i+" de "+(passos.length-1);
+    btVoltar.disabled = i===0;
+    btAvancar.hidden = i===passos.length-1;
+    btConcluir.hidden = !btAvancar.hidden;
+    var prox = passos[i+1] && passos[i+1].querySelector(".tt-titulo");
+    seguir.innerHTML = prox ? "<span>A seguir</span><b>"+esc(prox.textContent)+"</b>" : "";
+    atual = i;
+    try { history.replaceState(null, "", "#passo-"+i); } catch(e){}
+    var acao = passos[i].getAttribute("data-ao-entrar");
+    if (acao === "comparar") passos[i].querySelectorAll(".tt-troca").forEach(function(t){ t.abrir(0); });
+  }
+
+  btVoltar.addEventListener("click", function(){ ir(atual-1); });
+  btAvancar.addEventListener("click", function(){ ir(atual+1); });
+  document.querySelectorAll("[data-ir]").forEach(function(b){
+    b.addEventListener("click", function(){ ir(+b.getAttribute("data-ir")); });
+  });
+  document.addEventListener("keydown", function(e){
+    if (e.target.closest && e.target.closest("input,textarea")) return;
+    if (e.key === "ArrowRight") ir(atual+1);
+    if (e.key === "ArrowLeft") ir(atual-1);
+  });
+
+  // Copiar instrução: cada botão copia o texto do seu próprio quadro
+  document.querySelectorAll("[data-copiar]").forEach(function(bt){
+    bt.addEventListener("click", function(){
+      var texto = bt.closest(".pg-prompt").querySelector("[data-instrucao]").textContent;
+      var rotulo = bt.querySelector("span");
+      function ok(){ rotulo.textContent = "Copiado"; setTimeout(function(){ rotulo.textContent = "Copiar instrução"; }, 2000); }
+      try {
+        navigator.clipboard.writeText(texto).then(ok, function(){ rotulo.textContent = "Selecione e copie"; });
+      } catch(e){ rotulo.textContent = "Selecione e copie"; }
+    });
+  });
+
+  // Abas de comparação: um botão por versão, um painel visível por vez
+  document.querySelectorAll(".tt-troca").forEach(function(t){
+    var abas = [].slice.call(t.querySelectorAll(".tt-troca__aba"));
+    var paineis = [].slice.call(t.querySelectorAll(".tt-troca__painel"));
+    t.abrir = function(n){
+      abas.forEach(function(a,k){ a.setAttribute("aria-selected", k===n); });
+      paineis.forEach(function(p,k){ p.hidden = k!==n; });
+    };
+    abas.forEach(function(a,k){ a.addEventListener("click", function(){ t.abrir(k); }); });
+    t.abrir(0);
+  });
+
+  var inicio = parseInt((location.hash.match(/passo-(\d+)/) || [])[1], 10);
+  ir(isNaN(inicio) ? 0 : inicio);
+})();
+</script>
+
+</body>
+</html>

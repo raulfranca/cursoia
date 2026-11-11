@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Editar uma imagem · Inteligência Artificial para Educadores</title>
+<meta name="description" content="Tutorial guiado: envie uma imagem ao Gemini e descreva o que mudar e o que manter, para trocar o cenário, ajustar cores ou tirar o fundo.">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Editar uma imagem">
+<meta property="og:description" content="Tutorial guiado: envie uma imagem ao Gemini e descreva o que mudar e o que manter, para trocar o cenário, ajustar cores ou tirar o fundo.">
+<meta property="og:url" content="https://raulfranca.github.io/cursoia/t5/editar-tutorial.html">
+<meta property="og:image" content="https://raulfranca.github.io/cursoia/assets/ilustracoes/og-curso-ia.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Caveat:wght@400;700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS6YNMGLZ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GS6YNMGLZ9');
+</script>
+
+<link rel="stylesheet" href="../assets/artigos.css">
+<script src="../assets/tutoriais.js" defer></script>
+
+<body class="pg-tutorial">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+  <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M3 12h.01"/><path d="M3 18h.01"/><path d="M3 6h.01"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M8 6h13"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
+</svg>
+
+<header class="pg-header">
+  <div class="pg-header__in">
+    <div class="tt-marca">
+      <a class="iap-btn iap-btn--quieto tt-lista" href="./"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-left"/></svg>Tutoriais</a>
+      <a class="pg-wordmark" href="../">Inteligência Artificial para Educadores</a>
+    </div>
+    <div class="tt-topo">
+      <div class="tt-progresso" aria-hidden="true"></div>
+      <span class="tt-contagem" aria-live="polite"></span>
+    </div>
+  </div>
+</header>
+
+<main class="tt-palco">
+
+  <!-- 0. Capa -->
+  <section class="tt-passo tt-capa" data-passo>
+    <div class="tt-texto">
+      <span class="iap-eyebrow">Tópico 5 · Criar e editar imagens</span>
+      <h1 class="tt-titulo">Editar uma imagem</h1>
+      <p class="tt-capa__lead">Envie uma imagem ao Gemini e descreva o que deve mudar. No exemplo, vamos mexer nas cartas do jogo da memória</p>
+      <ul class="tt-capa__meta">
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-list"/></svg><span><b>6</b> passos</span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-clock"/></svg><span><b>3</b> minutos</span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-shield"/></svg><span>Gemini da <b>conta institucional</b></span></li>
+      </ul>
+      <button class="iap-btn iap-btn--lg iap-btn--ink" type="button" data-ir="1">Começar <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+    </div>
+    <div class="tt-visual">
+      <div class="tt-fluxo tt-fluxo--img" role="img" aria-label="A carta da capivara e o pedido para colocá-la numa lagoa voltam do Gemini como a mesma capivara dentro da água">
+        <img class="tt-fluxo__arte tt-fluxo__arte--baixa" src="../assets/capturas/padrao-7-carta-capivara.webp" width="640" height="640" alt="">
+        <p class="tt-fluxo__pedido"><b>Você pede</b>Coloque esta capivara dentro de uma lagoa. Mantenha o desenho da capivara igual.</p>
+        <span class="tt-fluxo__passa"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-down"/></svg>o Gemini edita</span>
+        <img class="tt-fluxo__arte tt-fluxo__arte--centro tt-fluxo__arte--baixa" src="../assets/capturas/editar-3-capivara-lagoa.webp" width="640" height="640" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. Anexar -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/editar-1-anexo.webp" width="675" height="295" alt="Caixa do Gemini com a carta da capivara anexada em miniatura e o pedido para colocá-la dentro de uma lagoa"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 1</span>
+      <h2 class="tt-titulo">Anexe a imagem</h2>
+      <ul class="tt-dicas">
+        <li><span>Abra uma conversa nova e anexe a imagem pelo <strong>+</strong>, em Enviar arquivos.</span></li>
+        <li><span>Pode ser uma imagem feita pela IA ou outra que você tenha: um desenho escaneado, a foto de um cartaz.</span></li>
+        <li><span>Não precisa ativar Criar imagem: o pedido de mudança já deixa claro que você quer uma imagem de volta.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 2. Pedido -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <div class="pg-prompt">
+        <span class="pg-prompt__rotulo">Comando (Prompt)</span>
+        <p data-instrucao><mark>Coloque esta capivara dentro de uma lagoa, com a água até a barriga e algumas plantas aquáticas em volta.</mark> Mantenha o desenho da capivara, o chapéu e o estilo exatamente iguais.</p>
+        <button class="iap-btn iap-btn--md iap-btn--quieto tt-copiar" type="button" data-copiar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-copy"/></svg><span>Copiar instrução</span></button>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 2</span>
+      <h2 class="tt-titulo">Diga o que mudar e o que manter</h2>
+      <ul class="tt-dicas">
+        <li><span>Descreva a mudança com detalhes, como no primeiro tutorial. É o trecho grifado.</span></li>
+        <li><span>E diga também <strong>o que deve ficar igual</strong>. Sem isso, a IA pode redesenhar tudo.</span></li>
+        <li><span>Envie pela <strong>seta</strong>.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3. Resultado -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot pg-shot--media"><img src="../assets/capturas/editar-2-resultado.webp" width="750" height="730" alt="Resposta do Gemini com a capivara de chapéu vermelho dentro de uma lagoa, com vitórias-régias e taboas em volta"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 3</span>
+      <h2 class="tt-titulo">Veja o resultado</h2>
+      <ul class="tt-dicas">
+        <li><span>A capivara entrou na lagoa, e o desenho dela continuou o mesmo: chapéu, cor, expressão.</span></li>
+        <li><span>A pose mudou um pouco, porque agora ela está dentro da água.</span></li>
+        <li><span>Se algo mudou sem você pedir, diga na mesma conversa o que deve voltar ao que era.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 4. Cor -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <div class="tt-lado">
+        <figure><span class="tt-lado__rotulo">Antes</span><img src="../assets/capturas/padrao-6-carta-arara.webp" width="640" height="640" alt="Arara em azul vivo, de chapéu vermelho"></figure>
+        <figure><span class="tt-lado__rotulo">Depois</span><img src="../assets/capturas/editar-4-arara-terrosa.webp" width="640" height="640" alt="A mesma arara em azul acinzentado, de chapéu vermelho"></figure>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 4</span>
+      <h2 class="tt-titulo">Ajuste uma cor</h2>
+      <ul class="tt-dicas">
+        <li><span>Lembra da arara azul vivo, que fugiu do padrão do baralho?</span></li>
+        <li><span>Pedimos: <strong>"Deixe as cores desta arara mais terrosas e apagadas, combinando com as outras cartas do baralho. Não mude mais nada."</strong></span></li>
+        <li><span>Ela ficou num azul acinzentado, que conversa com as outras cartas.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 5. Fundo -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <div class="tt-lado">
+        <figure><span class="tt-lado__rotulo">Antes</span><img src="../assets/capturas/padrao-4-carta-onca.webp" width="640" height="640" alt="Carta da onça sobre papel creme, com chão e galhinhos"></figure>
+        <figure><span class="tt-lado__rotulo">Depois</span><img src="../assets/capturas/editar-5-onca-sem-fundo.webp" width="640" height="640" alt="A mesma onça sozinha sobre fundo branco"></figure>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 5</span>
+      <h2 class="tt-titulo">Tire o fundo</h2>
+      <ul class="tt-dicas">
+        <li><span>Pedimos: <strong>"Tire o fundo desta imagem: deixe a onça sozinha sobre um fundo totalmente branco, sem chão, sem galhinhos e sem a textura de papel. Não mude nada na onça."</strong></span></li>
+        <li><span>Com fundo branco, a figura fica fácil de recortar e colar num cartaz, numa atividade ou num slide.</span></li>
+        <li><span>O fundo vem <strong>branco</strong>, não transparente.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6. Comparar -->
+  <section class="tt-passo" data-passo data-ao-entrar="comparar">
+    <div class="tt-visual tt-visual--comparar">
+      <div class="tt-troca">
+        <div class="tt-troca__abas" role="tablist">
+          <button class="tt-troca__aba" type="button" role="tab">Mudar o cenário</button>
+          <button class="tt-troca__aba" type="button" role="tab">Ajustar a cor</button>
+          <button class="tt-troca__aba" type="button" role="tab">Tirar o fundo</button>
+        </div>
+        <div class="tt-troca__painel" role="tabpanel">
+          <div class="tt-lado">
+            <figure><span class="tt-lado__rotulo">Antes</span><img src="../assets/capturas/padrao-7-carta-capivara.webp" width="640" height="640" alt="Capivara sentada sobre papel creme"></figure>
+            <figure><span class="tt-lado__rotulo">Depois</span><img src="../assets/capturas/editar-3-capivara-lagoa.webp" width="640" height="640" alt="Capivara dentro de uma lagoa"></figure>
+          </div>
+        </div>
+        <div class="tt-troca__painel" role="tabpanel">
+          <div class="tt-lado">
+            <figure><span class="tt-lado__rotulo">Antes</span><img src="../assets/capturas/padrao-6-carta-arara.webp" width="640" height="640" alt="Arara em azul vivo"></figure>
+            <figure><span class="tt-lado__rotulo">Depois</span><img src="../assets/capturas/editar-4-arara-terrosa.webp" width="640" height="640" alt="Arara em azul acinzentado"></figure>
+          </div>
+        </div>
+        <div class="tt-troca__painel" role="tabpanel">
+          <div class="tt-lado">
+            <figure><span class="tt-lado__rotulo">Antes</span><img src="../assets/capturas/padrao-4-carta-onca.webp" width="640" height="640" alt="Onça sobre papel creme"></figure>
+            <figure><span class="tt-lado__rotulo">Depois</span><img src="../assets/capturas/editar-5-onca-sem-fundo.webp" width="640" height="640" alt="Onça sobre fundo branco"></figure>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 6</span>
+      <h2 class="tt-titulo">Compare as edições</h2>
+      <ul class="tt-dicas">
+        <li><span><strong>Interativo:</strong> toque nos botões para ver cada edição.</span></li>
+        <li><span>Você editou imagens só descrevendo a mudança, sem programa de edição.</span></li>
+        <li><span>A regra de ouro: diga <strong>o que mudar</strong> e <strong>o que manter</strong>.</span></li>
+        <li><span>Confira com atenção: a IA pode alterar pequenos detalhes sem avisar.</span></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<nav class="tt-rodape" aria-label="Navegação do tutorial">
+  <div class="tt-rodape__in">
+    <span class="tt-atalho">Use <kbd aria-label="seta para a esquerda">←</kbd><kbd aria-label="seta para a direita">→</kbd> no teclado</span>
+    <button class="iap-btn iap-btn--md iap-btn--quieto" type="button" data-voltar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-left"/></svg>Voltar</button>
+    <p class="tt-seguir" data-seguir aria-hidden="true"></p>
+    <button class="iap-btn iap-btn--md iap-btn--primary" type="button" data-avancar>Próximo <svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+    <a class="iap-btn iap-btn--md iap-btn--ink" href="./" data-concluir hidden>Concluir <svg class="ico ico--sm" aria-hidden="true"><use href="#i-check"/></svg></a>
+  </div>
+</nav>
+
+<script>
+(function(){
+  // Imagens e capturas: execução real no Gemini da conta @educa, em 10/11/2026
+
+  function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;"); }
+
+  var passos = [].slice.call(document.querySelectorAll("[data-passo]"));
+  var barra = document.querySelector(".tt-progresso");
+  barra.innerHTML = passos.map(function(){ return "<i></i>"; }).join("");
+  var pontos = [].slice.call(barra.children);
+  var contagem = document.querySelector(".tt-contagem");
+  var btVoltar = document.querySelector("[data-voltar]");
+  var btAvancar = document.querySelector("[data-avancar]");
+  var btConcluir = document.querySelector("[data-concluir]");
+  var seguir = document.querySelector("[data-seguir]");
+  var atual = -1;
+
+  function ir(i){
+    i = Math.max(0, Math.min(passos.length-1, i));
+    if (i === atual) return;
+    passos.forEach(function(p,k){ p.classList.toggle("ativo", k===i); p.hidden = k!==i; });
+    pontos.forEach(function(p,k){ p.className = k<i ? "feito" : (k===i ? "agora" : ""); });
+    contagem.textContent = i===0 ? "" : "Passo "+i+" de "+(passos.length-1);
+    btVoltar.disabled = i===0;
+    btAvancar.hidden = i===passos.length-1;
+    btConcluir.hidden = !btAvancar.hidden;
+    var prox = passos[i+1] && passos[i+1].querySelector(".tt-titulo");
+    seguir.innerHTML = prox ? "<span>A seguir</span><b>"+esc(prox.textContent)+"</b>" : "";
+    atual = i;
+    try { history.replaceState(null, "", "#passo-"+i); } catch(e){}
+    var acao = passos[i].getAttribute("data-ao-entrar");
+    if (acao === "comparar") passos[i].querySelectorAll(".tt-troca").forEach(function(t){ t.abrir(0); });
+    if (acao === "memoria" && window.novoJogo) window.novoJogo();
+  }
+
+  btVoltar.addEventListener("click", function(){ ir(atual-1); });
+  btAvancar.addEventListener("click", function(){ ir(atual+1); });
+  document.querySelectorAll("[data-ir]").forEach(function(b){
+    b.addEventListener("click", function(){ ir(+b.getAttribute("data-ir")); });
+  });
+  document.addEventListener("keydown", function(e){
+    if (e.target.closest && e.target.closest("input,textarea")) return;
+    if (e.key === "ArrowRight") ir(atual+1);
+    if (e.key === "ArrowLeft") ir(atual-1);
+  });
+
+  // Copiar instrução: cada botão copia o comando do seu próprio quadro
+  document.querySelectorAll("[data-copiar]").forEach(function(bt){
+    bt.addEventListener("click", function(){
+      var texto = bt.closest(".pg-prompt").querySelector("[data-instrucao]").textContent;
+      var rotulo = bt.querySelector("span");
+      function ok(){ rotulo.textContent = "Copiado"; setTimeout(function(){ rotulo.textContent = "Copiar instrução"; }, 2000); }
+      try {
+        navigator.clipboard.writeText(texto).then(ok, function(){ rotulo.textContent = "Selecione e copie"; });
+      } catch(e){ rotulo.textContent = "Selecione e copie"; }
+    });
+  });
+
+  // Abas de comparação: um botão por versão, um painel visível por vez
+  document.querySelectorAll(".tt-troca").forEach(function(t){
+    var abas = [].slice.call(t.querySelectorAll(".tt-troca__aba"));
+    var paineis = [].slice.call(t.querySelectorAll(".tt-troca__painel"));
+    t.abrir = function(n){
+      abas.forEach(function(a,k){ a.setAttribute("aria-selected", k===n); });
+      paineis.forEach(function(p,k){ p.hidden = k!==n; });
+    };
+    abas.forEach(function(a,k){ a.addEventListener("click", function(){ t.abrir(k); }); });
+    t.abrir(0);
+  });
+
+  var inicio = parseInt((location.hash.match(/passo-(\d+)/) || [])[1], 10);
+  ir(isNaN(inicio) ? 0 : inicio);
+})();
+</script>
+
+</body>
+</html>

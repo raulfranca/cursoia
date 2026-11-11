@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dar estilo às imagens · Inteligência Artificial para Educadores</title>
+<meta name="description" content="Tutorial guiado: mostre ao Gemini uma ilustração de referência, peça a análise do estilo e gere novas imagens nesse estilo.">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Dar estilo às imagens">
+<meta property="og:description" content="Tutorial guiado: mostre ao Gemini uma ilustração de referência, peça a análise do estilo e gere novas imagens nesse estilo.">
+<meta property="og:url" content="https://raulfranca.github.io/cursoia/t5/estilo-tutorial.html">
+<meta property="og:image" content="https://raulfranca.github.io/cursoia/assets/ilustracoes/og-curso-ia.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Caveat:wght@400;700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS6YNMGLZ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GS6YNMGLZ9');
+</script>
+
+<link rel="stylesheet" href="../assets/artigos.css">
+<script src="../assets/tutoriais.js" defer></script>
+
+<body class="pg-tutorial">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+  <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M3 12h.01"/><path d="M3 18h.01"/><path d="M3 6h.01"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M8 6h13"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
+</svg>
+
+<header class="pg-header">
+  <div class="pg-header__in">
+    <div class="tt-marca">
+      <a class="iap-btn iap-btn--quieto tt-lista" href="./"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-left"/></svg>Tutoriais</a>
+      <a class="pg-wordmark" href="../">Inteligência Artificial para Educadores</a>
+    </div>
+    <div class="tt-topo">
+      <div class="tt-progresso" aria-hidden="true"></div>
+      <span class="tt-contagem" aria-live="polite"></span>
+    </div>
+  </div>
+</header>
+
+<main class="tt-palco">
+
+  <!-- 0. Capa -->
+  <section class="tt-passo tt-capa" data-passo>
+    <div class="tt-texto">
+      <span class="iap-eyebrow">Tópico 5 · Criar e editar imagens</span>
+      <h1 class="tt-titulo">Dar estilo às imagens</h1>
+      <p class="tt-capa__lead">Mostre ao Gemini uma ilustração de que você gosta e peça imagens no mesmo estilo. No exemplo, a onça ganha o traço de um livro infantil</p>
+      <ul class="tt-capa__meta">
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-list"/></svg><span><b>9</b> passos</span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-clock"/></svg><span><b>5</b> minutos</span></li>
+        <li><svg class="ico ico--sm" aria-hidden="true"><use href="#i-shield"/></svg><span>Gemini da <b>conta institucional</b></span></li>
+      </ul>
+      <button class="iap-btn iap-btn--lg iap-btn--ink" type="button" data-ir="1">Começar <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+    </div>
+    <div class="tt-visual">
+      <div class="tt-fluxo tt-fluxo--img" role="img" aria-label="Uma ilustração de referência, um urso de livro infantil, vira uma descrição de estilo, que gera uma onça-pintada desenhada no mesmo estilo">
+        <img class="tt-fluxo__arte tt-fluxo__arte--baixa" src="../assets/capturas/estilo-0-referencia.webp" width="640" height="448" alt="">
+        <span class="tt-fluxo__passa"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-down"/></svg>o Gemini descreve o estilo</span>
+        <p class="tt-fluxo__pedido"><b>Prompt de estilo</b>Textura de aquarela com detalhes a lápis, paleta terrosa, fundo de papel creme, grande espaço vazio…</p>
+        <span class="tt-fluxo__passa"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-down"/></svg>e desenha outro animal</span>
+        <img class="tt-fluxo__arte tt-fluxo__arte--centro tt-fluxo__arte--baixa" src="../assets/capturas/estilo-7-onca.webp" width="640" height="448" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. Genérico -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="tt-arte"><img src="../assets/capturas/imagem-7-onca.webp" width="478" height="640" alt="Onça-pintada sentada, de frente, sorrindo, com contorno preto grosso e cores alegres sobre fundo branco"><figcaption>A onça do tutorial anterior: pedido sem referência de estilo</figcaption></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 1</span>
+      <h2 class="tt-titulo">Pedido genérico, imagem genérica</h2>
+      <ul class="tt-dicas">
+        <li><span>Sem referência, a IA desenha uma espécie de média de tudo o que já viu.</span></li>
+        <li><span>Por isso tantas imagens de IA se parecem: olhos grandes, contorno grosso, cores chapadas.</span></li>
+        <li><span>Descrever um estilo em palavras é difícil. É mais fácil <strong>mostrar um exemplo</strong>.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 2. Referência -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="tt-arte"><img src="../assets/capturas/estilo-0-referencia.webp" width="640" height="448" alt="Ilustração em aquarela de um urso marrom sentado no chão, olhando para o lado, com um pequeno chapéu vermelho pontudo, sobre fundo creme quase vazio"><figcaption>Jon Klassen, <i>I Want My Hat Back</i> (2011)</figcaption></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 2</span>
+      <h2 class="tt-titulo">Escolha uma referência</h2>
+      <ul class="tt-dicas">
+        <li><span>Pode ser a página de um livro, um cartaz, um desenho de que você goste.</span></li>
+        <li><span>No exemplo, uma ilustração do canadense <strong>Jon Klassen</strong>, autor de livros infantis premiados.</span></li>
+        <li><span>Salve a imagem no computador: clique nela com o botão direito e escolha <strong>Salvar imagem como</strong>.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3. Anexar -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/estilo-1-menu.webp" width="680" height="410" alt="Menu aberto pelo botão mais, com Enviar arquivos no topo da lista"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 3</span>
+      <h2 class="tt-titulo">Anexe a referência</h2>
+      <ul class="tt-dicas">
+        <li><span>Abra uma conversa nova no Gemini.</span></li>
+        <li><span>Clique no <strong>+</strong> e escolha <strong>Enviar arquivos</strong>, como no tutorial do recado na agenda, no tópico 3.</span></li>
+        <li><span>Escolha a imagem salva. Ela aparece em miniatura dentro da caixa.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 4. Aviso -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot pg-shot--media"><img src="../assets/capturas/estilo-2-aviso.webp" width="540" height="260" alt="Aviso Criar conteúdo com base em imagens e arquivos: verifique se você tem os direitos necessários sobre as imagens ou os arquivos que enviar, com os botões Cancelar e Concordo"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 4</span>
+      <h2 class="tt-titulo">Leia o aviso</h2>
+      <ul class="tt-dicas">
+        <li><span>Na primeira imagem que você envia, o Gemini pede que você confirme ter direito sobre ela.</span></li>
+        <li><span>Ao clicar em <strong>Concordo</strong>, você assume a responsabilidade pelo uso. O aviso não volta a aparecer.</span></li>
+        <li><span>O estilo (traço, cores, textura) não tem proteção de direito autoral. A obra e os personagens, sim. Inspire-se no <strong>jeito de desenhar</strong>, sem copiar os personagens.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 5. Pedir a análise -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <div class="pg-prompt">
+        <span class="pg-prompt__rotulo">Comando (Prompt)</span>
+        <p data-instrucao>Analise o estilo desta ilustração de livro infantil: traço, formas, cores, textura, fundo, luz e a expressão do personagem. Depois, escreva um prompt que eu possa usar para criar novas ilustrações de animais exatamente nesse estilo.</p>
+        <button class="iap-btn iap-btn--md iap-btn--quieto tt-copiar" type="button" data-copiar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-copy"/></svg><span>Copiar instrução</span></button>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 5</span>
+      <h2 class="tt-titulo">Peça a análise do estilo</h2>
+      <ul class="tt-dicas">
+        <li><span>Em vez de pedir a imagem direto, peça primeiro que o Gemini <strong>descreva o estilo</strong> em palavras.</span></li>
+        <li><span>Diga o que observar: traço, formas, cores, textura, fundo, luz e expressão.</span></li>
+        <li><span>E peça um <strong>prompt</strong> pronto, o texto de comando para reaproveitar depois.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6. Análise -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/estilo-4-analise.webp" width="750" height="640" alt="Resposta do Gemini com a Análise Estilística da Ilustração em tópicos: traço, formas, cores, textura, fundo, luz e expressão do personagem"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 6</span>
+      <h2 class="tt-titulo">Leia a análise</h2>
+      <ul class="tt-dicas">
+        <li><span>O Gemini observa a imagem como um professor de artes.</span></li>
+        <li><span>Ele percebe detalhes difíceis de pôr em palavras, como o <strong>espaço vazio</strong> em volta do urso e o único ponto de cor forte, o chapéu.</span></li>
+        <li><span>Neste exemplo, ele até reconheceu o ilustrador.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 7. Prompt em português -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/estilo-5-portugues.webp" width="750" height="600" alt="Pedido Reescreva esse prompt em português, para eu usar aqui mesmo no Gemini, e a resposta com o prompt traduzido, que começa com Ilustração de livro infantil minimalista de [SUBSTITUIR PELO ANIMAL DESEJADO]"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 7</span>
+      <h2 class="tt-titulo">Peça o prompt em português</h2>
+      <ul class="tt-dicas">
+        <li><span>O primeiro prompt veio em inglês, pensado para outras ferramentas.</span></li>
+        <li><span>Basta pedir: <strong>"Reescreva esse prompt em português, para eu usar aqui mesmo no Gemini."</strong></span></li>
+        <li><span>Copie o texto e <strong>guarde num documento</strong>. Ele é a base do próximo tutorial.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 8. Gerar -->
+  <section class="tt-passo" data-passo>
+    <div class="tt-visual">
+      <figure class="pg-shot"><img src="../assets/capturas/estilo-6-resultado.webp" width="750" height="615" alt="Resposta do Gemini com a ilustração de uma onça-pintada em aquarela, sentada, olhando para o lado, com um chapéu vermelho pontudo, sobre fundo creme"></figure>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 8</span>
+      <h2 class="tt-titulo">Gere a imagem no estilo</h2>
+      <ul class="tt-dicas">
+        <li><span>Na mesma conversa, escreva: <strong>"Agora crie a imagem com esse prompt. O animal é uma onça-pintada."</strong></span></li>
+        <li><span>A onça vem em aquarela, sobre papel creme, com muito espaço vazio e o olhar de lado.</span></li>
+        <li><span>Repare no <strong>chapéu vermelho</strong>: o Gemini copiou também o ponto de cor da referência.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 9. Comparar -->
+  <section class="tt-passo" data-passo data-ao-entrar="comparar">
+    <div class="tt-visual tt-visual--comparar">
+      <div class="tt-troca">
+        <div class="tt-troca__abas" role="tablist">
+          <button class="tt-troca__aba" type="button" role="tab">Sem referência</button>
+          <button class="tt-troca__aba" type="button" role="tab">A referência</button>
+          <button class="tt-troca__aba" type="button" role="tab">Com o estilo</button>
+        </div>
+        <div class="tt-troca__painel" role="tabpanel">
+          <figure class="tt-arte"><img src="../assets/capturas/imagem-7-onca.webp" width="478" height="640" alt="Onça-pintada em desenho genérico, sorrindo, sobre fundo branco"></figure>
+          <p class="tt-troca__pedido"><b>Pedido</b>Estilo de livro infantil, com traço simples e cores alegres</p>
+        </div>
+        <div class="tt-troca__painel" role="tabpanel">
+          <figure class="tt-arte"><img src="../assets/capturas/estilo-0-referencia.webp" width="640" height="448" alt="Urso de chapéu vermelho em aquarela, de Jon Klassen"></figure>
+          <p class="tt-troca__pedido"><b>Referência</b>Jon Klassen, <i>I Want My Hat Back</i> (2011)</p>
+        </div>
+        <div class="tt-troca__painel" role="tabpanel">
+          <figure class="tt-arte"><img src="../assets/capturas/estilo-7-onca.webp" width="640" height="448" alt="Onça-pintada em aquarela, de chapéu vermelho, sobre fundo creme"></figure>
+          <p class="tt-troca__pedido"><b>Pedido</b>Ilustração de livro infantil minimalista. Textura de aquarela com detalhes a lápis grafite. Paleta terrosa, com um pequeno destaque de cor vibrante. Fundo de papel creme, grande espaço vazio…</p>
+        </div>
+      </div>
+    </div>
+    <div class="tt-texto">
+      <span class="tt-num">Passo 9</span>
+      <h2 class="tt-titulo">Compare as onças</h2>
+      <ul class="tt-dicas">
+        <li><span><strong>Interativo:</strong> toque nos botões para ver cada versão.</span></li>
+        <li><span>Você transformou uma imagem de que gosta num <strong>prompt de estilo</strong>, que pode usar quantas vezes quiser.</span></li>
+        <li><span>Funciona com qualquer estilo: aquarela, xilogravura, história em quadrinhos, desenho a lápis.</span></li>
+        <li><span>Confira o resultado: a IA pode copiar detalhes que você não pediu, como o chapéu.</span></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<nav class="tt-rodape" aria-label="Navegação do tutorial">
+  <div class="tt-rodape__in">
+    <span class="tt-atalho">Use <kbd aria-label="seta para a esquerda">←</kbd><kbd aria-label="seta para a direita">→</kbd> no teclado</span>
+    <button class="iap-btn iap-btn--md iap-btn--quieto" type="button" data-voltar><svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-left"/></svg>Voltar</button>
+    <p class="tt-seguir" data-seguir aria-hidden="true"></p>
+    <button class="iap-btn iap-btn--md iap-btn--primary" type="button" data-avancar>Próximo <svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+    <a class="iap-btn iap-btn--md iap-btn--ink" href="./" data-concluir hidden>Concluir <svg class="ico ico--sm" aria-hidden="true"><use href="#i-check"/></svg></a>
+  </div>
+</nav>
+
+<script>
+(function(){
+  // Imagens e capturas: execução real no Gemini da conta @educa, em 10/11/2026
+
+  function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;"); }
+
+  var passos = [].slice.call(document.querySelectorAll("[data-passo]"));
+  var barra = document.querySelector(".tt-progresso");
+  barra.innerHTML = passos.map(function(){ return "<i></i>"; }).join("");
+  var pontos = [].slice.call(barra.children);
+  var contagem = document.querySelector(".tt-contagem");
+  var btVoltar = document.querySelector("[data-voltar]");
+  var btAvancar = document.querySelector("[data-avancar]");
+  var btConcluir = document.querySelector("[data-concluir]");
+  var seguir = document.querySelector("[data-seguir]");
+  var atual = -1;
+
+  function ir(i){
+    i = Math.max(0, Math.min(passos.length-1, i));
+    if (i === atual) return;
+    passos.forEach(function(p,k){ p.classList.toggle("ativo", k===i); p.hidden = k!==i; });
+    pontos.forEach(function(p,k){ p.className = k<i ? "feito" : (k===i ? "agora" : ""); });
+    contagem.textContent = i===0 ? "" : "Passo "+i+" de "+(passos.length-1);
+    btVoltar.disabled = i===0;
+    btAvancar.hidden = i===passos.length-1;
+    btConcluir.hidden = !btAvancar.hidden;
+    var prox = passos[i+1] && passos[i+1].querySelector(".tt-titulo");
+    seguir.innerHTML = prox ? "<span>A seguir</span><b>"+esc(prox.textContent)+"</b>" : "";
+    atual = i;
+    try { history.replaceState(null, "", "#passo-"+i); } catch(e){}
+    var acao = passos[i].getAttribute("data-ao-entrar");
+    if (acao === "comparar") passos[i].querySelectorAll(".tt-troca").forEach(function(t){ t.abrir(0); });
+    if (acao === "memoria" && window.novoJogo) window.novoJogo();
+  }
+
+  btVoltar.addEventListener("click", function(){ ir(atual-1); });
+  btAvancar.addEventListener("click", function(){ ir(atual+1); });
+  document.querySelectorAll("[data-ir]").forEach(function(b){
+    b.addEventListener("click", function(){ ir(+b.getAttribute("data-ir")); });
+  });
+  document.addEventListener("keydown", function(e){
+    if (e.target.closest && e.target.closest("input,textarea")) return;
+    if (e.key === "ArrowRight") ir(atual+1);
+    if (e.key === "ArrowLeft") ir(atual-1);
+  });
+
+  // Copiar instrução: cada botão copia o comando do seu próprio quadro
+  document.querySelectorAll("[data-copiar]").forEach(function(bt){
+    bt.addEventListener("click", function(){
+      var texto = bt.closest(".pg-prompt").querySelector("[data-instrucao]").textContent;
+      var rotulo = bt.querySelector("span");
+      function ok(){ rotulo.textContent = "Copiado"; setTimeout(function(){ rotulo.textContent = "Copiar instrução"; }, 2000); }
+      try {
+        navigator.clipboard.writeText(texto).then(ok, function(){ rotulo.textContent = "Selecione e copie"; });
+      } catch(e){ rotulo.textContent = "Selecione e copie"; }
+    });
+  });
+
+  // Abas de comparação: um botão por versão, um painel visível por vez
+  document.querySelectorAll(".tt-troca").forEach(function(t){
+    var abas = [].slice.call(t.querySelectorAll(".tt-troca__aba"));
+    var paineis = [].slice.call(t.querySelectorAll(".tt-troca__painel"));
+    t.abrir = function(n){
+      abas.forEach(function(a,k){ a.setAttribute("aria-selected", k===n); });
+      paineis.forEach(function(p,k){ p.hidden = k!==n; });
+    };
+    abas.forEach(function(a,k){ a.addEventListener("click", function(){ t.abrir(k); }); });
+    t.abrir(0);
+  });
+
+  var inicio = parseInt((location.hash.match(/passo-(\d+)/) || [])[1], 10);
+  ir(isNaN(inicio) ? 0 : inicio);
+})();
+</script>
+
+</body>
+</html>

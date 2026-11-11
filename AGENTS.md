@@ -196,6 +196,9 @@ tutoriais soltos. Modelo: `t3/index.html`.
   explica vem primeiro. No tópico 3: ditado (escudo, Shift + Enter, microfone), termos
   (atalhos de copiar, colar e buscar), prova, metamorfose, bilhete (anexar pelo +),
   biografias, edital e cartazes (duas conversas e tradução de volta).
+  No tópico 5: gerar (Criar imagem, proporção, baixar), estilo (referência e aviso de
+  direitos), padrão (kit e carta-modelo) e editar. Os quatro constroem o mesmo jogo da
+  memória, e cada um usa o resultado do anterior.
 - **Tutorial novo do tópico entra nessa lista**, ou a cursista não chega a ele.
 - O botão **Concluir** do último passo grava no navegador (`localStorage`, chave
   `cursoia:tutoriais-concluidos`) e volta para a lista, que mostra o check e "N de M
@@ -235,6 +238,10 @@ Um elemento por passo, escolhido pelo que o passo pede:
 | Comando para copiar | o prompt | `pg-prompt` com rótulo "Comando (Prompt)" e botão "Copiar instrução" (`iap-btn--quieto`) |
 | Demonstração animada | uma ação que acontece no tempo (falar, digitar) | animação disparada ao entrar no passo (`data-ao-entrar`), com botão "Ver de novo" e versão parada para quem pede menos movimento |
 | Antes e depois interativo | o fechamento: o que mudou | pares clicáveis (`tt-par`), o primeiro já aberto |
+| Imagem gerada | o resultado de um pedido de imagem | `tt-arte`, com a imagem baixada no tamanho original e legenda com a data |
+| Duas imagens lado a lado | antes e depois, ou modelo e cópia | `tt-lado`, com rótulo curto em cima de cada uma |
+| Comparação em abas | o fechamento com imagens | `tt-troca`: um botão por versão, a primeira aberta, e o pedido que gerou cada uma |
+| Jogo | quando o material produzido é jogável | `tt-memoria` (t5/padrao-tutorial.html), embaralhado a cada entrada no passo |
 
 ### Como escrever
 
