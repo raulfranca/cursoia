@@ -15,6 +15,7 @@ Publicado por GitHub Pages a partir da raiz: <https://raulfranca.github.io/curso
 | `*.html` da raiz (exceto `index.html`) | Redirecionamentos dos endereços antigos, de antes das pastas. Não editar; não criar novos. |
 | `divulgacao/` | Matriz do card 1:1 para o grupo de WhatsApp (`card-whatsapp.html`), ilustrações de fundo transparente (`ilustracoes/`) e o script que as gera (`transparente.py`). Receita na seção 7.4 do `AGENTS.md` da pasta de conteúdo. |
 | `old/index.html` | Landing do piloto de 2025 ("Sua Rotina Mais Leve na Escola"), arquivada. Referência de conteúdo, não de forma. |
+| `old/t7-tutoriais/` | Tutoriais de habilidade/assistente que não foram usados (bilhete, ata, plano e o índice), arquivados em 11/11/2026 quando habilidades virou o Tópico 6. Nunca foram publicados no Classroom. Não linkar. |
 | `design/` | **Design system da marca — referência, não código de produção.** Ver abaixo. |
 
 **Deploy:** o GitHub Pages republica a raiz da `main` a cada push. Não há build nem dependência
